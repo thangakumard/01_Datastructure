@@ -24,8 +24,6 @@ public class RotateArrayToRight1 {
           rotate(input,0,length-1);
           
           Assert.assertEquals(input, output);
-          
-          
 	}
 	
 	private void rotate(int[] input,int start, int end)
