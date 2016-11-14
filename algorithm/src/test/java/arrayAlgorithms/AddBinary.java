@@ -4,9 +4,10 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 
 public class AddBinary {
-	
-	@Test
-	public void binarySum(){
+
+	/*
+	//@Test
+	public void Approach1(){
 		int i = 1001;
 		int j = 11;
 		
@@ -47,5 +48,55 @@ public class AddBinary {
 		return result;
 
 	}
+	
+	@Test
+	public void Approach2(){
+		String i = "1001";
+		String j = "11";
+		
+		Assert.assertEquals("1100", addBitString(i,j));
+	}
+	
+	
+	
+	private String addBitString(String a, String b){
+		
+		String result = "";
+		int L1 = a.length();
+		int L2 = b.length();
+		
+		if(a.length() < b.length()){
+			for(int i=0; i < L2-L1; i++){
+				a= '0' + a;
+			}
+		}
 
+		if(b.length() < a.length()){
+			for(int i=0; i < L1-L2; i++){
+				b= '0' + b;
+			}
+		}
+		
+		int length = a.length();
+		
+		int carry = 0;
+		
+		for(int i =0; i< a.length(); i++){
+			int x = a.charAt(i) - '0';
+			int y = b.charAt(i) - '0';
+			
+			int sum = (x ^ y ^ carry) + '0';
+			
+			result =Integer.toString(sum) + result;
+			
+			carry = (x & y) | (y & carry) | (x & carry);
+		}
+
+		if(carry == 1)
+			result = '1' + result;
+		
+		return result;
+	}
+	
+*/
 }

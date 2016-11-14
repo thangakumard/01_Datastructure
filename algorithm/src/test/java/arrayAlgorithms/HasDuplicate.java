@@ -16,7 +16,7 @@ public class HasDuplicate {
 		
 		for(int n: input)
 		{
-			if(set.add(n))
+			if(!set.add(n))
 				hasDuplicate = true;
 		}
 		Assert.assertTrue(hasDuplicate);
