@@ -27,5 +27,4 @@ public class SinglyLinkedList {
 		node.next = temp.next.next;
 		temp = null;
 	}
-	
 }
