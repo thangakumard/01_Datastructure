@@ -50,8 +50,7 @@ public class RemoveLoop {
 				return 1;
 			}
 		}		
-		return 0;	
-		
+		return 0;			
 	}	
 	
 	public void removeLoop(Node loop, Node head){
