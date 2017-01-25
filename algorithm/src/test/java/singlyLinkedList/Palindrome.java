@@ -17,7 +17,6 @@ public class Palindrome {
 		list.push(new Node('B'));
 		list.push(new Node('A'));
 		
-
 		Node middle = list.head;
 		Node jumper = list.head;
 		Node head2 = null;

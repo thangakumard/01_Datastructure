@@ -23,7 +23,7 @@ public class RemoveLoop {
 		list.push(new Node(5));
 		list.push(new Node(6));
 		
-		list.head.next.next.next.next = list.head.next;	
+		list.head.next.next.next.next.next.next = list.head.next;	
 		
 		findAndDeleteLoop(list.head);
 		Node currentNode = list.head;
