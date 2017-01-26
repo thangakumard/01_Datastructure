@@ -10,6 +10,8 @@ detectAndRemoveLoop() must change the below list to 1->2->3->4->5->NULL.
 http://www.geeksforgeeks.org/detect-and-remove-loop-in-a-linked-list/
 */
 
+/******************Floyd’s Cycle detection algorithm ********************/
+
 public class RemoveLoop {
 	
 	@Test
