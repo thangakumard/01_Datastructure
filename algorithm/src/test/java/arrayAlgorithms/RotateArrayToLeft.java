@@ -11,7 +11,7 @@ public class RotateArrayToLeft {
 		int k = 2;
 		int[] temp = new int[k];
 		for(int i=0; i < k; i++){
-			temp[0] = a[i];
+			temp[i] = a[i];
 		}
 		
 		int x = 0;
