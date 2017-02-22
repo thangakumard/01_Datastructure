@@ -13,9 +13,11 @@ public class LCAOfBST {
 		tree.root = buildBST(input, 0, input.length-1);
 		inOrderTraversal(tree.root);
 		
-		Node lca = lcAOfNodes(tree.root, 6,10);
+		Node lca = lcAOfNodes(tree.root, 6,10);		
+		System.out.println("lcAOfNodes(tree.root, 6,10) :" + lca.key);
 		
-		System.out.println(lca.key);
+		Node lca1 = lcAOfNodes(tree.root, 8,10);		
+		System.out.println(" lcAOfNodes(tree.root, 6,10) :" + lca1.key);
 	}
 	
 	/**
