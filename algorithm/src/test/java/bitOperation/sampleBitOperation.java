@@ -10,7 +10,7 @@ public class sampleBitOperation {
 	@Test
 	public void bitOperation(){
 		
-		int a = 60;	/* 60 = 0011 1100 */
+		int a = 60;		/* 60 = 0011 1100 */
 	      int b = 13;	/* 13 = 0000 1101 */
 	      int c = 0;
 
@@ -37,15 +37,31 @@ public class sampleBitOperation {
 	      c = a << 2;       /* 240 = 1111 0000 */
 	      System.out.println("a << 2 = " + c );
 	      
-	      
+
+	      /******** >> (Signed right shift) 
+	       * If the number is negative, then 1 is used as a filler and 
+	       if the number is positive, then 0 is used as a filler. ***/
+	       
+	      a = 100;
 	      //>> (right shift)	
 	      c = a >> 2;       /* 15 = 1111 */
-	      System.out.println("a >> 2  = " + c );
+	      System.out.println("a >> 2  = " + c );      
 	      
 	      
-	      //>>> (zero fill right shift)
+	      //>> (right shift)	
+	      c = -a >> 2;       /* 15 = 1111 */
+	      System.out.println("-a >> 2  = " + c );
+	      
+	      /***********>>> (Unsigned right shift)
+	       It always fills 0 irrespective of the sign of the number.*/
+	      
+	    //>>> (zero fill right shift)
 	      c = a >>> 2;      /* 15 = 0000 1111 */
 	      System.out.println("a >>> 2 = " + c );
+	      
+	      //>>> (zero fill right shift)
+	      c = -a >>> 2;      /* 15 = 0000 1111 */
+	      System.out.println("-a >>> 2 = " + c );
 	      
 	      Assert.assertTrue(true);
 		
