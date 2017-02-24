@@ -9,7 +9,7 @@ public class PowerOfTwo {
 	@Test
 	public void checkPowerOf2()
 	{
-		int input = 8;
+		int input = 1;
 		
 		if( input < 1)
 			Assert.fail();
