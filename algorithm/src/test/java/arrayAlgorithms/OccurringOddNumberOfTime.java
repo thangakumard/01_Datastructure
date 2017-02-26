@@ -37,6 +37,7 @@ public class OccurringOddNumberOfTime {
 	}
 	
 		@Test
+		//Time complexity O(n). But it requires extra space for hashing
 		public void approach2(){
 			
 			System.out.println("Approach 2 :");
@@ -63,6 +64,7 @@ public class OccurringOddNumberOfTime {
 		}
 		
 		@Test
+		//Time complexity O(n).
 		public void approach3(){
 			System.out.println("Approach 3 :");
 			int[] a = {1, 2, 3, 2, 3, 1, 3};			
