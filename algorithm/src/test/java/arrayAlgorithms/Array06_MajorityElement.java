@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class MajorityElement {
+public class Array06_MajorityElement {
 
 	/*
 	 * Majority Element: A majority element in an array A[] of size n is an element that appears more than n/2 times (and hence there is at most one such element).

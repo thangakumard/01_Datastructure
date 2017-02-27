@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class LeadersInTheArray {
+public class Array05_LeadersInTheArray {
 	
 	/*
 	 * http://www.geeksforgeeks.org/leaders-in-an-array/

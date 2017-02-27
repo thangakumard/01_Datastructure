@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 //http://www.geeksforgeeks.org/segregate-0s-and-1s-in-an-array-by-traversing-array-once/
-public class Segregate0sAnd1s {
+public class Array14_Segregate0sAnd1s {
 	
 	@Test
 	//time complexity O(n)

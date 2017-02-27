@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 //http://www.geeksforgeeks.org/find-a-fixed-point-in-a-given-array/
-public class FixedPointInAnArray {
+public class Array09_FixedPointInAnArray {
 
 	@Test
 	//Time complexity O(n)

@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 //www.geeksforgeeks.org/write-a-c-program-that-given-a-set-a-of-n-numbers-and-another-number-x-determines-whether-or-not-there-exist-two-elements-in-s-whose-sum-is-exactly-x/
 
-public class FindSumOfElements {
+public class Array15_FindSumOfElements {
 
 	@Test
 	//Time complexity O(n)

@@ -3,7 +3,7 @@ package arrayAlgorithms;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PeekElement {
+public class Array10_PeekElement {
 
 	
 	@Test

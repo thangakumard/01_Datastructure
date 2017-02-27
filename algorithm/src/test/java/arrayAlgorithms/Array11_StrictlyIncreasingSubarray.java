@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class StrictlyIncreasingSubarray {
+public class Array11_StrictlyIncreasingSubarray {
 
 	
 	public void approach1(){

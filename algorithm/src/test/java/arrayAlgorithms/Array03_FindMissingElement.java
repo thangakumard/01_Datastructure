@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class FindMissingElement {
+public class Array03_FindMissingElement {
 
 	
 	/** using formula
@@ -10,6 +10,7 @@ public class FindMissingElement {
 	 * Subtract all the elements one by one from total.
 	 * We will get the missing element 
 	 * */ 
+	//http://www.geeksforgeeks.org/find-the-missing-number/
 	//Time complexity O(n)
 	@Test
 	public void Approach1(){

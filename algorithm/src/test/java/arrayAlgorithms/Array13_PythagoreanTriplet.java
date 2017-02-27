@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class PythagoreanTriplet {
+public class Array13_PythagoreanTriplet {
 
 	@Test
 	public void approach01(){

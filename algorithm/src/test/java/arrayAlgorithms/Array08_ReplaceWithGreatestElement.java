@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class ReplaceWithGreatestElement {
+public class Array08_ReplaceWithGreatestElement {
 
 	@Test
 	//Time complexity is O(n^2)

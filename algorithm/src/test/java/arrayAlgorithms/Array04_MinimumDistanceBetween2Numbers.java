@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class MinimumDistanceBetween2Numbers {
+public class Array04_MinimumDistanceBetween2Numbers {
 	
 	/**
 	 * http://www.geeksforgeeks.org/find-the-minimum-distance-between-two-numbers/
