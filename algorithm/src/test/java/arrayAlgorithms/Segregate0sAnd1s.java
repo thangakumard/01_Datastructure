@@ -1,10 +1,11 @@
 package arrayAlgorithms;
 
 import org.testng.annotations.Test;
-
+//http://www.geeksforgeeks.org/segregate-0s-and-1s-in-an-array-by-traversing-array-once/
 public class Segregate0sAnd1s {
 	
 	@Test
+	//time complexity O(n)
 	public void approach1(){
 		
 		int[] a = {0,1,0,1,1,0,0,0,1,1};
