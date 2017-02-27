@@ -7,6 +7,7 @@ public class Array16_MissingElement0_99 {
 
 
 	@Test
+	//Time complexity is O(n)
 	public void Approach01(){
 
 		int[] input = {22,0,1,2,3,10,30,50,40,60,80,70,99,-10,120};
