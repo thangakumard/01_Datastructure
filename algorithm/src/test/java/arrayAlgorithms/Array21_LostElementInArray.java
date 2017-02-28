@@ -2,6 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
+//http://www.geeksforgeeks.org/find-lost-element-from-a-duplicated-array/
 public class Array21_LostElementInArray {
 
 	@Test

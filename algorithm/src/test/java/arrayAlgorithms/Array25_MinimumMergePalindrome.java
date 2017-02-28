@@ -2,6 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
+//http://www.geeksforgeeks.org/find-minimum-number-of-merge-operations-to-make-an-array-palindrome/
 public class Array25_MinimumMergePalindrome {
 	@Test
 	public void approach01(){

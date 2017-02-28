@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 
 public class Array23BitonicSubarray {
 
+	//http://www.geeksforgeeks.org/maximum-length-bitonic-subarray/
+	
 	public int longestSequence(int arr[]){
         int lis[] = new int[arr.length];
         int lds[] = new int[arr.length];
