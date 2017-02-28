@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class Array25_MoveAllZerosToEnd {
+public class Array26_MoveAllZerosToEnd {
 
 	@Test
 	public void approach01(){
