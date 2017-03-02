@@ -2,6 +2,8 @@ package tree;
 
 import java.util.Stack;
 
+import org.testng.annotations.Test;
+
 /*
 1) Create an empty stack S.
 2) Initialize current node as root
@@ -15,22 +17,26 @@ import java.util.Stack;
 //http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
 public class Tree01_InOrderIterative {
 
+	@Test
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes */
+    the nodes 
+    				1
+    		2				3
+    	4		5
+    	
+		*/
 		BinaryTree tree = new BinaryTree();
 		tree.root = new Node(1);
 		tree.root.left = new Node(2);
 		tree.root.right = new Node(3);
 		tree.root.left.left = new Node(4);
 		tree.root.left.right = new Node(5);
-		inorder();
+		inorder(tree.root);
 	}
 
-	Node root;
-
-	void inorder() {
+	void inorder(Node root) {
 		if (root == null) {
 			return;
 		}
