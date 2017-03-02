@@ -2,11 +2,11 @@ package tree;
 
 public class Node {
 
-	int key;
+	int data, height;
 	Node left, right;
 	
 	public Node(int item){
-		key = item;
+		data = item;
 		left = right = null;
 	}
 }

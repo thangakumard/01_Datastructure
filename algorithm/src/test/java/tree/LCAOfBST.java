@@ -14,10 +14,10 @@ public class LCAOfBST {
 		inOrderTraversal(tree.root);
 		
 		Node lca = lcAOfNodes(tree.root, 6,10);		
-		System.out.println("lcAOfNodes(tree.root, 6,10) :" + lca.key);
+		System.out.println("lcAOfNodes(tree.root, 6,10) :" + lca.data);
 		
 		Node lca1 = lcAOfNodes(tree.root, 8,10);		
-		System.out.println(" lcAOfNodes(tree.root, 6,10) :" + lca1.key);
+		System.out.println(" lcAOfNodes(tree.root, 6,10) :" + lca1.data);
 	}
 	
 	/**
@@ -48,7 +48,7 @@ public class LCAOfBST {
 		if(node == null)
 			return;
 		
-		System.out.println(node.key);
+		System.out.println(node.data);
 		inOrderTraversal(node.left);
 		inOrderTraversal(node.right);
 	}
@@ -58,10 +58,10 @@ public class LCAOfBST {
 		if(node == null)
 			return null;
 		
-		if(node.key > n1 && node.key > n2)
+		if(node.data > n1 && node.data > n2)
 			return lcAOfNodes(node.left, n1, n2);
 		
-		if( node.key < n1 && node.key < n2)
+		if( node.data < n1 && node.data < n2)
 			return lcAOfNodes(node.right, n1, n2);
 		
 		return node;

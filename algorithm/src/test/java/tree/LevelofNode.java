@@ -23,7 +23,7 @@ public class LevelofNode {
 		if(node == null)
 			return 0;
 		
-		if(node.key == data)
+		if(node.data == data)
 			return level;
 
 		downlevel = getLevel(node.left, data, level+1);
@@ -53,7 +53,7 @@ public class LevelofNode {
 		if(node == null)
 			return;
 
-		System.out.println(node.key);
+		System.out.println(node.data);
 		inOrderTraversal(node.left);
 		inOrderTraversal(node.right);
 	}

@@ -49,7 +49,7 @@ void inorder() {
        
         // visit the top node
         node = stack.pop();
-        System.out.print(node.key + " ");
+        System.out.print(node.data + " ");
         if (node.right != null) {
             node = node.right;
              

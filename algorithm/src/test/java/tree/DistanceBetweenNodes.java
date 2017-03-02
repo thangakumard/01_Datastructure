@@ -21,7 +21,7 @@ public class DistanceBetweenNodes {
 	 */
 	int distanceBetweenNodes(Node root, int node1, int node2){	
 		
-		int lca = lca(root, node1, node2).key;		
+		int lca = lca(root, node1, node2).data;		
 		
 		int a = distanceFromRoot(root, node1, 0);
 		int b = distanceFromRoot(root, node2, 0);
@@ -32,12 +32,12 @@ public class DistanceBetweenNodes {
 	}
 	
 	int distanceFromRoot(Node node,int n,int distance){		
-		if(node.key == n)
+		if(node.data == n)
 			return distance;
-		if(node.key > n){
+		if(node.data > n){
 			return distanceFromRoot(node.left, n, distance+1);
 		}
-		if(node.key < n){
+		if(node.data < n){
 			return distanceFromRoot(node.right, n, distance+1);
 		}		
 		return distance;
@@ -47,10 +47,10 @@ public class DistanceBetweenNodes {
 		if(node == null)
 			return null;
 		
-		if(node.key > n1 && node.key > n2)
+		if(node.data > n1 && node.data > n2)
 			return lca(node.left, n1, n2);
 		
-		if(node.key < n1 && node.key < n2)
+		if(node.data < n1 && node.data < n2)
 			return lca(node.right, n1, n2);
 		
 		return node;
@@ -76,7 +76,7 @@ void inOrderTraversal(Node node){
 	if(node == null)
 		return;
 	
-	System.out.println(node.key);
+	System.out.println(node.data);
 	inOrderTraversal(node.left);
 	inOrderTraversal(node.right);
 }

@@ -38,7 +38,7 @@ public class BSTFromSortedArray {
 		if(node == null)
 			return;
 		
-		System.out.println(node.key);
+		System.out.println(node.data);
 		inOrderTraversal(node.left);
 		inOrderTraversal(node.right);
 	}

@@ -40,7 +40,7 @@ public class LevelOrderTraversal {
             For more information on poll() visit 
             http://www.tutorialspoint.com/java/util/linkedlist_poll.htm */
 			Node tempNode = queue.poll();
-			System.out.println(tempNode.key);
+			System.out.println(tempNode.data);
 			
 			/*Enqueue left child */
 			if(tempNode.left != null){

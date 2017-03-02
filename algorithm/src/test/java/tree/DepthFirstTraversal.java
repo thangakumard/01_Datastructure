@@ -25,7 +25,7 @@ public class DepthFirstTraversal {
 			return;
 		
 		//print the data of the tree		
-		System.out.println(node.key + " ");
+		System.out.println(node.data + " ");
 		
 		//then recur on the left subtree
 		PreOrderTraversal(node.left);
@@ -43,7 +43,7 @@ public class DepthFirstTraversal {
 		InOrderTraversal(node.left);
 
 		//print the data of the tree		
-		System.out.println(node.key + " ");
+		System.out.println(node.data + " ");
 		
 		//then recur on the right subtree
 		InOrderTraversal(node.right);	
@@ -61,7 +61,7 @@ public class DepthFirstTraversal {
 		PostOrderTraversal(node.right);	
 
 		//print the data of the tree		
-		System.out.println(node.key + " ");
+		System.out.println(node.data + " ");
 		
 	}
 }
