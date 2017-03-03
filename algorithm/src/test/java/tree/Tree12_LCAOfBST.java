@@ -2,6 +2,7 @@ package tree;
 
 import org.testng.annotations.Test;
 
+//https://www.youtube.com/watch?v=TIoCCStdiFo
 public class Tree12_LCAOfBST {
 
 	@Test
@@ -23,11 +24,7 @@ public class Tree12_LCAOfBST {
 	/**
 	 * Find the middle number and keep it as root node
 	 * Repeat that for left array
-	 * Repeat that for right array
-	 * @param input
-	 * @param left
-	 * @param right
-	 * @return
+	 * Repeat that for right array	
 	 */
 	Node buildBST(int[] input, int left, int right){
 		
