@@ -7,13 +7,19 @@ import java.util.Set;
 
 import org.testng.annotations.Test;
 
-import cucumber.deps.com.thoughtworks.xstream.core.MapBackedDataHolder;
 
 public class SampleHashMap {
-
+	
+	/****************
+	 * Will not have duplicate key. 
+	 * But If second time try to insert the existing key value, it will update the value for that key
+	 * 
+	 */
+	
+	
 	@Test
 	public void test(){
-		HashMap<Integer, String> mapData = new HashMap<Integer,String>();
+		HashMap<Object, String> mapData = new HashMap<Object,String>();
 		
 		/********* Insert a record *********/
 		mapData.put(1, "one");
@@ -22,6 +28,11 @@ public class SampleHashMap {
 		mapData.put(4, "Four");
 		mapData.put(5, "Five");
 		mapData.put(6, "Six");
+		mapData.put(7, null);
+		mapData.put(null, null);
+		mapData.put(null, null);// This record will update the record with "null" key value. 
+								// it will not throw any exception
+		
 		
 		/********** Access a key value ******/
 		System.out.println(mapData.get(1));
@@ -34,9 +45,14 @@ public class SampleHashMap {
 		/********* To Remove a key*******/
 		mapData.remove(6);
 		
+		/*********** To check if a key is present *******/
+		if(mapData.containsKey(3)){
+			System.out.println("Key 3 is present in the collection.");
+		}
+		
 		/******** Access All the keys ******/
-		Set<Integer> lstIds = mapData.keySet();
-		for(Integer I:lstIds){
+		Set<Object> lstIds = mapData.keySet();
+		for(Object I:lstIds){
 			System.out.println("Key is : " + I + " & Value is : " + mapData.get(I));
 		}
 		
