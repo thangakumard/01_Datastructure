@@ -31,7 +31,7 @@ public class Tree01_InOrderIterative {
 	}
 
 	void inorderIterative(Node root) {
-		while(root == null) return;
+		if(root == null) return;
 		
 		Stack<Node> stack = new Stack<Node>();
 		

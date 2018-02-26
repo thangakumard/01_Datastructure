@@ -22,7 +22,7 @@ public class Tree13_BSTFromSortedArray {
 	}
 	
 	
-	Node buildBST(int[] input, int left, int right){
+	public Node buildBST(int[] input, int left, int right){
 		if(left > right)
 			return null;
 		int middle = (left+right)/2;

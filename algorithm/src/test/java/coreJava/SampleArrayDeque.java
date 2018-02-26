@@ -8,10 +8,18 @@ public class SampleArrayDeque {
 	@Test
 	public void test(){
 		 Deque<String> stack = new ArrayDeque<String>();
-		    stack.push("first");
+		    
+		   // To push item to stack		
+		 	stack.push("first");
 		    stack.push("second");
 		    stack.push("Third");
+		    
+		    //To add item to bottom of the stack
+		    stack.addLast("Zero");
+		    
+		    System.out.println("size()" + stack.size());
 		    System.out.println("getFirst()" + stack.getFirst());
+		    System.out.println("getLast()" + stack.getLast());
 		    System.out.println("pop()" + stack.pop());		    
 	}
 	

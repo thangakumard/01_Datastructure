@@ -20,13 +20,17 @@ public class Tree10_HeightOfBST {
 		tree.root.right = new Node(3);
 		tree.root.left.left = new Node(4);
 		tree.root.left.right = new Node(5);
-		int height = heightOfBST(tree.root);
+		Tree13_BSTFromSortedArray bstFromArray = new Tree13_BSTFromSortedArray();
+		int input[] = {300,400,425,450,475,500,550,600};
+		
+		
+		int height = heightOfBST(bstFromArray.buildBST(input, 0, input.length-1));
 		System.out.println("Height is : " + height);
 	}
 	
 	int heightOfBST(Node root){
 		if(root == null)
-			return 0;
+			return -1;
 		
 		int leftHeight = heightOfBST(root.left);
 		int rightHeight = heightOfBST(root.right);

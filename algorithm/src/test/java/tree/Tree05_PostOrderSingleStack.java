@@ -31,12 +31,10 @@ public class Tree05_PostOrderSingleStack {
 		Stack<Node> stack1 = new Stack<Node>();
 
 		while(currentNode != null || !stack1.isEmpty()){
-
 			if(currentNode != null){
 				stack1.push(currentNode);
 				currentNode = currentNode.left;
 			}else{
-
 				Node temp = stack1.peek().right;
 				if(temp == null){
 					temp = stack1.pop();
