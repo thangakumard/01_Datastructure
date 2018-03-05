@@ -13,6 +13,8 @@ public class SampleArrayDeque {
 		 	stack.push("first");
 		    stack.push("second");
 		    stack.push("Third");
+		    stack.addFirst("Four");
+		    stack.addFirst("Five");
 		    
 		    //To add item to bottom of the stack
 		    stack.addLast("Zero");
@@ -20,7 +22,8 @@ public class SampleArrayDeque {
 		    System.out.println("size()" + stack.size());
 		    System.out.println("getFirst()" + stack.getFirst());
 		    System.out.println("getLast()" + stack.getLast());
-		    System.out.println("pop()" + stack.pop());		    
+		    System.out.println("pop()" + stack.pop());
+		    System.out.println("PollFirst" + stack.pollFirst());
 	}
 	
 	/*******ArrayDeque as a Queue*********/
@@ -32,6 +35,7 @@ public class SampleArrayDeque {
 	    queue.offer("third");
 	  
 	    System.out.println("getLast()" + queue.getLast());
-	    System.out.println("poll()" + queue.poll());	    
+	    System.out.println("poll()" + queue.poll());	
+	    System.out.println("PollFirst" + queue.pollFirst());
 	}	
 }

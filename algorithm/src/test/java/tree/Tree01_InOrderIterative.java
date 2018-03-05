@@ -30,7 +30,7 @@ public class Tree01_InOrderIterative {
 		inorderIterative(tree.root);
 	}
 
-	void inorderIterative(Node root) {
+	public void inorderIterative(Node root) {
 		if(root == null) return;
 		
 		Stack<Node> stack = new Stack<Node>();

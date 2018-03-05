@@ -55,10 +55,10 @@ public class Tree12_LCAOfBST {
 		if(node == null)
 			return null;
 		
-		if(node.data > n1 && node.data > n2)
+		if(node.data > Math.max(n1, n2))
 			return lcAOfNodes(node.left, n1, n2);
 		
-		if( node.data < n1 && node.data < n2)
+		if( node.data < Math.min(n1, n2))
 			return lcAOfNodes(node.right, n1, n2);
 		
 		return node;

@@ -107,8 +107,9 @@ public class AVLTree {
 		root = insertIntoAVL(root, 17);
 		root = insertIntoAVL(root, 20);
 		
-		inOrder(root);
-		
+		//inOrder(root);
+		Tree01_InOrderIterative traverse = new Tree01_InOrderIterative();
+		traverse.inorderIterative(root);	
 	}
 
 }
