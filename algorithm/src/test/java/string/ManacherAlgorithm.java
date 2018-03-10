@@ -6,8 +6,7 @@ import org.testng.annotations.Test;
  * Reference : https://github.com/mission-peace/interview/blob/master/src/com/interview/string/LongestPalindromeSubstring.java
  * @author THANGAKUMAR
  *
- */
-/**
+ *
  * Linear time Manacher's algorithm to find longest palindromic substring.
  * There are 4 cases to handle
  * Case 1 : Right side palindrome is totally contained under current palindrome. In this case do not consider this as center.
