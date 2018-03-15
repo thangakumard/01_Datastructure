@@ -7,15 +7,17 @@ public class Dynamic04_SubsetSum {
 		
 		for(int i=0; i<= input.length;i++){
 			for(int j=0; j<= total; j++){
-				if(i == 0 || j== 0){
+				if(i == 0 || j== 0){ //Set 0th column and 0th row as TRUE
 					temp[i][j] = true;
 					continue;
 				}
 				if(j - input[i-1]>= 0){
+					//Previous Rows value || previous row's j-input value
 					temp[i][j] = temp[i-1][j] || temp[i-1][j-input[i-1]];
 				}
 				else
 				{
+					//Previous Row value
 					temp[i][j] = temp[i-1][j];
 				}
 			
