@@ -1,7 +1,17 @@
 package dynamicProgramming;
 
+import org.testng.annotations.*;
+
 public class Dynamic04_SubsetSum {
 
+	@Test
+	public void test(){
+		int[] input = {2,3,7,8,10};
+		int total = 11;
+		isSubsetSum(input, total);
+	}
+	
+	
 	private boolean isSubsetSum(int[] input, int total){
 		boolean[][] temp = new boolean[input.length+1][total+1];
 		
