@@ -20,9 +20,7 @@ public class SampleHashSet {
 	     System.out.println("HashSet String Collection contains: ");
 	     for(String temp : hset){
 	        System.out.println(temp);
-	     }
-	     
-	     
+	     }	     
 	     
 	     System.out.println("*******************");
 	     

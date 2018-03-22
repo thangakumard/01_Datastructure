@@ -29,10 +29,12 @@ public class SampleArray {
 		System.out.println(arr[0]);
 		
 		char input[] = {'a','b','c'};
-		System.out.println(input.length);
+		System.out.println(input.length); //length is a variable
 		
-		
-		
+		String s = input.toString(); //NOT CORRECT 
+		s = new String(input);
+		System.out.println(s);
+		System.out.println(s.length()); //length is  METHOD
 		
 	}
 	
