@@ -1,6 +1,13 @@
 package arrayAlgorithms;
 
 import org.testng.annotations.Test;
+/***************
+ * 
+ * https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
+ * Write an efficient C program to find the sum of contiguous subarray 
+ * within a one-dimensional array of numbers which has the largest sum.
+ **************/
+
 
 public class Algor01_Kadanes_MaxSumSubArray {
 	@Test
@@ -13,7 +20,8 @@ public class Algor01_Kadanes_MaxSumSubArray {
 	private int kadanesAlgorithm(int[] input){
 		
 		int size = input.length;
-		int max_so_for = Integer.MIN_VALUE, max_ending_here = 0;
+		int max_so_for = Integer.MIN_VALUE;
+		int max_ending_here = 0;
 		
 		for(int i=0; i< size; i++){
 			max_ending_here = max_ending_here + input[i];

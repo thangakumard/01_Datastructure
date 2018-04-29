@@ -43,8 +43,10 @@ public class Bit01_SumEqualXOR {
 	
 	/****
 	 * A+B = A XOR B + 2 * (A AND B). To make A+B = A XOR B, we have to make (A AND B) as 0
-	 * In the given problem A is n and B is i. So to make n AND i == 0 binaray value of i should have 0 
-	 * where ever binaray value of n has 1. That will be 2 * unsetbit (no of zeros) in n
+	 * In the given problem A is n and B is i. 
+	 * So to make n AND i == 0 binaray value of i should have 0 
+	 * where ever binaray value of n has 1. 
+	 * That will be 2 * unsetbit (no of zeros) in n
 	 */
 	public int solution2(int n){
 		int noOfZeros =0;

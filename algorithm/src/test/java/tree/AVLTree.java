@@ -2,6 +2,19 @@ package tree;
 
 import org.testng.annotations.Test;
 
+/****************
+ * Bainary search search is a special kind of binaray tree where every nodes in the left subtree is less than or equal to root and 
+ * every node in the right subtree is greater than or equal to root. This is recursively true for every node.
+ * 
+ * AVL tree is special kind of binary search tree but the difference of the height of the left subtree and right subtree will never be greater than 1
+ * To Insert a node into an AVL tree, we need to understand 4 simple cases
+ * 	1.  LEFT LEFT case
+ *  2.	LEFT RIGHT case
+ *  3.	RIGHT LEFT case
+ *  4.  RIGHT RIGHT case
+ *
+ */
+
 public class AVLTree {
 
 

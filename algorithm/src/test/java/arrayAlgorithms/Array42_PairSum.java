@@ -6,7 +6,7 @@ public class Array42_PairSum {
 
 	@Test
 	public void test(){
-		int[] input = {1, 4, 45, 6, 10, -8};
+		int[] input = {-1, 4, 17, 6, 10, -8};
 		mergeSort(input);
 		printPairSum(input,16);
 		

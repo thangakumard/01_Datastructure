@@ -3,6 +3,19 @@ package arrayAlgorithms;
 import org.testng.annotations.Test;
 
 //http://www.geeksforgeeks.org/find-lost-element-from-a-duplicated-array/
+/**************
+ * 
+ * Input:  arr1[] = {1, 4, 5, 7, 9}
+    arr2[] = {4, 5, 7, 9}
+	Output: 1
+	1 is missing from second array.
+	
+	Input: arr1[] = {2, 3, 4, 5}
+	       arr2[] = {2, 3, 4, 5, 6}
+	Output: 6
+	6 is missing from first array.
+ *
+ */
 public class Array21_LostElementInArray {
 
 	@Test

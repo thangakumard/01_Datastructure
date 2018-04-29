@@ -1,5 +1,21 @@
 package arrayAlgorithms;
 
+import java.util.Arrays;
+
+/***
+ * Given an array of integers, write a function that returns true 
+ * if there is a triplet (a, b, c) that satisfies a2 + b2 = c2.
+Example:
+
+Input: arr[] = {3, 1, 4, 6, 5}
+Output: True
+There is a Pythagorean triplet (3, 4, 5).
+
+Input: arr[] = {10, 4, 6, 12, 5}
+Output: False
+There is no Pythagorean triplet.
+ */
+
 import org.testng.annotations.Test;
 
 public class Array13_PythagoreanTriplet {
@@ -11,7 +27,6 @@ public class Array13_PythagoreanTriplet {
 
 		System.out.println("Approch 1");
 		System.out.println("Given input has pythagorean : " + pythagorean(a, n)); 
-
 	}
 
 	boolean pythagorean(int[] input, int n){
@@ -40,7 +55,7 @@ public class Array13_PythagoreanTriplet {
 		for(int i=0; i<n; i++){
 			a[i] = a[i] * a[i];
 		}
-		a = sort(a, 0 , n);
+		Arrays.sort(a);
 		
 		for(int j=n-1; j >= 2; j--){
 			

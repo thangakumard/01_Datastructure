@@ -3,7 +3,12 @@ package arrayAlgorithms;
 import org.testng.annotations.Test;
 
 import string.RabinKarpSearch;
-
+/************
+ * 
+ * Refernce : https://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/
+ * https://www.youtube.com/watch?v=H4VrKHVG5qI
+ *
+ */
 public class Algor02_RabinKarp_PatternMatching {
 	
 private int prime = 101;

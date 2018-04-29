@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class ListObject {
 
+	@Test
 	public void Test(){
 		
 		List<Integer> intArray = new ArrayList<>();
@@ -33,7 +34,7 @@ public class ListObject {
 		myList1.add("Apple");
 		myList1.add("Banana");
 		myList1.add("Orange");
-		Object[] myArray1 = myList.toArray();
+		Object[] myArray1 = myList1.toArray();
 		myArray1[0] = "X";
 		myArray1[1] = "Y";
 		myArray1[2] = "Z";
@@ -48,9 +49,9 @@ public class ListObject {
 		myList2.add("100");
 		myList2.add("200");
 		myList2.add("300");
-		Integer[] myArray2 = new Integer[myList.size()];
-		for (int i = 0; i < myList.size(); i++) {
-		   myArray2[i] = Integer.valueOf(myList.get(i));
+		Integer[] myArray2 = new Integer[myList2.size()];
+		for (int i = 0; i < myList2.size(); i++) {
+		   myArray2[i] = Integer.valueOf(myList2.get(i));
 		}
 		for (Integer myInt : myArray2) {
 		   System.out.println(myInt);

@@ -26,9 +26,9 @@ public class LList02_Palindrome {
 			middle = middle.next;
 		}
 		if (jumper != null) {
-			head2 = middle.next;
+			head2 = middle.next; // For Odd number of nodes, we have to ignore the middle node
 		} else {
-			head2 = middle;
+			head2 = middle;   // For even number of nodes
 		}
 
 		Node reversed = getReverseList(head2);

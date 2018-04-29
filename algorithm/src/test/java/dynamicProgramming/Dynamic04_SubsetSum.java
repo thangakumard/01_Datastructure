@@ -7,8 +7,9 @@ public class Dynamic04_SubsetSum {
 	@Test
 	public void test(){
 		int[] input = {2,3,7,8,10};
-		int total = 11;
-		isSubsetSum(input, total);
+		int total = 10;
+		isSubsetSum(input, total);		
+		printpairs(input, total);
 	}
 	
 	
@@ -37,5 +38,27 @@ public class Dynamic04_SubsetSum {
 		
 		return temp[input.length][total];
 	}
+	
+	
+	public void printpairs(int arr[],int sum)
+    {
+	    final int MAX = 100000; // Max size of Hashmap
+        // Declares and initializes the whole array as false
+        boolean[] binmap = new boolean[MAX];
+ 
+        for (int i=0; i<arr.length; ++i)
+        {
+            int temp = sum-arr[i];
+ 
+            // checking for condition
+            if (temp>=0 && binmap[temp])
+            {
+                System.out.println("Pair with given sum " +
+                                    sum + " is (" + arr[i] +
+                                    ", "+temp+")");
+            }
+            binmap[arr[i]] = true;
+        }
+    }
 	
 }

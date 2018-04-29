@@ -3,6 +3,22 @@ package arrayAlgorithms;
 import org.testng.annotations.Test;
 
 //http://www.geeksforgeeks.org/print-missing-elements-that-lie-in-range-0-99/
+/****************
+ * 
+ *     Input: {88, 105, 3, 2, 200, 0, 10}
+     Output: 1
+             4-9
+             11-87
+             89-99
+
+
+     Input: {9, 6, 900, 850, 5, 90, 100, 99}
+     Output: 0-4
+             7-8
+             10-89
+             91-98
+ *
+ */
 public class Array16_MissingElement0_99 {
 
 
