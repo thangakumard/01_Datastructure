@@ -3,14 +3,49 @@ package bitOperation;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
+/*******************
+ * Bitwise Operators
+ * 
+ * NOT
+ * OR
+ * AND
+ * XOR
+ * 
+ */
 
 public class sampleBitOperation {
 	
 	@Test
+	public void flipByte(){
+		/********************
+		 * XOR Truth Table
+		 * A	B		A XOR B
+		 * 0	0		0
+		 * 0	1		1
+		 * 1	0		1
+		 * 1	1		0
+		 */
+		//use XOR to flip byte
+		int i = 1;
+		System.out.println(" To flip didgit : GivenNO XOR 1");
+		System.out.print("XOR of 1 is :");
+		System.out.println(1^i);
+		i = 0;
+		System.out.print("XOR of 0 is :");
+		System.out.println(1^i);
+	}
+	
+	@Test
+	public void complementOperator(){
+		byte i = 1;
+		System.out.println(" Complement operator :");
+		System.out.println(~i);
+	}
+	
+	@Test
 	public void bitOperation(){
 		
-		int a = 60;		/* 60 = 0011 1100 */
+		  int a = 60;	/* 60 = 0011 1100 */
 	      int b = 13;	/* 13 = 0000 1101 */
 	      int c = 0;
 
