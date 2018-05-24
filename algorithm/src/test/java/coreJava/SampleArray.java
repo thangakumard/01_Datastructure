@@ -35,15 +35,15 @@ public class SampleArray {
 			int[] testArray3 = new int[10];
 			Arrays.fill(testArray3, 50);
 			System.out.println(Arrays.toString(testArray3));//[50, 50, 50, 50, 50, 50, 50, 50, 50, 50]
-			// To List
+		// 8. Convert To List
 			List list1 = Arrays.asList(testArray3);
 			// printing the list
 			System.out.println("The list is:" + list1);
-		//8. Binaray Search
+		// 9. Binaray Search
 			//binarySearch(int[] a, int key)
 			//binarySearch(int[] a, int fromIndex, int toIndex, int key)
 			Arrays.binarySearch(testArray3, 0, 5, 50);
-		//9. Compare 2 array
+		// 10. Compare 2 array
 			Arrays.equals(testArray2,testArray3);
 		/***** Char Array *******/
 		char input[] = {'a','b','c'};
