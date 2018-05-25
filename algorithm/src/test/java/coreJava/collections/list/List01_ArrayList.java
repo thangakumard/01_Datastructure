@@ -46,6 +46,13 @@ public class List01_ArrayList {
               // Printing array of objects
               for (Object obj : objects)
                   System.out.print(obj + " ");
+	//12. List of List
+		 List<List<Integer>> result = new ArrayList<List<Integer>>();
+		List<Integer> row = new ArrayList<>();
+		row.add(1);
+		row.add(2);
+		row.add(3);
+		result.add(row);
     
   }
 }
