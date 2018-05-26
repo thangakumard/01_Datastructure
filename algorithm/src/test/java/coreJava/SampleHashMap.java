@@ -20,7 +20,8 @@ public class SampleHashMap {
 	@Test
 	public void test(){
 		HashMap<Object, String> mapData = new HashMap<Object,String>();
-		
+        HashMap<Integer, String[]> input = new HashMap<Integer,String[]>();
+        input.put(1, new String[]{"asdasd","dsfdgfg"});
 		/********* Insert a record *********/
 		mapData.put(1, "one");
 		mapData.put(2, "Two");

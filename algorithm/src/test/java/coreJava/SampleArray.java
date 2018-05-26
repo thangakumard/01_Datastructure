@@ -1,7 +1,8 @@
 package coreJava;
-import java.util.Arrays;
 
-import org.testng.Assert;
+import java.util.Arrays;
+import java.util.List;
+
 import org.testng.annotations.Test;
 
 public class SampleArray {
@@ -18,7 +19,7 @@ public class SampleArray {
 			System.out.println("The first element is: " + testArray1[0]);
 		// 4. Iterate all Elements
 			System.out.print("[Version 1] The contents of testArray1 are:");
-			for (int i = 0; i < a1.length; ++i) {
+			for (int i = 0; i < testArray1.length; ++i) {
 			    System.out.print(" " + testArray1[i]);
 			}
 			System.out.println();
@@ -28,9 +29,9 @@ public class SampleArray {
 			}
 		System.out.println();
 		// 5. Modify Element
-			a1[0] = 4;
+			testArray1[0] = 4;
 		// 6. Sort
-			Arrays.sort(a1);		   
+			Arrays.sort(testArray1);		   
 	      	// 7. fill	      
 			int[] testArray3 = new int[10];
 			Arrays.fill(testArray3, 50);

@@ -1,4 +1,7 @@
+package coreJava;
+
 import org.testng.annotations.Test;
+
 public class Sample_2DArray {
     private static void printArray(int[][] a) {
         for (int i = 0; i < a.length; ++i) {
@@ -13,7 +16,7 @@ public class Sample_2DArray {
     }
     
     @Test
-    public void 2DArraySample(){
+    public void twoDArraySample(){
         System.out.println("Example I:");
         int[][] a = new int[2][5];
         printArray(a);

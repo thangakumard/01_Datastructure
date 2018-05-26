@@ -1,4 +1,9 @@
 package coreJava.collections.list;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 import org.testng.annotations.Test;
 
 public class List01_ArrayList {
@@ -42,7 +47,7 @@ public class List01_ArrayList {
         // 10. delete the last element
               v1.remove(v1.size() - 1);
          //11. arrayList to array
-              Object[] objects = al.toArray(); 
+              Object[] objects = v1.toArray(); 
               // Printing array of objects
               for (Object obj : objects)
                   System.out.print(obj + " ");
