@@ -2,6 +2,7 @@ package coreJava.collections.list;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import org.testng.annotations.Test;
@@ -10,54 +11,126 @@ public class List01_ArrayList {
 
   @Test
 	public void arrayListSample(){
-        // 1. initialize
-            List<Integer> v0 = new ArrayList<>();
-            List<Integer> v1;                           // v1 == null
-        // 2. cast an array to a vector
-            Integer[] a = {0, 1, 2, 3, 4};
-            v1 = new ArrayList<>(Arrays.asList(a));
-        // 3. make a copy
-            List<Integer> v2 = v1;                      // another reference to v1
-            List<Integer> v3 = new ArrayList<>(v1);     // make an actual copy of v1
-        // 4. get length
-           System.out.println("The size of v1 is: " + v1.size());;
-        // 5. access element
-              System.out.println("The first element in v1 is: " + v1.get(0));
-        // 6. iterate the vector
-              System.out.print("[Version 1] The contents of v1 are:");
-              for (int i = 0; i < v1.size(); ++i) {
-                  System.out.print(" " + v1.get(i));
-              }
-              System.out.println();
-              System.out.print("[Version 2] The contents of v1 are:");
-              for (int item : v1) {
-                  System.out.print(" " + item);
-              }
-              System.out.println();
-        // 7. modify element
-              v2.set(0, 5);       // modify v2 will actually modify v1
-              System.out.println("The first element in v1 is: " + v1.get(0));
-              v3.set(0, -1);
-              System.out.println("The first element in v1 is: " + v1.get(0));
-        // 8. sort
-              Collections.sort(v1);
-        // 9. add new element at the end of the vector
-              v1.add(-1);
-              v1.add(1, 6);
-        // 10. delete the last element
-              v1.remove(v1.size() - 1);
-         //11. arrayList to array
-              Object[] objects = v1.toArray(); 
-              // Printing array of objects
-              for (Object obj : objects)
-                  System.out.print(obj + " ");
-	//12. List of List
-		 List<List<Integer>> result = new ArrayList<List<Integer>>();
-		List<Integer> row = new ArrayList<>();
-		row.add(1);
-		row.add(2);
-		row.add(3);
-		result.add(row);
-    
+       List<Integer> list1 = new ArrayList<Integer>();
+       //ADD
+       list1.add(10);
+       list1.add(20);
+       list1.add(30);
+       list1.add(40);      
+       
+       //ADD ALL
+       List<Integer> list2 = new ArrayList<Integer>();
+       list2.add(100);
+       list2.add(200);
+       list2.add(300);
+       list2.add(400);
+       
+       list1.addAll(list2);
+       
+       //ADD ALL -BY INDEX
+       List<Integer> list3 = new ArrayList<Integer>();
+       list3.add(1000);
+       list3.add(2000);
+       list3.add(3000);
+       list3.add(4000);
+       list3.addAll(0,list3);
+       
+       //SIZE OF LIST
+       System.out.println("list1.size() : " + list1.size());
+       
+     //REMOVE BY INDEX
+       list1.remove(0);
+       
+       //REMOVE BY OBJECT
+       list1.remove(list1.get(1)); // REMOVE BY OBJECT
+       
+       //REMOVE ALL
+       List<Integer> listToRemove = new ArrayList<Integer>();
+       listToRemove.add(30);
+       listToRemove.add(40);
+       list1.remove(listToRemove);
+       
+       //ISEMPTY
+       System.out.println("Is list1 isempty :" + list1.isEmpty());
+       
+       //ITERATE
+       System.out.println("Iterator loops elements in list1 :");
+       Iterator<Integer> i = list1.iterator();
+       while(i.hasNext()){
+    	   System.out.print(i.next() + ", ");
+       }
+       System.out.println("");
+       
+       //FOR EACH
+       System.out.println("for loops elements in list1 :");
+       for(int item: list1){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
+       
+       //CONTAINTS
+       System.out.println("list1.contains(100) :" + list1.contains(100));
+       
+       //CONTAINTS ALL
+       System.out.println("list1.contains(100) :" + list1.containsAll(list2));
+       
+       //INDEX OF
+       System.out.println("list1.indexOf(200) :" + list1.indexOf(200));
+       
+       //LAST INDEX OF
+       System.out.println("list1.lastIndexOf(40):" + list1.lastIndexOf(40));
+       
+       //EQUALS
+       List<Integer> list4 = new ArrayList<Integer>();
+       list4.add(100);
+       list4.add(200);
+       list4.add(300);
+       list4.add(400);
+       System.out.println("list2.equals(list3) :" + list2.equals(list4));
+       
+       //RETAIN ALL -> Keeps the items in the list2, if it present in list1. Removes all other elements
+       list1.retainAll(list2);
+       
+       //SET => To update an element in the required index
+       list1.set(1,23);
+       System.out.println("Update/Set the 1st index value as 23 :" + list1.indexOf(1));
+
+       //SUBLIST => To use portion of the list
+       List<Integer> subList1 = list3.subList(1, 3);
+       System.out.println("Portion of list3 :");
+       for(int item: subList1){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
+       
+       //SORT
+       Collections.sort(list1);
+       System.out.println("list1 after Collections.sort(list1):");
+       for(int item: list1){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
+       
+       //ARRAY TO ARRAYLIST
+       System.out.println("Convert Array to ArrayList :");
+       int[] array2 = new int[] {-1,-2,-3,-4};
+       List negativeList = Arrays.asList(array2);
+       for(Object item: negativeList){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
+       
+       //ARRAYLIST TO ARRAY
+       System.out.println("Convert ArrayList To Array:");
+       
+	   int[] myArray = list3.stream().mapToInt(arr -> arr).toArray();
+       for(int item: myArray){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
+       
+       //LIST OF LIST
+       List<List<Integer>> listOfList = new ArrayList<>();
+       listOfList.add(list2);
   }
 }
