@@ -19,6 +19,7 @@ public class SampleHashMap {
 	
 	@Test
 	public void test(){
+		HashMap<Integer, Boolean> testmap = new HashMap<Integer,Boolean>();
 		HashMap<Object, String> mapData = new HashMap<Object,String>();
         HashMap<Integer, String[]> input = new HashMap<Integer,String[]>();
         input.put(1, new String[]{"asdasd","dsfdgfg"});

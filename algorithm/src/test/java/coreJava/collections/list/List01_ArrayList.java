@@ -7,6 +7,14 @@ import java.util.List;
 
 import org.testng.annotations.Test;
 
+/********
+ * Reference : https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+ * Resizable-array implementation of the List interface. 
+ * Implements all optional list operations, and permits all elements, including null. 
+ * In addition to implementing the List interface, this class provides methods to manipulate the size of the array that is used internally to store the list. 
+ * (This class is roughly equivalent to Vector, except that it is unsynchronized.)
+ *
+ */
 public class List01_ArrayList {
 
   @Test
@@ -80,6 +88,9 @@ public class List01_ArrayList {
        //LAST INDEX OF
        System.out.println("list1.lastIndexOf(40):" + list1.lastIndexOf(40));
        
+       //GET
+       System.out.println("To get index value of required index : " + list1.get(0));
+       
        //EQUALS
        List<Integer> list4 = new ArrayList<Integer>();
        list4.add(100);
@@ -103,14 +114,6 @@ public class List01_ArrayList {
        }
        System.out.println("");
        
-       //SORT
-       Collections.sort(list1);
-       System.out.println("list1 after Collections.sort(list1):");
-       for(int item: list1){
-    	   System.out.print(item + ", ");
-       }
-       System.out.println("");
-       
        //ARRAY TO ARRAYLIST
        System.out.println("Convert Array to ArrayList :");
        int[] array2 = new int[] {-1,-2,-3,-4};
@@ -121,8 +124,7 @@ public class List01_ArrayList {
        System.out.println("");
        
        //ARRAYLIST TO ARRAY
-       System.out.println("Convert ArrayList To Array:");
-       
+       System.out.println("Convert ArrayList To Array:");       
 	   int[] myArray = list3.stream().mapToInt(arr -> arr).toArray();
        for(int item: myArray){
     	   System.out.print(item + ", ");
@@ -132,5 +134,22 @@ public class List01_ArrayList {
        //LIST OF LIST
        List<List<Integer>> listOfList = new ArrayList<>();
        listOfList.add(list2);
+       
+       //***************************** COLLECTION METHODS ********************************
+       //SORT
+       Collections.sort(list1);
+       System.out.println("list1 after Collections.sort(list1):");
+       for(int item: list1){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
+       
+       //REVERSE
+       Collections.reverse(list1);
+       System.out.println("list1 after Collections.reverse(list1):");
+       for(int item: list1){
+    	   System.out.print(item + ", ");
+       }
+       System.out.println("");
   }
 }

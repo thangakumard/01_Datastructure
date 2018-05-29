@@ -1,7 +1,7 @@
 package coreJava;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import static java.lang.Math.toIntExact;
+
 
 public class Casting {
 	
@@ -69,7 +69,7 @@ public class Casting {
 	public void LongToInt(){	
 		//Refer : https://stackoverflow.com/questions/1590831/safely-casting-long-to-int-in-java
 		long foo = 10L;
-		int bar = toIntExact(foo);
+		int bar = Math.toIntExact(foo);
 	}
 	@Test
 	public void IntegerToString(){
