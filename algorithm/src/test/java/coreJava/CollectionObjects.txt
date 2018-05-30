@@ -1,0 +1,37 @@
+public interface Collection<E>  extends Iterable<E>
+
+public interface List<E> extends Collection<E>
+
+		public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+		public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>, Deque<E>, Cloneable, Serializable
+		public class Vector<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, Serializable
+
+public interface Set<E> extends Collection<E>
+	public interface SortedSet<E> extends Set<E>
+			
+			public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Serializable
+			public class TreeSet<E> extends AbstractSet<E> implements Serializable, Cloneable, Iterable<E>, Collection<E>, NavigableSet<E>, Set<E>, SortedSet<E>
+			public abstract class AbstractSet<E> extends AbstractCollection<E> implements Set<E>
+
+public interface Queue<E> extends Collection<E>
+	public interface Deque<E> extends Queue<E>	
+
+public interface Map<K,V>
+	public interface SortedMap<K,V> extends Map<K,V>
+			public class HashMap<K,V> extends AbstractMap<K,V> implements Map<K,V>, Cloneable, Serializable
+			public class TreeMap<K,V> extends AbstractMap<K,V> implements Serializable, Cloneable, Map<K,V>, NavigableMap<K,V>, SortedMap<K,V>
+			public class Hashtable<K,V> extends Dictionary<K,V> implements Map<K,V>, Cloneable, Serializable
+
+	public interface SortedMap<K,V> extends Map<K,V>
+		
+		
+		
+
+
+public class Collections extends Object
+public class Arrays extends Object
+public abstract class Dictionary<K,V> extends Object
+public abstract class AbstractCollection<E> extends Object implements Collection<E>
+
+
+
