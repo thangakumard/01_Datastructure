@@ -81,10 +81,10 @@ public class LList05_PartitioningLinkedList {
 		if(typeOfList == "left"){
 			resultList.head = leftSide.head;
 		}
-		else if(typeOfList == "left"){
+		else if(typeOfList == "equal"){
 			resultList.head = equalList.head;
 		}
-		else if(typeOfList == "left"){
+		else if(typeOfList == "right"){
 			resultList.head = rightSide.head;
 		}
 		else if(typeOfList == "leftequal"){

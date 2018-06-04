@@ -43,7 +43,7 @@ public class LList06_RemoveLoop {
 		
 		Node slow = node; Node fast = node;
 		
-		while(slow != null && fast != null && fast.next != null){			
+		while(fast != null && fast.next != null){			
 			slow = slow.next;
 			fast = fast.next.next;		
 			

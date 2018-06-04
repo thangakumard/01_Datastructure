@@ -19,15 +19,15 @@ public class Tree21_BuildTreeFromPostAndInOrder {
 	}
 	
 	int pIndex= 0;
-	private int getIndex(){
-		return pIndex;
-	}
-	
-	private int setIndex(int index){
-		pIndex = index;
-		return pIndex;
-	}
-	
+//	private int getIndex(){
+//		return pIndex;
+//	}
+//	
+//	private int setIndex(int index){
+//		pIndex = index;
+//		return pIndex;
+//	}
+
 	public void inorderIterative(Node root) {
 		if(root == null) return;
 		
@@ -50,22 +50,20 @@ public class Tree21_BuildTreeFromPostAndInOrder {
 	 public Node buildTree(int[] inorder, int[] postorder) {	        
 		 Node root = null;
 		 if(postorder.length > 0){
-			 setIndex(postorder.length-1);			 
-			 root = buildTree(inorder,postorder,0,inorder.length-1,getIndex());
+//			 setIndex(postorder.length-1);			 
+			 root = buildTree(inorder,postorder,0,inorder.length-1,postorder.length-1);
 		 }		 
 		 return root;		 
 	  }
 	 
 	 private Node buildTree(int[] inorder,int[] postorder,int start,int end,int postorderIndex){
 		 if(start > end){return null;}
-			 int rootValue = postorder[postorderIndex];	
-			 setIndex(postorderIndex-1);
+			 int rootValue = postorder[postorderIndex];			 
 			 Node currentNode = new Node(rootValue);
 			 if(start == end) return currentNode;
 			 int rootIndex = findIndex(inorder,start, end, rootValue);
-			 currentNode.right= buildTree(inorder, postorder, rootIndex+1, end,getIndex());
-			 currentNode.left = buildTree(inorder,postorder,start,rootIndex-1,getIndex());
-			 
+			 currentNode.right= buildTree(inorder, postorder, rootIndex+1, end, postorderIndex-1);
+			 currentNode.left = buildTree(inorder,postorder,start,rootIndex-1,postorderIndex-1);
 		 return currentNode;
 	 }
 	 

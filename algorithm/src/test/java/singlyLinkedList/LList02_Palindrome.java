@@ -5,8 +5,39 @@ import org.testng.annotations.Test;
 
 public class LList02_Palindrome {
 
+	Node left = null;
+	
 	@Test
-	public void validatePalindrome() {
+	public void validatePalindrom_BestApproach(){
+		SinglyLinkedList list = new SinglyLinkedList();
+		list.push(new Node('A'));
+		list.push(new Node('B'));
+		list.push(new Node('A'));
+		list.push(new Node('B'));
+		list.push(new Node('A'));
+		list.push(new Node('B'));
+		list.push(new Node('A'));
+		
+		left = list.head;
+		System.out.println("validatePalindrom_BestApproach :" + recursiveCheck(list.head));
+	}
+	
+	private boolean recursiveCheck(Node right){
+		if(right == null)
+			return true;
+		
+		boolean isSublistPalindrome = recursiveCheck(right.next);
+		if(!isSublistPalindrome){
+			return false;
+		}
+		
+		boolean isEqual = left.value == right.value;
+		left = left.next;
+		return isEqual;
+	}
+	
+	@Test
+	public void validatePalindrome_Approach2() {
 
 		SinglyLinkedList list = new SinglyLinkedList();
 		list.push(new Node('A'));

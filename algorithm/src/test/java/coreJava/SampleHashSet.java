@@ -15,8 +15,9 @@ public class SampleHashSet {
 	     hset.add("BB");
 	     hset.add("CC");
 	     hset.add("DD");
+	     
 	 
-	     // Displaying HashSet elements
+	     // Displaying HashSet elements[
 	     System.out.println("HashSet String Collection contains: ");
 	     for(String temp : hset){
 	        System.out.println(temp);
