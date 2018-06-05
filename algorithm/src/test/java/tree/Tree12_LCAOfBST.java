@@ -18,7 +18,7 @@ public class Tree12_LCAOfBST {
 		System.out.println("lcAOfNodes(tree.root, 6,10) :" + lca.data);
 		
 		Node lca1 = lcAOfNodes(tree.root, 8,10);		
-		System.out.println(" lcAOfNodes(tree.root, 6,10) :" + lca1.data);
+		System.out.println(" lcAOfNodes(tree.root, 8,10) :" + lca1.data);
 	}
 	
 	/**
@@ -44,9 +44,8 @@ public class Tree12_LCAOfBST {
 	void inOrderTraversal(Node node){
 		if(node == null)
 			return;
-		
-		System.out.println(node.data);
 		inOrderTraversal(node.left);
+		System.out.print(node.data +" ");
 		inOrderTraversal(node.right);
 	}
 	
