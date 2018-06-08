@@ -1,7 +1,10 @@
 package coreJava;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.testng.annotations.Test;
 
@@ -49,7 +52,29 @@ public class SampleArray {
 		/***** Char Array *******/
 		char input[] = {'a','b','c'};
 		System.out.println(input.length); //length is a variable
-		
+		//11.So convert array to arrayList
+		System.out.println("**** Merging 2 Arrays ****");
+		System.out.println("****Array to List of Array Object****");
+		String a[] = { "A", "E", "I" };
+	    String b[] = { "O", "U" };
+	    List list = new ArrayList(Arrays.asList(a));
+	    list.addAll(Arrays.asList(b));
+	    Object[] c = list.toArray();
+	    System.out.println(Arrays.toString(c));
+	    
+	   
+        //12.Convert int[] to List<Integer>
+	    System.out.println("**** Merging 2 Arrays ****");
+	    int[] nums1 = new int[]{1,3,4};
+	    int[] nums2 = new int[]{5,6,7};
+	  	System.out.println("**** Array to List of Array: To specific type : type of <T> ****");
+	    List<Integer> list11 = Arrays.stream(nums1).boxed().collect(Collectors.toList());
+        List<Integer> list21 = Arrays.stream(nums2).boxed().collect(Collectors.toList());
+        //Merge to array List
+        list11.addAll(list21);
+        Collections.sort(list11);        
+        System.out.println(list11);
+        
 		String s = input.toString(); //NOT CORRECT 
 		s = new String(input);
 		System.out.println(s);
