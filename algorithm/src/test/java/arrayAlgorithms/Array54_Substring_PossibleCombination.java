@@ -10,6 +10,7 @@ public class Array54_Substring_PossibleCombination {
 	@Test
 	public void Test(){
 		ListSubstringCombinations("abc");
+		//ListSubstringCombinations("aaa");
 	}
 	
 	private void ListSubstringCombinations(String input){
