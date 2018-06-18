@@ -2,7 +2,6 @@ package coreJava;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 public class Casting {
 	
 	/****
@@ -24,6 +23,7 @@ public class Casting {
 		String str = "10";
 		int i = Integer.parseInt(str); // To covert String to int (Primitive Type)
 		Integer j = Integer.valueOf(i); // To covert int to Integer
+		Double d = new Double(0);
 	}
 	
 	@Test

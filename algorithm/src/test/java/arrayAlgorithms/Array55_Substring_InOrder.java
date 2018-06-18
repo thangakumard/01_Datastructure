@@ -5,7 +5,7 @@ public class Array55_Substring_InOrder {
 
 	@Test
 	public void Test(){
-		printSubstrings("abc");
+		printSubstrings("abcd");
 	}
 	
 	private void printSubstrings(String input){

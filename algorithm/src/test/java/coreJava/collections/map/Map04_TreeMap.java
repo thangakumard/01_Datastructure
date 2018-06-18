@@ -15,7 +15,7 @@ public class Map04_TreeMap {
 		treeMap1.put(1, 100);
 		treeMap1.put(3, 300);
 		treeMap1.put(4, 400);
-		treeMap1.put(2, 200);
+		treeMap1.put(2, 500);
 		
 		for(Map.Entry<Integer,Integer> entry: treeMap1.entrySet()){
 			System.out.println("Key :" + entry.getKey() + "Value :" + entry.getValue());
