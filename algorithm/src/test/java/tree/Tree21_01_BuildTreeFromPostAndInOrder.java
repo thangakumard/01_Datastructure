@@ -6,7 +6,7 @@ import java.util.Stack;
 import org.testng.annotations.Test;
 
 
-public class Tree21_BuildTreeFromPostAndInOrder {
+public class Tree21_01_BuildTreeFromPostAndInOrder {
 
 	@Test
 	public void buildBinaryTree(){

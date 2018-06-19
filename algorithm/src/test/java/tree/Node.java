@@ -3,7 +3,7 @@ package tree;
 public class Node {
 
 	public int data, height;
-	Node left, right;
+	public Node left, right;
 	
 	public Node(int item){
 		data = item;

@@ -4,7 +4,7 @@ public class BinaryTree {
 	
 	public Node root;
 	
-	BinaryTree()
+	public BinaryTree()
 	{
 		root = null;
 	}
