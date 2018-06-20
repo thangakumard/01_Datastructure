@@ -81,4 +81,41 @@ public class SampleString {
 		
 		System.out.println("abcd.substring(0,1) : " + s1.substring(0,1));
 	}
+	
+	@Test
+	public void String_Print_Words(){
+		String input ="The sky is blue";
+		int index = 0;
+		String value; 
+		while(input != ""){
+			index = input.indexOf(" ");
+			if(index == -1){
+				value = input;
+			}
+			else{
+				value = input.substring(0,index);
+			}
+			System.out.println(input.substring(0,index));
+			input = input.substring(index+1,input.length());
+		}		
+	}
+	
+	@Test
+	public void String_Print_Words_inReverse(){
+		String input ="The sky is blue";
+		int index = 0;
+		String value; 
+		while(input != ""){
+			index = input.lastIndexOf(" ");
+			if(index == -1){
+				value = input;
+				input= "";
+			}
+			else{
+				value = input.substring(index+1,input.length());
+				input = input.substring(0,index);
+			}
+			System.out.println(value);			
+		}		
+	}
 }
