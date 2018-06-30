@@ -30,10 +30,10 @@ private int prime = 101;
     }
     
     //Help to recalculate HASH
-    private long recalculateHash(char[] str,int oldIndex, int newIndex,long oldHash, int patternLen) {
-        long newHash = oldHash - str[oldIndex];// REMOVE THE FIRST CHAR OF PREVIOUS HASH
+    private long recalculateHash(char[] str,int oldStartIndex, int newEndIndex,long oldHash, int patternLen) {
+        long newHash = oldHash - str[oldStartIndex];// REMOVE THE FIRST CHAR OF PREVIOUS HASH
         newHash = newHash/prime; // DIVIDE THE HASH WITH PRIME NUMBER
-        newHash += str[newIndex]*Math.pow(prime, patternLen - 1); // FIND HASH FOR THE NEXT CHAR IN THE STRING AND ADD THAT WITH HASH 
+        newHash += str[newEndIndex]*Math.pow(prime, patternLen - 1); // FIND HASH FOR THE NEXT CHAR IN THE STRING AND ADD THAT WITH HASH 
         return newHash;
     }
     

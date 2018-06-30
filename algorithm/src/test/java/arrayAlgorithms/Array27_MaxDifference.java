@@ -20,7 +20,7 @@ public class Array27_MaxDifference {
 	@Test
 	public void approach01(){
 		
-		int a[]  = {2,3,7,8,9,1,4};
+		int a[]  = {10, 3, 2, 6, 4, 8, 1};
 		int size = a.length;
 		int maxDiff = Integer.MIN_VALUE;
 		int minElement = a[0];
