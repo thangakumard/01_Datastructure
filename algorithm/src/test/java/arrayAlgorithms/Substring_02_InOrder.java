@@ -1,7 +1,7 @@
 package arrayAlgorithms;
 import org.testng.annotations.Test;
 
-public class Array55_Substring_InOrder {
+public class Substring_02_InOrder {
 
 	@Test
 	public void Test(){

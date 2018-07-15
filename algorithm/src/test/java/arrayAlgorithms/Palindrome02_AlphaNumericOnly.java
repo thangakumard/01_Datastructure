@@ -1,6 +1,23 @@
 package arrayAlgorithms;
 import org.testng.annotations.Test;
-public class Array51_PalindromeAlphaNumericOnly {
+/*****
+ 	https://leetcode.com/problems/valid-palindrome/description/
+ 
+	Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+	
+	Note: For the purpose of this problem, we define empty string as valid palindrome.
+	
+	Example 1:
+	
+	Input: "A man, a plan, a canal: Panama"
+	Output: true
+	Example 2:
+	
+	Input: "race a car"
+	Output: false
+
+ */
+public class Palindrome02_AlphaNumericOnly {
 
 	
 	@Test

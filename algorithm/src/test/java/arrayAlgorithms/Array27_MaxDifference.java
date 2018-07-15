@@ -18,6 +18,7 @@ public class Array27_MaxDifference {
 	
 	
 	@Test
+	//Time complexity O(n)
 	public void approach01(){
 		
 		int a[]  = {10, 3, 2, 6, 4, 8, 1};

@@ -1,8 +1,20 @@
-package algorithms;
+package arrayAlgorithms;
+
 import org.testng.annotations.Test;
 
-public class PalindromicSubstrings_ManacherAlgorithm {
+/*****************
+ * 
+ * https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/
+	Manacher’s Algorithm – Linear Time Longest Palindromic Substring – Part 1
+	Given a string, find the longest substring which is palindrome.
+	
+	if the given string is “forgeeksskeegfor”, the output should be “geeksskeeg”
+	if the given string is “abaaba”, the output should be “abaaba”
+	if the given string is “abababa”, the output should be “abababa”
+	if the given string is “abcbabcbabcba”, the output should be “abcbabcba”
+ */
 
+public class Palindrome05_Longest_Substring {
 	@Test
 	public void Test(){
 		System.out.println(countSubstrings("abba"));

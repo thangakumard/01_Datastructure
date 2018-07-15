@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
  * https://www.careercup.com/question?id=12435684
  *
  **********/
-public class Array54_Substring_PossibleCombination {
+public class Substring_01_PossibleCombination {
 
 	@Test
 	public void Test(){

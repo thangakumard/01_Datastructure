@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
  * https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
  * Write an efficient C program to find the sum of contiguous subarray 
  * within a one-dimensional array of numbers which has the largest sum.
+ * -2, -3, 4, -1, -2, 1, 5, -3
+ * 	Maximum Array Sum is : 4, -1, -2, 1, 5 = 7	
  **************/
 
 

@@ -1,7 +1,26 @@
 package arrayAlgorithms;
 import org.testng.annotations.Test;
+/****
+ * 
+ * https://www.geeksforgeeks.org/remove-character-string-make-palindrome/
+   Given a string, we need to check whether it is possible to make this string a palindrome after removing exactly one character from this.
 
-public class Array52_Palindrome_Remove1Char {
+	Examples:
+	
+	Input  : str = “abcba”
+	Output : Yes
+	we can remove character ‘c’ to make string palindrome
+	
+	Input  : str = “abcbea”
+	Output : Yes
+	we can remove character ‘e’ to make string palindrome
+	
+	Input : str = “abecbea”
+	It is not possible to make this string palindrome 
+	just by removing one character 
+
+ */
+public class Palindrome03_ByRemovingAChar {
 	
 		@Test
 		public void test_isPalindrome(){

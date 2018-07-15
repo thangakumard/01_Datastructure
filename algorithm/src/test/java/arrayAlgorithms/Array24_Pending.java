@@ -2,7 +2,7 @@ package arrayAlgorithms;
 
 import org.testng.annotations.Test;
 
-public class Array23_ReverseAnArraywithSPLChar {
+public class Array24_Pending {
 
 	@Test
 	public void approach01(){

@@ -3,7 +3,7 @@ package arrayAlgorithms;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
-public class Palindrome {
+public class Palindrome01_isPalindrome {
 	
 	@Test	
 	public void PalindromeCheck()

@@ -3,6 +3,26 @@ import java.util.HashSet;
 
 import org.junit.Assert;
 import org.testng.annotations.Test;
+/******
+ * 
+ 	https://www.geeksforgeeks.org/happy-number/
+	Happy Number
+	A number is called happy if it leads to 1 after a sequence of steps where in each step number is replaced by sum of squares of its digit that is if we start with Happy Number and keep replacing it with digits square sum, we reach 1.
+	Examples :
+	
+	Input: n = 19
+	Output: True
+	19 is Happy Number,
+	1^2 + 9^2 = 82
+	8^2 + 2^2 = 68
+	6^2 + 8^2 = 100
+	1^2 + 0^2 + 0^2 = 1
+	As we reached to 1, 19 is a Happy Number.
+	
+	Input: n = 20
+	Output: False
+ *
+ */
 
 public class Array43_HappyNumber {
 	 HashSet<Integer> myset = new HashSet<Integer>();
@@ -10,9 +30,9 @@ public class Array43_HappyNumber {
 	 @Test
 	  public void test1(){
 		 Assert.assertFalse(bestApproach(234));
-		 Assert.assertFalse(Approach1(234));
+		 Assert.assertFalse(isHappyNumber(234));
 	 }
-	   public boolean Approach1(int n) {        
+	   public boolean isHappyNumber(int n) {        
 		        if(n== 1){
 		            return true;
 		        }
@@ -27,7 +47,7 @@ public class Array43_HappyNumber {
 		                n = n / 10;
 		                
 		            }
-		            return Approach1(m);
+		            return isHappyNumber(m);
 		        }
 		        else{
 		            return false;
@@ -46,7 +66,7 @@ public class Array43_HappyNumber {
 	                    fast = squareAndAnd(squareAndAnd(fast));
 	                    
 	                }while(slow != fast);
-	                if(slow == 1){
+	                if(slow == 1 || fast == 1){
 	                    return true;
 	                }
 	                else{

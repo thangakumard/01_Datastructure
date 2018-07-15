@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.testng.annotations.Test;
 
-public class Array56_Substring_Subset {
+public class Substring_03_Subset {
 
 	@Test
 	public void Test(){

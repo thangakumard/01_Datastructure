@@ -67,10 +67,8 @@ public class Array04_MinimumDistanceBetween2Numbers {
 				
 				if(a[prev] != a[i] && min_distance > Math.abs(prev - i)){
 					min_distance = Math.abs(prev - i);
-				}
-				else{
-					prev = i;
-				}
+				}				
+				prev = i;
 			}			
 		}
 		

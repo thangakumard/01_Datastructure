@@ -7,7 +7,15 @@ import string.RabinKarpSearch;
  * 
  * Refernce : https://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/
  * https://www.youtube.com/watch?v=H4VrKHVG5qI
- *
+	 Input:  txt[] = "THIS IS A TEST TEXT"
+	        pat[] = "TEST"
+	Output: Pattern found at index 10
+	
+	Input:  txt[] =  "AABAACAADAABAABA"
+	        pat[] =  "AABA"
+	Output: Pattern found at index 0
+	        Pattern found at index 9
+	        Pattern found at index 12
  */
 public class Algor02_RabinKarp_PatternMatching {
 	

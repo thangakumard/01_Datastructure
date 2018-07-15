@@ -7,6 +7,7 @@ public class Array22_SumClosestToZero {
 
 	
 	@Test
+	//Time complexity n^2
 	public void approach01(){
 
 		int[] input = {1, 60, -10, 70, -80, 85};
@@ -31,6 +32,7 @@ public class Array22_SumClosestToZero {
 
 
 	@Test
+	//Time complexity n(log n)
 	public void approach02()
 	{
 		int[] input = {1, 60, -10, 70, -80, 85};

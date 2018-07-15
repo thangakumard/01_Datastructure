@@ -6,6 +6,7 @@ public class Array05_LeadersInTheArray {
 	
 	/*
 	 * http://www.geeksforgeeks.org/leaders-in-an-array/
+	 * For example int the array {16, 17, 4, 3, 5, 2}, leaders are 17, 5 and 2.
 	 */
 	
 	@Test

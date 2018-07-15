@@ -1,9 +1,18 @@
 package arrayAlgorithms;
 
 /***
- * 
+ * https://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/
  * Knuth–Morris–Pratt(KMP) Pattern Matching(Substring search)
  *
+	Input:  txt[] = "THIS IS A TEST TEXT"
+	        pat[] = "TEST"
+	Output: Pattern found at index 10
+	
+	Input:  txt[] =  "AABAACAADAABAABA"
+	        pat[] =  "AABA"
+	Output: Pattern found at index 0
+	        Pattern found at index 9
+	        Pattern found at index 12
  */
 import org.testng.annotations.*;
 

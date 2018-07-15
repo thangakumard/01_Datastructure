@@ -3,7 +3,7 @@ package arrayAlgorithms;
 import org.testng.annotations.Test;
 
 /************
- * 
+ * https://www.geeksforgeeks.org/replace-every-element-with-the-greatest-on-right-side/
  * Given an array of integers, replace every element with the next greatest element 
  * (greatest element on the right side) in the array. 
  * Since there is no element next to the last element, replace it with -1. 
