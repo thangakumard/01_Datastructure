@@ -16,25 +16,15 @@ public class Palindromic_Substring_Count {
         if(s.length() == 1)
             return 1;
        
-        
+        System.out.println();
         for(int i=0; i < s.length(); i++){
             
-            String temp = helper(s,i,i);
-            if(temp.length() > 0){
-//                if(temp.length() == 1){
-//                    count++;
-//                }
-//                else{
-//                    count += 2;
-//                }
-            }
-            
-            temp = helper(s, i , i+1);
-            if(temp.length() > 0)
-            {
-                //count++;
-            }
+            System.out.print(helper(s,i,i));
+            System.out.print(",");
+            System.out.print(helper(s, i , i+1));
+            System.out.print(",");
         }
+        System.out.println();
         return count;
     }
 	    
