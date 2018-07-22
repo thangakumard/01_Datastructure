@@ -28,11 +28,11 @@ public class PalindromicSubstring {
 	@Test
 	public void printPalindromicSubstring(){
 		
-		String input = "aaa";
+		String input = "aabaa";
 		char[] charInput = input.toCharArray();
 		for(int i=0; i< input.length(); i++){
-			helper(charInput , i, i);
-			helper(charInput, i, i+1);
+			helper(charInput , i, i);// for odd length
+			helper(charInput, i, i+1);// for even length
 		}	
 		
 		for(String palind : palindrome){

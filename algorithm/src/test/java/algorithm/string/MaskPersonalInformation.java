@@ -1,4 +1,8 @@
 package algorithm.string;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 /*******
  * https://leetcode.com/problems/masking-personal-information/description/
  * Example 1:
@@ -33,6 +37,15 @@ package algorithm.string;
  */
 
 public class MaskPersonalInformation {
+	
+	@Test
+	 public void MaskTest(){
+		 Assert.assertEquals(maskPII("thanga@gmail.com"),"t*****a@gmail.com");
+		 Assert.assertEquals(maskPII("aa@gmail.com"),"a*****a@gmail.com");
+		 Assert.assertEquals(maskPII("1(234)567-890"),"***-***-7890");
+		 Assert.assertEquals(maskPII("86-(10)12345678"),"+**-***-***-5678");
+	 }
+	
 	 public String maskPII(String S) {                
 	        if(S.indexOf('@') > -1){
 	            return maskEmail(S);
@@ -43,23 +56,35 @@ public class MaskPersonalInformation {
 	    }
 	    
 	    private String maskEmail(String S){
-	        S = S.toLowerCase(); 
-	        if(S.indexOf('@') == 2){
-	            StringBuilder email = new StringBuilder();
-	            email.append(S.charAt(0));
-	            email.append("*****");
-	            email.append(S.charAt(1));
-	            email.append(S.substring(2,S.length()));
-	            S = email.toString();
-	        }
-	        else{
-	            String toReplace = S.substring(1,S.indexOf('@')-1);
-	            S = S.replaceFirst(toReplace, "*****");           
-	        }
-	        return S;
+//	        S = S.toLowerCase(); 
+//	        if(S.indexOf('@') == 2){
+//	            StringBuilder email = new StringBuilder();
+//	            email.append(S.charAt(0));
+//	            email.append("*****");
+//	            email.append(S.charAt(1));
+//	            email.append(S.substring(2,S.length()));
+//	            S = email.toString();
+//	        }
+//	        else{
+//	            String toReplace = S.substring(1,S.indexOf('@')-1);
+//	            S = S.replaceFirst(toReplace, "*****");           
+//	        }
+//	        return S;
+	    	return S.substring(0,1) + "*****" + S.substring(S.indexOf('@')-1).toLowerCase();
 	    }
 	    
 	    private String maskPhoneNumber(String S){
+	    	String digits = S.replaceAll("\\D+", "");
+            String local = "***-***-" + digits.substring(digits.length() - 4);
+            if(digits.length() == 10)
+            	return local;
+            String ans = "+";
+            for(int i=0; i < digits.length()-10; i++)
+            	ans += "*";
+            return ans + "-" + local;
+	    }
+	    
+	    private String maskPhoneNumber1(String S){
 	        String input = S;
 	        S = S.replace("(","");
 	        S = S.replace(")","");
