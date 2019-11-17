@@ -2,6 +2,8 @@ package coreJava;
 
 import org.testng.annotations.Test;
 
+import java.util.Locale;
+
 import org.testng.Assert;
 
 public class StringAPIs {
@@ -20,13 +22,13 @@ public class StringAPIs {
 	public void stringAPIs(){
 		String input ="I am learning Java";
 		
-		System.out.println("charAt(int index) :" + input.charAt(0));
+		System.out.println("charAt(intï¿½index) :" + input.charAt(0));
 		
-		System.out.println("codePointAt(int index) :" + input.codePointAt(0));
+		System.out.println("codePointAt(intï¿½index) :" + input.codePointAt(0));
 		
-		System.out.println("codePointBefore(int index):" + input.codePointBefore(1));
+		System.out.println("codePointBefore(intï¿½index):" + input.codePointBefore(1));
 		
-		System.out.println("codePointCount(int beginIndex, int endIndex):" + input.codePointCount(0,2));
+		System.out.println("codePointCount(intï¿½beginIndex, intï¿½endIndex):" + input.codePointCount(0,2));
 		System.out.println("");
 	}
 	
@@ -53,28 +55,146 @@ public class StringAPIs {
 		System.out.println("");
 		
 		System.out.println("********* (BOOLEAN)STRING COMPARE - CHAR ***********");
-		System.out.println("contentEquals(CharSequence s): Apple with apple : " + value.contentEquals("apple"));
-		System.out.println("contentEquals(CharSequence s): Apple with Apple : " + value.contentEquals("Apple"));
+		System.out.println("contentEquals(CharSequenceï¿½s): Apple with apple : " + value.contentEquals("apple"));
+		System.out.println("contentEquals(CharSequenceï¿½s): Apple with Apple : " + value.contentEquals("Apple"));
 		System.out.println("");
 		
 		System.out.println("********* (BOOLEAN)STRING COMPARE - StringBuffer ***********");
 		StringBuffer strBuffer = new StringBuffer();
 		strBuffer.append("apple");
-		System.out.println("contentEquals(StringBuffer sb): Apple with apple : " + value.contentEquals(strBuffer));
-		System.out.println("contentEquals(StringBuffer sb): Apple with Apple : " + value.contentEquals(strBuffer));
+		System.out.println("contentEquals(StringBufferï¿½sb): Apple with apple : " + value.contentEquals(strBuffer));
+		System.out.println("contentEquals(StringBufferï¿½sb): Apple with Apple : " + value.contentEquals(strBuffer));
 	
 		System.out.println("");		
 		System.out.println("********* (BOOLEAN)STRING CONTAINS ***********");
-		System.out.println("contains(CharSequence s): Apple with apple : " + value.contains("App"));
+		System.out.println("contains(CharSequenceï¿½s): Apple with apple : " + value.contains("App"));
 	
 		System.out.println("");		
-		System.out.println("********* (BOOLEAN)equals(Object anObject) ***********");
-		System.out.println("equals(Object anObject): Apple with Apple : " + value.equals("Apple"));
+		System.out.println("********* (BOOLEAN)equals(Objectï¿½anObject) ***********");
+		System.out.println("equals(Objectï¿½anObject): Apple with Apple : " + value.equals("Apple"));
 		
 		System.out.println("");		
-		System.out.println("********* (BOOLEAN)equalsIgnoreCase(String anotherString) ***********");
-		System.out.println("equals(Object anObject): Apple with apple : " + value.equalsIgnoreCase("apple"));
-	}
+		System.out.println("********* (BOOLEAN)equalsIgnoreCase(Stringï¿½anotherString) ***********");
+		System.out.println("equals(Objectï¿½anObject): Apple with apple : " + value.equalsIgnoreCase("apple"));
+		
+		System.out.println("");		
+		System.out.println("********* (INT)indexOf(CHAR) ***********");
+		System.out.println("value.indexOf('p'): First occurance of : " + value.indexOf('p'));
+		
+		System.out.println("");		
+		System.out.println("********* (INT)indexOf(CHAR, INT FROM_INT) ***********");
+		System.out.println("value.indexOf('p',value.indexOf('p')): 2nd occurance of : " + value.indexOf('p',value.indexOf('p')+1));
+	
+		System.out.println("");		
+		System.out.println("********* STATIC STRING join(CharSequenceÂ delimiter,Â CharSequence...Â elements) ***********");
+		System.out.println("String.join(\" < \", \"Four\", \"Five\", \"Six\", \"Seven\") : " + String.join(" < ", "Four", "Five", "Six", "Seven"));
+		
+		System.out.println("");		
+		System.out.println("********* (INT)lastindexOf(CHAR) ***********");
+        String Str = new String("Welcome to geeksforgeeks"); 
+        System.out.print("Found Last Index of g at : "); 
+        System.out.println(); 
+		System.out.println("Welcome to geeksforgeeks: Last occurance index of g at : " + Str.lastIndexOf('g'));
+		
+		System.out.println("");		
+		System.out.println("********* (INT)lastindexOf(CHAR, FROMINDEX) ***********");
+        Str = new String("Welcome to geeksforgeeks"); 
+        System.out.print("Found Last Index of g at : "); 
+        System.out.println(Str.lastIndexOf('g', 15));
+        
+        System.out.println("");		
+		System.out.println("********* (BOOLEAN)isEmpty() ***********");
+        System.out.println("\"  \".isEmpty():" +"  ".isEmpty());
+
+        
+        System.out.println("");		
+        System.out.println("********* (BOOLEAN)isBlank() ***********");
+        System.out.println("\"  \".isBlank():" +"  ".isBlank());
+        
+        System.out.println("");		
+        System.out.println("********* (STRING)replace(charÂ oldChar, charÂ newChar) ***********");
+        Str = "oooooo-hhhh-oooooo";  
+        String rs = Str.replace("h","s"); // Replace 'h' with 's'  
+        System.out.println("Original String :" + Str);  
+        System.out.println("After replacement :" + rs);  
+
+        System.out.println("");		
+        System.out.println("********* (STRING)replaceAll(StringÂ regex,Â StringÂ replacement) ***********");
+        Str = "how to do in java provides java tutorials";
+        String newStr = Str.replaceAll("\\s", "");
+        System.out.println("(how to do in java provides java tutorials).eplaceAll(\"\\\\s\", \"\") : "+newStr);
+        
+        System.out.println("");		
+        System.out.println("********* (STRING) replaceFirst(StringÂ regex,Â StringÂ replacement) ***********");
+        Str = "Java says hello world. Java String tutorial";
+        //Replace first occurrence of substring "Java" with "JAVA"
+        System.out.println("Str.replaceFirst(\"Java\", \"JAVA\") : " + Str.replaceFirst("Java", "JAVA"));
+        //Replace first occurrence of substring "a" with "A"
+        Str.replaceFirst("[a]", "A");
+        System.out.println("Str.replaceFirst(\"[a]\", \"A\") : " + Str.replaceFirst("[a]", "A"));
+        
+        System.out.println("");		
+        System.out.println("********* (STRING[]) split(StringÂ regex) ***********");
+        Str = "geekss@for@geekss"; 
+        String[] arrOfStr = Str.split("@"); 
+        System.out.println("(\"geekss@for@geekss\").split(\"@\") : ");
+        for (String a : arrOfStr) 
+            System.out.println(a); 
+        
+        System.out.println("");		
+        System.out.println("********* (STRING[]) split(StringÂ regex, intÂ limit) ***********");
+        Str = "geekss@for@geekss"; 
+        arrOfStr = Str.split("@", 2); 
+        System.out.println("(\"geekss@for@geekss\").split(\"@\", 2) : ");
+        for (String a : arrOfStr) 
+            System.out.println(a); 
+        
+        
+        System.out.println("");		
+        System.out.println("********* (BOOLEAN) startsWith(StringÂ prefix) ***********");
+        Str = "This is just a sample string";  
+        //checking whether the given string starts with "This"
+        System.out.println("(\"This is just a sample string\").startsWith(\"This\") :"+ Str.startsWith("This"));  
+		
+        //checking whether the given string starts with "Hi"
+        System.out.println("(\"This is just a sample string\").startsWith(\"Hi\") :"+ Str.startsWith("Hi"));  
+
+        System.out.println("");		
+        System.out.println("********* (BOOLEAN) startsWith(StringÂ prefix, intÂ toffset) ***********");
+        Str= new String("quick brown fox jumps over the lazy dog");
+        System.out.println("(\"quick brown fox jumps over the lazy dog\").startsWith(\"brown\",6) :"+ Str.startsWith("brown",6));  
+
+        System.out.println("");		
+        System.out.println("********* (CharSequence) subSequence(intÂ beginIndex, intÂ endIndex) ***********");
+        Str = "Welcome to geeksforgeeks";
+        System.out.println("(\"Welcome to geeksforgeeks\").Str.subSequence(0, 7) :"+ Str.subSequence(0, 7));  
+
+        System.out.println("");		
+        System.out.println("********* (String) substring(intÂ beginIndex) ***********");
+        System.out.println("********* (String) substring(intÂ beginIndex, intÂ endIndex) ***********");
+        Str="javatpoint";  
+        System.out.println("(javatpoint).substring(2,4) : " + Str.substring(2,4));//returns va  
+        System.out.println("(javatpoint).substring(2) : " +Str.substring(2));//returns vatpoint  
+        
+        System.out.println("");		
+        System.out.println("********* (String) toLowerCase() ***********");
+        Str="JAVATPOINT HELLO stRIng";  
+        System.out.println("(JAVATPOINT HELLO stRIng).toLowerCase() : " + Str.toLowerCase());
+        
+        System.out.println("");		
+        System.out.println("********* (String) toLowerCase(LocaleÂ locale) ***********");
+        Str="JAVATPOINT HELLO stRIng";  
+        System.out.println("(JAVATPOINT HELLO stRIng).toLowerCase(Locale.ENGLISH) : " + Str.toLowerCase(Locale.ENGLISH));
+        System.out.println("(JAVATPOINT HELLO stRIng).toLowerCase(Locale.forLanguageTag(\"tr\")) : " + Str.toLowerCase(Locale.forLanguageTag("tr")));
+
+        System.out.println("");		
+        System.out.println("********* (String) trim() ***********");
+        Str = " geeks for geeks has all java functions to read  ";  
+        System.out.println("(\" geeks for geeks has all java functions to read  \").trim() : "+ Str.trim()); 
+        System.out.println("");		
+        System.out.println("");		
+ 
+        }
 	
 	@Test
 	public void stringFormat(){

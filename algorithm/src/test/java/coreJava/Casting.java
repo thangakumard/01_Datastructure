@@ -22,8 +22,9 @@ public class Casting {
 		
 		String str = "10";
 		int i = Integer.parseInt(str); // To covert String to int (Primitive Type)
+		@SuppressWarnings("unused")
 		Integer j = Integer.valueOf(i); // To covert int to Integer
-		Double d = new Double(0);
+		//Double d = new Double(0); Deprecated
 	}
 	
 	@Test
@@ -31,19 +32,22 @@ public class Casting {
 		
 		double doubleValue = 15.4;
 	    int intValue = (int) doubleValue;
-	    
+	    System.out.println("(int) 15.4: " + intValue);
+
 	    //Convert Double to Int with Rounding
 	    double doubleValue1 = -21.3;
 		double doubleValue2 = -21.7;
+		
 		int intValue1 = (int) Math.round(doubleValue1);
 		int intValue2 = (int) Math.round(doubleValue2);
-	    System.out.println("The first int value is: " + intValue1);
-	    System.out.println("The second int value is: " + intValue2);
+	    System.out.println("(int) Math.round(-21.3): " + intValue1);
+	    System.out.println("(int) Math.round(-21.7): " + intValue2);
 	      
 		//Double to int/Integer
 		Double d = 5.25;
 		Integer value = d.intValue();
 		int x = d.intValue();
+	    System.out.println("(5.25).intValue(): " + value);
 	}
 	
 	
@@ -52,7 +56,8 @@ public class Casting {
 		//Read more: http://www.java67.com/2014/11/how-to-convert-double-to-long-in-java-example.html#ixzz5AUPOJJjY
 			
 		// first example - converting double to long using longValue() method 
-		double d = 102.9520; long l = (new Double(d)).longValue(); 
+		double d = 102.9520; 
+		long l = (new Double(d)).longValue(); 
 		System.out.println("double value=" + d + ", long=" + l); 
 
 		// second example - rather simple just cast double to long 
