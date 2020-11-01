@@ -107,9 +107,9 @@ public class StringAPIs {
         System.out.println("\"  \".isEmpty():" +"  ".isEmpty());
 
         
-        System.out.println("");		
-        System.out.println("********* (BOOLEAN)isBlank() ***********");
-        System.out.println("\"  \".isBlank():" +"  ".isBlank());
+//        System.out.println("");		
+//        System.out.println("********* (BOOLEAN)isBlank() ***********");
+//        System.out.println("\"  \".isBlank():" +"  ".isBlank());
         
         System.out.println("");		
         System.out.println("********* (STRING)replace(char oldChar, char newChar) ***********");

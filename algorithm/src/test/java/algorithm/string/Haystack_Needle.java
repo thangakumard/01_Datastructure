@@ -29,7 +29,7 @@ public class Haystack_Needle {
 
 	@Test
 	public void testString(){
-		Assert.assertEquals(strStr("hello", "ll"), 2);
+		Assert.assertEquals(strStr("hello", "o"), 2);
 	}
 	public int strStr(String haystack, String needle) {
 		  for (int i = 0; ; i++) {

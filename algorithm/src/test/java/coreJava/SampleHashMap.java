@@ -68,7 +68,18 @@ public class SampleHashMap {
 	         System.out.print("key is: "+ mentry.getKey() + " & Value is: ");
 	         System.out.println(mentry.getValue());
 	      }
-		/*********************************/
+	     System.out.println("**************");
+	     
+	     HashMap<Character, Integer> aMap = new HashMap<Character, Integer>();
+	     aMap.put('A', 1);
+	     aMap.put('B', 2);
+	     aMap.put('C', 3);
+	     for(Map.Entry<Character, Integer> entry : aMap.entrySet()) {
+	    	 
+	     }
+	     
+	      
+	      
 	}
 	
 }
