@@ -1,4 +1,4 @@
-package algorithms.efficientSorts;
+package algorithms.array.efficientSorts;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

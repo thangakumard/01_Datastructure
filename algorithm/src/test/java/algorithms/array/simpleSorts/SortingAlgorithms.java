@@ -1,4 +1,4 @@
-package algorithms.simpleSorts;
+package algorithms.array.simpleSorts;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
