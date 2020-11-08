@@ -1,6 +1,12 @@
 package coreJava;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.Spliterator;
 
 import org.testng.annotations.Test;
 
@@ -8,7 +14,14 @@ public class SampleHashSet {
 	
 	@Test
 	public void test(){
-		 HashSet<String> hset = new HashSet<String>();
+		
+		/********************************
+		ArrayList maintains the order of the object in which they are inserted 
+		while HashSet is an unordered collection and doesn’t maintain any order.
+		************************************/
+		
+		//Method 1: add(E e)
+		HashSet<String> hset = new HashSet<String>();
 		 
 	     //add elements to HashSet
 	     hset.add("AA");
@@ -40,6 +53,22 @@ public class SampleHashSet {
 	        System.out.println(temp);
 	     }
 	     
+	   //Method 2: clear()
+	    hset.clear(); // Removes all the elements from the set
+	    
+	    //Method 3: clone() //Returns a shallow copy of this HashSet instance: the elements themselves are not cloned.
+	     hset.add("AA");
+	     hset.add("BB");
+	     HashSet hsetCloned = new HashSet();
+	     hsetCloned = (HashSet) hset.clone();
+	     // Displaying HashSet elements of hsetCloned
+	     System.out.println("*******************");
+	     System.out.println("From the cloned object: ");
+	     for(Object temp : hsetCloned){
+	        System.out.println(temp);
+	     }	
+	    
+	   //Method 4: contains(Object o)
 	     /********* get "CC" object from hsetObj ******/
 	     
 	     if(hsetObj.contains("CC")){
@@ -49,6 +78,82 @@ public class SampleHashSet {
 	    		 }
 	    	 }
 	     }
+	     
+	   //Method 5: isEmpty()
+	     System.out.println("*******************");
+	     System.out.println("hset.isEmpty() :"+ hset.isEmpty());
+	     
+	   //Method 6: iterator()
+	     Iterator value = hset.iterator();
+	     System.out.println("Hashset using Iterator:");
+	     while(value.hasNext()) {
+	    	 System.out.println(value.next());
+	     }
+	     //Method 7: remove(Object o)
+	     hset.remove("AA");
+	     hset.remove("XYZ");
+	     System.out.println("After removing AA from the set:");
+	     for(Object temp : hset){
+		        System.out.println(temp);
+		     }
+	     //Method 8: Size()
+	     System.out.println("Hashset Size:" + hset.size());
+
+	     //Method 9: spliterator()
+	     Spliterator<String> words = hset.spliterator();
+	     System.out.println("spliterator()");
+	     words.forEachRemaining((w) -> System.out.println(w)) ;
+	     
+	     
+	     /*********** SET methods ***********/
+	     //Set to Array
+	     String[] arrWords = new String[hset.size()];
+	     arrWords = hset.toArray(arrWords);
+	     
+	   //Set to ArrayList
+	     List<String> aList1 = new ArrayList<String>(hset); 
+	     
+	     List<String> aList2 = new ArrayList<String>(); 
+	     aList2.addAll(hset); 
+	     
+	     HashSet<String> setFromList = new HashSet<String>(aList1);
+	     
+	     /**** Compare 2 sets */
+	  // Creating object of Set 
+	        Set<String> arrset1 = new HashSet<String>(); 
+	  
+	        // Populating arrset1 
+	        arrset1.add("A"); 
+	        arrset1.add("B"); 
+	        arrset1.add("C"); 
+	        arrset1.add("D"); 
+	        arrset1.add("E"); 
+	  
+	        // print arrset1 
+	        System.out.println("First Set: "
+	                           + arrset1); 
+	  
+	        // Creating another object of Set 
+	        Set<String> arrset2 = new HashSet<String>(); 
+	  
+	        // Populating arrset2 
+	        arrset2.add("A"); 
+	        arrset2.add("B"); 
+	        arrset2.add("C"); 
+	        arrset2.add("D"); 
+	        arrset2.add("E"); 
+	  
+	        // print arrset2 
+	        System.out.println("Second Set: "
+	                           + arrset2); 
+	  
+	        // comparing first Set to another 
+	        // using equals() method 
+	        System.out.println("Are First Set and Second Set are equal : " + arrset1.equals(arrset2)); 
+	        
+	        /**** Sort Sets */
+	        List<String> list = new ArrayList<String>(arrset1); 
+	        Collections.sort(list);
 	     
 	}
 

@@ -8,6 +8,7 @@ public class SampleChar {
 	public void SampleChar(){
 		
 		String s = "1243";
+		System.out.println("s.charAt(1) :" + s.charAt(1));
 		char[] input = s.toCharArray();
 		
 		System.out.println("Subtract by 0");

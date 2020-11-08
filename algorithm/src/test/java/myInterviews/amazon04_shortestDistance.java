@@ -1,8 +1,8 @@
 package myInterviews;
 import org.testng.annotations.Test;
 
-import tree.BinaryTree;
-import tree.Node;
+import algorithms.tree.BinaryTree;
+import algorithms.tree.Node;
 
 /********
  * 

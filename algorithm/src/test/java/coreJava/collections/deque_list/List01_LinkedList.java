@@ -2,7 +2,8 @@ package coreJava.collections.deque_list;
 import java.util.LinkedList;
 import java.util.Queue;
 import org.testng.annotations.Test;
-import tree.Node;
+
+import algorithms.tree.Node;
 
 public class List01_LinkedList {
 

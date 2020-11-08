@@ -38,8 +38,8 @@ public class ListObject {
 		myArray1[0] = "X";
 		myArray1[1] = "Y";
 		myArray1[2] = "Z";
-		for (String myString:myList1) {
-		   System.out.println(myString);
+		for (Object myObject : myArray1) {
+			   System.out.println(myObject);
 		}
 		
 		/*****

@@ -75,6 +75,7 @@ public class Casting {
 		//Refer : https://stackoverflow.com/questions/1590831/safely-casting-long-to-int-in-java
 		long foo = 10L;
 		int bar = Math.toIntExact(foo);
+		System.out.println("Math.toIntExact(foo) :" + Math.toIntExact(foo));
 	}
 	@Test
 	public void IntegerToString(){
@@ -82,6 +83,7 @@ public class Casting {
 		int mark = 100;
 		String value1 = Integer.toString(mark);
 		String value2 = String.valueOf(mark);
-		
+		System.out.println("Integer.toString(mark) :" + Integer.toString(mark));
+		System.out.println("String.valueOf(mark) :" + String.valueOf(mark));
 	}
 }

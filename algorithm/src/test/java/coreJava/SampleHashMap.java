@@ -14,6 +14,10 @@ public class SampleHashMap {
 	 * Will not have duplicate key. 
 	 * But If second time try to insert the existing key value, it will update the value for that key
 	 * 
+	 * 
+	 * The HashMap class does not maintain the order of the elements.
+	 * This means that It might not return the elements in the same order they were inserted into it.
+	 * If the application needs the elements to be returned in the same order they were inserted, LinkedHashMap should be used.
 	 */
 	
 	
@@ -52,6 +56,75 @@ public class SampleHashMap {
 			System.out.println("Key 3 is present in the collection.");
 		}
 		
+		/*********getOrDEfault(k,v)************/
+		
+		System.out.println("mapData.getOrDefault(10, \"From Default value\") :" + mapData.getOrDefault(10, "From Default value"));
+		
+		
+		/***********putAll()******************/
+		// Creating an empty HashMap 
+	    HashMap<Integer, String> hash_map = new HashMap<Integer, String>(); 
+	  
+	    // Mapping string values to int keys  
+	    hash_map.put(10, "Geeks"); 
+	    hash_map.put(15, "4"); 
+	    hash_map.put(20, "Geeks"); 
+	    hash_map.put(30, "Welcomes"); 
+	    hash_map.put(40, "You"); 
+	  
+	    // Displaying the HashMap 
+	    System.out.println("Initial Mappings are: " + hash_map); 
+	  
+	    // Creating a new hash map and copying 
+	    HashMap<Integer, String> new_hash_map = new HashMap<Integer, String>(); 
+	    new_hash_map.putAll(hash_map); 
+	  
+	    // Displaying the final HashMap 
+	    System.out.println("The new map looks like this: " + new_hash_map); 
+	    
+	    /***********putIfAbsent()******************/
+	    hash_map.putIfAbsent(25, "From putIfAbsent"); 
+	    
+	    System.out.println("After putIfAbsent:\n "
+                + hash_map); 
+	    
+	    /*************merge()*****************/
+	    // create a HashMap and add some values 
+        HashMap<Integer, String> 
+            map1 = new HashMap<>(); 
+        map1.put(1, "L"); 
+        map1.put(2, "M"); 
+        map1.put(3, "N"); 
+  
+        HashMap<Integer, String> 
+            map2 = new HashMap<>(); 
+        map2.put(1, "B"); 
+        map2.put(2, "G"); 
+        map2.put(3, "R"); 
+  
+        // print map details 
+        System.out.println("HashMap1: "
+                           + map1.toString()); 
+  
+        System.out.println("HashMap2: "
+                           + map2.toString()); 
+  
+        // provide value for new key which is absent 
+        // using computeIfAbsent method 
+        map2.forEach( 
+            (key, value) 
+                -> map1.merge( 
+                    key, 
+                    value, 
+                    (v1, v2) 
+                        -> v1.equalsIgnoreCase(v2) 
+                               ? v1 
+                               : v1 + ", " + v2)); 
+  
+        // print new mapping 
+        System.out.println("New HashMap: " + map1);
+        System.out.println("*******************************");
+	
 		/******** Access All the keys ******/
 		Set<Object> lstIds = mapData.keySet();
 		for(Object I:lstIds){

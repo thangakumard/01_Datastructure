@@ -4,7 +4,7 @@ import java.util.Deque;
 
 import org.testng.annotations.Test;
 
-import tree.Node;
+import algorithms.tree.Node;
 
 public class List01_ArrayDeque {
 
