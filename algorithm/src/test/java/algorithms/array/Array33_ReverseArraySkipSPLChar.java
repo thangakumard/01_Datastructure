@@ -26,10 +26,10 @@ public class Array33_ReverseArraySkipSPLChar {
 		char temp = ' ';
 		
 		while(l < r){
-			if(!isAlphabet(str[l])){
+			if(!Character.isAlphabetic(str[l])){
 				l++;
 			}
-			else if(!isAlphabet(str[r])){
+			else if(!Character.isAlphabetic(str[r])){
 				r--;
 			}
 			else
@@ -43,14 +43,15 @@ public class Array33_ReverseArraySkipSPLChar {
 		}
 		
 		for(int i=0; i < str.length; i++){
-			System.out.println(str[i]);
+			System.out.print(str[i]);
 		}
-
+		System.out.println("");
+		System.out.println("*************");
 	}
 
 
-	public boolean isAlphabet(char c){
-		return((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
-	}
+//	public boolean isAlphabet(char c){
+//		return((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+//	}
 
 }

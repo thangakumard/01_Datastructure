@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 	3) A[] = {40, 30, 20, 10}, the complete array itself is bitonic, so output is 4.
  */
 public class Array23_BitonicSubarray {
-	public int longestSequence(int arr[]){
+	public int bitonic_01(int arr[]){
         int lis[] = new int[arr.length];
         int lds[] = new int[arr.length];
         for(int i=0; i < arr.length; i++){
@@ -48,12 +48,47 @@ public class Array23_BitonicSubarray {
         }
         return max;
     }
+	
+	static int bitonic_02(int arr[]) 
+    { 
+		int n = arr.length;
+        int[] inc = new int[n]; // Length of increasing subarray ending  
+                                // at all indexes 
+        int[] dec = new int[n]; // Length of decreasing subarray starting 
+                                // at all indexes 
+        int max; 
+  
+        // Length of increasing sequence ending at first index is 1 
+        inc[0] = 1; 
+  
+        // Length of increasing sequence starting at first index is 1 
+        dec[n-1] = 1; 
+  
+        // Step 1) Construct increasing sequence array 
+        for (int i = 1; i < n; i++) 
+           inc[i] = (arr[i] >= arr[i-1])? inc[i-1] + 1: 1; 
+  
+        // Step 2) Construct decreasing sequence array 
+        for (int i = n-2; i >= 0; i--) 
+            dec[i] = (arr[i] >= arr[i+1])? dec[i+1] + 1: 1; 
+  
+        // Step 3) Find the length of maximum length bitonic sequence 
+        max = inc[0] + dec[0] - 1; 
+        for (int i = 1; i < n; i++) 
+            if (inc[i] + dec[i] - 1 > max) 
+                max = inc[i] + dec[i] - 1; 
+  
+        return max; 
+    } 
     
 	@Test
     public void approach01(){        
         int[] arr = {1,4,3,7,2,1,8,11,13,0};
-        int r = longestSequence(arr);
-        System.out.print("Bitonic Subarray :" + r);
+        int r = bitonic_01(arr);
+        System.out.println("Bitonic Subarray :" + r);
+        
+        int b = bitonic_02(arr);
+        System.out.println("Bitonic Subarray :" + b);
     
     }	
 }

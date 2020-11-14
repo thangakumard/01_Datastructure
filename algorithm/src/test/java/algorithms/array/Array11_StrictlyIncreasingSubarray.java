@@ -36,7 +36,7 @@ public class Array11_StrictlyIncreasingSubarray {
 	
 	@Test
 	public void appraoch2(){
-		int[] a={1, 2, 2, 4};
+		int[] a={1, 2, 3, 4};
 		int len = 1;
 		int cnt =0;
 		

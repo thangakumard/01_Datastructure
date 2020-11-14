@@ -21,7 +21,7 @@ public class findHCF {
 	@Test
 	public void Test(){
 		
-		int[] input = new int[]{2,5};
+		int[] input = new int[]{36,60};
 		findGCD(input,input.length);
 		List<String> s = new ArrayList<>();
 		s.size();
@@ -44,6 +44,9 @@ public class findHCF {
     {
         if (a == 0)
             return b;
+        System.out.println("b :" + b);
+        System.out.println("a :" + a);
+        System.out.println("b % a :" + b % a);
         return gcd(b % a, a);
     }
  

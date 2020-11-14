@@ -20,7 +20,8 @@ import org.testng.annotations.Test;
 /*********
  * 
  * https://www.geeksforgeeks.org/find-pythagorean-triplet-in-an-unsorted-array/
- *Given an array of integers, write a function that returns true if there is a triplet (a, b, c) that satisfies a2 + b2 = c2.
+ *Given an array of integers, write a function that returns true if there is a triplet (a, b, c) 
+ *that satisfies a2 + b2 = c2.
 
 	Example:
 	

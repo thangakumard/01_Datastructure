@@ -16,7 +16,7 @@ public class Algor01_Kadanes_MaxSumSubArray {
 	public void Test(){
 				
 		//int[] input ={1,3,-2,4,-2,1};
-		int[] input ={-1,-3,-2,-4,-2,-1};
+		int[] input ={-2,1,-3,4,-1,2,1,-5,4};
 		System.out.println(kadanesAlgorithm(input));
 	}
 	
