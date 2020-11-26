@@ -40,9 +40,12 @@ public class LList16_RemoveGivenKey {
 		
 		//removeGivenKey(list.head, 40);
 		//removeGivenKey(list.head, 50);
-		list.head = removeGivenKey(list.head, 60);
-		list.head = removeGivenKey(list.head, 600);
 		
+		//list.head = removeGivenKey(list.head, 60);
+		//list.head = removeGivenKey(list.head, 600);
+		
+		list.head = removeElements(list.head, 60);
+		//list.head = removeElements(list.head, 600);
 		
 		currentNode = list.head;
 		while(currentNode != null){
@@ -53,6 +56,14 @@ public class LList16_RemoveGivenKey {
 		System.out.println();
 	}
 	
+	//Solution 1: Recursive
+	public Node removeElements(Node head, int val) {
+        if (head == null) return null;
+        head.next = removeElements(head.next, val);
+        return head.value == val ? head.next : head;
+	}
+	
+	//Solution 2
 	public Node removeGivenKey(Node head, int key){
 		if(head == null){
 			return null;
@@ -81,4 +92,6 @@ public class LList16_RemoveGivenKey {
 			return head;
 		}
 	}
+	
+
 }

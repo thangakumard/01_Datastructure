@@ -24,16 +24,16 @@ public class Algor01_Kadanes_MaxSumSubArray {
 		
 		int size = input.length;
 		int max_so_for = Integer.MIN_VALUE;
-		int max_ending_here = 0;
+		int sum_of_digits = 0;
 		
 		for(int i=0; i< size; i++){
-			max_ending_here = max_ending_here + input[i];
+			sum_of_digits = sum_of_digits + input[i];
 			
-			if(max_so_for < max_ending_here){
-				max_so_for = max_ending_here;
+			if(max_so_for < sum_of_digits){
+				max_so_for = sum_of_digits;
 			}
-			if(max_ending_here < 0){
-				max_ending_here = 0;
+			if(sum_of_digits < 0){
+				sum_of_digits = 0;
 			}
 		}
 		

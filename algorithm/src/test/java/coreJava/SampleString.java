@@ -51,9 +51,12 @@ public class SampleString {
 		System.out.println("CodePointAt(0) : " + s1.codePointAt(0));
 		System.out.println("CodePointAt(0) : " + s2.codePointAt(0));
 		String_compareToIgnoreCase();
-		String_substring();
-		String_Print_Words();
-		String_Print_Words_inReverse();
+		//String_substring();
+//		String_Print_Words();
+//		String_Print_Words_inReverse();
+		
+		String split = "Good I am";
+		String[] afterSplit = split.split("\\s",2);
 	}
 	
 	@Test

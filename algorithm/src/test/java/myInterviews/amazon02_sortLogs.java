@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.openqa.selenium.logging.Logs;
 import org.testng.annotations.Test;
 
 /*******

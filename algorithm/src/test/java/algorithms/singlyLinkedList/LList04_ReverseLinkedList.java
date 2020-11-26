@@ -32,6 +32,7 @@ public class LList04_ReverseLinkedList {
 		while(CurrentNode != null){			
 			next = CurrentNode.next;
 			CurrentNode.next = prev;
+			
 			prev = CurrentNode;
 			CurrentNode = next;			
 		}		

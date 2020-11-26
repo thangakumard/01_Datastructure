@@ -22,16 +22,17 @@ public class LList02_Palindrome {
 		System.out.println("validatePalindrom_BestApproach :" + recursiveCheck(list.head));
 	}
 	
-	private boolean recursiveCheck(Node right){
-		if(right == null)
+	//Solution 1
+	private boolean recursiveCheck(Node currentNode){
+		if(currentNode == null)
 			return true;
 		
-		boolean isSublistPalindrome = recursiveCheck(right.next);
+		boolean isSublistPalindrome = recursiveCheck(currentNode.next);
 		if(!isSublistPalindrome){
 			return false;
 		}
 		
-		boolean isEqual = left.value == right.value;
+		boolean isEqual = left.value == currentNode.value;
 		left = left.next;
 		return isEqual;
 	}
@@ -68,6 +69,7 @@ public class LList02_Palindrome {
 
 	}
 
+	//Solution 2
 	public boolean isPalindrome(Node head1, Node head2) {
 
 		Boolean isValid = true;

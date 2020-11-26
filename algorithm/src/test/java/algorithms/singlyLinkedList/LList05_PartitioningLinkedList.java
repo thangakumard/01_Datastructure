@@ -24,22 +24,58 @@ public class LList05_PartitioningLinkedList {
 	@Test
 	public void doPartition(){
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(5));
 		list.push(new Node(1));
-		list.push(new Node(4));
-		list.push(new Node(2));
+		list.push(new Node(5));
 		list.push(new Node(10));
+		list.push(new Node(2));
+		list.push(new Node(8));
+		list.push(new Node(2));
 		list.push(new Node(3));
 		
-		SinglyLinkedList partitioned = partitionByX(list.head,3);
+		//SinglyLinkedList partitioned = partitionByX(list.head,3);
 		
-		Node currentNode = partitioned.head;
-		while(currentNode != null){
-			System.out.println(currentNode.value);
-			currentNode = currentNode.next;
-		}
+		Node partitioned1 = partition(list.head,5);
+		
+//		Node currentNode = partitioned.head;
+//		while(currentNode != null){
+//			System.out.println(currentNode.value);
+//			currentNode = currentNode.next;
+//		}
 		Assert.assertTrue(true);
 	}
+	
+	private Node partition(Node head, int x)  
+	{  
+	    /* Let us initialize start and tail nodes of  
+	    new list */
+	    Node tail = head;  
+	  
+	    // Now iterate original list and connect nodes  
+	    Node curr = head;  
+	    while (curr != null)  
+	    {  
+	        Node next = curr.next;  
+	        if (curr.value < x)  
+	        {  
+	            /* Insert node at head. */
+	            curr.next = head;  
+	            head = curr;  
+	        }  
+	  
+	        else // Append to the list of greater values  
+	        {  
+	            /* Insert node at tail. */
+	            tail.next = curr;  
+	            tail = curr;  
+	        }  
+	        curr = next;  
+	    }  
+	    tail.next = null;  
+	  
+	    // The head has changed, so we need  
+	    // to return it to the user.  
+	    return head;  
+	}  
 	
 	public SinglyLinkedList partitionByX(Node head,int x){
 	

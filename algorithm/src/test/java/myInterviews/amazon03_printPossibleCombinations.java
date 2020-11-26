@@ -28,7 +28,7 @@ public class amazon03_printPossibleCombinations {
 	
 	private void helper(String prefix, String rest){
 		if(rest.length() == 0){
-			System.out.println(prefix + " ");
+			System.out.print(prefix + " ");
 		}else{
 			helper(prefix + rest.charAt(0), rest.substring(1));
 			helper(prefix, rest.substring(1));

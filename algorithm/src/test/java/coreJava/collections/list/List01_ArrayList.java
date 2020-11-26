@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.testng.annotations.Test;
 
@@ -117,11 +118,14 @@ public class List01_ArrayList {
        //ARRAY TO ARRAYLIST
        System.out.println("Convert Array to ArrayList :");
        int[] array2 = new int[] {-1,-2,-3,-4};
-       List negativeList = Arrays.asList(array2);
+       List negativeList = Arrays.asList(array2);  //???????????????
        for(Object item: negativeList){
-    	   System.out.print(item + ", ");
+    	   System.out.println("Arrays.asList :");
+    	   System.out.print( item + ", ");
        }
        System.out.println("");
+       //to get integer value from the converted list
+       int val = (int) negativeList.get(0);
        
        //ARRAYLIST TO ARRAY
        System.out.println("Convert ArrayList To Array:");       

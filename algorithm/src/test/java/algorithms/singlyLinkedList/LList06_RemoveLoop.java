@@ -2,6 +2,8 @@ package algorithms.singlyLinkedList;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import bsh.Console;
+
 /*Detect and Remove Loop in a Linked List
 Write a function detectAndRemoveLoop() that checks whether a given Linked List contains loop and if loop is present then removes the loop and returns true. 
 And if the list doesn�t contain loop then returns false. Below diagram shows a linked list with a loop. 
@@ -67,7 +69,6 @@ public class LList06_RemoveLoop {
 			while(ptr2.next != loop && ptr2.next != ptr1){
 				ptr2 = ptr2.next;
 			}
-			
 			if(ptr2.next == ptr1){
 				break;
 			}

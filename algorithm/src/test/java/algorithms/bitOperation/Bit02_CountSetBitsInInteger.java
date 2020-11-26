@@ -4,9 +4,20 @@ import org.testng.annotations.*;
 public class Bit02_CountSetBitsInInteger {
 
 	/********
-	 * Input : n = 13
-       Output : 3
-	   Binary representation of 11 is 1101 and has 3 set bits
+		Write an efficient program to count number of 1s in binary representation of an integer.
+		
+		Examples :
+		
+		Input : n = 6
+		Output : 2
+		Binary representation of 6 is 110 and has 2 set bits
+		
+		Input : n = 13
+		Output : 3
+		Binary representation of 13 is 1101 and has 3 set bits
+	 	Input : n = 13
+       	Output : 3
+	   	Binary representation of 11 is 1101 and has 3 set bits
 	 */
 	@Test
 	public void test(){
@@ -45,7 +56,6 @@ public class Bit02_CountSetBitsInInteger {
 	 *  Untill n > 0 do this 
 	 * 		1. n = (n & n-1)
 	 * 		2. Counter ++
-	 * 		3. Right shift n by 1
 	 * Time Complexity is O(logn)
 	 * Space Complexity is O(1)
 	 */

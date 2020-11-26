@@ -2,7 +2,7 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
-public class Tree28_Inorder_Successor_BST {
+public class Tree28_InOrder_Successor_BST {
 
 	@Test
 	public void successor(){

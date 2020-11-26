@@ -2,7 +2,7 @@ package algorithms.bitOperation;
 
 import org.testng.annotations.*; 
 /**************
- * 
+ * Given a positive integer n, find count of positive integers i such that 0 <= i <= n and n+i = n^i (n XOR i)
  * Input n = 12
    Output: 4
    

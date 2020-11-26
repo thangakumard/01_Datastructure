@@ -2,7 +2,7 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
-public class Tree14_DistanceBetweenNodes {
+public class Tree14_DistanceBetweenNodes_BT {
 
 	@Test
 	public void test(){

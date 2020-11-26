@@ -27,7 +27,7 @@ public class Tree16_VerticalOrderTraversal {
 			tree.root.right.right = new Node(20);
 			tree.root.right.right.right = new Node(25);
 			
-		   List<List<Integer>> result= verticalOrder(tree.root);
+		   List<List<Integer>> result= verticalTraversal(tree.root);
 		   for(List<Integer> i : result){
 			   for(Integer j: i){
 				   System.out.println(j);
@@ -35,7 +35,50 @@ public class Tree16_VerticalOrderTraversal {
 		   }
 	}
 	
-	    public List<List<Integer>> verticalOrder(Node root) {
+public List<List<Integer>> verticalTraversal(Node root) {
+        
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        Deque<Node> nodeQueue = new ArrayDeque<Node>();
+        Deque<Integer> orderQueue = new ArrayDeque<Integer>();
+        HashMap<Integer,List<Integer>> verticalMap = new HashMap<Integer, List<Integer>>();
+        
+        nodeQueue.offerFirst(root);
+        orderQueue.offerFirst(0);
+        Node currentNode;
+        int vertical = 0, minValue =0, maxValue = 0;
+        while(!nodeQueue.isEmpty()) {
+        	
+        	currentNode = nodeQueue.pollFirst();
+        	vertical = orderQueue.pollFirst();
+        	minValue = Math.min(minValue, vertical);
+        	maxValue = Math.max(maxValue, vertical);
+        	
+        	if(!verticalMap.containsKey(vertical)) {
+        		verticalMap.put(vertical, new ArrayList<Integer>());
+        	}
+        	verticalMap.get(vertical).add(currentNode.data);
+
+        	if(currentNode.left != null) {
+        		nodeQueue.offerLast(currentNode.left);
+        		orderQueue.offerLast(vertical -1);
+        	}
+        	
+        	if(currentNode.right != null) {
+        		nodeQueue.offerLast(currentNode.right);
+        		orderQueue.offerLast(vertical + 1);
+        	}
+        	
+        }
+        
+        for(int i=minValue; i <= maxValue; i++) {
+        	result.add(verticalMap.get(i));
+        }
+        
+        return result;
+}
+	
+	
+	    public List<List<Integer>> verticalOrder_01(Node root) {
 	        if (root == null) {
 	            return new ArrayList<>();
 	        }
