@@ -47,13 +47,17 @@ public class Tree14_DistanceBetweenNodes_BT {
 		if(node == null)
 			return null;
 		
-		if(node.data > n1 && node.data > n2)
-			return lca(node.left, n1, n2);
+		if(node.data == n1 || node.data == n2) {
+			return node;
+		}
 		
-		if(node.data < n1 && node.data < n2)
-			return lca(node.right, n1, n2);
+		node.left = lca(node.left, n1, n2);
+		node.right = lca(node.right, n1, n2);
 		
-		return node;
+		if(node.left  != null && node.right != null) {
+			return node;
+		}
+		return node.left != null ? node.left : node.right;
 	}
 	
 	

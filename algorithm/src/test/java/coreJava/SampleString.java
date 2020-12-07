@@ -102,7 +102,6 @@ public class SampleString {
 			else{
 				value = input.substring(0,index);
 			}
-			System.out.println(input.substring(0,index));
 			input = input.substring(index+1,input.length());
 		}		
 	}

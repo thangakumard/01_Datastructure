@@ -10,8 +10,8 @@ public class Amazon_07_MinimumDifficultyJobSchedule {
 	@Test
 	public void test() {
 		
-		int[] jobs = new int[] {6,5,4,3,2,1};
-		minDifficulty(jobs,2);
+		int[] jobs = new int[] {7,1,7,1,7,1};
+		System.out.println("minDifficulty :" + minDifficulty(jobs,3));
 		
 		
 	}

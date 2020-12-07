@@ -12,7 +12,7 @@ public class testRun {
 		lruCahche.put(2,2);
 		lruCahche.put(3,3);
 		lruCahche.put(4,4);
-		System.out.println(""+lruCahche.map);
+		System.out.println(""+lruCahche.get(4));
 		
 	}
 
