@@ -8,60 +8,60 @@ public class Tree09_DepthFirstTraversal {
 	public void test()
 	{
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
+		tree.root = new TreeNode(1);
 		
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		
 		PreOrderTraversal(tree.root);
 		InOrderTraversal(tree.root);
 		PostOrderTraversal(tree.root);
 	}
 	
-	public void PreOrderTraversal(Node node){
-		if(node == null)
+	public void PreOrderTraversal(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
 		
 		//print the data of the tree		
-		System.out.println(node.data + " ");
+		System.out.println(TreeNode.data + " ");
 		
 		//then recur on the left subtree
-		PreOrderTraversal(node.left);
+		PreOrderTraversal(TreeNode.left);
 		
 		//then recur on the right subtree
-		PreOrderTraversal(node.right);	
+		PreOrderTraversal(TreeNode.right);	
 		
 	}
 	
-	public void InOrderTraversal(Node node){
-		if(node == null)
+	public void InOrderTraversal(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
 			
 		//then recur on the left subtree
-		InOrderTraversal(node.left);
+		InOrderTraversal(TreeNode.left);
 
 		//print the data of the tree		
-		System.out.println(node.data + " ");
+		System.out.println(TreeNode.data + " ");
 		
 		//then recur on the right subtree
-		InOrderTraversal(node.right);	
+		InOrderTraversal(TreeNode.right);	
 		
 	}
 	
-	public void PostOrderTraversal(Node node){
-		if(node == null)
+	public void PostOrderTraversal(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
 		
 		//then recur on the left subtree
-		PostOrderTraversal(node.left);
+		PostOrderTraversal(TreeNode.left);
 		
 		//then recur on the right subtree
-		PostOrderTraversal(node.right);	
+		PostOrderTraversal(TreeNode.right);	
 
 		//print the data of the tree		
-		System.out.println(node.data + " ");
+		System.out.println(TreeNode.data + " ");
 		
 	}
 }

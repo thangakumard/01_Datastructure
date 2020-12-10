@@ -2,12 +2,12 @@ package myInterviews;
 import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
-import algorithms.tree.Node;
+import algorithms.tree.TreeNode;
 
 /********
  * 
  * @author THANGAKUMAR
- * Find the sortest distance between two given nodes in binary tree
+ * Find the sortest distance between two given TreeNodes in binary tree
  */
 public class amazon04_shortestDistance {
 
@@ -18,21 +18,21 @@ public class amazon04_shortestDistance {
 		
 		BinaryTree tree = new BinaryTree();
 		tree.root = buildBST(input, 0, input.length-1);
-		int a = distanceBetweenNodes(tree.root,1,4);
-		System.out.println(" distanceBetweenNodes :" +  a);
+		int a = distanceBetweenTreeNodes(tree.root,1,4);
+		System.out.println(" distanceBetweenTreeNodes :" +  a);
 	}
 	
-	private Node buildBST(int[] input,int start, int end){
+	private TreeNode buildBST(int[] input,int start, int end){
 		if(end < start)
 			return null;
 		int mid = (start+ end)/2;
-		Node root = new Node(input[mid]);
+		TreeNode root = new TreeNode(input[mid]);
 		root.left = buildBST(input, start, mid-1);
 		root.right = buildBST(input, mid+1,end);
 		return root;
 	}
 	
-	private int distanceBetweenNodes(Node root, int x, int y){
+	private int distanceBetweenTreeNodes(TreeNode root, int x, int y){
 		
 		int xDistanceFromRoot =0, yDistanceFromRoot = 0, LCADistanceFromRoot = 0;
 		xDistanceFromRoot = distanceFromRoot(root, x, 0);
@@ -43,7 +43,7 @@ public class amazon04_shortestDistance {
 		return distance;
 	}
 	
-	private int distanceFromRoot(Node root, int value, int distance){
+	private int distanceFromRoot(TreeNode root, int value, int distance){
 		if(root == null)
 			return -1;
 		if(root.data == value)
@@ -57,7 +57,7 @@ public class amazon04_shortestDistance {
 		return -1;
 	}
 	
-	private int getLCA(Node root, int x, int y){
+	private int getLCA(TreeNode root, int x, int y){
 		if(root == null)
 			return -1;
 		

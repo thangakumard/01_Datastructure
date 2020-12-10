@@ -9,36 +9,36 @@ public class Tree07_PreOrderIterative {
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				1
     		2				3
     	4		5
 
 		 */
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		preOrderTraversal(tree.root);
 	}
 	
-	ArrayDeque<Node> stack = new ArrayDeque<Node>();
-	private void preOrderTraversal(Node root){
-		Node currentNode = null;
+	ArrayDeque<TreeNode> stack = new ArrayDeque<TreeNode>();
+	private void preOrderTraversal(TreeNode root){
+		TreeNode currentTreeNode = null;
 		if(root == null) return;
 		stack.addFirst(root);
 		while(!stack.isEmpty()){
-			currentNode = stack.pop();
-			System.out.print(currentNode.data);
+			currentTreeNode = stack.pop();
+			System.out.print(currentTreeNode.data);
 			
-			if(currentNode.right != null){
-				stack.addFirst(currentNode.right);
+			if(currentTreeNode.right != null){
+				stack.addFirst(currentTreeNode.right);
 			}
 			
-			if(currentNode.left != null){
-				stack.addFirst(currentNode.left);
+			if(currentTreeNode.left != null){
+				stack.addFirst(currentTreeNode.left);
 			}
 				
 		}

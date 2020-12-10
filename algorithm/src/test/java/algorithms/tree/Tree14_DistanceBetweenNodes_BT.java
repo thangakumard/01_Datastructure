@@ -11,78 +11,78 @@ public class Tree14_DistanceBetweenNodes_BT {
 		BinaryTree tree = new BinaryTree();
 		tree.root = buildBST(input, 0, input.length-1);
 
-		int a = distanceBetweenNodes(tree.root,1,4);
+		int a = distanceBetweenTreeNodes(tree.root,1,4);
 		
-		System.out.println(" distanceBetweenNodes :" +  a);
+		System.out.println(" distanceBetweenTreeNodes :" +  a);
 	}
 	
 	/**
-	 * Distance b/w nodes = Distance(root, n1) + Distance (root + n2) - 2 * Distance(root , lca)	 
+	 * Distance b/w TreeNodes = Distance(root, n1) + Distance (root + n2) - 2 * Distance(root , lca)	 
 	 */
-	int distanceBetweenNodes(Node root, int node1, int node2){	
+	int distanceBetweenTreeNodes(TreeNode root, int TreeNode1, int TreeNode2){	
 		
-		int lca = lca(root, node1, node2).data;		
+		int lca = lca(root, TreeNode1, TreeNode2).data;		
 		
-		int a = distanceFromRoot(root, node1, 0);
-		int b = distanceFromRoot(root, node2, 0);
+		int a = distanceFromRoot(root, TreeNode1, 0);
+		int b = distanceFromRoot(root, TreeNode2, 0);
 		int c = (2 * distanceFromRoot(root,lca,0));		
 		int distance = a + b - c; 			
 		
 		return distance;
 	}
 	
-	int distanceFromRoot(Node node,int n,int distance){		
-		if(node.data == n)
+	int distanceFromRoot(TreeNode TreeNode,int n,int distance){		
+		if(TreeNode.data == n)
 			return distance;
-		if(node.data > n){
-			return distanceFromRoot(node.left, n, distance+1);
+		if(TreeNode.data > n){
+			return distanceFromRoot(TreeNode.left, n, distance+1);
 		}
-		if(node.data < n){
-			return distanceFromRoot(node.right, n, distance+1);
+		if(TreeNode.data < n){
+			return distanceFromRoot(TreeNode.right, n, distance+1);
 		}		
 		return distance;
 	}
 	
-	Node lca(Node node, int n1, int n2){		
-		if(node == null)
+	TreeNode lca(TreeNode TreeNode, int n1, int n2){		
+		if(TreeNode == null)
 			return null;
 		
-		if(node.data == n1 || node.data == n2) {
-			return node;
+		if(TreeNode.data == n1 || TreeNode.data == n2) {
+			return TreeNode;
 		}
 		
-		node.left = lca(node.left, n1, n2);
-		node.right = lca(node.right, n1, n2);
+		TreeNode.left = lca(TreeNode.left, n1, n2);
+		TreeNode.right = lca(TreeNode.right, n1, n2);
 		
-		if(node.left  != null && node.right != null) {
-			return node;
+		if(TreeNode.left  != null && TreeNode.right != null) {
+			return TreeNode;
 		}
-		return node.left != null ? node.left : node.right;
+		return TreeNode.left != null ? TreeNode.left : TreeNode.right;
 	}
 	
 	
-Node buildBST(int[] input, int left, int right){
+TreeNode buildBST(int[] input, int left, int right){
 		
 		if(left > right)
 			return null;
 		
 		int middle = (left + right)/2;
 		
-		Node node = new Node(input[middle]);
+		TreeNode TreeNode = new TreeNode(input[middle]);
 		
-		node.left = buildBST(input, left, middle-1);
-		node.right = buildBST(input, middle+1, right);
+		TreeNode.left = buildBST(input, left, middle-1);
+		TreeNode.right = buildBST(input, middle+1, right);
 		
-		return node;		
+		return TreeNode;		
 	}
 
-void inOrderTraversal(Node node){
-	if(node == null)
+void inOrderTraversal(TreeNode TreeNode){
+	if(TreeNode == null)
 		return;
 	
-	System.out.println(node.data);
-	inOrderTraversal(node.left);
-	inOrderTraversal(node.right);
+	System.out.println(TreeNode.data);
+	inOrderTraversal(TreeNode.left);
+	inOrderTraversal(TreeNode.right);
 }
 
 }

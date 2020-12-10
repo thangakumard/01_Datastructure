@@ -15,25 +15,25 @@ public class Tree01_InOrderIterative {
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				1
     		2				3
     	4		5
     	
 		*/
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		inorderIterative(tree.root);
 	}
 
-	public void inorderIterative(Node root) {
+	public void inorderIterative(TreeNode root) {
 		if(root == null) return;
 		
-		Stack<Node> stack = new Stack<Node>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
 		
 		while(true){
 			if(root != null){

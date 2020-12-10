@@ -10,22 +10,22 @@ public class Tree16_VerticalOrderTraversal {
 	public void vertical_Traversal(){	
 		
 		/* creating a binary tree and entering 
-	    the nodes 
+	    the TreeNodes 
 	    				10
 	    		5				15
 	    	2		8       13		20
 	    				9				25
 			*/
 			BinaryTree tree = new BinaryTree();
-			tree.root = new Node(10);
-			tree.root.left = new Node(5);
-			tree.root.right = new Node(15);
-			tree.root.left.left = new Node(2);
-			tree.root.left.right = new Node(8);
-			tree.root.left.right.right = new Node(9);
-			tree.root.right.left = new Node(13);
-			tree.root.right.right = new Node(20);
-			tree.root.right.right.right = new Node(25);
+			tree.root = new TreeNode(10);
+			tree.root.left = new TreeNode(5);
+			tree.root.right = new TreeNode(15);
+			tree.root.left.left = new TreeNode(2);
+			tree.root.left.right = new TreeNode(8);
+			tree.root.left.right.right = new TreeNode(9);
+			tree.root.right.left = new TreeNode(13);
+			tree.root.right.right = new TreeNode(20);
+			tree.root.right.right.right = new TreeNode(25);
 			
 		   List<List<Integer>> result= verticalTraversal(tree.root);
 		   for(List<Integer> i : result){
@@ -35,20 +35,20 @@ public class Tree16_VerticalOrderTraversal {
 		   }
 	}
 	
-public List<List<Integer>> verticalTraversal(Node root) {
+public List<List<Integer>> verticalTraversal(TreeNode root) {
         
         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        Deque<Node> nodeQueue = new ArrayDeque<Node>();
+        Deque<TreeNode> TreeNodeQueue = new ArrayDeque<TreeNode>();
         Deque<Integer> orderQueue = new ArrayDeque<Integer>();
         HashMap<Integer,List<Integer>> verticalMap = new HashMap<Integer, List<Integer>>();
         
-        nodeQueue.offerFirst(root);
+        TreeNodeQueue.offerFirst(root);
         orderQueue.offerFirst(0);
-        Node currentNode;
+        TreeNode currentTreeNode;
         int vertical = 0, minValue =0, maxValue = 0;
-        while(!nodeQueue.isEmpty()) {
+        while(!TreeNodeQueue.isEmpty()) {
         	
-        	currentNode = nodeQueue.pollFirst();
+        	currentTreeNode = TreeNodeQueue.pollFirst();
         	vertical = orderQueue.pollFirst();
         	minValue = Math.min(minValue, vertical);
         	maxValue = Math.max(maxValue, vertical);
@@ -56,15 +56,15 @@ public List<List<Integer>> verticalTraversal(Node root) {
         	if(!verticalMap.containsKey(vertical)) {
         		verticalMap.put(vertical, new ArrayList<Integer>());
         	}
-        	verticalMap.get(vertical).add(currentNode.data);
+        	verticalMap.get(vertical).add(currentTreeNode.data);
 
-        	if(currentNode.left != null) {
-        		nodeQueue.offerLast(currentNode.left);
+        	if(currentTreeNode.left != null) {
+        		TreeNodeQueue.offerLast(currentTreeNode.left);
         		orderQueue.offerLast(vertical -1);
         	}
         	
-        	if(currentNode.right != null) {
-        		nodeQueue.offerLast(currentNode.right);
+        	if(currentTreeNode.right != null) {
+        		TreeNodeQueue.offerLast(currentTreeNode.right);
         		orderQueue.offerLast(vertical + 1);
         	}
         	
@@ -78,7 +78,7 @@ public List<List<Integer>> verticalTraversal(Node root) {
 }
 	
 	
-	    public List<List<Integer>> verticalOrder_01(Node root) {
+	    public List<List<Integer>> verticalOrder_01(TreeNode root) {
 	        if (root == null) {
 	            return new ArrayList<>();
 	        }
@@ -86,7 +86,7 @@ public List<List<Integer>> verticalTraversal(Node root) {
 	        int maxVal = 0;
 	        Map<Integer, List<Integer>> map = new HashMap<>();
 
-	        Deque<Node> queue = new LinkedList<>();
+	        Deque<TreeNode> queue = new LinkedList<>();
 	        Deque<Integer> verticalQueue = new LinkedList<>();
 
 	        queue.offerFirst(root);

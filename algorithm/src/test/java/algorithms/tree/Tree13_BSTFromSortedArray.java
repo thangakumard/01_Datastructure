@@ -6,9 +6,9 @@ public class Tree13_BSTFromSortedArray {
 
 	/**************
 	 * -------Approach-------
-	 * 1. Find the middle element and set that as root node
-	 * 2. Repeat that for left half of the array and keep that left of root node in the step 1
-	 * 3. Repeat that for right half of the array and keep that right of root node in the step 1
+	 * 1. Find the middle element and set that as root TreeNode
+	 * 2. Repeat that for left half of the array and keep that left of root TreeNode in the step 1
+	 * 3. Repeat that for right half of the array and keep that right of root TreeNode in the step 1
 	 */
 	
 	@Test
@@ -22,24 +22,24 @@ public class Tree13_BSTFromSortedArray {
 	}
 	
 	
-	public Node buildBST(int[] input, int left, int right){
+	public TreeNode buildBST(int[] input, int left, int right){
 		if(left > right)
 			return null;
 		int middle = (left+right)/2;
-		Node node = new Node(input[middle]);
+		TreeNode TreeNode = new TreeNode(input[middle]);
 		
-		node.left = buildBST(input, left, middle-1);
-		node.right = buildBST(input, middle+1, right);
+		TreeNode.left = buildBST(input, left, middle-1);
+		TreeNode.right = buildBST(input, middle+1, right);
 		
-		return node;
+		return TreeNode;
 	}
 	
-	void inOrderTraversal(Node node){
-		if(node == null)
+	void inOrderTraversal(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
 		
-		System.out.println(node.data);
-		inOrderTraversal(node.left);
-		inOrderTraversal(node.right);
+		System.out.println(TreeNode.data);
+		inOrderTraversal(TreeNode.left);
+		inOrderTraversal(TreeNode.right);
 	}
 }

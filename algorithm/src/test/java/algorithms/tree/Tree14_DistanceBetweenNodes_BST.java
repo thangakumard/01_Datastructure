@@ -11,16 +11,16 @@ public class Tree14_DistanceBetweenNodes_BST {
 		BinaryTree tree = new BinaryTree();
 		tree.root = buildBST(input, 0, input.length-1);
 
-		int a = distanceBetweenNodes(tree.root,1,4);
+		int a = distanceBetweenTreeNodes(tree.root,1,4);
 		
-		System.out.println(" distanceBetweenNodes :" +  a);
+		System.out.println(" distanceBetweenTreeNodes :" +  a);
 	}
 	
-	private Node buildBST(int[] input,int i, int j) {
+	private TreeNode buildBST(int[] input,int i, int j) {
 		if(i > j)
 			return null;
 		int middle = (i+j)/2;
-		Node root = new Node(middle);
+		TreeNode root = new TreeNode(middle);
 		root.left = buildBST(input, i, middle-1);
 		root.right = buildBST(input, middle+1, j);
 		
@@ -28,10 +28,10 @@ public class Tree14_DistanceBetweenNodes_BST {
 		
 	}
 	
-	private int distanceBetweenNodes(Node root, int n1, int n2) {
+	private int distanceBetweenTreeNodes(TreeNode root, int n1, int n2) {
 		
 		//Get LCA
-		Node lca = getLCA(root, n1, n2);
+		TreeNode lca = getLCA(root, n1, n2);
 		System.out.println("LCA :" + lca.data);
 		
 		//Distance of n1 from LCA
@@ -48,7 +48,7 @@ public class Tree14_DistanceBetweenNodes_BST {
 		return distance;
 	}
 	
-	private Node getLCA(Node root, int n1,int n2) {
+	private TreeNode getLCA(TreeNode root, int n1,int n2) {
 		if(root == null)
 			return null;
 		
@@ -62,7 +62,7 @@ public class Tree14_DistanceBetweenNodes_BST {
 		return root;
 	}
 	
-	private int distancefromLCA(Node lca, int n1, int distance) {
+	private int distancefromLCA(TreeNode lca, int n1, int distance) {
 		if(lca == null) return distance;
 		if(lca.data == n1 )
 			return distance;

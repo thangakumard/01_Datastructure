@@ -2,7 +2,7 @@ package algorithms.tree;
 
 public class BinaryTree {
 	
-	public Node root;
+	public TreeNode root;
 	
 	public BinaryTree()
 	{

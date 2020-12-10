@@ -4,9 +4,9 @@ public class AVLTree_test {
 	
 	
 	
-	private Node insertIntoAVL(Node root, int value){
+	private TreeTreeNode insertIntoAVL(TreeTreeNode root, int value){
 		if(root == null){
-			return new Node(value);
+			return new TreeTreeNode(value);
 		}
 		if(root.data < value){
 			root.right = insertIntoAVL(root.right, value);
@@ -38,7 +38,7 @@ public class AVLTree_test {
 		return root;
 	}
 
-	private int setHeight(Node root) {
+	private int setHeight(TreeNode root) {
 		if(root == null){
 			return 0;
 		}
@@ -46,9 +46,9 @@ public class AVLTree_test {
 				root.right != null ? root.right.height : 0));
 	}
 
-	private Node rightRotate(Node root) {
+	private TreeNode rightRotate(TreeNode root) {
 		
-		Node newRoot = root.left;
+		TreeNode newRoot = root.left;
 		root.left = root.left.right;
 		newRoot.right = root;
 		
@@ -57,8 +57,8 @@ public class AVLTree_test {
 		return newRoot;
 	}
 	
-	private Node leftRotate(Node root){
-		Node newRoot = root.right;
+	private TreeNode leftRotate(TreeNode root){
+		TreeNode newRoot = root.right;
 		root.right = root.right.left;
 		newRoot.left = root;
 		
@@ -67,12 +67,12 @@ public class AVLTree_test {
 		return newRoot;
 	}
 
-	private int getBalance(Node left, Node right) {
+	private int getBalance(TreeNode left, TreeNode right) {
 		// TODO Auto-generated method stub
 		return height(left) - height(right);
 	}
 
-	private int height(Node root) {
+	private int height(TreeNode root) {
 		if(root == null){
 			return 0;
 		}

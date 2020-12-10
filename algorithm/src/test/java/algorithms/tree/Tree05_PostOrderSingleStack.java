@@ -10,32 +10,32 @@ public class Tree05_PostOrderSingleStack {
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				1
     		2				3
     	4		5
 
 		 */
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		postOrderInSingleStack(tree.root);
 	}
 
-	void postOrderInSingleStack(Node root){
+	void postOrderInSingleStack(TreeNode root){
 
-		Node currentNode = root;
-		Stack<Node> stack1 = new Stack<Node>();
+		TreeNode currentTreeNode = root;
+		Stack<TreeNode> stack1 = new Stack<TreeNode>();
 
-		while(currentNode != null || !stack1.isEmpty()){
-			if(currentNode != null){
-				stack1.push(currentNode);
-				currentNode = currentNode.left;
+		while(currentTreeNode != null || !stack1.isEmpty()){
+			if(currentTreeNode != null){
+				stack1.push(currentTreeNode);
+				currentTreeNode = currentTreeNode.left;
 			}else{
-				Node temp = stack1.peek().right;
+				TreeNode temp = stack1.peek().right;
 				if(temp == null){
 					temp = stack1.pop();
 					System.out.print(temp.data + " ");
@@ -44,7 +44,7 @@ public class Tree05_PostOrderSingleStack {
 						System.out.print(temp.data + " ");
 					}
 				}else{
-					currentNode = temp;
+					currentTreeNode = temp;
 				}
 			}
 		}

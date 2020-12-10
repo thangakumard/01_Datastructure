@@ -14,53 +14,53 @@ public class Tree12_LCAOfBST {
 		tree.root = buildBST(input, 0, input.length-1);
 		inOrderTraversal(tree.root);
 		
-		Node lca = lcAOfNodes(tree.root, 6,10);		
-		System.out.println("lcAOfNodes(tree.root, 6,10) :" + lca.data);
+		TreeNode lca = lcAOfTreeNodes(tree.root, 6,10);		
+		System.out.println("lcAOfTreeNodes(tree.root, 6,10) :" + lca.data);
 		
-		Node lca1 = lcAOfNodes(tree.root, 8,10);		
-		System.out.println(" lcAOfNodes(tree.root, 8,10) :" + lca1.data);
+		TreeNode lca1 = lcAOfTreeNodes(tree.root, 8,10);		
+		System.out.println(" lcAOfTreeNodes(tree.root, 8,10) :" + lca1.data);
 	}
 	
 	/**
-	 * Find the middle number and keep it as root node
+	 * Find the middle number and keep it as root TreeNode
 	 * Repeat that for left array
 	 * Repeat that for right array	
 	 */
-	Node buildBST(int[] input, int left, int right){
+	TreeNode buildBST(int[] input, int left, int right){
 		
 		if(left > right)
 			return null;
 		
 		int middle = (left + right)/2;
 		
-		Node node = new Node(input[middle]);
+		TreeNode TreeNode = new TreeNode(input[middle]);
 		
-		node.left = buildBST(input, left, middle-1);
-		node.right = buildBST(input, middle+1, right);
+		TreeNode.left = buildBST(input, left, middle-1);
+		TreeNode.right = buildBST(input, middle+1, right);
 		
-		return node;		
+		return TreeNode;		
 	}
 	
-	void inOrderTraversal(Node node){
-		if(node == null)
+	void inOrderTraversal(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
-		inOrderTraversal(node.left);
-		System.out.print(node.data +" ");
-		inOrderTraversal(node.right);
+		inOrderTraversal(TreeNode.left);
+		System.out.print(TreeNode.data +" ");
+		inOrderTraversal(TreeNode.right);
 	}
 	
-	Node lcAOfNodes(Node node,int n1, int n2){
+	TreeNode lcAOfTreeNodes(TreeNode TreeNode,int n1, int n2){
 		
-		if(node == null)
+		if(TreeNode == null)
 			return null;
 		
-		if(node.data > Math.max(n1, n2))
-			return lcAOfNodes(node.left, n1, n2);
+		if(TreeNode.data > Math.max(n1, n2))
+			return lcAOfTreeNodes(TreeNode.left, n1, n2);
 		
-		if( node.data < Math.min(n1, n2))
-			return lcAOfNodes(node.right, n1, n2);
+		if( TreeNode.data < Math.min(n1, n2))
+			return lcAOfTreeNodes(TreeNode.right, n1, n2);
 		
-		return node;
+		return TreeNode;
 	}
 	
 }

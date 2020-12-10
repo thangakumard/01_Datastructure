@@ -14,7 +14,7 @@ public class Tree21_01_BuildTreeFromPostAndInOrder {
 		int[] inorder = new int[]{9,3,15,20,7};
 		int[] postorder = new int[]{9,15,7,20,3};
 		
-		Node root = buildTree(inorder, postorder);
+		TreeNode root = buildTree(inorder, postorder);
 		inorderIterative(root);
 	}
 	
@@ -28,10 +28,10 @@ public class Tree21_01_BuildTreeFromPostAndInOrder {
 //		return pIndex;
 //	}
 
-	public void inorderIterative(Node root) {
+	public void inorderIterative(TreeNode root) {
 		if(root == null) return;
 		
-		Stack<Node> stack = new Stack<Node>();
+		Stack<TreeNode> stack = new Stack<TreeNode>();
 		
 		while(true){
 			if(root != null){
@@ -47,8 +47,8 @@ public class Tree21_01_BuildTreeFromPostAndInOrder {
 		}
 	}
 	
-	 public Node buildTree(int[] inorder, int[] postorder) {	        
-		 Node root = null;
+	 public TreeNode buildTree(int[] inorder, int[] postorder) {	        
+		 TreeNode root = null;
 		 if(postorder.length > 0){
 //			 setIndex(postorder.length-1);			 
 			 root = buildTree(inorder,postorder,0,inorder.length-1,postorder.length-1);
@@ -56,15 +56,15 @@ public class Tree21_01_BuildTreeFromPostAndInOrder {
 		 return root;		 
 	  }
 	 
-	 private Node buildTree(int[] inorder,int[] postorder,int start,int end,int postorderIndex){
+	 private TreeNode buildTree(int[] inorder,int[] postorder,int start,int end,int postorderIndex){
 		 if(start > end){return null;}
 			 int rootValue = postorder[postorderIndex];			 
-			 Node currentNode = new Node(rootValue);
-			 if(start == end) return currentNode;
+			 TreeNode currentTreeNode = new TreeNode(rootValue);
+			 if(start == end) return currentTreeNode;
 			 int rootIndex = findIndex(inorder,start, end, rootValue);
-			 currentNode.right= buildTree(inorder, postorder, rootIndex+1, end, postorderIndex-1);
-			 currentNode.left = buildTree(inorder,postorder,start,rootIndex-1,postorderIndex-1);
-		 return currentNode;
+			 currentTreeNode.right= buildTree(inorder, postorder, rootIndex+1, end, postorderIndex-1);
+			 currentTreeNode.left = buildTree(inorder,postorder,start,rootIndex-1,postorderIndex-1);
+		 return currentTreeNode;
 	 }
 	 
 	 private int findIndex(int[] inorder,int start, int end, int value){

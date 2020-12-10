@@ -12,21 +12,21 @@ public class Tree28_InOrder_Successor_BST {
 		tree.root = buildBST(input, 0, input.length-1);
 		//inOrderTraversal(tree.root);
 		
-		Node p = new Node(7);
+		TreeNode p = new TreeNode(7);
 		System.out.println(inOrderSuccessor(tree.root, p).data);
 	}
 	
-	private Node buildBST(int[] input,int start, int end){
+	private TreeNode buildBST(int[] input,int start, int end){
 		if(start > end) return null;
 		
 		int mid = (start+end)/2;
-		Node root = new Node(input[mid]);
+		TreeNode root = new TreeNode(input[mid]);
 		root.left = buildBST(input, start, mid-1);
 		root.right = buildBST(input, mid+1, end);
 		return root;
 	}
 	
-	private void inOrderTraversal(Node root){
+	private void inOrderTraversal(TreeNode root){
 		if(root == null)
 			return;
 		inOrderTraversal(root.left);
@@ -34,14 +34,14 @@ public class Tree28_InOrder_Successor_BST {
 		inOrderTraversal(root.right);
 	}
 	
-	private Node inOrderSuccessor(Node root, Node p){
+	private TreeNode inOrderSuccessor(TreeNode root, TreeNode p){
 		if(root == null)
 			return null;
 		if(root.data <= p.data){
 			return inOrderSuccessor(root.right, p);
 		}
 		else{
-			Node left = inOrderSuccessor(root.left, p);
+			TreeNode left = inOrderSuccessor(root.left, p);
 			return left != null ? left : root;
 		}
 	}

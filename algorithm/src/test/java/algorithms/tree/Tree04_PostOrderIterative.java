@@ -13,34 +13,34 @@ public class Tree04_PostOrderIterative {
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				1
     		2				3
     	4		5
 
 		 */
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		postOrder_usingTwoStack(tree.root);
 		postOrder_usingSingleStack(tree.root);
 	}
 	
 	
-	void postOrder_usingSingleStack(Node root) {
+	void postOrder_usingSingleStack(TreeNode root) {
 		if(root == null)return;
 		
-		ArrayDeque<Node> stack1 = new ArrayDeque<Node>();
-		Node current = root;
+		ArrayDeque<TreeNode> stack1 = new ArrayDeque<TreeNode>();
+		TreeNode current = root;
 		while(current != null || !stack1.isEmpty()) {
 			if(current != null) {
 				stack1.addFirst(current);
 				current = current.left;
 			}else {
-				Node temp = stack1.peek().right;
+				TreeNode temp = stack1.peek().right;
 				if(temp == null) {
 					temp = stack1.pop();
 					System.out.println(temp.data + " ");
@@ -58,12 +58,12 @@ public class Tree04_PostOrderIterative {
 	}
 
 	
-	void postOrder_usingTwoStack(Node root){
+	void postOrder_usingTwoStack(TreeNode root){
 		if(root == null)
 			return;
 		
-		Deque<Node> stack1 = new ArrayDeque<Node>();
-		Deque<Node> stack2 = new ArrayDeque<Node>();
+		Deque<TreeNode> stack1 = new ArrayDeque<TreeNode>();
+		Deque<TreeNode> stack2 = new ArrayDeque<TreeNode>();
 		
 		stack1.add(root);
 		while(!stack1.isEmpty()){

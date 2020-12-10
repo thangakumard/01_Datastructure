@@ -17,45 +17,45 @@ public class LevelofNode {
 
 	}
 
-	int getLevel(Node node,int data,int level){
+	int getLevel(TreeNode TreeNode,int data,int level){
 			
 		int downlevel = 0;
-		if(node == null)
+		if(TreeNode == null)
 			return 0;
 		
-		if(node.data == data)
+		if(TreeNode.data == data)
 			return level;
 
-		downlevel = getLevel(node.left, data, level+1);
+		downlevel = getLevel(TreeNode.left, data, level+1);
 		if(downlevel != 0)
 			return downlevel;
 
-		downlevel = getLevel(node.right, data, level+1);
+		downlevel = getLevel(TreeNode.right, data, level+1);
 		return downlevel;
 	}
 
-	Node buildBST(int[] input, int left, int right){
+	TreeNode buildBST(int[] input, int left, int right){
 
 		if(left > right)
 			return null;
 
 		int middle = (left + right)/2;
 
-		Node node = new Node(input[middle]);
+		TreeNode TreeNode = new TreeNode(input[middle]);
 
-		node.left = buildBST(input, left, middle-1);
-		node.right = buildBST(input, middle+1, right);
+		TreeNode.left = buildBST(input, left, middle-1);
+		TreeNode.right = buildBST(input, middle+1, right);
 
-		return node;		
+		return TreeNode;		
 	}
 
-	void inOrderTraversal(Node node){
-		if(node == null)
+	void inOrderTraversal(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
 
-		System.out.println(node.data);
-		inOrderTraversal(node.left);
-		inOrderTraversal(node.right);
+		System.out.println(TreeNode.data);
+		inOrderTraversal(TreeNode.left);
+		inOrderTraversal(TreeNode.right);
 	}
 
 }

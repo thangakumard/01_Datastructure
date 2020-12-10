@@ -1,10 +1,8 @@
 package algorithms.singlyLinkedList;
 
-import java.util.LinkedList;
-
 public class SinglyLinkedList {
 
-	Node head;
+	public Node head;
  
 	public void push(Node node){
 		if(head == null){

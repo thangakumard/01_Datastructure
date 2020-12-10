@@ -3,11 +3,11 @@ package algorithms.tree;
 import org.testng.annotations.Test;
 
 /****************
- * Bainary search search is a special kind of binaray tree where every nodes in the left subtree is less than or equal to root and 
- * every node in the right subtree is greater than or equal to root. This is recursively true for every node.
+ * Bainary search search is a special kind of binaray tree where every TreeNodes in the left subtree is less than or equal to root and 
+ * every TreeNode in the right subtree is greater than or equal to root. This is recursively true for every TreeNode.
  * 
  * AVL tree is special kind of binary search tree but the difference of the height of the left subtree and right subtree will never be greater than 1
- * To Insert a node into an AVL tree, we need to understand 4 simple cases
+ * To Insert a TreeNode into an AVL tree, we need to understand 4 simple cases
  * 	1.  LEFT LEFT case
  *  2.	LEFT RIGHT case
  *  3.	RIGHT LEFT case
@@ -18,9 +18,9 @@ import org.testng.annotations.Test;
 public class AVLTree {
 
 
-	private Node leftRotate(Node root){
+	private TreeNode leftRotate(TreeNode root){
 
-		Node newRoot = root.right;
+		TreeNode newRoot = root.right;
 		root.right = root.right.left;
 		newRoot.left = root;
 
@@ -30,9 +30,9 @@ public class AVLTree {
 		return newRoot;
 	}
 
-	private Node rightRotate(Node root){
+	private TreeNode rightRotate(TreeNode root){
 
-		Node newRoot = root.left;
+		TreeNode newRoot = root.left;
 		root.left = root.left.right;
 		newRoot.right = root;
 
@@ -42,17 +42,17 @@ public class AVLTree {
 		return newRoot;
 	}
 
-	private int setHeight(Node root){
+	private int setHeight(TreeNode root){
 		if(root == null)
 			return 0;
 		return 1 + Math.max((root.left != null ? root.left.height : 0) , (root.right != null ? root.right.height : 0));
 	}
 	
-	private int balance(Node rootLeft, Node rootRight){
+	private int balance(TreeNode rootLeft, TreeNode rootRight){
 		return height(rootLeft) - height(rootRight);
 	}
 	
-	private int height(Node root){
+	private int height(TreeNode root){
 		if(root == null){
 			return 0;
 		}
@@ -61,10 +61,10 @@ public class AVLTree {
 		}
 	}
 
-	private Node insertIntoAVL(Node root, int data){
+	private TreeNode insertIntoAVL(TreeNode root, int data){
 		
 		if(root == null){
-			return new Node(data);
+			return new TreeNode(data);
 		}
 		if(root.data <= data){
 			root.right = insertIntoAVL(root.right, data);
@@ -94,15 +94,15 @@ public class AVLTree {
 		return root;
 	}
 	
-	private void inOrder(Node node){
-		if(node == null)
+	private void inOrder(TreeNode TreeNode){
+		if(TreeNode == null)
 			return;
-		if(node.left != null)
-			inOrder(node.left);
-		if(node.right != null)
-			inOrder(node.right);
+		if(TreeNode.left != null)
+			inOrder(TreeNode.left);
+		if(TreeNode.right != null)
+			inOrder(TreeNode.right);
 		
-		System.out.println(node.data);
+		System.out.println(TreeNode.data);
 			
 		
 	}
@@ -110,7 +110,7 @@ public class AVLTree {
 	@Test
 	public void test(){
 		
-		Node root = null;
+		TreeNode root = null;
 		root = insertIntoAVL(root, -10);
 		root = insertIntoAVL(root, 2);
 		root = insertIntoAVL(root, 13);

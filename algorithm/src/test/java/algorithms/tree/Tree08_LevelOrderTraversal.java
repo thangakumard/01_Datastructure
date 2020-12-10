@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 /*
  * printLevelorder(tree)
 1) Create an empty queue q
-2) temp_node = root //start from root
-3) Loop while temp_node is not NULL
-    a) print temp_node->data.
-    b) Enqueue temp_node�s children (first left then right children) to q
-    c) Dequeue a node from q and assign it�s value to temp_node
+2) temp_TreeNode = root //start from root
+3) Loop while temp_TreeNode is not NULL
+    a) print temp_TreeNode->data.
+    b) Enqueue temp_TreeNode�s children (first left then right children) to q
+    c) Dequeue a TreeNode from q and assign it�s value to temp_TreeNode
  */
 public class Tree08_LevelOrderTraversal {
 	
@@ -20,18 +20,18 @@ public class Tree08_LevelOrderTraversal {
 	public void test()
 	{
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
  
 		LevelTraversal(tree.root);
 	}
 	
-	private void LevelTraversal(Node root){
+	private void LevelTraversal(TreeNode root){
 		
-		Queue<Node> queue = new LinkedList<Node>();
+		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.add(root);
 		
 		while(!queue.isEmpty()){
@@ -39,17 +39,17 @@ public class Tree08_LevelOrderTraversal {
 			/* poll() removes the present head.
             For more information on poll() visit 
             http://www.tutorialspoint.com/java/util/linkedlist_poll.htm */
-			Node tempNode = queue.poll();
-			System.out.println(tempNode.data);
+			TreeNode tempTreeNode = queue.poll();
+			System.out.println(tempTreeNode.data);
 			
 			/*Enqueue left child */
-			if(tempNode.left != null){
-				queue.add(tempNode.left);
+			if(tempTreeNode.left != null){
+				queue.add(tempTreeNode.left);
 			}
 			
 			/*Enqueue right child */
-			if(tempNode.right != null){
-				queue.add(tempNode.right);
+			if(tempTreeNode.right != null){
+				queue.add(tempTreeNode.right);
 			}
 			
 		}	

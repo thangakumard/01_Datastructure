@@ -2,29 +2,29 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
-//http://www.geeksforgeeks.org/get-level-of-a-node-in-a-binary-tree/
+//http://www.geeksforgeeks.org/get-level-of-a-TreeNode-in-a-binary-tree/
 public class Tree11_LevelOfNodeInBST {
 
 	@Test
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				1
     		2				3
     	4		5
 		 */
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		int level = findLevel(tree.root , 5,1);
-		System.out.println("Node's Level is : " + level);
+		System.out.println("TreeNode's Level is : " + level);
 	}
 
-	int findLevel(Node root, int value, int level){
+	int findLevel(TreeNode root, int value, int level){
 		if(root == null){ 
 			return 0;
 		}

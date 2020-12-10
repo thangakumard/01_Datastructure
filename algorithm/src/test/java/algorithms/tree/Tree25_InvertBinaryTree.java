@@ -9,45 +9,45 @@ public class Tree25_InvertBinaryTree {
 	@Test
 	public void invertTree(){
 		BinaryTree t1 = new BinaryTree();
-		t1.root = new Node(1);
-		t1.root.left = new Node(2);
-		t1.root.right = new Node(3);
-		t1.root.left.left = new Node(4);
-		t1.root.left.right = new Node(5);
+		t1.root = new TreeNode(1);
+		t1.root.left = new TreeNode(2);
+		t1.root.right = new TreeNode(3);
+		t1.root.left.left = new TreeNode(4);
+		t1.root.left.right = new TreeNode(5);
 		
 		printInorder(invertTreeRecursive(t1.root));
 		printInorder(invertTreeIterative(t1.root));
 	}
 	
-	private Node invertTreeRecursive(Node root){
+	private TreeNode invertTreeRecursive(TreeNode root){
 		if(root == null)
 			return null;
-		Node temp = root.left;
+		TreeNode temp = root.left;
 		root.left = invertTreeRecursive(root.right);
 		root.right = invertTreeRecursive(temp);
 		
 		return root;
 	}
 	
-	private Node invertTreeIterative(Node root) {
+	private TreeNode invertTreeIterative(TreeNode root) {
         if(root == null)
             return null;
-        ArrayDeque<Node> queue = new ArrayDeque<Node>();
+        ArrayDeque<TreeNode> queue = new ArrayDeque<TreeNode>();
         queue.addLast(root);
         
         while(!queue.isEmpty()){
-        	Node currentNode = queue.removeFirst();
-        	Node temp = currentNode.left;
-            currentNode.left = currentNode.right;
-            currentNode.right = temp;
-            if(currentNode.left != null) queue.addLast(currentNode.left);
-            if(currentNode.right != null) queue.addLast(currentNode.right);                
+        	TreeNode currentTreeNode = queue.removeFirst();
+        	TreeNode temp = currentTreeNode.left;
+            currentTreeNode.left = currentTreeNode.right;
+            currentTreeNode.right = temp;
+            if(currentTreeNode.left != null) queue.addLast(currentTreeNode.left);
+            if(currentTreeNode.right != null) queue.addLast(currentTreeNode.right);                
         }
         
         return root;
     }
 	
-	private void printInorder(Node root){
+	private void printInorder(TreeNode root){
 		if(root == null)
 			return;
 		printInorder(root.left);

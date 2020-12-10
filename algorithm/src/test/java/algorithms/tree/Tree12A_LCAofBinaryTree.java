@@ -16,65 +16,65 @@ public class Tree12A_LCAofBinaryTree {
 		System.out.println("");
 		inOrderTraversal(tree.root);
 		System.out.println("");
-		Node lca = LCAOfBinaryTree(tree.root, 6,10);		
+		TreeNode lca = LCAOfBinaryTree(tree.root, 6,10);		
 		System.out.println("LCAOfBinaryTree(tree.root, 6,10) :" + lca.data);
 		
-		Node lca1 = LCAOfBinaryTree(tree.root, 8,10);		
+		TreeNode lca1 = LCAOfBinaryTree(tree.root, 8,10);		
 		System.out.println("LCAOfBinaryTree(tree.root, 8,10) :" + lca1.data);
 	}
 	
 	/**
-	 * Find the middle number and keep it as root node
+	 * Find the middle number and keep it as root TreeNode
 	 * Repeat that for left array
 	 * Repeat that for right array	
 	 */
-	Node buildBST(int[] input, int left, int right){
+	TreeNode buildBST(int[] input, int left, int right){
 		
 		if(left > right)
 			return null;
 		
 		int middle = (left + right)/2;
 		
-		Node node = new Node(input[middle]);
+		TreeNode TreeNode = new TreeNode(input[middle]);
 		
-		node.left = buildBST(input, left, middle-1);
-		node.right = buildBST(input, middle+1, right);
+		TreeNode.left = buildBST(input, left, middle-1);
+		TreeNode.right = buildBST(input, middle+1, right);
 		
-		return node;		
+		return TreeNode;		
 	}
 	
-	private Node LCAOfBinaryTree(Node node, int x, int y){		
-		if(node == null)
-			return node;
+	private TreeNode LCAOfBinaryTree(TreeNode TreeNode, int x, int y){		
+		if(TreeNode == null)
+			return TreeNode;
 		
-		if(node.data == x || node.data == y)
-			return node;
+		if(TreeNode.data == x || TreeNode.data == y)
+			return TreeNode;
 		
-		node.left = LCAOfBinaryTree(node.left, x, y);
-		node.right = LCAOfBinaryTree(node.right, x, y);
+		TreeNode.left = LCAOfBinaryTree(TreeNode.left, x, y);
+		TreeNode.right = LCAOfBinaryTree(TreeNode.right, x, y);
 		
-		if(node.left != null && node.right != null)
-			return node;
+		if(TreeNode.left != null && TreeNode.right != null)
+			return TreeNode;
 		
-		return (node.left != null ? node.left : node.right); 
+		return (TreeNode.left != null ? TreeNode.left : TreeNode.right); 
 		
 	}
 	
-	private void inOrderTraversal(Node node){
+	private void inOrderTraversal(TreeNode TreeNode){
 		
-		Deque<Node> stack = new ArrayDeque<Node>();
-		Node currentNode = node;
+		Deque<TreeNode> stack = new ArrayDeque<TreeNode>();
+		TreeNode currentTreeNode = TreeNode;
 		
-		while(currentNode != null || !stack.isEmpty()){
-			if(currentNode != null){
-				stack.addFirst(currentNode);
-				currentNode = currentNode.left; 
+		while(currentTreeNode != null || !stack.isEmpty()){
+			if(currentTreeNode != null){
+				stack.addFirst(currentTreeNode);
+				currentTreeNode = currentTreeNode.left; 
 			}else{
 				if(stack.isEmpty())
 					break;
-				currentNode = stack.removeFirst();
-				System.out.print(currentNode.data + " ");
-				currentNode = currentNode.right;
+				currentTreeNode = stack.removeFirst();
+				System.out.print(currentTreeNode.data + " ");
+				currentTreeNode = currentTreeNode.right;
 			}			
 		}
 	}

@@ -8,22 +8,22 @@ public class excersice {
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				10
     		20				30
     	4		5
 		 */
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(10);
-		tree.root.left = new Node(20);
-		tree.root.right = new Node(30);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
+		tree.root = new TreeNode(10);
+		tree.root.left = new TreeNode(20);
+		tree.root.right = new TreeNode(30);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
 		int level = LCA(tree.root , 5,4);
 		System.out.println("LCA is : " + level);
 	}
 
-	private int LCA(Node root, int i, int j) {
+	private int LCA(TreeNode root, int i, int j) {
 		
 		if(root == null) return -1;
 		

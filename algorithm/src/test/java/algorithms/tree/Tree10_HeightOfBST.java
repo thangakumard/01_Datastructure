@@ -8,19 +8,19 @@ public class Tree10_HeightOfBST {
 	public void test()
 	{
 		/* creating a binary tree and entering 
-    the nodes 
+    the TreeNodes 
     				1
     		2				3
     	4		5
     	
 		*/
 		BinaryTree tree = new BinaryTree();
-		tree.root = new Node(1);
-		tree.root.left = new Node(2);
-		tree.root.right = new Node(3);
-		tree.root.left.left = new Node(4);
-		tree.root.left.right = new Node(5);
-		tree.root.left.right.right = new Node(7);
+		tree.root = new TreeNode(1);
+		tree.root.left = new TreeNode(2);
+		tree.root.right = new TreeNode(3);
+		tree.root.left.left = new TreeNode(4);
+		tree.root.left.right = new TreeNode(5);
+		tree.root.left.right.right = new TreeNode(7);
 		Tree13_BSTFromSortedArray bstFromArray = new Tree13_BSTFromSortedArray();
 		int input[] = {300,400,425,450,475,500,550,600};
 		
@@ -29,7 +29,7 @@ public class Tree10_HeightOfBST {
 		System.out.println("Height is : " + height);
 	}
 	
-	int heightOfBST(Node root){
+	int heightOfBST(TreeNode root){
 		if(root == null)
 			return 0;
 		
