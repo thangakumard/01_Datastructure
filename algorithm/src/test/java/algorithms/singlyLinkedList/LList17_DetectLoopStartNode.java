@@ -10,18 +10,18 @@ public class LList17_DetectLoopStartNode {
 	public void testRemoveLoop(){
 		
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(1));
-		list.push(new Node(2));
+		list.push(new ListNode(1));
+		list.push(new ListNode(2));
 		
 		list.head.next.next = list.head;
 
 		System.out.println("Loop starting node is :" + findLoopStartNode(list.head).value);
 	}
 	
-	private Node findLoopStartNode(Node head){
+	private ListNode findLoopStartNode(ListNode head){
 		
 		if(head == null) return null;
-		Node pointer2 = detectLoop(head);
+		ListNode pointer2 = detectLoop(head);
 		
 		if(pointer2 == null) return null;
 		
@@ -33,10 +33,10 @@ public class LList17_DetectLoopStartNode {
 		return pointer2;
 	}
 	
-	private Node detectLoop(Node head){
+	private ListNode detectLoop(ListNode head){
 		
-		Node slow = head;
-		Node fast = head;
+		ListNode slow = head;
+		ListNode fast = head;
 		
 		while(fast != null && fast.next != null){
 			slow = slow.next;

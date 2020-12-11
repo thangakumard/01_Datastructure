@@ -14,12 +14,12 @@ public class Tree35_maximumPathSum {
 
 int max_sum = Integer.MIN_VALUE;
     
-    public int maxPathSum(Node root) {
+    public int maxPathSum(ListNode root) {
         max_gain(root);
         return max_sum;
     }
     
-    private int max_gain(Node root){
+    private int max_gain(ListNode root){
         if(root == null) return 0;
         
         //left tree sum

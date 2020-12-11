@@ -42,17 +42,17 @@ public class LList18_listComponents {
 	public void test() {
 		
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(0));
-		list.push(new Node(1));
-		list.push(new Node(2));
-		list.push(new Node(3));
+		list.push(new ListNode(0));
+		list.push(new ListNode(1));
+		list.push(new ListNode(2));
+		list.push(new ListNode(3));
 		
 		int[] G = new int[] {0,2};
 		System.out.println(numComponents(list.head,G));
 	}
 	
 	
-	public int numComponents(Node head, int[] G) {
+	public int numComponents(ListNode head, int[] G) {
         int result = 0;
         Set<Integer> subSet = new HashSet<Integer>();
         for(int i: G){

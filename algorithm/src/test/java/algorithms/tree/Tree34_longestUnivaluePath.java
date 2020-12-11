@@ -4,14 +4,14 @@ public class Tree34_longestUnivaluePath {
 	
 	int ans = 0;
 	
-	public int longestUniversalValuePath(Node root) {
+	public int longestUniversalValuePath(ListNode root) {
 		ans = 0;
 		arrowLength(root);
 		return ans;
 		
 	}
 
-	public int arrowLength(Node node) {
+	public int arrowLength(ListNode node) {
 		if(node == null) return 0;
 		
 		int left = arrowLength(node.left);

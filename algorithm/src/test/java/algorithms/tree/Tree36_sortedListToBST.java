@@ -5,7 +5,7 @@ import java.util.Stack;
 
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.Node;
+import algorithms.singlyLinkedList.ListNode;
 import algorithms.singlyLinkedList.SinglyLinkedList;
 
 
@@ -15,12 +15,12 @@ public class Tree36_sortedListToBST {
 	public void test() {
 		
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(10));
-		list.push(new Node(20));
-		list.push(new Node(30));
-		list.push(new Node(40));
-		list.push(new Node(50));
-		list.push(new Node(60));
+		list.push(new ListNode(10));
+		list.push(new ListNode(20));
+		list.push(new ListNode(30));
+		list.push(new ListNode(40));
+		list.push(new ListNode(50));
+		list.push(new ListNode(60));
 
 		TreeNode root = buildBSTFromList(list.head);
 		printInOrder(root);
@@ -28,11 +28,11 @@ public class Tree36_sortedListToBST {
 		
 	}
 	
-	private TreeNode buildBSTFromList(Node head) {
+	private TreeNode buildBSTFromList(ListNode head) {
 		
 		if(head == null) return null;
 		
-		Node middleNode = getmiddleNode(head);
+		ListNode middleNode = getmiddleNode(head);
 		
 		TreeNode root = new TreeNode(middleNode.value);
 		if(head == middleNode)
@@ -44,10 +44,10 @@ public class Tree36_sortedListToBST {
 		
 	}
 	
-	private Node getmiddleNode(Node head) {
-		Node slow = head;
-		Node fast = head;
-		Node previous = slow;
+	private ListNode getmiddleNode(ListNode head) {
+		ListNode slow = head;
+		ListNode fast = head;
+		ListNode previous = slow;
 		
 		if(fast.next != null && fast.next.next != null) {
 			previous = slow;

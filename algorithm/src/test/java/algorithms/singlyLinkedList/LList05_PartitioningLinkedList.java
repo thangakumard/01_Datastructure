@@ -24,17 +24,17 @@ public class LList05_PartitioningLinkedList {
 	@Test
 	public void doPartition(){
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(1));
-		list.push(new Node(5));
-		list.push(new Node(10));
-		list.push(new Node(2));
-		list.push(new Node(8));
-		list.push(new Node(2));
-		list.push(new Node(3));
+		list.push(new ListNode(1));
+		list.push(new ListNode(5));
+		list.push(new ListNode(10));
+		list.push(new ListNode(2));
+		list.push(new ListNode(8));
+		list.push(new ListNode(2));
+		list.push(new ListNode(3));
 		
 		//SinglyLinkedList partitioned = partitionByX(list.head,3);
 		
-		Node partitioned1 = partition(list.head,5);
+		ListNode partitioned1 = partition(list.head,5);
 		
 //		Node currentNode = partitioned.head;
 //		while(currentNode != null){
@@ -44,17 +44,17 @@ public class LList05_PartitioningLinkedList {
 		Assert.assertTrue(true);
 	}
 	
-	private Node partition(Node head, int x)  
+	private ListNode partition(ListNode head, int x)  
 	{  
 	    /* Let us initialize start and tail nodes of  
 	    new list */
-	    Node tail = head;  
+	    ListNode tail = head;  
 	  
 	    // Now iterate original list and connect nodes  
-	    Node curr = head;  
+	    ListNode curr = head;  
 	    while (curr != null)  
 	    {  
-	        Node next = curr.next;  
+	        ListNode next = curr.next;  
 	        if (curr.value < x)  
 	        {  
 	            /* Insert node at head. */
@@ -77,15 +77,15 @@ public class LList05_PartitioningLinkedList {
 	    return head;  
 	}  
 	
-	public SinglyLinkedList partitionByX(Node head,int x){
+	public SinglyLinkedList partitionByX(ListNode head,int x){
 	
-		Node currentNode = head;
+		ListNode currentNode = head;
 		SinglyLinkedList leftSide = new SinglyLinkedList();
-		Node leftLastNode = null;
+		ListNode leftLastNode = null;
 		SinglyLinkedList rightSide = new SinglyLinkedList();
-		Node rightLastNode = null;
+		ListNode rightLastNode = null;
 		SinglyLinkedList equalList = new SinglyLinkedList();
-		Node equalListLastNode = null;
+		ListNode equalListLastNode = null;
 		String typeOfList = "";
 		SinglyLinkedList resultList = new SinglyLinkedList();
 		

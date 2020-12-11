@@ -8,19 +8,19 @@ public class PrintNodesInReverse {
 	public void test()
 	{
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(1));
-		list.push(new Node(2));
-		list.push(new Node(3));
-		list.push(new Node(4));
-		list.push(new Node(5));
-		list.push(new Node(6));
-		list.push(new Node(7));
+		list.push(new ListNode(1));
+		list.push(new ListNode(2));
+		list.push(new ListNode(3));
+		list.push(new ListNode(4));
+		list.push(new ListNode(5));
+		list.push(new ListNode(6));
+		list.push(new ListNode(7));
 		
 		PrintInReverse(list.head);
 	}
 	
 	
-	public void PrintInReverse(Node node)
+	public void PrintInReverse(ListNode node)
 	{
 		if(node == null)
 			return;

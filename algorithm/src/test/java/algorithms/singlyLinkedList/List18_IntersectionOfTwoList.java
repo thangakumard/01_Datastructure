@@ -8,24 +8,24 @@ public class List18_IntersectionOfTwoList {
 	public void Test(){
 		
 		SinglyLinkedList list1 = new SinglyLinkedList();
-		list1.push(new Node(1));
-		list1.push(new Node(2));
-		list1.push(new Node(3));
-		list1.push(new Node(4));
-		list1.push(new Node(6));
-		list1.push(new Node(9));
-		list1.push(new Node(10));
+		list1.push(new ListNode(1));
+		list1.push(new ListNode(2));
+		list1.push(new ListNode(3));
+		list1.push(new ListNode(4));
+		list1.push(new ListNode(6));
+		list1.push(new ListNode(9));
+		list1.push(new ListNode(10));
 		
 		SinglyLinkedList list2 = new SinglyLinkedList();
-		list2.push(new Node(10));
-		list2.push(new Node(20));
+		list2.push(new ListNode(10));
+		list2.push(new ListNode(20));
 
 		list2.head.next.next = list1.head.next.next.next; 
 		
 		System.out.println("INTERSECTION IS : " + getIntersection(list1.head, list2.head).value);
 	}
 	
-	private Node getIntersection(Node nodeA, Node nodeB){
+	private ListNode getIntersection(ListNode nodeA, ListNode nodeB){
 		
 		if(nodeA == null || nodeB == null)
 			return null;
@@ -52,7 +52,7 @@ public class List18_IntersectionOfTwoList {
 		return nodeA;
 	}
 	
-	private int getLength(Node head){
+	private int getLength(ListNode head){
 		int n =0;
 		while(head != null){
 			head = head.next;

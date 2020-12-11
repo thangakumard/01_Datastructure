@@ -2,14 +2,14 @@ package algorithms.singlyLinkedList;
 
 public class SinglyLinkedList {
 
-	public Node head;
+	public ListNode head;
  
-	public void push(Node node){
+	public void push(ListNode node){
 		if(head == null){
 			head = node;
 		}else {
-			Node currentNode = head;
-			Node tailNode = head;
+			ListNode currentNode = head;
+			ListNode tailNode = head;
 			while(currentNode != null){
 				tailNode = currentNode;
 				currentNode = currentNode.next;
@@ -18,8 +18,8 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	public Node insertAtBeginning(Node head, int data){
-		Node currentNode = new Node(data);
+	public ListNode insertAtBeginning(ListNode head, int data){
+		ListNode currentNode = new ListNode(data);
 		if(head == null){
 			return currentNode;
 		}
@@ -28,13 +28,13 @@ public class SinglyLinkedList {
 		return head;		
 	}
 	
-	public Node insertAtEnd(Node head, int data){
-		Node currentNode = new Node(data);
+	public ListNode insertAtEnd(ListNode head, int data){
+		ListNode currentNode = new ListNode(data);
 		if(head != null){
 			head = currentNode;			
 		}
 		else{
-			Node temp = head;
+			ListNode temp = head;
 			while(temp.next != null){
 				temp = temp.next;
 			}
@@ -43,8 +43,8 @@ public class SinglyLinkedList {
 		return head;
 	}
 	
-	public Node insertAtIndex(Node head, int index, int data){
-		Node currentNode = new Node(data);		
+	public ListNode insertAtIndex(ListNode head, int index, int data){
+		ListNode currentNode = new ListNode(data);		
 		if(index <= 0 || index > noOfNodes(head)+1){
 			System.out.println("INVALID INDEX !");
 		}
@@ -53,7 +53,7 @@ public class SinglyLinkedList {
 			head = currentNode;
 		}else{
 			int counter = 1;
-			Node temp = head;
+			ListNode temp = head;
 			while(counter < index -1){
 				temp = temp.next;
 				counter++;
@@ -64,7 +64,7 @@ public class SinglyLinkedList {
 		return head;
 	}
 	
-	public int noOfNodes(Node head){
+	public int noOfNodes(ListNode head){
 		if(head == null){
 			return 0;
 		}else{
@@ -77,9 +77,9 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	public void remove(Node node){
+	public void remove(ListNode node){
 		
-		Node temp = node.next;
+		ListNode temp = node.next;
 		node.value = temp.value;
 		node.next = temp.next.next;
 		temp = null;

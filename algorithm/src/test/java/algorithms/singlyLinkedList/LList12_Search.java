@@ -7,15 +7,15 @@ public class LList12_Search {
 	@Test
 	public void test(){
 		SinglyLinkedList list1 = new SinglyLinkedList();
-		list1.push(new Node(10));		
-		list1.push(new Node(30));
-		list1.push(new Node(40));		
-		list1.push(new Node(60));		
-		list1.push(new Node(90));
-		list1.push(new Node(20));
-		list1.push(new Node(50));
+		list1.push(new ListNode(10));		
+		list1.push(new ListNode(30));
+		list1.push(new ListNode(40));		
+		list1.push(new ListNode(60));		
+		list1.push(new ListNode(90));
+		list1.push(new ListNode(20));
+		list1.push(new ListNode(50));
 		
-		Node resultNode = search(list1.head, 40);
+		ListNode resultNode = search(list1.head, 40);
 		if(resultNode != null){
 			System.out.println();
 			System.out.println("FOUND THE REQUIRED NODE :" + resultNode.value);
@@ -40,13 +40,13 @@ public class LList12_Search {
 		
 	}
 	
-	private Node search(Node head,int searchValue){
+	private ListNode search(ListNode head,int searchValue){
 		
 		if(head == null){
 			return null;
 		}
 		else{
-			Node currentNode = head;
+			ListNode currentNode = head;
 			while(currentNode != null){
 				if(currentNode.value == searchValue){
 					return currentNode;

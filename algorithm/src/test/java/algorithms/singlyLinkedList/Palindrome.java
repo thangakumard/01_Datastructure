@@ -9,17 +9,17 @@ public class Palindrome {
 	public void validatePalindrome() {
 
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
 		
-		Node middle = list.head;
-		Node jumper = list.head;
-		Node head2 = null;
+		ListNode middle = list.head;
+		ListNode jumper = list.head;
+		ListNode head2 = null;
 
 		while (jumper != null && jumper.next != null) {
 			jumper = jumper.next.next;
@@ -31,18 +31,18 @@ public class Palindrome {
 			head2 = middle;
 		}
 
-		Node reversed = getReverseList(head2);
+		ListNode reversed = getReverseList(head2);
 
 		Assert.assertEquals(isPalindrome(list.head, reversed), true);
 
 	}
 
-	public boolean isPalindrome(Node head1, Node head2) {
+	public boolean isPalindrome(ListNode head1, ListNode head2) {
 
 		Boolean isValid = true;
 
-		Node temp1 = head1;
-		Node temp2 = head2;
+		ListNode temp1 = head1;
+		ListNode temp2 = head2;
 
 		while (temp1 != null && temp2 != null) {
 
@@ -60,11 +60,11 @@ public class Palindrome {
 		return isValid;
 	}
 
-	public Node getReverseList(Node head) {
+	public ListNode getReverseList(ListNode head) {
 
-		Node prev = null;
-		Node next = null;
-		Node current = head;
+		ListNode prev = null;
+		ListNode next = null;
+		ListNode current = head;
 
 		while (current != null) {
 			next = current.next;

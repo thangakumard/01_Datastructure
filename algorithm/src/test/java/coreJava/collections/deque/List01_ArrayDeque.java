@@ -24,12 +24,12 @@ public class List01_ArrayDeque {
 		}		
 		
 		//With Objects
-		Deque<Node> nodeQue = new ArrayDeque<Node>();
-		nodeQue.offerLast(new Node(10));
-		nodeQue.offerLast(new Node(20));
-		nodeQue.offerLast(new Node(30));
+		Deque<ListNode> nodeQue = new ArrayDeque<ListNode>();
+		nodeQue.offerLast(new ListNode(10));
+		nodeQue.offerLast(new ListNode(20));
+		nodeQue.offerLast(new ListNode(30));
 		//nodeQue.offerLast(null); // Will throw Null pointer exception.But linkedList will not throw exception for null values
-		nodeQue.offerLast(new Node(40));
+		nodeQue.offerLast(new ListNode(40));
 		
 		while(!nodeQue.isEmpty()){
 			if(nodeQue.peekFirst() != null){

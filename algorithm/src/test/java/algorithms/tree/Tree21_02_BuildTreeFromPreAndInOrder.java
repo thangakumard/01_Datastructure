@@ -8,11 +8,11 @@ public class Tree21_02_BuildTreeFromPreAndInOrder {
 	public void buildTree(){
 		int[] preorder = new int[]{3,9,20,15,7};
 		int[] inorder = new int[]{9,3,15,20,7};
-		Node root = buildTree(preorder,inorder);
+		ListNode root = buildTree(preorder,inorder);
 		printInOrder(root);
 	}
 	
-	private void printInOrder(Node root){
+	private void printInOrder(ListNode root){
 		if(root == null)
 			return;
 		printInOrder(root.left);
@@ -30,15 +30,15 @@ public class Tree21_02_BuildTreeFromPreAndInOrder {
        preIndex = value;
    }
    
-   public Node buildTree(int[] preorder, int[] inorder) {
+   public ListNode buildTree(int[] preorder, int[] inorder) {
        return buildBinaryTree(preorder, inorder, 0, inorder.length-1, 0);
    }
    
-   public Node buildBinaryTree(int[] pre, int[] in, int s, int e, int preIndex){
+   public ListNode buildBinaryTree(int[] pre, int[] in, int s, int e, int preIndex){
        if(s > e)
            return null;
        System.out.println("s :" + s + "e :" + e);
-       Node root = new Node(pre[preIndex]);
+       ListNode root = new ListNode(pre[preIndex]);
        int index = findIndex(in, s, e, pre[preIndex]);
        setPIndex(preIndex+1);        
        root.left = buildBinaryTree(pre, in, s, index-1, getPIndex());

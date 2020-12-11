@@ -1,18 +1,18 @@
 package algorithms.singlyLinkedList;
 
-public class Node {
+public class ListNode {
 
 	public int value;
-	public Node next = null;
+	public ListNode next = null;
 
-	public Node(int x) {
+	public ListNode(int x) {
 		value = x;
 		next = null;
 	}
 
 	public char charValue;
 
-	public Node(char x) {
+	public ListNode(char x) {
 		charValue = x;
 		next = null;
 	}

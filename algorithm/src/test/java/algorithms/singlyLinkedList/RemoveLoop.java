@@ -18,17 +18,17 @@ public class RemoveLoop {
 	public void testRemoveLoop(){
 		
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(1));
-		list.push(new Node(2));
-		list.push(new Node(3));
-		list.push(new Node(4));
-		list.push(new Node(5));
-		list.push(new Node(6));
+		list.push(new ListNode(1));
+		list.push(new ListNode(2));
+		list.push(new ListNode(3));
+		list.push(new ListNode(4));
+		list.push(new ListNode(5));
+		list.push(new ListNode(6));
 		
 		list.head.next.next.next.next.next.next = list.head.next;	
 		
 		findAndDeleteLoop(list.head);
-		Node currentNode = list.head;
+		ListNode currentNode = list.head;
 		while(currentNode != null)
 		{
 			System.out.println(currentNode.value);
@@ -39,9 +39,9 @@ public class RemoveLoop {
 	}
 	
 	
-	public int findAndDeleteLoop(Node node){
+	public int findAndDeleteLoop(ListNode node){
 		
-		Node slow = node; Node fast = node;
+		ListNode slow = node; ListNode fast = node;
 		
 		while(slow != null && fast != null && fast.next != null){			
 			slow = slow.next;
@@ -55,9 +55,9 @@ public class RemoveLoop {
 		return 0;			
 	}	
 	
-	public void removeLoop(Node loop, Node head){
+	public void removeLoop(ListNode loop, ListNode head){
 		
-		Node ptr1 = null, ptr2 = null;
+		ListNode ptr1 = null, ptr2 = null;
 		
 		ptr1 = head;
 		

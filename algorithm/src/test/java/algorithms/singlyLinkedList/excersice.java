@@ -9,12 +9,12 @@ public class excersice {
 	public void ReverseTheList(){
 	
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(10));
-		list.push(new Node(9));
-		list.push(new Node(8));
-		list.push(new Node(7));
-		list.push(new Node(6));
-		list.push(new Node(5));
+		list.push(new ListNode(10));
+		list.push(new ListNode(9));
+		list.push(new ListNode(8));
+		list.push(new ListNode(7));
+		list.push(new ListNode(6));
+		list.push(new ListNode(5));
 		
 	    
         System.out.println("Given Linked list");
@@ -25,10 +25,10 @@ public class excersice {
         printList(list.head);		
 	}
 	
-	public Node reverse(Node node){
-		Node prev = null;
-		Node next = null;
-		Node currNode = node;
+	public ListNode reverse(ListNode node){
+		ListNode prev = null;
+		ListNode next = null;
+		ListNode currNode = node;
 		
 		while(currNode != null) {
 			next = currNode.next;
@@ -43,7 +43,7 @@ public class excersice {
 	}
 	
 	 // prints content of double linked list
-    void printList(Node node) {
+    void printList(ListNode node) {
         while (node != null) {
             System.out.print(node.value + " ");
             node = node.next;

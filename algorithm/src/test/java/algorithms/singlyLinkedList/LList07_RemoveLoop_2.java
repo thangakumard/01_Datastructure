@@ -19,18 +19,18 @@ public class LList07_RemoveLoop_2 {
 	public void testRemoveLoop2(){
 		
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(1));
-		list.push(new Node(2));
-		list.push(new Node(3));
-		list.push(new Node(4));
-		list.push(new Node(5));
-		list.push(new Node(6));
+		list.push(new ListNode(1));
+		list.push(new ListNode(2));
+		list.push(new ListNode(3));
+		list.push(new ListNode(4));
+		list.push(new ListNode(5));
+		list.push(new ListNode(6));
 		
 		list.head.next.next.next.next.next.next = list.head.next;	
 		
 		findLoop(list);
 		
-		Node currentNode = list.head;
+		ListNode currentNode = list.head;
 		while(currentNode != null)
 		{
 			System.out.println(currentNode.value);
@@ -44,8 +44,8 @@ public class LList07_RemoveLoop_2 {
 	 // Function that detects loop in the list
 	public boolean findLoop(SinglyLinkedList list){
 		
-		Node slow = list.head.next;
-		Node fast = list.head.next.next;		
+		ListNode slow = list.head.next;
+		ListNode fast = list.head.next.next;		
 		
         // If slow and fast meet at same point then loop is present
 		while(slow != null && fast !=null)
@@ -61,9 +61,9 @@ public class LList07_RemoveLoop_2 {
 	}
 	
     // Function to remove loop
-	public void removeLoop(Node point, Node head){
-		Node ptr1 = point;
-		Node ptr2 = point;
+	public void removeLoop(ListNode point, ListNode head){
+		ListNode ptr1 = point;
+		ListNode ptr2 = point;
 		
         // Count the number of nodes in loop
 		int k =1;

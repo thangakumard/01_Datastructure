@@ -5,25 +5,25 @@ import org.testng.annotations.Test;
 
 public class LList02_Palindrome {
 
-	Node left = null;
+	ListNode left = null;
 	
 	@Test
 	public void validatePalindrom_BestApproach(){
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
 		
 		left = list.head;
 		System.out.println("validatePalindrom_BestApproach :" + recursiveCheck(list.head));
 	}
 	
 	//Solution 1
-	private boolean recursiveCheck(Node currentNode){
+	private boolean recursiveCheck(ListNode currentNode){
 		if(currentNode == null)
 			return true;
 		
@@ -41,17 +41,17 @@ public class LList02_Palindrome {
 	public void validatePalindrome_Approach2() {
 
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
-		list.push(new Node('B'));
-		list.push(new Node('A'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
+		list.push(new ListNode('B'));
+		list.push(new ListNode('A'));
 		
-		Node middle = list.head;
-		Node jumper = list.head;
-		Node head2 = null;
+		ListNode middle = list.head;
+		ListNode jumper = list.head;
+		ListNode head2 = null;
 
 		while (jumper != null && jumper.next != null) {
 			jumper = jumper.next.next;
@@ -63,19 +63,19 @@ public class LList02_Palindrome {
 			head2 = middle;   // For even number of nodes
 		}
 
-		Node reversed = getReverseList(head2);
+		ListNode reversed = getReverseList(head2);
 
 		Assert.assertEquals(isPalindrome(list.head, reversed), true);
 
 	}
 
 	//Solution 2
-	public boolean isPalindrome(Node head1, Node head2) {
+	public boolean isPalindrome(ListNode head1, ListNode head2) {
 
 		Boolean isValid = true;
 
-		Node temp1 = head1;
-		Node temp2 = head2;
+		ListNode temp1 = head1;
+		ListNode temp2 = head2;
 
 		while (temp1 != null && temp2 != null) {
 
@@ -93,11 +93,11 @@ public class LList02_Palindrome {
 		return isValid;
 	}
 
-	public Node getReverseList(Node head) {
+	public ListNode getReverseList(ListNode head) {
 
-		Node prev = null;
-		Node next = null;
-		Node current = head;
+		ListNode prev = null;
+		ListNode next = null;
+		ListNode current = head;
 
 		while (current != null) {
 			next = current.next;

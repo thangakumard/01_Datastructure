@@ -11,11 +11,11 @@ package algorithms.tree;
  */
 public class Tree32_SubtreeofAnotherTree {
 
-	public boolean isSubtree(Node s, Node t) {
+	public boolean isSubtree(ListNode s, ListNode t) {
         return traverse(s,t);
     }
     
-    private boolean equals(Node x, Node y){
+    private boolean equals(ListNode x, ListNode y){
         if(x==null && y == null)
             return true;
         if(x==null || y == null){
@@ -24,7 +24,7 @@ public class Tree32_SubtreeofAnotherTree {
         return x.data == y.data && equals(x.left, y.left) && equals(x.right, y.right);
     }
     
-    private boolean traverse(Node s, Node t){
+    private boolean traverse(ListNode s, ListNode t){
         return s!=null && (equals(s,t) || traverse(s.left,t) || traverse(s.right,t));
     }
 }

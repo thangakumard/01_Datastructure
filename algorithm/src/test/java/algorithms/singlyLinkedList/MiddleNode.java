@@ -9,26 +9,26 @@ public class MiddleNode {
 	public void getMiddleNode(){
 		
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(10));
-		list.push(new Node(20));
-		list.push(new Node(30));
-		list.push(new Node(40));
-		list.push(new Node(50));
-		list.push(new Node(60));
-		list.push(new Node(70));
-		list.push(new Node(80));
-		list.push(new Node(90));
-		list.push(new Node(100));
+		list.push(new ListNode(10));
+		list.push(new ListNode(20));
+		list.push(new ListNode(30));
+		list.push(new ListNode(40));
+		list.push(new ListNode(50));
+		list.push(new ListNode(60));
+		list.push(new ListNode(70));
+		list.push(new ListNode(80));
+		list.push(new ListNode(90));
+		list.push(new ListNode(100));
 		
-		Node middle = findMiddleNode(list.head);
+		ListNode middle = findMiddleNode(list.head);
 		System.out.println(middle.value);
 		Assert.assertEquals(middle.value, 60);
 	}
 	
-	public Node findMiddleNode(Node head){
-		Node fast = head;
-		Node slow = head;
-		Node currentNode = head;
+	public ListNode findMiddleNode(ListNode head){
+		ListNode fast = head;
+		ListNode slow = head;
+		ListNode currentNode = head;
 		
 		while(currentNode != null && currentNode.next != null ){
 			fast = fast.next.next;//30;50;70;90;null

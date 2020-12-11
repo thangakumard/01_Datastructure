@@ -7,18 +7,18 @@ public class LList15_InsertInSortedList {
 	@Test
 	public void test(){
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(10));
-		list.push(new Node(20));
-		list.push(new Node(30));
-		list.push(new Node(40));
-		list.push(new Node(50));
-		list.push(new Node(60));
-		list.push(new Node(70));
-		list.push(new Node(80));
-		list.push(new Node(90));
-		list.push(new Node(100));
+		list.push(new ListNode(10));
+		list.push(new ListNode(20));
+		list.push(new ListNode(30));
+		list.push(new ListNode(40));
+		list.push(new ListNode(50));
+		list.push(new ListNode(60));
+		list.push(new ListNode(70));
+		list.push(new ListNode(80));
+		list.push(new ListNode(90));
+		list.push(new ListNode(100));
 		
-		Node currentNode = list.head;
+		ListNode currentNode = list.head;
 		while(currentNode != null){
 			System.out.print(currentNode.value + " -->");
 			currentNode = currentNode.next;			
@@ -39,13 +39,13 @@ public class LList15_InsertInSortedList {
 		System.out.println();
 	}
 	
-	public Node insertInSortedList(Node head, int value){
-		Node newNode = new Node(value);
+	public ListNode insertInSortedList(ListNode head, int value){
+		ListNode newNode = new ListNode(value);
 		if(head == null){
 			head = newNode;
 		}else{
-			Node currentNode = head;
-			Node previousNode = head;
+			ListNode currentNode = head;
+			ListNode previousNode = head;
 			while(currentNode != null && currentNode.value < value) {				
 				previousNode = currentNode;
 				currentNode = currentNode.next;

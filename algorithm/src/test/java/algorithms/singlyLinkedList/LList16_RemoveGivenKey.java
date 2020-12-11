@@ -17,20 +17,20 @@ public class LList16_RemoveGivenKey {
 //		list.push(new Node(90));
 //		list.push(new Node(100));
 		
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
-		list.push(new Node(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
+		list.push(new ListNode(60));
 		
 		
 		
-		Node currentNode = list.head;
+		ListNode currentNode = list.head;
 		while(currentNode != null){
 			System.out.print(currentNode.value + " -->");
 			currentNode = currentNode.next;			
@@ -57,29 +57,29 @@ public class LList16_RemoveGivenKey {
 	}
 	
 	//Solution 1: Recursive
-	public Node removeElements(Node head, int val) {
+	public ListNode removeElements(ListNode head, int val) {
         if (head == null) return null;
         head.next = removeElements(head.next, val);
         return head.value == val ? head.next : head;
 	}
 	
 	//Solution 2
-	public Node removeGivenKey(Node head, int key){
+	public ListNode removeGivenKey(ListNode head, int key){
 		if(head == null){
 			return null;
 		}		
 		else{
-			Node previousNode = head;
-			Node currentNode = head;
+			ListNode previousNode = head;
+			ListNode currentNode = head;
 			while(currentNode != null){
 				if(currentNode.value == key){
 					if(currentNode == previousNode){
-						Node oldNode = currentNode;
+						ListNode oldNode = currentNode;
 						previousNode = currentNode = currentNode.next;						 
 						head = currentNode;
 						oldNode.next = null;
 					}else{
-						Node oldNode = currentNode;						
+						ListNode oldNode = currentNode;						
 						previousNode.next = currentNode.next;
 						currentNode = currentNode.next;
 						oldNode.next = null;

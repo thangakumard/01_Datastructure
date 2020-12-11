@@ -7,15 +7,15 @@ public class LList11_DeleteNode {
 	public void Test(){
 		
 		SinglyLinkedList list1 = new SinglyLinkedList();
-		list1.push(new Node(10));		
-		list1.push(new Node(30));
-		list1.push(new Node(40));		
-		list1.push(new Node(60));		
-		list1.push(new Node(90));
-		list1.push(new Node(20));
-		list1.push(new Node(50));
+		list1.push(new ListNode(10));		
+		list1.push(new ListNode(30));
+		list1.push(new ListNode(40));		
+		list1.push(new ListNode(60));		
+		list1.push(new ListNode(90));
+		list1.push(new ListNode(20));
+		list1.push(new ListNode(50));
 		/*********** DELETE A NODE AT GIVEN INDEX ***********/
-		Node currentNode = deleteNodeAt(list1.head, 7);		
+		ListNode currentNode = deleteNodeAt(list1.head, 7);		
 						
 		while(currentNode != null){
 			System.out.print(currentNode.value + "-->");
@@ -46,9 +46,9 @@ public class LList11_DeleteNode {
 		System.out.println();
 	}
 	
-	private Node deletedHeadNode(Node head){
+	private ListNode deletedHeadNode(ListNode head){
 		if(head != null){		
-			Node old_Head = head;
+			ListNode old_Head = head;
 			head = head.next;
 			old_Head.next = null;
 			System.out.println("DELETED NODE IS : " + old_Head.value);
@@ -56,12 +56,12 @@ public class LList11_DeleteNode {
 		return head;
 	}
 	
-	private Node deleteTailNode(Node head){
+	private ListNode deleteTailNode(ListNode head){
 		if(head != null){
 			if(head.next != null)
 			{
-				Node tail = head;
-				Node previousToTail = null;
+				ListNode tail = head;
+				ListNode previousToTail = null;
 				
 				while(tail.next != null){
 					previousToTail = tail;
@@ -80,17 +80,17 @@ public class LList11_DeleteNode {
 		return head;
 	}
 	
-	private Node deleteNodeAt(Node head,int index){
+	private ListNode deleteNodeAt(ListNode head,int index){
 
 		if(noOfNodes(head) < index || index <= 0){ 
 			System.out.println("INVALID POSITION !");
 			return null;
 		}
-		Node currentNode = head;
+		ListNode currentNode = head;
 		int count = 1;
 		
 		if(index == 1){
-			Node oldHead = head;
+			ListNode oldHead = head;
 			head = head.next;
 			oldHead.next = null; // IT IS IMPORTANT TO MAKE 'NULL' THE NEXT OF DELETED NODE
 			System.out.println("DELETED NODE IS : " + currentNode.value);
@@ -101,7 +101,7 @@ public class LList11_DeleteNode {
 			count++;
 		}
 		
-		Node temp = currentNode.next;		
+		ListNode temp = currentNode.next;		
 		currentNode.next = temp.next;
 		temp.next = null; // IT IS IMPORTANT TO MAKE 'NULL' FOR THE NEXT OF DELETED NODE
 		System.out.println("DLEETED NODE IS : " + temp.value);
@@ -109,7 +109,7 @@ public class LList11_DeleteNode {
 			
 	}
 	
-	private int noOfNodes(Node head){		
+	private int noOfNodes(ListNode head){		
 		if(head == null){
 			return 0;
 		}		

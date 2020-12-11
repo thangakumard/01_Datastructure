@@ -8,21 +8,21 @@ public class LList10_Merge2SortedLinkedList {
 	public void test(){
 		
 		SinglyLinkedList list1 = new SinglyLinkedList();
-		list1.push(new Node(10));		
-		list1.push(new Node(30));
-		list1.push(new Node(40));		
-		list1.push(new Node(60));		
-		list1.push(new Node(90));
+		list1.push(new ListNode(10));		
+		list1.push(new ListNode(30));
+		list1.push(new ListNode(40));		
+		list1.push(new ListNode(60));		
+		list1.push(new ListNode(90));
 		
 		
 		SinglyLinkedList list2 = new SinglyLinkedList();		
-		list2.push(new Node(20));		
-		list2.push(new Node(50));		
-		list2.push(new Node(70));
-		list2.push(new Node(80));		
-		list2.push(new Node(100));
+		list2.push(new ListNode(20));		
+		list2.push(new ListNode(50));		
+		list2.push(new ListNode(70));
+		list2.push(new ListNode(80));		
+		list2.push(new ListNode(100));
 		
-		Node newHead = mergeLists(list1.head, list2.head);
+		ListNode newHead = mergeLists(list1.head, list2.head);
 		
 		while(newHead != null){
 			System.out.print(newHead.value + " --> ");
@@ -32,10 +32,10 @@ public class LList10_Merge2SortedLinkedList {
 		System.out.println();
 	}
 	
-	private Node mergeLists(Node list1, Node list2){
+	private ListNode mergeLists(ListNode list1, ListNode list2){
 		
-		Node tempNode = new Node(0);
-		Node newHead = tempNode;
+		ListNode tempNode = new ListNode(0);
+		ListNode newHead = tempNode;
 		
 		while(list1 != null && list2 != null){
 			

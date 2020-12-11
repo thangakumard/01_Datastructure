@@ -24,16 +24,16 @@ public class PartitioningLinkedList {
 	@Test
 	public void doPartition(){
 		SinglyLinkedList list = new SinglyLinkedList();
-		list.push(new Node(5));
-		list.push(new Node(1));
-		list.push(new Node(4));
-		list.push(new Node(2));
-		list.push(new Node(10));
-		list.push(new Node(3));
+		list.push(new ListNode(5));
+		list.push(new ListNode(1));
+		list.push(new ListNode(4));
+		list.push(new ListNode(2));
+		list.push(new ListNode(10));
+		list.push(new ListNode(3));
 		
 		SinglyLinkedList partitioned = partitionByX(list.head,3);
 		
-		Node currentNode = partitioned.head;
+		ListNode currentNode = partitioned.head;
 		while(currentNode != null){
 			System.out.println(currentNode.value);
 			currentNode = currentNode.next;
@@ -41,15 +41,15 @@ public class PartitioningLinkedList {
 		Assert.assertTrue(true);
 	}
 	
-	public SinglyLinkedList partitionByX(Node head,int x){
+	public SinglyLinkedList partitionByX(ListNode head,int x){
 	
-		Node currentNode = head;
+		ListNode currentNode = head;
 		SinglyLinkedList leftSide = new SinglyLinkedList();
-		Node leftLastNode = null;
+		ListNode leftLastNode = null;
 		SinglyLinkedList rightSide = new SinglyLinkedList();
-		Node rightLastNode = null;
+		ListNode rightLastNode = null;
 		SinglyLinkedList equalList = new SinglyLinkedList();
-		Node equalListLastNode = null;
+		ListNode equalListLastNode = null;
 		String typeOfList = "";
 		SinglyLinkedList resultList = new SinglyLinkedList();
 		
