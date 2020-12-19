@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import org.testng.annotations.Test;
 
-import algorithms.tree.Node;
+import algorithms.singlyLinkedList.ListNode;
 
 public class List01_LinkedList {
 
@@ -19,7 +19,7 @@ public class List01_LinkedList {
 				
 				while(!nodeQue.isEmpty()){
 					if(nodeQue.peek() != null){
-						System.out.println(nodeQue.poll().data);
+						System.out.println(nodeQue.poll().value);
 					}
 					else{
 						nodeQue.poll();

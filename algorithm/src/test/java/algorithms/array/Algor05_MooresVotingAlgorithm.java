@@ -39,23 +39,17 @@ public class Algor05_MooresVotingAlgorithm {
 	}
 	
 	private int findCandidate(int[] input){		
-		int candidate = 0;
-		int count = 1;
-		int i=1;
-		while(i < input.length){
-			if(input[candidate] == input[i]){
-				count ++;
-			}
-			else{
-				count--;
-			}
-			if(count == 0){
-				candidate = i;
-				count = 1;
-			}
-			i++;
-		}
-		return input[candidate];
+		 int count = 0;
+	        Integer candidate = null;
+
+	        for (int num : input) {
+	            if (count == 0) {
+	                candidate = num;
+	            }
+	            count += (num == candidate) ? 1 : -1;
+	        }
+
+	        return candidate;
 	}
 	
 	private boolean isMajority(int[] input, int candidate){

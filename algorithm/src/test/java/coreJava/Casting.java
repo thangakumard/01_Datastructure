@@ -16,6 +16,14 @@ public class Casting {
 			boolean - represents logical operation that can either be true or false
 			char - represents a single unicode (16 bit) character.
 	 */
+	
+	@Test
+	public void CharToInt() {
+		String str = "123";
+		System.out.println(Character.getNumericValue(str.charAt(0)));
+		System.out.println(Character.getNumericValue(str.charAt(1)));
+		System.out.println(Character.getNumericValue(str.charAt(2)));
+	}
 
 	@Test
 	public void StringToInt(){

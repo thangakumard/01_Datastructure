@@ -28,17 +28,38 @@ public class Array39_RotateArray_Right {
 	public void Test(){
 		
 		int[] input = {10,20,30,40,50,60};
-		rightRotate(input, 3);
+		//rightRotate_01(input, 3);
+		rightRotate_02(input, 30);
 		for(int i=0; i < input.length ; i++){
 			System.out.println(input[i]);
 		}
 	}
 	
-	public void rightRotate(int[] input, int d){
+	private void rightRotate_01(int[] nums, int k) {
+        
+        int l = nums.length;
+         k = k % l; 
+        
+        int[] result = new int[nums.length];
+        
+        if(k == 0) return;
+        int j = 0;
+        for(int i =0; i < l; i++){
+            j = (i+k) % l;
+            result[j] = nums[i];
+        }
+        
+       System.arraycopy(result,0,nums,0,l);
+    }
+	
+	public void rightRotate_02(int[] input, int d){
 		
-		reverse(input, 0, input.length-1-d);
-		reverse(input, input.length-d, input.length-1);
-		reverse(input,0, input.length-1);
+		int l = input.length;
+		d = d % l;
+		
+		reverse(input, 0, l-1-d);
+		reverse(input, l-d, l-1);
+		reverse(input,0, l-1);
 	}
 	
 	private void reverse(int[] input, int start, int end){
@@ -54,4 +75,6 @@ public class Array39_RotateArray_Right {
 		}
 		
 	}
+	
+	 
 }

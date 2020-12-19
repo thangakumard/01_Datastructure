@@ -1,33 +1,38 @@
 package algorithms.array;
 
+import org.testng.Assert;
 import org.testng.annotations.*;
 /******
  * 
 	https://www.geeksforgeeks.org/array-rotation/
+	https://leetcode.com/problems/rotate-array/
+	
  */
 
 public class Array38_RotateArray_Left {
 
 	@Test
-	public void Test(){
-		int[] input = {10,20,30,40,50,60};
-		int k = 2; //rotate numbers
-		int[] result = rotateArray(input, k);	
+	public void rotateArrayLeft() {
+		int[] input = { 10,20,30,40,50 };
+		int[] expected = {30,40,50,10,20};
 		
-		for(int i=0; i< input.length; i++){
-			System.out.println(result[i]);
+		int n = input.length;
+		int rotateCount = 22;
+		int[] output = rotateArray(input,rotateCount);
+		for(int i=0; i < output.length ; i++){
+			System.out.println(output[i]);
 		}
 	}
 	
 	private int[] rotateArray(int[] input, int k){
-		
 		int[] result = new int[input.length];
-		int n = input.length;
-		int mod = k % n;
+		int l = input.length;
+		k = k%l;
+		if(k ==0) return input;
 		
-		for(int i=0; i < n; i++){
-			int j = (i+mod) % n;
-			result[i] = input[j];
+		for(int i=0; i < l; i++){
+			int j = (i+l-k) % l;
+			result[j] = input[i];
 		}
 		return result;
 	}

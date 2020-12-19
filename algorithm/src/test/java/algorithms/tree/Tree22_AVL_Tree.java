@@ -7,7 +7,7 @@ public class Tree22_AVL_Tree {
 	@Test
 	public void test(){
 		
-		ListNode root = null;
+		TreeNode root = null;
 		root = insertIntoAVL(root, -10);
 		root = insertIntoAVL(root, 2);
 		root = insertIntoAVL(root, 13);
@@ -23,10 +23,10 @@ public class Tree22_AVL_Tree {
 	}
 	
 
-	private ListNode insertIntoAVL(ListNode root, int value)
+	private TreeNode insertIntoAVL(TreeNode root, int value)
 	{
 		if(root == null)
-			return new ListNode(value);
+			return new TreeNode(value);
 		
 		if(root.data >= value){
 			root.left = insertIntoAVL(root.left, value);
@@ -58,16 +58,16 @@ public class Tree22_AVL_Tree {
 		return root;
 	}
 	
-	private ListNode leftRotate(ListNode root){
-		ListNode newRoot = root.right;
+	private TreeNode leftRotate(TreeNode root){
+		TreeNode newRoot = root.right;
 		root.right = newRoot.left;
 		newRoot.left = root;
 		
 		return newRoot;
 	}
 	
-	private ListNode rightRotate(ListNode root){
-		ListNode newRoot = root.left;
+	private TreeNode rightRotate(TreeNode root){
+		TreeNode newRoot = root.left;
 		root.left = newRoot.right;
 		newRoot.right = root;
 		
@@ -75,7 +75,7 @@ public class Tree22_AVL_Tree {
 	}
 	
 	
-	private int balanceFactor(ListNode root){
+	private int balanceFactor(TreeNode root){
 		if(root == null)
 			return 0;
 		

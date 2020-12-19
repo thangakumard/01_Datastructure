@@ -4,7 +4,7 @@ import java.util.Deque;
 
 import org.testng.annotations.Test;
 
-import algorithms.tree.Node;
+import algorithms.singlyLinkedList.ListNode;
 
 public class List01_ArrayDeque {
 
@@ -33,7 +33,7 @@ public class List01_ArrayDeque {
 		
 		while(!nodeQue.isEmpty()){
 			if(nodeQue.peekFirst() != null){
-				System.out.println(nodeQue.pollFirst().data);
+				System.out.println(nodeQue.pollFirst().value);
 			}
 			else{
 				nodeQue.pollFirst();

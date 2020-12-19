@@ -32,4 +32,54 @@ public class SampleChar {
 		System.out.println("Character.isLetterOrDigit('&') : " + Character.isLetterOrDigit('&'));
 		System.out.println("Character.isLetterOrDigit(' ') : " + Character.isLetterOrDigit(' '));
 	}
+	
+	@Test
+	private void charIntValue() {
+		
+	
+		
+		
+		
+		System.out.println("a :"+ Character.getNumericValue('a'));
+		System.out.println("b :"+ Character.getNumericValue('b'));
+		System.out.println("c :"+ Character.getNumericValue('c'));
+		System.out.println("d :"+ Character.getNumericValue('d'));
+		System.out.println("e :"+ Character.getNumericValue('e'));
+		System.out.println("f :"+ Character.getNumericValue('f'));
+		System.out.println("g :"+ Character.getNumericValue('g'));
+		System.out.println("h :"+ Character.getNumericValue('h'));
+		
+		
+		System.out.println("A :"+ Character.getNumericValue('A'));
+		System.out.println("B :"+ Character.getNumericValue('B'));
+		System.out.println("C :"+ Character.getNumericValue('C'));
+		System.out.println("D :"+ Character.getNumericValue('D'));
+		System.out.println("E :"+ Character.getNumericValue('E'));
+		System.out.println("F :"+ Character.getNumericValue('F'));
+		System.out.println("G :"+ Character.getNumericValue('G'));
+		System.out.println("H :"+ Character.getNumericValue('H'));
+		
+		int[] value = new int[26];
+		value[0] = 'a';
+		value[1] = 'b';
+		value[2] = 'c';
+		value[3] = 'd';
+		value[4] = 'e';
+		
+		for(int i=0; i < 5; i++) {
+			System.out.println(value[i]);
+		}
+		
+		value[0] = 'a';
+		value[1] = 'b';
+		value[2] = 'c';
+		value[3] = 'd';
+		value[4] = 'e';
+		
+		for(int i=0; i < 5; i++) {
+			System.out.println(value[i]- 'a');
+		}
+		
+	}
+	
 }

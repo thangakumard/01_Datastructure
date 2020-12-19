@@ -2,7 +2,7 @@ package algorithms.array;
 
 import org.testng.annotations.Test;
 
-import algorithms.string.RabinKarpSearch;
+import algorithms.string.search.String04_RabinKarpSearch;
 /************
  * 
  * Refernce : https://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/
