@@ -17,12 +17,12 @@ public class excersice {
 		list.push(new ListNode(5));
 		
 	    
-        System.out.println("Given Linked list");
-        printList(list.head);
-        list.head = reverse(list.head);
-        System.out.println(" ");
-        System.out.println("Reversed linked list ");
-        printList(list.head);		
+//        System.out.println("Given Linked list");
+//        printList(list.head);
+        System.out.println(nthElementFromEnd(list, 2));
+//        System.out.println(" ");
+//        System.out.println("Reversed linked list ");
+//        printList(list.head);		
 	}
 	
 	public ListNode reverse(ListNode node){
@@ -37,16 +37,26 @@ public class excersice {
 			prev = currNode;
 			currNode = next;
 		}
-		
 		return prev;
-		
 	}
 	
 	 // prints content of double linked list
-    void printList(ListNode node) {
-        while (node != null) {
-            System.out.print(node.value + " ");
-            node = node.next;
-        }
-    }
+	 public int nthElementFromEnd(SinglyLinkedList list, int n) {
+	       
+		 	ListNode currentNode = reverse(list.head);
+	        printList(currentNode);
+	        while(n > 1 && currentNode != null){
+	            currentNode = currentNode.next;
+	            n--;
+	        }
+	        return currentNode.value;
+	    }
+	 
+	 void printList(ListNode node) {
+	        while (node != null) {
+	            System.out.print(node.value + " ");
+	            node = node.next;
+	        }
+	        System.out.print("->NULL");
+	    }
 }

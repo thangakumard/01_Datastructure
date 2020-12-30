@@ -4,9 +4,9 @@ public class AVLTree_test {
 	
 	
 	
-	private TreeTreeNode insertIntoAVL(TreeTreeNode root, int value){
+	private TreeNode insertIntoAVL(TreeNode root, int value){
 		if(root == null){
-			return new TreeTreeNode(value);
+			return new TreeNode(value);
 		}
 		if(root.data < value){
 			root.right = insertIntoAVL(root.right, value);

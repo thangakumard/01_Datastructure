@@ -1,11 +1,15 @@
 package algorithms.amazon;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
+
+import org.testng.annotations.Test;
+
+import java.util.*;
 
 /*
  * 
- * https://leetcode.com/problems/merge-intervals/
+ * https://leetcode.com/problems/merge-(s/
  * 
  * Given an array of intervals where intervals[i] = [starti, endi], merge all overlapping intervals, and return an array of the non-overlapping intervals that cover all the intervals in the input.
 
@@ -24,18 +28,35 @@ import java.util.LinkedList;
 	 */
 
 public class Amazon_09_MergeInterval {
+	
+	@Test
+	private void test() {
+		int[][] input = {{1,3},{2,6},{8,10},{15,18}};
+		@SuppressWarnings("unused")
+		int[][] output = merge(input);
+	}
 
 	public int[][] merge(int[][] intervals){
+		
 		Arrays.sort(intervals, (a,b) -> Integer.compare(a[0], b[0]));
-		LinkedList<int[]> mergeList = new LinkedList<int[]>();
+		List<int[]> result = new ArrayList<int[]>();
+		result.add(intervals[0]);
+		int[] current_Interval = intervals[0];
+		
 		for(int[] interval: intervals) {
-			if(mergeList.isEmpty() || mergeList.getLast()[1] < interval[0]) {
-				mergeList.add(interval);
+			int current_begin = current_Interval[0];
+			int current_end = current_Interval[1];
+			
+			int next_begin = interval[0];
+			int next_end = interval[1];
+			
+			if(current_end >= next_begin) {
+				current_Interval[1] = Math.max(current_end, next_end);
 			}else {
-				mergeList.getLast()[1] = Math.max(mergeList.getLast()[1], interval[1]);
+				current_Interval = interval;
+				result.add(current_Interval);
 			}
 		}
-		
-		return mergeList.toArray(new int[mergeList.size()][]);
+		return result.toArray(new int[result.size()][]);
 	}
 }

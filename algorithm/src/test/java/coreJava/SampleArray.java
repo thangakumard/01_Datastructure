@@ -15,7 +15,8 @@ public class SampleArray {
 		
 		 // 1. Initialize
 			int[] testArray1 = new int[5];
-			int[] testArray2 = {1, 2, 3};		
+			int[] testArray2 = {1, 2, 3};
+			int testArray4[] = new int[5];
 		 // 2. Get Length
 			System.out.println("The size of testArray1 is: " + testArray1.length);
 		// 3. Access Element
@@ -81,5 +82,23 @@ public class SampleArray {
 		System.out.println(s.length()); //length is  METHOD
 		
 	}
+	
+
+		public void ArrayListToArray() 
+		{ 
+			List<Integer> al = new ArrayList<Integer>(); 
+			al.add(10); 
+			al.add(20); 
+			al.add(30); 
+			al.add(40); 
+
+			// ArrayList to Array Conversion 
+			int[] arr = al.stream().mapToInt(i -> i).toArray(); 
+
+			for (int x : arr) 
+				System.out.print(x + " "); 
+		}
+	
+
 	
 }

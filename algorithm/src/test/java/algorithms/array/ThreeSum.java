@@ -1,5 +1,7 @@
 package algorithms.array;
 
+import java.util.Arrays;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,8 +14,9 @@ public class ThreeSum {
 	}
 
 	public int ThreeSumClosest(int[] nums, int target) {
-		int min = Integer.MIN_VALUE;
+		int min = Integer.MAX_VALUE;
 		int result = 0;
+		Arrays.sort(nums);
 		int size = nums.length - 1;
 		int sum = 0;
 

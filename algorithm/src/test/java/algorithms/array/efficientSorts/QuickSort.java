@@ -15,7 +15,7 @@ public class QuickSort {
 		for (int i = 0; i < input.length; i++) {
 			System.out.println("input : " + input[i]);
 		}
-		Assert.assertEquals(input, output, "Merge sort fails!!!");
+		Assert.assertEquals(input, output, "Quick sort fails!!!");
 	}
 
 	public void quickSortRecursive(int[] input, int left, int right) {

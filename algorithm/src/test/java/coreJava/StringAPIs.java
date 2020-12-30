@@ -175,6 +175,9 @@ public class StringAPIs {
         Str="javatpoint";  
         System.out.println("(javatpoint).substring(2,4) : " + Str.substring(2,4));//returns va  
         System.out.println("(javatpoint).substring(2) : " +Str.substring(2));//returns vatpoint  
+        String s = "leetcode";
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$4");
+        System.out.println("(leetcode).s.substring(s.length()-1, s.length()) : " + s.substring(s.length()-1, s.length()));
         
         System.out.println("");		
         System.out.println("********* (String) toLowerCase() ***********");
@@ -196,8 +199,31 @@ public class StringAPIs {
  
         }
 	
-	@Test
-	public void stringFormat(){
-		
+		@Test
+	    public void stringSplit() {
+
+	        String greeting = "a,b,c,d,,";
+	        String [] split_greeting;
+	        System.out.println( "Limit is equal to 0" );
+	        //This signifies that break the given string on every occurrence of the condition, and remove all whitespace at the end of the string
+	        split_greeting = greeting.split(",",0);
+	        for(String piece : split_greeting){
+	        System.out.println(piece);}
+
+	        System.out.println( "Limit is equal to -1" );
+	        split_greeting = greeting.split(",",-1);
+	        for(String piece : split_greeting){
+	        System.out.println(piece);}
+
+	        System.out.println( "Limit is equal to 3" );
+	        split_greeting =  greeting.split(",",3);
+	        for(String piece : split_greeting){
+	        System.out.println(piece);}
+	        
+	        System.out.println( "Limit is equal to 6" );
+	        split_greeting =  greeting.split(",",6);
+	        for(String piece : split_greeting){
+	        System.out.println(piece);}
+	    
 	}
 }

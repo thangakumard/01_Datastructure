@@ -22,7 +22,7 @@ public class LList01_MiddleNode {
 		
 		ListNode middle = findMiddleNode(list.head);
 		System.out.println(middle.value);
-		Assert.assertEquals(middle.value, 60);
+		Assert.assertEquals(middle.value, 50);
 	}
 	
 	public ListNode findMiddleNode(ListNode head){
@@ -33,6 +33,7 @@ public class LList01_MiddleNode {
 		ListNode slow = head;	
 		while(fast != null && fast.next != null ){
 			fast = fast.next.next;//30;50;70;90;null
+			if(fast != null)
 			slow = slow.next;//20;30;40;50;60			
 		}
 		return slow;

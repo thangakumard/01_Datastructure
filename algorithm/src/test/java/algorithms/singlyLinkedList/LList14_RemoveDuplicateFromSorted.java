@@ -4,6 +4,10 @@ import org.testng.annotations.Test;
 
 public class LList14_RemoveDuplicateFromSorted {
 
+	/*
+	 * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
+	 * 
+	 */
 
 	@Test
 	public void test(){
@@ -36,6 +40,10 @@ public class LList14_RemoveDuplicateFromSorted {
 		System.out.println();
 	}
 	
+	/*
+	 * Time complexity O(n)
+	 * Space Complexity O(1)
+	 */
 	private ListNode removeDuplicateFromSortedLinkedList(ListNode head){
 		if(head == null){
 			return null;

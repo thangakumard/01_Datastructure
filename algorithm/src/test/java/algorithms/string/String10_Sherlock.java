@@ -1,9 +1,12 @@
 package algorithms.string;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+
+
 import org.junit.Assert;
 import org.testng.annotations.Test;
+
+import com.google.common.collect.Multiset.Entry;
 
 public class String10_Sherlock {
 	
@@ -41,66 +44,79 @@ Each character
 		Assert.assertEquals("YES", isValid("aaabbbccccdddeee"));
 		Assert.assertEquals("NO", isValid("aaabbbccdddeee"));
 		Assert.assertEquals("YES", isValid("aaaabbbcccddd"));
-		Assert.assertEquals("NO", isValid("abbbcccddd"));
+		Assert.assertEquals("YES", isValid("abbbcccddd"));
+		Assert.assertEquals("YES", isValid("abcdefghhgfedecba"));
+		Assert.assertEquals("NO", isValid("aaaabbcc"));
+		Assert.assertEquals("NO", isValid("xxxaabbccrry"));
 	}
 	
 	// Complete the isValid function below.
     static String isValid(String s) {
+    	if(s.length() == 1) return "YES";
+    	
         int[] frequency = new int[26];
         
         for(int i=0; i < s.length(); i++){
             int position = (int) s.charAt(i) - (int)'a';
             frequency[position]++;
         }
-        HashMap<Integer, Integer> mapCount = new HashMap<Integer,Integer>();
+        HashMap<Integer, List<Character>> mapCount = new HashMap<Integer,List<Character>>();
 
         for(int i=0; i< 26; i++)
         {
         	if(frequency[i] > 0) {
         	 
-        		if(mapCount.containsKey(frequency[i])){
-        			
-        			mapCount.put(frequency[i], mapCount.get(frequency[i])+1);
-        		}
-        		else {
-        			mapCount.put(frequency[i], 1);
-        		}
-        		
+        		List<Character> charList = mapCount.getOrDefault(frequency[i], new ArrayList<Character>());
+        		charList.add((char)(i+'a'));
+        		mapCount.put(frequency[i], charList);
+ 
         	}
         	 
         }
+        if(mapCount.size() == 1) {
+        	return "YES";
+        }
         if(mapCount.size() > 2) {
         	return "NO";
-        }else if(mapCount.size() == 2) {        	
+        }else if(mapCount.size() == 2) {
         	
-        	int firstValue = 0, secondValue = 0;
-        	for(Map.Entry<Integer, Integer> entry: mapCount.entrySet()) {
-        		if(firstValue == 0)
-        		{
-        			firstValue = entry.getKey();
-        		}else {
-        			secondValue = entry.getKey();
-        		}
-        	}
-        	int diff = Math.abs(firstValue - secondValue);
-        	if(diff > 1) {
-        		return "NO";
-        	}else {
-        		if(mapCount.get(firstValue) == 1 || mapCount.get(secondValue) == 1) {
-        			int minValue = Math.min(firstValue, secondValue);
-        			if(mapCount.get(minValue) == 1) {
-        				if(minValue != 1) {
-        				return "NO";
+        	Integer[] req_arr = new Integer[mapCount.size()];
+        	Set<Integer> keys = mapCount.keySet();
+        	req_arr = keys.toArray(req_arr);
+        	
+        	int min_frequ = Math.min(req_arr[0],req_arr[1]);
+        	int max_frequ = Math.max(req_arr[0],req_arr[1]);
+        	
+        	List<Character> min_chars = mapCount.get(min_frequ);
+        	List<Character> max_chars = mapCount.get(max_frequ);
+        	
+        	if(min_chars.size() == 1 || max_chars.size() == 1) {
+        		if(min_frequ == 1 && min_chars.size() == 1)
+        			return "YES";
+        		if(min_frequ == 1 && min_chars.size() > 1)
+        			return "NO";
+        		if(max_frequ  > 1 && min_chars.size() > 1) {
+        			if(max_chars.size() == 1) {
+        				if(max_frequ - 1 == min_frequ) {
+        					return "YES";
         				}
+        			}else {
+        				return "NO";
         			}
-        		}else {
+        		}
+        		else {
         			return "NO";
         		}
+        		
+        		
         	}
+        	else
+        		return "NO";
+        	
         	
         }
         
-        return "YES"; 
+        return "NO"; 
     }
 
 }

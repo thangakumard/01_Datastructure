@@ -8,7 +8,7 @@ public class Substring_03_Subset {
 
 	@Test
 	public void Test(){
-		int[] input = new int[]{1,2,3};
+		int[] input = new int[]{1,3,3};
 		ArrayList<ArrayList<Integer>> result = subsets(input);
 		System.out.println(result);
 	}

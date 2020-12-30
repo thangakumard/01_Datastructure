@@ -47,7 +47,7 @@ public class SampleString {
 		s1="abcd";
 		s2="ABCD";
 		
-		System.out.println("If abcs.compareTo(ABCD) : " + s1.compareTo(s2));// Char difference at kth(0th) index is a-c So it will return -2
+		System.out.println("If abcs.compareTo(ABCD) : " + s1.compareTo(s2));// Char difference at kth(0th) index is a-A (97-65) So it will return 32
 		System.out.println("CodePointAt(0) : " + s1.codePointAt(0));
 		System.out.println("CodePointAt(0) : " + s2.codePointAt(0));
 		String_compareToIgnoreCase();
@@ -64,7 +64,7 @@ public class SampleString {
 		String s1="abcd";
 		String s2="ABCD";
 		
-		System.out.println("If abcd.compareToIgnoreCase(ABCD) : " + s1.compareToIgnoreCase(s2));// Char difference at kth(0th) index is a-c So it will return -2
+		System.out.println("If abcd.compareToIgnoreCase(ABCD) : " + s1.compareToIgnoreCase(s2));// Char difference at kth(0th) index is a-a So it will return 0
 	}
 	
 	@Test
@@ -89,39 +89,39 @@ public class SampleString {
 		System.out.println("abcd.substring(0,1) : " + s1.substring(0,1));
 	}
 	
-	@Test
-	public void String_Print_Words(){
-		String input ="The sky is blue";
-		int index = 0;
-		String value; 
-		while(input != ""){
-			index = input.indexOf(" ");
-			if(index == -1){
-				value = input;
-			}
-			else{
-				value = input.substring(0,index);
-			}
-			input = input.substring(index+1,input.length());
-		}		
-	}
-	
-	@Test
-	public void String_Print_Words_inReverse(){
-		String input ="The sky is blue";
-		int index = 0;
-		String value; 
-		while(input != ""){
-			index = input.lastIndexOf(" ");
-			if(index == -1){
-				value = input;
-				input= "";
-			}
-			else{
-				value = input.substring(index+1,input.length());
-				input = input.substring(0,index);
-			}
-			System.out.println(value);			
-		}		
-	}
+//	@Test
+//	public void String_Print_Words(){
+//		String input ="The sky is blue";
+//		int index = 0;
+//		String value; 
+//		while(input != ""){
+//			index = input.indexOf(" ");
+//			if(index == -1){
+//				value = input;
+//			}
+//			else{
+//				value = input.substring(0,index);
+//			}
+//			input = input.substring(index+1,input.length());
+//		}		
+//	}
+//	
+//	@Test
+//	public void String_Print_Words_inReverse(){
+//		String input ="The sky is blue";
+//		int index = 0;
+//		String value; 
+//		while(input != ""){
+//			index = input.lastIndexOf(" ");
+//			if(index == -1){
+//				value = input;
+//				input= "";
+//			}
+//			else{
+//				value = input.substring(index+1,input.length());
+//				input = input.substring(0,index);
+//			}
+//			System.out.println(value);			
+//		}		
+//	}
 }
