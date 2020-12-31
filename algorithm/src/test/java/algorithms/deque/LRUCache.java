@@ -35,23 +35,23 @@ public class LRUCache {
 			      System.out.println("" + lhm);
 	}
 	
-	public Deque<Integer> getLRUCache(int page){
-		
-		if(doublyQueue.contains(page)){
-			
-			
-			
-			doublyQueue.offerLast(page);
-			
-		}else {
-			if(doublyQueue.size() == CACHE_SIZE) {
-				doublyQueue.pollFirst();
-			}
-			doublyQueue.offerLast(page);
-		}
-		
-		return doublyQueue;
-	}
+//	public Deque<Integer> getLRUCache(int page){
+//		
+//		if(doublyQueue.contains(page)){
+//			
+//			
+//			
+//			doublyQueue.offerLast(page);
+//			
+//		}else {
+//			if(doublyQueue.size() == CACHE_SIZE) {
+//				doublyQueue.pollFirst();
+//			}
+//			doublyQueue.offerLast(page);
+//		}
+//		
+//		return doublyQueue;
+//	}
 	
 	
 }
