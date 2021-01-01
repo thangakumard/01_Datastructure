@@ -33,72 +33,72 @@ Constraints:
 nums is a non-decreasing array.
 -109 <= target <= 109
  */
-	
-	
+
 public class Array05_FirstLastPositionOfElement {
-	
+
 	@Test
 	public void test() {
-		
-		int[] input = {5,7,7,8,8,10};
+
+		int[] input = { 5, 7, 7, 8, 8, 10 };
 		int[] result = searchRange(input, 8);
 		System.out.println("First Inde :" + result[0]);
 		System.out.println("Last Inde :" + result[1]);
 	}
-	
+
 	/*
-	 * Time complexity O(logn)
-	 * Space complexity O(1)
+	 * Time complexity O(logn) Space complexity O(1)
 	 */
 
 	public int[] searchRange(int[] nums, int target) {
-		int[] result = {-1,-1};
-		
-		if(nums.length < 1) return result;
-		
-		result[0] = firstPositionOfElement(nums,target);
+		int[] result = { -1, -1 };
+
+		if (nums.length < 1)
+			return result;
+
+		result[0] = firstPositionOfElement(nums, target);
 		result[1] = secondPositionOfElement(nums, target);
-		
+
 		return result;
 	}
 
 	private int firstPositionOfElement(int[] nums, int target) {
 		int index = -1;
-		int start = 0, end = nums.length-1, mid = 0;
-		
-		while(start <= end) {
-			mid = start + (end-start)/2;
-			
-			if(nums[mid] >= target) {
-				end = mid -1;
-			}else {
+		int start = 0, end = nums.length - 1, mid = 0;
+
+		while (start <= end) {
+			mid = start + (end - start) / 2;
+
+			if (nums[mid] >= target) {
+				end = mid - 1;
+			} else {
 				start = mid + 1;
 			}
-			
-			if(nums[mid] == target) index = mid;
+
+			if (nums[mid] == target)
+				index = mid;
 		}
-		
+
 		return index;
 	}
-	
+
 	private int secondPositionOfElement(int[] nums, int target) {
 		int index = -1;
-		int start = 0, end = nums.length-1, mid = 0;
-		
-		while(start <= end) {
-			mid = start + (end-start)/2;
-			
-			if(nums[mid] <= target) {
+		int start = 0, end = nums.length - 1, mid = 0;
+
+		while (start <= end) {
+			mid = start + (end - start) / 2;
+
+			if (nums[mid] <= target) {
 				start = mid + 1;
-			}else {
+			} else {
 				end = mid - 1;
 			}
-			
-			if(nums[mid] == target) index = mid;
+
+			if (nums[mid] == target)
+				index = mid;
 		}
-		
+
 		return index;
 	}
-	
-}
 
+}

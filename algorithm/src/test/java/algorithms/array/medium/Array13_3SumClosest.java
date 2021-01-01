@@ -24,32 +24,31 @@ Constraints:
  */
 public class Array13_3SumClosest {
 
-	 public int threeSumClosest(int[] nums, int target) {
-	        int min_difference = Integer.MAX_VALUE;
-	        int sum = 0, result =0;
-	        Arrays.sort(nums);
-	        for(int i=0; i < nums.length -2; i++){
-	            int j = i+1, k = nums.length-1;
-	            
-	            while(j < k){
-	                sum = nums[i] + nums[j] + nums[k];
-	                
-	                if(sum == target)
-	                    return sum;
-	        
-	                int diff = Math.abs(target - sum);
-	                if(diff < min_difference){
-	                    min_difference = diff;
-	                    result = sum;
-	                }
-	                if(sum > target){
-	                    k--;
-	                }
-	                else if(sum < target){
-	                    j++;
-	                }
-	            }
-	        }
-	        return result;
-	    }
+	public int threeSumClosest(int[] nums, int target) {
+		int min_difference = Integer.MAX_VALUE;
+		int sum = 0, result = 0;
+		Arrays.sort(nums);
+		for (int i = 0; i < nums.length - 2; i++) {
+			int j = i + 1, k = nums.length - 1;
+
+			while (j < k) {
+				sum = nums[i] + nums[j] + nums[k];
+
+				if (sum == target)
+					return sum;
+
+				int diff = Math.abs(target - sum);
+				if (diff < min_difference) {
+					min_difference = diff;
+					result = sum;
+				}
+				if (sum > target) {
+					k--;
+				} else if (sum < target) {
+					j++;
+				}
+			}
+		}
+		return result;
+	}
 }

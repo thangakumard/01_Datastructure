@@ -24,32 +24,33 @@ Note:
  */
 public class Array10_SubarrayProductLessThanK {
 
-	 @Test
-	 public  void test() {
-		    System.out.println(this.numSubarrayProductLessThanK(new int[] { 2, 5, 3, 10 }, 30));
-		    System.out.println(this.numSubarrayProductLessThanK(new int[] { 8, 2, 6, 5 }, 50));
-		  }
-	 
-	 public int numSubarrayProductLessThanK(int[] nums, int k) {
-	       
-         if(k <= 1) return 0;
-        
-        int product = 1;
-        int result = 0;
-        
-        int left = 0, right = 0;
-        
-        while(right < nums.length){
-            
-            product *= nums[right];
-            
-            while(product >= k){
-                product /= nums[left];
-                left++;
-            }
-            result += right - left + 1;
-            right++;
-        }
-        return result;
-    }
+	@Test
+	public void test() {
+		System.out.println(this.numSubarrayProductLessThanK(new int[] { 2, 5, 3, 10 }, 30));
+		System.out.println(this.numSubarrayProductLessThanK(new int[] { 8, 2, 6, 5 }, 50));
+	}
+
+	public int numSubarrayProductLessThanK(int[] nums, int k) {
+
+		if (k <= 1)
+			return 0;
+
+		int product = 1;
+		int result = 0;
+
+		int left = 0, right = 0;
+
+		while (right < nums.length) {
+
+			product *= nums[right];
+
+			while (product >= k) {
+				product /= nums[left];
+				left++;
+			}
+			result += right - left + 1;
+			right++;
+		}
+		return result;
+	}
 }

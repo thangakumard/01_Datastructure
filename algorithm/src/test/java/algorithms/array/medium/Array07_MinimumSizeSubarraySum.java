@@ -6,7 +6,9 @@ import org.testng.annotations.Test;
 /*
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  * 
- * Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+ * Given an array of n positive integers and a positive integer s, 
+ * find the minimal length of a contiguous subarray of which the sum ≥ s. 
+ * If there isn't one, return 0 instead.
 
 Example: 
 	
@@ -21,9 +23,9 @@ public class Array07_MinimumSizeSubarraySum {
 	
 	@Test
 	private void test() {
-		int[] input = {1,2,3,4,5};
-		int s = 11;
-		Assert.assertEquals(minSubArrayLen(s,input), 3); 
+		int[] input = {2,3,1,2,4,3};
+		int s = 5;
+		Assert.assertEquals(minSubArrayLen(s,input), 2); 
 		
 	}
 	

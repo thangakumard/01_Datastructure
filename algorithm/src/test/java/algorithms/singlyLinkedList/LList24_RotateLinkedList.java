@@ -70,7 +70,7 @@ public class LList24_RotateLinkedList {
 	 
 	 void printList(ListNode node) {
 	        while (node != null) {
-	            System.out.print(node.value + " ");
+	            System.out.print(node.value + "->");
 	            node = node.next;
 	        }
 	    }
