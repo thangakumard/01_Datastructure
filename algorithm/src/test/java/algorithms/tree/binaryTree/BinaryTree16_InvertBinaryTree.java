@@ -1,10 +1,12 @@
-package algorithms.tree;
-
-import java.util.ArrayDeque;
+package algorithms.tree.binaryTree;
+import java.util.*;
 
 import org.testng.annotations.Test;
 
-public class Tree25_InvertBinaryTree {
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
+public class BinaryTree16_InvertBinaryTree {
 
 	@Test
 	public void invertTree(){
@@ -19,6 +21,10 @@ public class Tree25_InvertBinaryTree {
 		printInorder(invertTreeIterative(t1.root));
 	}
 	
+	/*
+	 * Time complexity O(n)
+	 * Space complexity O(n)
+	 */
 	private TreeNode invertTreeRecursive(TreeNode root){
 		if(root == null)
 			return null;
@@ -29,19 +35,25 @@ public class Tree25_InvertBinaryTree {
 		return root;
 	}
 	
+	/*
+	 * Time complexity O(n)
+	 * Space complexity O(n)
+	 */
 	private TreeNode invertTreeIterative(TreeNode root) {
         if(root == null)
             return null;
-        ArrayDeque<TreeNode> queue = new ArrayDeque<TreeNode>();
-        queue.addLast(root);
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.add(root);
         
         while(!queue.isEmpty()){
-        	TreeNode currentTreeNode = queue.removeFirst();
+        	TreeNode currentTreeNode = queue.remove();
+        	
         	TreeNode temp = currentTreeNode.left;
             currentTreeNode.left = currentTreeNode.right;
             currentTreeNode.right = temp;
-            if(currentTreeNode.left != null) queue.addLast(currentTreeNode.left);
-            if(currentTreeNode.right != null) queue.addLast(currentTreeNode.right);                
+            
+            if(currentTreeNode.left != null) queue.add(currentTreeNode.left);
+            if(currentTreeNode.right != null) queue.add(currentTreeNode.right);                
         }
         
         return root;

@@ -1,8 +1,11 @@
-package algorithms.tree;
-
+package algorithms.tree.binaryTree;
 import org.testng.annotations.Test;
 
-public class Tree10_HeightOfBST {
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+import algorithms.tree.BinarySearchTree.BST02_BSTFromSortedArray;
+
+public class BinaryTree01_HeightOfBinaryTree {
 
 	@Test
 	public void test()
@@ -21,7 +24,7 @@ public class Tree10_HeightOfBST {
 		tree.root.left.left = new TreeNode(4);
 		tree.root.left.right = new TreeNode(5);
 		tree.root.left.right.right = new TreeNode(7);
-		Tree13_BSTFromSortedArray bstFromArray = new Tree13_BSTFromSortedArray();
+		BST02_BSTFromSortedArray bstFromArray = new BST02_BSTFromSortedArray();
 		int input[] = {300,400,425,450,475,500,550,600};
 		
 		

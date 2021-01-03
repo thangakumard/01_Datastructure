@@ -2,6 +2,8 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
+import algorithms.tree.common.Tree01_Traversal_InOrderIterative;
+
 /****************
  * Bainary search search is a special kind of binaray tree where every TreeNodes in the left subtree is less than or equal to root and 
  * every TreeNode in the right subtree is greater than or equal to root. This is recursively true for every TreeNode.
@@ -121,7 +123,7 @@ public class AVLTree {
 		root = insertIntoAVL(root, 20);
 		
 		//inOrder(root);
-		Tree01_InOrderIterative traverse = new Tree01_InOrderIterative();
+		Tree01_Traversal_InOrderIterative traverse = new Tree01_Traversal_InOrderIterative();
 		traverse.inorderIterative(root);	
 	}
 

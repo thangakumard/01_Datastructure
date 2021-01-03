@@ -1,10 +1,6 @@
 package algorithms.tree;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.List;
+import java.util.*;
 
 import org.junit.Assert;
 import org.testng.annotations.Test;
@@ -23,44 +19,34 @@ public class Tree27_ZigzagLevelOrder {
 		System.out.println(ZigzagTreeTraversal(t1.root));
 	}
 	
-	private List<List<Integer>> ZigzagTreeTraversal(TreeNode root){
-		
-		 if(root == null) return new ArrayList<>();
-	        boolean zig = true;
-	      
-	        List<List<Integer>> lstResult = new ArrayList<>();
-	        Deque<TreeNode> TreeNodeQue = new ArrayDeque<TreeNode>();
-	        TreeNodeQue.offerLast(root);
-	      
-	      while(!TreeNodeQue.isEmpty()){
-	        int size = TreeNodeQue.size();
-	        List<Integer> levelTreeNodes = new ArrayList<>();
-	        for(int i=0; i< size; i++){
-	          
-	        	TreeNode head = TreeNodeQue.pollFirst();
-	          levelTreeNodes.add(head.data);
-	          
-	          if(head.left != null){
-	            TreeNodeQue.offerLast(head.left);
+	public static List<List<Integer>> ZigzagTreeTraversal(TreeNode root) {
+	    List<List<Integer>> result = new ArrayList<List<Integer>>();
+	    
+	    Queue<TreeNode> queueNodes = new LinkedList<>();
+	    queueNodes.add(root);
+	    boolean leftToRight = false;
+
+	    while(!queueNodes.isEmpty()){
+	        leftToRight = !leftToRight;
+	        int size = queueNodes.size();
+	        List<Integer> levelValues = new ArrayList<>();
+
+	        for(int i=0; i < size; i++){
+	          TreeNode currentNode = queueNodes.poll();
+	          if(leftToRight)
+	            levelValues.add(currentNode.data);
+	          else{
+	            levelValues.add(0,currentNode.data);
 	          }
-	          if(head.right != null){
-	            TreeNodeQue.offerLast(head.right);
-	          }
+
+	          if(currentNode.left != null)queueNodes.add(currentNode.left);
+	          if(currentNode.right != null)queueNodes.add(currentNode.right);
 	          
 	        }
-	        
-	        if(zig){
-	          lstResult.add(levelTreeNodes);
-	        }
-	        else{
-	            Collections.reverse(levelTreeNodes);
-	            lstResult.add(levelTreeNodes);
-	        }
-	        
-	        zig = !zig;
-	      }
-	      
-	      return lstResult;
-	}
+	        result.add(levelValues);
+	    }
+
+	    return result;
+	  }
 	
 }

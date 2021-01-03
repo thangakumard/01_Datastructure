@@ -1,9 +1,12 @@
-package algorithms.tree;
+package algorithms.tree.binaryTree;
 
 import org.testng.annotations.Test;
 
-//http://www.geeksforgeeks.org/get-level-of-a-TreeNode-in-a-binary-tree/
-public class Tree11_LevelOfNodeInBST {
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
+//https://www.geeksforgeeks.org/get-level-of-a-node-in-a-binary-tree/
+public class BinaryTree02_LevelOfNode {
 
 	@Test
 	public void test()

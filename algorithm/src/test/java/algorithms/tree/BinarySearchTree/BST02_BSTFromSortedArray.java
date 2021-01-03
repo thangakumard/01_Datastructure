@@ -1,8 +1,11 @@
-package algorithms.tree;
+package algorithms.tree.BinarySearchTree;
 
 import org.testng.annotations.Test;
 
-public class Tree13_BSTFromSortedArray {
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
+public class BST02_BSTFromSortedArray {
 
 	/**************
 	 * -------Approach-------

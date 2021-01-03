@@ -1,13 +1,19 @@
-package algorithms.tree;
+package algorithms.tree.common;
 
 import java.util.*;
 import java.util.Stack;
 
 import org.testng.annotations.Test;
 
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
 //https://www.youtube.com/watch?v=qT65HltK2uE&t=181s
 //https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/TreeTraversals.java#L120
-public class Tree04_PostOrderIterative {
+/*
+ * https://leetcode.com/problems/binary-tree-postorder-traversal/
+ */
+public class Tree03_Traversal_PostOrderIterative {
 
 	@Test
 	public void test()

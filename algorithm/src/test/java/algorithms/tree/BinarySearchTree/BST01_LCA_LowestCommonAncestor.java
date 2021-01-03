@@ -1,9 +1,12 @@
-package algorithms.tree;
+package algorithms.tree.BinarySearchTree;
 
 import org.testng.annotations.Test;
 
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
 //https://www.youtube.com/watch?v=TIoCCStdiFo
-public class Tree12_LCAOfBST {
+public class BST01_LCA_LowestCommonAncestor {
 
 	@Test
 	public void test(){
@@ -49,18 +52,18 @@ public class Tree12_LCAOfBST {
 		inOrderTraversal(TreeNode.right);
 	}
 	
-	TreeNode lcAOfTreeNodes(TreeNode TreeNode,int n1, int n2){
+	TreeNode lcAOfTreeNodes(TreeNode root,int n1, int n2){
 		
-		if(TreeNode == null)
+		if(root == null)
 			return null;
 		
-		if(TreeNode.data > Math.max(n1, n2))
-			return lcAOfTreeNodes(TreeNode.left, n1, n2);
+		if(root.data > Math.max(n1, n2))
+			return lcAOfTreeNodes(root.left, n1, n2);
 		
-		if( TreeNode.data < Math.min(n1, n2))
-			return lcAOfTreeNodes(TreeNode.right, n1, n2);
+		if( root.data < Math.min(n1, n2))
+			return lcAOfTreeNodes(root.right, n1, n2);
 		
-		return TreeNode;
+		return root;
 	}
 	
 }

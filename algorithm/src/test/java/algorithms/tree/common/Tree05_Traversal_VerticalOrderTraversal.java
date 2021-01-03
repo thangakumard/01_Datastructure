@@ -1,10 +1,13 @@
-package algorithms.tree;
+package algorithms.tree.common;
 
 import java.util.*;
 
 import org.testng.annotations.Test;
 
-public class Tree16_VerticalOrderTraversal {
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
+public class Tree05_Traversal_VerticalOrderTraversal {
 
 	@Test
 	public void vertical_Traversal(){	
@@ -27,12 +30,14 @@ public class Tree16_VerticalOrderTraversal {
 			tree.root.right.right = new TreeNode(20);
 			tree.root.right.right.right = new TreeNode(25);
 			
-		   List<List<Integer>> result= verticalTraversal(tree.root);
-		   for(List<Integer> i : result){
-			   for(Integer j: i){
-				   System.out.println(j);
-			   }
-		   }
+//		   List<List<Integer>> result= verticalOrder_01(tree.root);
+//		   for(List<Integer> i : result){
+//			   for(Integer j: i){
+//				   System.out.println(j);
+//			   }
+//		   }
+			
+			System.out.println(verticalOrder_01(tree.root));
 	}
 	
 public List<List<Integer>> verticalTraversal(TreeNode root) {
@@ -78,7 +83,7 @@ public List<List<Integer>> verticalTraversal(TreeNode root) {
 }
 	
 	
-	    public List<List<Integer>> verticalOrder_01(TreeNode root) {
+	public List<List<Integer>> verticalOrder_01(TreeNode root) {
 	        if (root == null) {
 	            return new ArrayList<>();
 	        }
@@ -95,6 +100,7 @@ public List<List<Integer>> verticalTraversal(TreeNode root) {
 	        while (!queue.isEmpty()) {
 	            root = queue.pollFirst();
 	            vertical = verticalQueue.pollFirst();
+	           
 	            minVal = Math.min(minVal, vertical);
 	            maxVal = Math.max(maxVal, vertical);
 
@@ -118,9 +124,10 @@ public List<List<Integer>> verticalTraversal(TreeNode root) {
 
 	        List<List<Integer>> result = new ArrayList<>();
 	        for (int i = minVal; i <= maxVal; i++) {
-	            List<Integer> r = map.get(i);
-	            result.add(r);
+	            //List<Integer> r = map.get(i);
+	            result.add(map.get(i));
 	        }
 	        return result;
 	    }
+
 }

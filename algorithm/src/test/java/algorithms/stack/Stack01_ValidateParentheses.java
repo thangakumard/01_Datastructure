@@ -40,7 +40,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class ValidateParentheses {
+public class Stack01_ValidateParentheses {
 
 	@Test
 	public void TestParentheses(){

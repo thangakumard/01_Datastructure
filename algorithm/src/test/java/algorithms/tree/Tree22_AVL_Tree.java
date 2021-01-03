@@ -2,6 +2,8 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
+import algorithms.tree.common.Tree01_Traversal_InOrderIterative;
+
 public class Tree22_AVL_Tree {
 	
 	@Test
@@ -18,7 +20,7 @@ public class Tree22_AVL_Tree {
 		root = insertIntoAVL(root, 20);
 		
 		//inOrder(root);
-		Tree01_InOrderIterative traverse = new Tree01_InOrderIterative();
+		Tree01_Traversal_InOrderIterative traverse = new Tree01_Traversal_InOrderIterative();
 		traverse.inorderIterative(root);	
 	}
 	

@@ -1,15 +1,21 @@
-package algorithms.tree;
+package algorithms.tree.common;
 
 import java.util.Stack;
 
 import org.testng.annotations.Test;
 
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
+
 
 //http://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
 //https://www.youtube.com/watch?v=nzmtCFNae9k
 //https://github.com/mission-peace/interview/blob/master/src/com/interview/tree/TreeTraversals.java
-
-public class Tree01_InOrderIterative {
+/*
+ * https://leetcode.com/problems/binary-tree-inorder-traversal/
+ * 
+ */
+public class Tree01_Traversal_InOrderIterative {
 
 	@Test
 	public void test()
