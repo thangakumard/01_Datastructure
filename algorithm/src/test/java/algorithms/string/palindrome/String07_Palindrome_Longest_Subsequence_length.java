@@ -44,7 +44,7 @@ public class String07_Palindrome_Longest_Subsequence_length {
 		int[][] dp = new int[s.length()][s.length()];
 		
 		for(int i=s.length()-1; i >=0; i--) {
-			dp[i][i] = 1;
+			dp[i][i] = 1; // Assign all the diagonal position to 1
 			for(int j=i+1; j<s.length();j++ ) {
 				if(s.charAt(i) == s.charAt(j)) {
 					dp[i][j] += dp[i+1][j-1] + 2;

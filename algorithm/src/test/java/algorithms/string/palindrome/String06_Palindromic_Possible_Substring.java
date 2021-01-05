@@ -35,8 +35,8 @@ public class String06_Palindromic_Possible_Substring {
 		String input = "aaa";
 		char[] charInput = input.toCharArray();
 		for(int i=0; i< input.length(); i++){
-			helper(charInput , i, i);// for odd length
-			helper(charInput, i, i+1);// for even length
+			expandFromMiddle(charInput , i, i);// for odd length
+			expandFromMiddle(charInput, i, i+1);// for even length
 		}	
 		
 		for(String palind : palindrome){
@@ -46,7 +46,7 @@ public class String06_Palindromic_Possible_Substring {
 		System.out.println("Number of Palindrmic Substring :" + Counter);
 	}
 	
-	private void helper(char[] input, int start, int end){
+	private void expandFromMiddle(char[] input, int start, int end){
 		int length = input.length;
 		while(start >=0 && end < length && input[start] == input[end]){
 			if(start != end)
@@ -54,7 +54,6 @@ public class String06_Palindromic_Possible_Substring {
 			start--;
 			end++;
 			palindrome.add(new String(input).substring(start+1, end)); //IMPORTANT TO COLLECT THE SUBSTRING WITHIN THE WHILE LOOP
-			
 		}
 	}
 }

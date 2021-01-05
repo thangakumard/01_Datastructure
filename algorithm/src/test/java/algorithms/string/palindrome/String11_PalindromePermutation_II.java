@@ -1,4 +1,5 @@
 package algorithms.string.palindrome;
+
 import java.util.*;
 
 import org.testng.annotations.Test;
@@ -23,32 +24,36 @@ public class String11_PalindromePermutation_II {
 	private void test() {
 		System.out.println(generatePalindromes("aabb"));
 	}
+
 	public List<String> generatePalindromes(String s) {
 		LinkedList<String> result = new LinkedList<>();
-        LinkedList<String> odd = new LinkedList<>();
-        int[] char_count = new int[256];
-        for(char c: s.toCharArray()) {
-        	char_count[c]++;
-        }
-        for(int i=0;i<char_count.length;i++) {
-        	if(char_count[i] % 2 != 0) {
-        	 odd.add((char)i + "");
-        	}
-        }
-        if(odd.size() > 1) return result;
-        
-        generate(result,char_count, odd.size()!=0? odd.getFirst():"",s.length());
-        return result;
-    }
-	
-	private void generate(List<String> r,int[] counts,String Curr,int len) {
-		if(Curr.length() == len)
+		LinkedList<String> odd = new LinkedList<>();
+		int[] char_count = new int[256];
+		for (char c : s.toCharArray()) {
+			char_count[c]++;
+		}
+		for (int i = 0; i < char_count.length; i++) {
+			if (char_count[i] % 2 != 0) {
+				odd.add((char) i + "");
+			}
+		}
+		if (odd.size() > 1) // If more than one ODD occurrence of a character, we cannot build Palindrome
+			return result;
+
+		backtrack(result, char_count, odd.size() != 0 ? odd.getFirst() : "", s.length());
+		return result;
+	}
+
+	private void backtrack(List<String> r, int[] counts, String Curr, int len) {
+		if (Curr.length() == len) { // once string
 			r.add(Curr);
-		else for(int i=0;i< counts.length;i++) {
-			if(counts[i] > 1) {
-				counts[i] -=2;
-				generate(r,counts,((char)i) + Curr + ((char)i),len);
-				counts[i] +=2;
+		} else {
+			for (int i = 0; i < counts.length; i++) {
+				if (counts[i] > 1) {
+					counts[i] -= 2;
+					backtrack(r, counts, ((char) i) + Curr + ((char) i), len);
+					counts[i] += 2;
+				}
 			}
 		}
 	}
