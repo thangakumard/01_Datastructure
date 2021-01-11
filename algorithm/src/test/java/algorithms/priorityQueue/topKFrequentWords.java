@@ -40,6 +40,11 @@ public class topKFrequentWords {
 		  for(String word : result) {
 			  System.out.println(word);
 		  }
+		  
+		  List<String> result_2 = topKFrequent_02(input , 2);
+		  for(String word : result_2) {
+			  System.out.println(word);
+		  }
 	  }
 	  
 	  public List<String> topKFrequent_01(String[] words, int k) {

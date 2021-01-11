@@ -1,4 +1,4 @@
-package algorithms.array;
+package algorithms.array.easy;
 
 import java.util.HashSet;
 
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
  * @author THANGAKUMAR
  *
  */
-public class Array15_FindSumOfElements {
+public class Array30_FindSumOfElements {
 
 	@Test
 	//Time complexity O(n^2)

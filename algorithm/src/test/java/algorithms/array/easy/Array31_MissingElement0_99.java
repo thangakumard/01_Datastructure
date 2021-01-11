@@ -1,4 +1,4 @@
-package algorithms.array;
+package algorithms.array.easy;
 
 import org.testng.annotations.Test;
 
@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
              91-98
  *
  */
-public class Array16_MissingElement0_99 {
+public class Array31_MissingElement0_99 {
 
 
 	@Test
@@ -59,8 +59,8 @@ public class Array16_MissingElement0_99 {
 
 				i= j;
 			}
-
-			i++;			
+			else
+				i++;			
 		}
 	}
 }

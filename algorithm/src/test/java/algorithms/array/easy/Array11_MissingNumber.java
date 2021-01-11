@@ -1,5 +1,9 @@
 package algorithms.array.easy;
 
+import java.util.Arrays;
+
+import org.testng.annotations.Test;
+
 /*
  * https://leetcode.com/problems/missing-number/
  * 
@@ -40,6 +44,12 @@ All the numbers of nums are unique.
 
  */
 public class Array11_MissingNumber {
+	
+	@Test
+	private void test() {
+		int[] input = new int[] {1,0,3};
+		System.out.println(missingNumber(input));
+	}
 
     public int missingNumber(int[] nums) {
 		int total = 0;	
@@ -47,8 +57,8 @@ public class Array11_MissingNumber {
 		for(int j: nums){
 			total += j;
 		}
-		int n = nums.length+1;
+		int n = nums.length;
 
-        return (n * ( n-1)/2) - total;
+        return n * ( n+1)/2 - total;
     }
 }

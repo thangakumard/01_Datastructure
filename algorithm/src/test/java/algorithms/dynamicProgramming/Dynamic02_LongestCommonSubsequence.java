@@ -16,7 +16,7 @@ public class Dynamic02_LongestCommonSubsequence {
 	public void Test(){
 		String a = "GXTXAYB";
 		String b = "AGGTAB";
-		System.out.println(getLongestCommonSubsequence(a, b));
+		System.out.println(getLongestCommonSubsequence(a, b)); //GTAB
 	}
 
 	

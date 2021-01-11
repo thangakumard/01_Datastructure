@@ -1,10 +1,11 @@
-package algorithms.array;
+package algorithms.array.easy;
 
 import org.testng.annotations.Test;
 /***
  * 
  * 
  * https://www.geeksforgeeks.org/count-strictly-increasing-subarrays/
+ * 
 Given an array of integers, count number of subarrays (of size more than one) that are strictly increasing.
 Expected Time Complexity : O(n)
 Expected Extra Space: O(1)
@@ -27,7 +28,7 @@ There are 2 subarrays {1, 2} and {2, 4}
  *
  */
 
-public class Array11_StrictlyIncreasingSubarray {
+public class Array28_StrictlyIncreasingSubarray {
 
 	
 	public void approach1(){
@@ -35,6 +36,11 @@ public class Array11_StrictlyIncreasingSubarray {
 	}
 	
 	@Test
+	/*
+	 * An Efficient Solution can count subarrays in O(n) time. 
+	 * The idea is based on fact that a sorted subarray of length ‘len’ adds len*(len-1)/2 to result. 
+	 * For example, {10, 20, 30, 40} adds 6 to the result.
+	 */
 	public void appraoch2(){
 		int[] a={1, 2, 3, 4};
 		int len = 1;

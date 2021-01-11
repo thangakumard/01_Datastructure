@@ -53,6 +53,7 @@ public class Array17_FindSmallestLetterGreaterThanTarget {
 	public char searchNextLetter(char[] letters, char key) {
 		int start = 0, end = letters.length - 1;
 		int n = letters.length;
+		
 		if (key < letters[0] || key > letters[n - 1])
 			return letters[0];
 		while (start <= end) {

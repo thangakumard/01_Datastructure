@@ -39,7 +39,6 @@ public class Array15_MergeInterval {
 		result.add(new int[]{8,10});
 		result.add(new int[]{15,18});
 		System.out.println(mergeInterval(result.toArray(new int[result.size()][])));
-		
 	}
 	
 	private int[][] mergeInterval(int[][] input){
@@ -51,7 +50,7 @@ public class Array15_MergeInterval {
 			if(result.isEmpty() || result.getLast()[1] < interval[0]) {
 				result.add(interval);
 			}else {
-				result.getLast()[1] = Math.min(result.getLast()[1], interval[1]);
+				result.getLast()[1] = Math.max(result.getLast()[1], interval[1]);
 			}
 		}
 		return result.toArray(new int[result.size()][]);

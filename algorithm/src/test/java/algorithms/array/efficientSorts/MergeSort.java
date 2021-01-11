@@ -38,6 +38,7 @@ public class MergeSort {
 
 		int tempIndex = left;
 		int[] temp = new int[input.length];
+		
 		while (array1LeftIndex <= array1RightIndex && array2LeftIndex <= array2RightIndex) {
 			if (input[array1LeftIndex] < input[array2LeftIndex]) {
 				temp[tempIndex] = input[array1LeftIndex];

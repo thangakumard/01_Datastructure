@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.dfs;
 import org.testng.annotations.Test;
 /*************
  * 
@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class NumberOfIslands {
+public class DFS02_NumberOfIslands {
 
 	@Test
 	public void GetNumberOfIslands(){
@@ -57,7 +57,7 @@ public class NumberOfIslands {
 	        for(int j=0; j<n; j++){
 	            if(grid[i][j]=='1'){
 	                count++;
-	                merge(grid, i, j);
+	                dfs(grid, i, j);
 	            }
 	        }
 	    }
@@ -65,7 +65,7 @@ public class NumberOfIslands {
 	    return count;
 	}
 	 
-	public void merge(char[][] grid, int i, int j){
+	public void dfs(char[][] grid, int i, int j){
 	    int m=grid.length;
 	    int n=grid[0].length;
 	 
@@ -74,10 +74,10 @@ public class NumberOfIslands {
 	 
 	    grid[i][j]='X';
 	 
-	    merge(grid, i-1, j);
-	    merge(grid, i+1, j);
-	    merge(grid, i, j-1);
-	    merge(grid, i, j+1);
+	    dfs(grid, i-1, j);
+	    dfs(grid, i+1, j);
+	    dfs(grid, i, j-1);
+	    dfs(grid, i, j+1);
 	}
 	
 }

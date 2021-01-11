@@ -1,9 +1,9 @@
-package algorithms.array;
+package algorithms.array.easy;
 
 import org.testng.annotations.Test;
 
 //http://www.geeksforgeeks.org/find-minimum-difference-pair/
-public class Array19_ElementsWithGivenDifference {
+public class Array35_ElementsWithGivenDifference {
 	
 	@Test
 	//Time complexity is O(nlogn) * O(n)

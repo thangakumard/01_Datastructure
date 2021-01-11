@@ -36,11 +36,11 @@ public class LList05_PartitioningLinkedList {
 		
 		ListNode partitioned1 = partition(list.head,5);
 		
-//		Node currentNode = partitioned.head;
-//		while(currentNode != null){
-//			System.out.println(currentNode.value);
-//			currentNode = currentNode.next;
-//		}
+		ListNode currentNode = partitioned1;
+		while(currentNode != null){
+			System.out.println(currentNode.value);
+			currentNode = currentNode.next;
+		}
 		Assert.assertTrue(true);
 	}
 	

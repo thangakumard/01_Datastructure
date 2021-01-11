@@ -1,4 +1,4 @@
-package algorithms.array;
+package algorithms.array.easy;
 
 import java.util.Arrays;
 
@@ -33,7 +33,7 @@ import org.testng.annotations.Test;
 	Output: False
 	There is no Pythagorean triplet.
  */
-public class Array13_PythagoreanTriplet {
+public class Array29_PythagoreanTriplet {
 
 	@Test
 	//Time complexity O(n^3)

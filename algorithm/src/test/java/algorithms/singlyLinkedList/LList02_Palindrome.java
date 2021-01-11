@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class LList02_Palindrome {
 
-	ListNode left = null;
+	ListNode leftPointer = null;
 	
 	@Test
 	public void validatePalindrom_BestApproach(){
@@ -18,7 +18,7 @@ public class LList02_Palindrome {
 		list.push(new ListNode('B'));
 		list.push(new ListNode('A'));
 		
-		left = list.head;
+		leftPointer = list.head;
 		System.out.println("validatePalindrom_BestApproach :" + recursiveCheck(list.head));
 	}
 	
@@ -32,8 +32,8 @@ public class LList02_Palindrome {
 			return false;
 		}
 		
-		boolean isEqual = left.value == currentNode.value;
-		left = left.next;
+		boolean isEqual = leftPointer.charValue == currentNode.charValue;
+		leftPointer = leftPointer.next;
 		return isEqual;
 	}
 	

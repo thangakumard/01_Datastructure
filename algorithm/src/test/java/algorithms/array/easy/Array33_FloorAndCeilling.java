@@ -1,8 +1,8 @@
-package algorithms.array;
+package algorithms.array.easy;
 
 import org.testng.annotations.Test;
 
-public class Array17_FloorAndCeilling {
+public class Array33_FloorAndCeilling {
 	
 	//http://www.geeksforgeeks.org/search-floor-and-ceil-in-a-sorted-array/
 	// Assume than the array is sorted in non-decreasing order
@@ -18,7 +18,7 @@ public class Array17_FloorAndCeilling {
 		else if(x > input[size-1])
 			System.out.println("No Ceiling. Floor is" + input[size-1]);
 		else
-			floor(input, 0, input.length-1, x);
+			floor(input, 0, input.length-1, 4);
 		
 	}
 	
