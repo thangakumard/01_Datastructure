@@ -12,19 +12,24 @@ package algorithms.tree;
 public class Tree32_SubtreeofAnotherTree {
 
 	public boolean isSubtree(TreeNode s, TreeNode t) {
-        return traverse(s,t);
+		if(s == null)
+			return false;
+		else if(isSameTree(s,t)) {
+			return true;
+		}else {
+			return isSubtree(s.left, t) || isSubtree(s.right, t);
+		}
     }
     
-    private boolean equals(TreeNode x, TreeNode y){
-        if(x==null && y == null)
-            return true;
-        if(x==null || y == null){
-            return false;
-        }
-        return x.data == y.data && equals(x.left, y.left) && equals(x.right, y.right);
-    }
-    
-    private boolean traverse(TreeNode s, TreeNode t){
-        return s!=null && (equals(s,t) || traverse(s.left,t) || traverse(s.right,t));
+    private boolean isSameTree(TreeNode x, TreeNode y) {
+    	if(x == null || y == null) {
+    		return x == null && y == null;
+    	}
+    	else if(x.data == y.data) {
+    		return isSameTree(x.left, y.left) && isSameTree(x.right, y.right);
+    	}
+    	else {
+    		return false;
+    	}
     }
 }

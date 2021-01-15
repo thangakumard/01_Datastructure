@@ -45,29 +45,27 @@ import org.testng.annotations.Test;
 
  */
 public class Dynamic08_UniquePaths {
-	
+
 	@Test
 	private void test() {
-		System.out.println(uniquePath(1,1));
-		System.out.println(uniquePath(2,2));
-		System.out.println(uniquePath(7,3));
+		System.out.println(uniquePath(1, 1));
+		System.out.println(uniquePath(2, 2));
+		System.out.println(uniquePath(7, 3));
 	}
-	
+
 	private int uniquePath(int m, int n) {
 		int[][] dp = new int[m][n];
-		
-		for(int[] arr:dp) {
+
+		for (int[] arr : dp) {
 			Arrays.fill(arr, 1);
 		}
-		
-		for(int col=1; col < m; col++) {
-			for(int row = 1; row < n; row++) {
-				dp[col][row] = dp[col-1][row]
- + dp[col][row-1];
-				}
+
+		for (int col = 1; col < m; col++) {
+			for (int row = 1; row < n; row++) {
+				dp[col][row] = dp[col - 1][row] + dp[col][row - 1];
+			}
 		}
-		return dp[m-1][n-1];
+		return dp[m - 1][n - 1];
 	}
-	
 
 }
