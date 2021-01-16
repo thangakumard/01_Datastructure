@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.dynamicProgramming;
 
 import java.util.*;
 
@@ -30,7 +30,7 @@ Example 3:
 Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
 Output: false
  */
-public class String18_WordBreak {
+public class String19_WordBreak {
 	
 	@Test
 	private void test() {

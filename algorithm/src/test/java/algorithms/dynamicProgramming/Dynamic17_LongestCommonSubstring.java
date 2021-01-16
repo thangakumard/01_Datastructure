@@ -1,8 +1,12 @@
-package algorithms.string;
+package algorithms.dynamicProgramming;
 
 import org.testng.annotations.Test;
 
-public class String02_LongestCommonSubstring {
+/**
+ * https://www.youtube.com/watch?v=BysNXJHzCEs
+ *https://leetcode.com/problems/maximum-length-of-repeated-subarray/
+ */
+public class Dynamic17_LongestCommonSubstring {
 
 	@Test
 	 public void test() {

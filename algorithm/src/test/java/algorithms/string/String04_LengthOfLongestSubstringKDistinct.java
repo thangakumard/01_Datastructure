@@ -1,5 +1,6 @@
 package algorithms.string;
 
+import java.util.Collections;
 import java.util.HashMap;
 
 import org.testng.annotations.Test;
@@ -24,12 +25,9 @@ public class String04_LengthOfLongestSubstringKDistinct {
                 map.put(input[j], j++);                
             }
             if(map.size() > k){
-                int min_index = input.length;
-                for(int value: map.values()){
-                    min_index = Math.min(min_index, value);
-                }
-                i = min_index+1;
-                map.remove(input[min_index]);
+                int index_to_delete = Collections.min(map.values());
+                map.remove(input[index_to_delete]);
+                i = index_to_delete + 1;
             }
             max_length = Math.max(max_length, j-i);
         }

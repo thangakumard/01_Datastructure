@@ -45,20 +45,20 @@ public class String04_LongestSubstringSameLettersReplacement {
 	 public int findLength(String str, int k) {
 	    int N = str.length();
 	    int[] char_input = new int[128];
-	    int window_start = 0;
+	    int left = 0;
 	    int max_length = 0;
 	    int current_max = 0;
 
-	    for(int window_end =0; window_end < str.length(); window_end++){
-	      char_input[str.charAt(window_end) - 'a']++;
-	      int char_count = char_input[str.charAt(window_end)-'a'];
+	    for(int right =0; right < str.length(); right++){
+	      char_input[str.charAt(right) - 'a']++;
+	      int char_count = char_input[str.charAt(right)-'a'];
 	      current_max = Math.max(current_max, char_count);
 
-	      while(window_end - window_start - current_max + 1 > k){
-	        char_input[str.charAt(window_start)-'a']--;
-	        window_start++;
+	      while(right - left - current_max + 1 > k){
+	        char_input[str.charAt(left)-'a']--;
+	        left++;
 	      }
-	      max_length = Math.max(max_length, window_end-window_start + 1);
+	      max_length = Math.max(max_length, right-left + 1);
 	    }
 
 	    return max_length;

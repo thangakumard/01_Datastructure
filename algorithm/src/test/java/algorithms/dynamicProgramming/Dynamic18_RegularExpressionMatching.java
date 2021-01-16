@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.dynamicProgramming;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -14,7 +14,7 @@ The matching should cover the entire input string (not partial).
  *
  */
 
-public class String06_RegularExpressionMatching {
+public class Dynamic18_RegularExpressionMatching {
 	
 	@Test
 	public void isRegxMatch(){

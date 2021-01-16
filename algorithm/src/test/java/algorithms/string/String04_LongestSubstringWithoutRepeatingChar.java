@@ -25,9 +25,9 @@ public class String04_LongestSubstringWithoutRepeatingChar {
 
 	@Test
 	public void getSubstringLength(){
-		Assert.assertEquals(4, lengthOfLongestSubstring_01("abccabd"));
+		//Assert.assertEquals(4, lengthOfLongestSubstring_01("abccabd"));
 		//Assert.assertEquals(4, lengthOfLongestSubstring_01("abcabcdbbef"));
-		//Assert.assertEquals(4, lengthOfLongestSubstring_02("abcafbb"));
+		Assert.assertEquals(5, lengthOfLongestSubstring_01("abccbafd"));
 	}
 	
 	//from https://www.youtube.com/watch?v=3IETreEybaA&t=69s
