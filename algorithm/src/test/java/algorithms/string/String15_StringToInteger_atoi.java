@@ -52,4 +52,34 @@ s consists of English letters (lower-case and upper-case), digits, ' ', '+', '-'
  */
 public class String15_StringToInteger_atoi {
 
+	public int myAtoi(String s) {
+        if(s == null || s.isEmpty()){
+            return 0;
+        }
+        s = s.trim();
+        boolean isNegative = s.charAt(0) == '-' ? true : false;
+        
+        if(s.charAt(0) == '-' || s.charAt(0) == '+'){
+            s = s.substring(1,s.length());
+        }
+        
+        char[] input = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(char c: input){
+            if(Character.isDigit(c)){
+                sb.append(c);
+                
+                if(Long.parseLong(sb.toString()) > Integer.MAX_VALUE){
+                    return isNegative? Integer.MIN_VALUE : Integer.MAX_VALUE;
+                }
+                
+            }else
+                break;
+        }
+        
+        if(sb.length() == 0){
+            return 0;
+        }
+        return isNegative ? -Integer.parseInt(sb.toString()) : Integer.parseInt(sb.toString());
+    }
 }
