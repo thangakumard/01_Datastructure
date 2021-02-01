@@ -1,70 +1,84 @@
 package algorithms.string;
 import org.testng.annotations.Test;
-
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import org.testng.Assert;
+
+
 public class String13_ZigZagConversion {
 
 	
 	@Test
 	public void Test(){
-		Assert.assertEquals(getZigZag("PAYPALISHIRING",2) , "PYAIHRNAPLSIIG");
-		Assert.assertEquals(getZigZag("AB",1) , "AB");
+		Assert.assertEquals(convert("PAYPALISHIRING",2) , "PYAIHRNAPLSIIG");
+		Assert.assertEquals(convert("AB",1) , "AB");
 	}
-	 public String getZigZag(String s, int numRows) {
-	        
-	        if(s == null || s.length() == 0 || s.length() < numRows )
-	            return s;
-	        
-	        ArrayDeque<Character> queue = new ArrayDeque<Character>();
-	        List<ArrayDeque<Character>> lstQue = new ArrayList<>();
-	        int n = 0;
-	        int i = 0;
-	        boolean zig = true;
-	        
-	        for(int j=0; j< numRows; j++){
-	            queue = new ArrayDeque<Character>();
-	            lstQue.add(queue);
-	        }
-	        
-	        while(n < s.length()){            
-	            if(i > -1 && i < numRows){	            
-	                if(zig){
-	                    lstQue.get(i).addLast(s.charAt(n));
-	                    i++;                    
-	                }else{
-	                    lstQue.get(i).addLast(s.charAt(n));
-	                    i--;
-	                }                
-	                n++;
-	            }
-	            else{
-	                zig = !zig;
-	                if(numRows == 1){
-	                	i = 0;
-	                }
-	                else{
-		                if(i < 0) {
-		                    i = 1;
-		                }
-		                else{
-		                    i = numRows -2;
-		                }
-	                }
-	            }            
-	        }
-	        
-	        StringBuilder result = new StringBuilder();
-	        ArrayDeque<Character> resultQueue = new ArrayDeque<Character>();
-	        for(int j =0 ; j <numRows; j++){            
-	            resultQueue = lstQue.get(j);
-	            while(!resultQueue.isEmpty()){
-	                result.append(resultQueue.removeFirst());
-	            }
-	        }
-	        return result.toString();
-	    }
+	
+	public String convert(String str, int n) {
+        
+		  // Corner Case (Only one row) 
+		        if (n == 1)  
+		        { 
+		            return str;
+		        } 
+		        char[] str1 = str.toCharArray(); 
+		  
+		        // Find length of string 
+		        int len = str.length(); 
+		  
+		        // Create an array of 
+		        // strings for all n rows 
+		        String[] arr = new String[n]; 
+		        Arrays.fill(arr, ""); 
+		        
+		  
+		        // Initialize index for 
+		        // array of strings arr[] 
+		        int row = 0; 
+		        boolean down = true; // True if we are moving  
+		        // down in rows, else false 
+		  
+		        // Travers through 
+		        // given string 
+		        for (int i = 0; i < len; ++i)  
+		        { 
+		            // append current character 
+		            // to current row 
+		            arr[row] += (str1[i]); 
+		  
+		            // If last row is reached, 
+		            // change direction to 'up' 
+		            if (row == n - 1)  
+		            { 
+		                down = false; 
+		            }  
+		              
+		            // If 1st row is reached,  
+		            // change direction to 'down' 
+		            else if (row == 0)  
+		            { 
+		                down = true; 
+		            } 
+		  
+		            // If direction is down,  
+		            // increment, else decrement 
+		            if (down) 
+		            { 
+		                row++; 
+		            }  
+		            else 
+		            { 
+		                row--; 
+		            } 
+		        } 
+		  
+		        StringBuilder sb = new StringBuilder();
+		        // Print concatenation 
+		        // of all rows 
+		        for (int i = 0; i < n; ++i)  
+		        { 
+		            sb.append(arr[i]); 
+		        } 
+		        
+		        return sb.toString();
+		    } 
 }

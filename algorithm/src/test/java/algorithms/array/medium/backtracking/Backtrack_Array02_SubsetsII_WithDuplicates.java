@@ -2,6 +2,8 @@ package algorithms.array.medium.backtracking;
 
 import java.util.*;
 
+import org.testng.annotations.Test;
+
 /***
  * https://leetcode.com/problems/subsets-ii/
  * https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
@@ -18,6 +20,13 @@ import java.util.*;
 
 public class Backtrack_Array02_SubsetsII_WithDuplicates {
 
+	@Test
+	private void test() {
+		int[] input = { 1, 2, 2 };
+		System.out.println(subsetsWithDup(input));
+		String a = "";
+	}
+	
 	public List<List<Integer>> subsetsWithDup(int[] nums) {
 		List<List<Integer>> list = new ArrayList<>();
 		Arrays.sort(nums); //to handle UNSORTED Array

@@ -19,7 +19,7 @@ import java.util.*;
 	Explanation: t is "aabbb" which its length is 5.
  * 
  */
-public class String03_LengthOfLongestSubstringTwoDistinct {
+public class String03_LengthOfLongestSubstringTwoDistinctChar {
 
 public int lengthOfLongestSubstringTwoDistinct(String s) {
         

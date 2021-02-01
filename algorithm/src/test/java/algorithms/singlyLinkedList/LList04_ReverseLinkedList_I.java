@@ -2,7 +2,7 @@ package algorithms.singlyLinkedList;
 
 import org.testng.annotations.Test;
 
-public class LList04_ReverseLinkedList {
+public class LList04_ReverseLinkedList_I {
 	
 	@Test
 	public void ReverseTheList(){
@@ -43,7 +43,6 @@ public class LList04_ReverseLinkedList {
 		return node;
 	}
 	
-	 // prints content of double linked list
     void printList(ListNode node) {
         while (node != null) {
             System.out.print(node.value + " ");

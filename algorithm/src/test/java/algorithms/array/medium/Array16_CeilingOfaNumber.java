@@ -31,7 +31,10 @@ public class Array16_CeilingOfaNumber {
 
 	 public int searchCeilingOfANumber(int[] arr, int key) {
 	     if(arr.length == 0) return -1;
-	     if(arr[0] > key || arr[arr.length-1] < key)
+	     if(arr[0] > key) {
+	    	 return 0;
+	     }
+	     if(arr[arr.length-1] < key)
 	    	 return -1;
 
 	    int start = 0, end = arr.length-1;

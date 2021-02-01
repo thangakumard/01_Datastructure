@@ -55,7 +55,8 @@ public class Backtrack_Array11_WordSearch {
         
         board[row][col] = '#';
         
-        boolean result = backtracking(board, row+1, col, word, index + 1) ||
+        boolean result = 
+        	backtracking(board, row+1, col, word, index + 1) ||
             backtracking(board, row-1, col, word, index + 1) ||
             backtracking(board, row, col + 1, word, index + 1) ||
             backtracking(board, row, col -1, word, index + 1);

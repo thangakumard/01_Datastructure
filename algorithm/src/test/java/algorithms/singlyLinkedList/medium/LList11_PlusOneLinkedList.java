@@ -1,4 +1,6 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
+
+import algorithms.singlyLinkedList.ListNode;
 
 /*
  * https://leetcode.com/problems/plus-one-linked-list/
@@ -18,7 +20,7 @@ package algorithms.singlyLinkedList;
 	Input: head = [0]
 	Output: [1]
  */
-public class LList21_PlusOneLinkedList {
+public class LList11_PlusOneLinkedList {
 	
 	public ListNode plusOneListIterative(ListNode head) {
 		

@@ -1,6 +1,9 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import org.testng.annotations.Test;
+
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
 
 /*
  * https://leetcode.com/problems/rotate-list/solution/
@@ -26,7 +29,7 @@ import org.testng.annotations.Test;
 
  */
 
-public class LList24_RotateLinkedList {
+public class LList08_RotateLinkedList {
 	
 	@Test
 	private void test() {

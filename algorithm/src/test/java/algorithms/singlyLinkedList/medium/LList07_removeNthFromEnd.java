@@ -1,12 +1,15 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import org.testng.annotations.Test;
+
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
 
 /*
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
  * 
  */
-public class LList22_removeNthFromEnd {
+public class LList07_removeNthFromEnd {
 	
 	@Test
 	private void test() {

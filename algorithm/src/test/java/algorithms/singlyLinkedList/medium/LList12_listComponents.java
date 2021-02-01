@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import java.util.*;
 
@@ -36,7 +36,10 @@ The value of each node in the linked list will be in the range [0, N - 1].
 G is a subset of all values in the linked list
  */
 
-public class LList18_listComponents {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList12_listComponents {
 
 	@Test
 	public void test() {

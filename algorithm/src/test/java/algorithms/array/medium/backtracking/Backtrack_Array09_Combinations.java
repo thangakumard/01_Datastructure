@@ -1,5 +1,10 @@
 package algorithms.array.medium.backtracking;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.testng.annotations.Test;
+
 /***
  * 
  * https://leetcode.com/problems/combinations/
@@ -26,4 +31,27 @@ package algorithms.array.medium.backtracking;
  */
 public class Backtrack_Array09_Combinations {
 
+	@Test
+	private void test() {
+		System.out.println(combine(4,2));
+		System.out.println(combine(4,3));
+	}
+	
+	public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> result = new ArrayList<>();
+        backtrack(result,n,k,new ArrayList<>(),1);
+        return result;
+    }
+    
+    private void backtrack(List<List<Integer>> result,int n, int k, List<Integer> current, int start){
+        if(current.size()  == k){
+            result.add(new ArrayList<>(current));
+        }
+        for(int i=start; i < n+1; i++){
+            if(current.contains(i)) continue;
+            current.add(i);
+            backtrack(result,n,k,current,i+1);
+            current.remove(current.size()-1);
+        }
+    }
 }

@@ -3,6 +3,8 @@ package algorithms.array.medium.backtracking;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.testng.annotations.Test;
+
 /***
  * https://leetcode.com/problems/permutations/
  * https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
@@ -29,6 +31,13 @@ import java.util.List;
 
 public class Backtrack_Array03_Permutations {
 
+	@Test
+	private void test() {
+		int[] input = { 1, 2, 3 };
+		System.out.println(permute(input));
+		String a = "";
+	}
+	
 	public List<List<Integer>> permute(int[] nums) {
 		List<List<Integer>> list = new ArrayList<>();
 		// Arrays.sort(nums); // not necessary

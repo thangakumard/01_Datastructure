@@ -2,7 +2,7 @@ package algorithms.string;
 
 import org.testng.annotations.Test;
 
-public class String04_LongestSubstringSameLettersReplacement {
+public class String04_LongestSubstringWithSameLettersReplacement {
 
 	/*
 	 * https://www.youtube.com/watch?v=00FmUN1pkGE

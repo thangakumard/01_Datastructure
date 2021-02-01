@@ -1,8 +1,12 @@
 package algorithms.array.medium.backtracking;
 
-import java.util.*;;
+import java.util.*;
+
+import org.testng.annotations.Test;;
 /***
- * https://leetcode.com/problems/letter-combinations-of-a-phone-number/ Given a
+ * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+ * 
+ *  Given a
  * string containing digits from 2-9 inclusive, return all possible letter
  * combinations that the number could represent. Return the answer in any order.
  * 
@@ -29,6 +33,11 @@ import java.util.*;;
  * 
  */
 public class Backtrack_Array08_LetterCombinationsPhoneNumber {
+	
+	@Test
+	private void test() {
+		System.out.println(letterCombinations("23"));
+	}
 
 public List<String> letterCombinations(String digits) {
         

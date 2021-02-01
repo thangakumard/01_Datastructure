@@ -2,6 +2,8 @@ package algorithms.array.medium.backtracking;
 
 import java.util.*;
 
+import org.testng.annotations.Test;
+
 /**
  * https://leetcode.com/problems/palindrome-partitioning/
  * https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
@@ -26,6 +28,12 @@ import java.util.*;
  */
 public class Backtrack_Array07_palindrome_partitioning {
 
+	@Test
+	private void test() {
+		String input = "aaab";
+		System.out.println(partition(input));
+	}
+	
 	public List<List<String>> partition(String s) {
 		List<List<String>> list = new ArrayList<>();
 		backtrack(list, new ArrayList<>(), s, 0);

@@ -2,6 +2,8 @@ package algorithms.array.medium.backtracking;
 
 import java.util.*;
 
+import org.testng.annotations.Test;
+
 /***
  * https://leetcode.com/problems/permutations-ii/
  * https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
@@ -25,6 +27,13 @@ import java.util.*;
  */
 public class Backtrack_Array04_Permutations_II {
 
+	@Test
+	private void test() {
+		int[] input = { 1, 2, 2 };
+		System.out.println(permuteUnique(input));
+		String a = "";
+	}
+	
 	public List<List<Integer>> permuteUnique(int[] nums) {
 		List<List<Integer>> list = new ArrayList<>();
 		Arrays.sort(nums);

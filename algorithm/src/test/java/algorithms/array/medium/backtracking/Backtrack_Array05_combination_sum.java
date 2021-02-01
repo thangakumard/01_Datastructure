@@ -2,6 +2,8 @@ package algorithms.array.medium.backtracking;
 
 import java.util.*;
 
+import org.testng.annotations.Test;
+
 /**
  * https://leetcode.com/problems/combination-sum/
  * https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-(Subsets-Permutations-Combination-Sum-Palindrome-Partitioning)
@@ -43,6 +45,13 @@ import java.util.*;
  */
 public class Backtrack_Array05_combination_sum {
 
+	@Test
+	private void test() {
+		int[] input = { 2,3,6,7 };
+		System.out.println(combinationSum(input, 7));
+		String a = "";
+	}
+	
 	public List<List<Integer>> combinationSum(int[] nums, int target) {
 		List<List<Integer>> list = new ArrayList<>();
 		Arrays.sort(nums);
