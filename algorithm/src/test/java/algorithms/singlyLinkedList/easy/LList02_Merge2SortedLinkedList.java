@@ -1,8 +1,11 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 
 import org.testng.annotations.*;
 
-public class LList10_Merge2SortedLinkedList {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList02_Merge2SortedLinkedList {
 	
 	@Test
 	public void test(){

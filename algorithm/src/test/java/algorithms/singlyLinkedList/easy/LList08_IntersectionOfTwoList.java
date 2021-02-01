@@ -1,7 +1,10 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 import org.testng.annotations.Test;
 
-public class List18_IntersectionOfTwoList {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList08_IntersectionOfTwoList {
 
 	
 	@Test

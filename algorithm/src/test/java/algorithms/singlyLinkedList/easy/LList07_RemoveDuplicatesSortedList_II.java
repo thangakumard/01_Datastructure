@@ -1,8 +1,11 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 
 import org.testng.annotations.Test;
 
-public class LList14_RemoveDuplicatesSortedList_II {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList07_RemoveDuplicatesSortedList_II {
 	/*
 	 * https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
 	 * Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.

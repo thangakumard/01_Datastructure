@@ -1,6 +1,9 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import org.testng.annotations.Test;
+
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
 
 /***
  * 
@@ -37,7 +40,7 @@ import org.testng.annotations.Test;
  * The number of nodes in the list is in the range sz. 1 <= sz <= 5000 0 <=
  * Node.val <= 1000 1 <= k <= sz
  */
-public class LList04_ReverseLinkedList_K_Group {
+public class LList13_ReverseLinkedList_K_Group {
 	
 	@Test
 	private void test() {

@@ -1,9 +1,12 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LList02_Palindrome {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList03_Palindrome {
 
 	ListNode leftPointer = null;
 	

@@ -1,9 +1,12 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class LList01_MiddleNode {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList10_MiddleNode {
 
 	@Test
 	public void getMiddleNode(){
