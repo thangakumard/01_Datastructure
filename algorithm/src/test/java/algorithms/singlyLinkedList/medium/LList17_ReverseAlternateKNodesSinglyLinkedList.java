@@ -1,9 +1,12 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import org.testng.annotations.Test;
 
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
 /*
- * https://leetcode.com/problems/reverse-nodes-in-k-group/solution/
+ * https://leetcode.com/problems/reverse-nodes-in-k-group/
  * 
  * Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
 
@@ -43,7 +46,7 @@ import org.testng.annotations.Test;
 	1 <= k <= sz
 
  */
-public class LList25_ReverseAlternateKNodesSinglyLinkedList {
+public class LList17_ReverseAlternateKNodesSinglyLinkedList {
 
 	@Test
 	private void test() {

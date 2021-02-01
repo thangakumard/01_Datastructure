@@ -1,8 +1,11 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import java.util.*;
 
 import org.testng.annotations.Test;
+
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
 
 /*
  * https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
@@ -35,7 +38,7 @@ import org.testng.annotations.Test;
 	The given linked list will contain between 1 and 1000 nodes.
 	Each node in the linked list has -1000 <= node.val <= 1000.
  */
-public class LList26_RemoveZeroSumConsecutiveNodes {
+public class LList16_RemoveZeroSumConsecutiveNodes {
 
 	@Test
 	private void test() {

@@ -1,6 +1,8 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 
 import java.util.*;
+
+import algorithms.singlyLinkedList.ListNode;
 /*****
  * 
  * https://leetcode.com/problems/intersection-of-two-linked-lists/
@@ -56,7 +58,7 @@ import java.util.*;
  * preferably run in O(n) time and use only O(1) memory.
  * 
  */
-public class LList28_GetIntersectionNode {
+public class LList13_GetIntersectionNode {
 
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 		if (headA == null || headB == null)

@@ -1,8 +1,11 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.medium;
 
 import java.util.PriorityQueue;
 
 import org.testng.annotations.Test;
+
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
 
 /****
  * 
@@ -33,7 +36,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class LList27_MergeKSortedLists {
+public class LList15_MergeKSortedLists {
 
 	@Test
 	private void test() {

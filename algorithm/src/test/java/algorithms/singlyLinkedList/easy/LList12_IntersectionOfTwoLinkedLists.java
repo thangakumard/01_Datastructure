@@ -1,8 +1,11 @@
-package algorithms.singlyLinkedList;
+package algorithms.singlyLinkedList.easy;
 
 import org.testng.annotations.Test;
 
-public class LList23_IntersectionOfTwoLinkedLists {
+import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.SinglyLinkedList;
+
+public class LList12_IntersectionOfTwoLinkedLists {
 
 	/*
 	 * https://leetcode.com/problems/intersection-of-two-linked-lists/
