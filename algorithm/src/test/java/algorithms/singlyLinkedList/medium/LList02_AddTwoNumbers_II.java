@@ -42,9 +42,11 @@ public class LList02_AddTwoNumbers_II {
 		list2.push(new ListNode(8));
 		list2.push(new ListNode(9));
 		list2.push(new ListNode(4));
-
-		ListNode result = addTwoNumbers(list1.head, list2.head);
-		printList(result);
+		
+		ListNode result1 = addTwoNumbers(list1.head, list2.head);
+		ListNode result2 = addTwoNumbers_approach_01(list1.head, list2.head);
+		printList(result1);
+		printList(result2);
 	}
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
@@ -86,7 +88,7 @@ public class LList02_AddTwoNumbers_II {
 			head = curr;
 		}
 
-		printList(head);
+		//printList(head);
 
 		// take the carry into account
 		// to have all elements to be less than 10
@@ -101,7 +103,7 @@ public class LList02_AddTwoNumbers_II {
 
 			// update the result: add to front
 			ListNode curr = new ListNode(val);
-			System.out.println("curr: " + val);
+			//System.out.println("curr: " + val);
 			curr.next = head;
 			head = curr;
 
@@ -127,8 +129,16 @@ public class LList02_AddTwoNumbers_II {
 	int carry = 0;
 
 	public ListNode addTwoNumbers_approach_01(ListNode l1, ListNode l2) {
-		recursive(l1, l1_stack);
-		recursive(l2, l2_stack);
+		//recursive(l1, l1_stack);
+		//recursive(l2, l2_stack);
+		while (l1 != null) {
+			l1_stack.push(l1.value);
+			l1 = l1.next;
+		} 
+		while (l2 != null) {
+			l2_stack.push(l2.value);
+			l2 = l2.next;
+		} 
 		ListNode dummy = new ListNode(0);
 		ListNode head = dummy;
 		while (!l1_stack.isEmpty() || !l2_stack.isEmpty() || carry > 0) {
@@ -147,15 +157,6 @@ public class LList02_AddTwoNumbers_II {
 		return dummy.next;
 	}
 
-	public void recursive(ListNode l1, Stack<Integer> stack) {
-
-		if (l1 != null) {
-			stack.push(l1.value);
-			l1 = l1.next;
-		} else
-			return;
-		recursive(l1, stack);
-	}
 
 	public void printList(ListNode node) {
 		while (node != null) {

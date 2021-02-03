@@ -22,7 +22,8 @@ public class String04_LengthOfLongestSubstringKDistinct {
         
         while(j < input.length){
             if(map.size() <= k){
-                map.put(input[j], j++);                
+                map.put(input[j], j);
+                j++;
             }
             if(map.size() > k){
                 int index_to_delete = Collections.min(map.values());

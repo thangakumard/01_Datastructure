@@ -29,7 +29,8 @@ public int lengthOfLongestSubstringTwoDistinct(String s) {
         int left=0, right = 0, max = 0, index_delete = -1;
         
        while(right < s.length()){
-           map.put(s.charAt(right), right++);
+           map.put(s.charAt(right), right);
+           right++;
            
            if(map.size() == 3){
                index_delete = Collections.min(map.values());
