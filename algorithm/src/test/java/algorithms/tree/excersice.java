@@ -19,25 +19,59 @@ public class excersice {
 		tree.root.right = new TreeNode(30);
 		tree.root.left.left = new TreeNode(4);
 		tree.root.left.right = new TreeNode(5);
-		int level = LCA(tree.root , 5,4);
-		System.out.println("LCA is : " + level);
+		
+		
+		int distance = distanceBetween2(tree.root, 4, 30);
+		
+		
+		System.out.println("LCA is : " + distance);
 	}
 
-	private int LCA(TreeNode root, int i, int j) {
-		
-		if(root == null) return -1;
-		
-		if(root.data < i && root.data < j){
-			return LCA(root.right, i , j);
+	private TreeNode getLCA(TreeNode root, int a, int b){
+		  if(root == null)
+		    return null;
+		  if(root.data > Math.max(a,b)){
+		    return getLCA(root.left, a, b);
+		  }
+		   if(root.data < Math.min(a,b)){
+		    return getLCA(root.right, a, b);
+		  }
+		  return root;
+		  
 		}
-		else if(root.data > i && root.data > j){
-			return LCA(root.left, i, j);
-		}
-		else{
-			return root.data;
-		}
-		
-	}
+		  
+		private int distanceFromLCA(TreeNode lca, int x, int distance){
+		    if(lca.data == x){
+		      return distance;
+		    }
+		    if(lca.data > x){
+		      return distanceFromLCA(lca.left, x , 1+distance);
+		    }
+		    if(lca.data < x){
+		      return distanceFromLCA(lca.right, x , 1+distance);
+		    }
+		    return distance+1;
+		  }
+		// Returns minimum distance beween a and b. 
+		// This function assumes that a and b exist 
+		// in BST. 
+		private int distanceBetween2(TreeNode root, int a, int b) 
+		{ 
+			if (root == null) 
+				return 0; 
+
+			//Get LCA of a and b
+		  	TreeNode lca = getLCA(root,a,b);
+		  
+		    //Distance of a from LCA
+			int x1 = distanceFromLCA(lca, a, 0);
+		  
+		    //Distance of b from LCA
+			int y1 = distanceFromLCA(lca, b, 0);
+		  
+			return x1 + y1; 
+		} 
+
 
 	
 }

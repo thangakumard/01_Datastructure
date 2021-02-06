@@ -18,7 +18,7 @@ public class Tree21_01_BuildTreeFromPostAndInOrder {
 		inorderIterative(root);
 	}
 	
-	int pIndex= 0;
+//	int pIndex= 0;
 //	private int getIndex(){
 //		return pIndex;
 //	}
@@ -61,7 +61,9 @@ public class Tree21_01_BuildTreeFromPostAndInOrder {
 			 int rootValue = postorder[postorderIndex];			 
 			 TreeNode currentTreeNode = new TreeNode(rootValue);
 			 if(start == end) return currentTreeNode;
+			 
 			 int rootIndex = findIndex(inorder,start, end, rootValue);
+			 
 			 currentTreeNode.right= buildTree(inorder, postorder, rootIndex+1, end, postorderIndex-1);
 			 currentTreeNode.left = buildTree(inorder,postorder,start,rootIndex-1,postorderIndex-1);
 		 return currentTreeNode;
