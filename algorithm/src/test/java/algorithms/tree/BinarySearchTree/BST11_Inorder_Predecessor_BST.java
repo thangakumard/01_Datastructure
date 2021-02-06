@@ -1,11 +1,13 @@
-package algorithms.tree;
+package algorithms.tree.BinarySearchTree;
 
 import org.testng.annotations.Test;
 
-public class Tree28_InOrder_Successor_BST {
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
 
+public class BST11_Inorder_Predecessor_BST {
 	@Test
-	public void successor(){
+	public void predecessor(){
 		int[] input = {1,2,3,4,5,6,7,8,9,10};
 		
 		BinaryTree tree = new BinaryTree();
@@ -13,7 +15,7 @@ public class Tree28_InOrder_Successor_BST {
 		//inOrderTraversal(tree.root);
 		
 		TreeNode p = new TreeNode(7);
-		System.out.println(inOrderSuccessor(tree.root, p).data);
+		System.out.println(inOrderPredecessor(tree.root, p).data);
 	}
 	
 	private TreeNode buildBST(int[] input,int start, int end){
@@ -34,15 +36,15 @@ public class Tree28_InOrder_Successor_BST {
 		inOrderTraversal(root.right);
 	}
 	
-	private TreeNode inOrderSuccessor(TreeNode root, TreeNode p){
+	private TreeNode inOrderPredecessor(TreeNode root, TreeNode p){
 		if(root == null)
 			return null;
-		if(root.data <= p.data){
-			return inOrderSuccessor(root.right, p);
+		if(root.data >= p.data){
+			return inOrderPredecessor(root.left, p);
 		}
 		else{
-			TreeNode left = inOrderSuccessor(root.left, p);
-			return left != null ? left : root;
+			TreeNode right = inOrderPredecessor(root.right, p);
+			return right!= null ? right : root;
 		}
 	}
 	

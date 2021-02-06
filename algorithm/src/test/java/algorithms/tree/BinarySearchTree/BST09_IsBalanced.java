@@ -1,11 +1,14 @@
-package algorithms.tree;
+package algorithms.tree.BinarySearchTree;
 import org.junit.Assert;
 import org.testng.annotations.Test;
+
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
 /******
  * a binary tree in which the depth of the two subtrees of every TreeNode never differ by more than 1.
  *https://leetcode.com/problems/balanced-binary-tree/description/
  */
-public class Tree26_IsBalanced {
+public class BST09_IsBalanced {
 
 	boolean result = true;
 	
