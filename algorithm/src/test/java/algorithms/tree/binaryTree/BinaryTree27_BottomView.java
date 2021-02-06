@@ -1,5 +1,5 @@
 package algorithms.tree.binaryTree;
 
-public class BinaryTree24_BottomView {
+public class BinaryTree27_BottomView {
 
 }

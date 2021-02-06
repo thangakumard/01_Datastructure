@@ -28,7 +28,7 @@ Follow up: Solve it both recursively and iteratively.
  */
 import algorithms.tree.TreeNode;
 
-public class BinaryTree27_isSymmetric {
+public class BinaryTree29_isSymmetric {
 
 	public boolean isSymmetric(TreeNode root) {
         if(root == null)

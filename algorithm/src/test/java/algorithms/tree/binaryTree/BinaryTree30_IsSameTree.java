@@ -40,7 +40,7 @@ import org.testng.asserts.*;
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
-public class Tree27_IsSameTree {
+public class BinaryTree30_IsSameTree {
 
 	@Test
 	private void test() {

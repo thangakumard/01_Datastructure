@@ -22,7 +22,7 @@ import algorithms.tree.TreeNode;
  * Explanation: All root-to-leaf paths are: 1->2->5, 1->3
  *
  */
-public class BinaryTree28_BinaryTreePaths {
+public class BinaryTree31_BinaryTreePaths {
 
 	public List<String> binaryTreePaths(TreeNode root) {
 		List<String> result = new ArrayList<>();
