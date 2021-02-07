@@ -1,11 +1,14 @@
 package algorithms.tree.binaryTree;
 
+import java.util.List;
+
 import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
-public class BinaryTree26_TopView {
+public class BinaryTree33_ConvertToMirrorBinaryTree {
+
 	
 	/* creating a binary tree and entering 
     the TreeNodes 
@@ -16,7 +19,7 @@ public class BinaryTree26_TopView {
 		*/
 
 	@Test
-	public void topView(){
+	public void convertToMirrorImage(){
 		BinaryTree tree = new BinaryTree();
 		tree.root = new TreeNode(10);
 		tree.root.left = new TreeNode(5);
@@ -28,24 +31,29 @@ public class BinaryTree26_TopView {
 		tree.root.right.right = new TreeNode(20);
 		tree.root.right.right.right = new TreeNode(25);
 		
-		printTopView(tree.root);
+		inOrderTraversal(tree.root);
+		mirrorBinaryTree(tree.root);
+		System.out.println(" ");
+		inOrderTraversal(tree.root);
+		
+		
 	}
 	
-	public void printTopView(TreeNode node) {
-		left_view(node.left);
-		System.out.print(node.data + " ");
-		right_view(node.right);
-	}
+	public  void mirrorBinaryTree(TreeNode root) {
+	    if(root == null) return;
+
+	    TreeNode temp = root.left;
+	    root.left = root.right;
+	    root.right = temp;
+
+	    if(root.left != null) mirrorBinaryTree(root.left);
+	    if(root.right != null) mirrorBinaryTree(root.right);
+	  }
 	
-	private void left_view(TreeNode node) {
-		if(node == null) return;
-		left_view(node.left);
-		System.out.print(node.data + " ");
-	}
-	
-	private void right_view(TreeNode node) {
-		if(node == null) return;
-		System.out.print(node.data + " ");
-		right_view(node.right);
+	private void inOrderTraversal(TreeNode root) {
+		if(root == null) return;
+		inOrderTraversal(root.left);
+		System.out.print(root.data + " ");
+		inOrderTraversal(root.right);
 	}
 }
