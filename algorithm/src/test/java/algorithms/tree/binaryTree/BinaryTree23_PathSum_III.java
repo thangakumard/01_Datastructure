@@ -50,6 +50,7 @@ public class BinaryTree23_PathSum_III {
         
         currentSum += root.data;
         count = map.getOrDefault((currentSum - target), 0);
+        
         map.put(currentSum , map.getOrDefault(currentSum, 0) + 1);
         count += countPaths(root.left, target, currentSum,map) + countPaths(root.right, target, currentSum,map);
         map.put(currentSum , map.get(currentSum) - 1);
