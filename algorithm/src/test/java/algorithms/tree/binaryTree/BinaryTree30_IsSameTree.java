@@ -35,8 +35,6 @@ The number of nodes in both trees is in the range [0, 100].
  */
 import org.junit.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.*;
-
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 

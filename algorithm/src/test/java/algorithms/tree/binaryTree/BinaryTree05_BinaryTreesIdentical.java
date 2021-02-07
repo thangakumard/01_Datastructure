@@ -1,6 +1,5 @@
 package algorithms.tree.binaryTree;
 
-import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
 /*

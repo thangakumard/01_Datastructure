@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
-import algorithms.tree.BinarySearchTree.BST02_BSTFromSortedArray;
 
 /*
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/

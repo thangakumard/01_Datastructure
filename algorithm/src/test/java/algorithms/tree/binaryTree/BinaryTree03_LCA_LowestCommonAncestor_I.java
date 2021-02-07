@@ -13,9 +13,7 @@ public class BinaryTree03_LCA_LowestCommonAncestor_I {
 
 	@Test
 	public void test(){
-	
-		int[] input = {3,5,1,6,2,0,8};
-		
+			
 		BinaryTree tree = new BinaryTree();
 		tree.root = new TreeNode(3);
 		tree.root.left = new TreeNode(5);

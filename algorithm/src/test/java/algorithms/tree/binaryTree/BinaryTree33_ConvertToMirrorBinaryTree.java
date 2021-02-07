@@ -1,7 +1,5 @@
 package algorithms.tree.binaryTree;
 
-import java.util.List;
-
 import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
