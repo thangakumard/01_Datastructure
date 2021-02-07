@@ -1,4 +1,6 @@
-package algorithms.tree;
+package algorithms.tree.binaryTree;
+
+import algorithms.tree.TreeNode;
 
 /*
  * 
@@ -9,7 +11,7 @@ package algorithms.tree;
  * and node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this node's descendants. 
  * The tree s could also be considered as a subtree of itself.
  */
-public class Tree32_SubtreeofAnotherTree {
+public class BinaryTree34_SubtreeofAnotherTree {
 
 	public boolean isSubtree(TreeNode s, TreeNode t) {
 		if(s == null)

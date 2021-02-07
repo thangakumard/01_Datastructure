@@ -1,13 +1,16 @@
-package algorithms.tree;
+package algorithms.tree.BinarySearchTree;
 
 import org.testng.annotations.Test;
+
+import algorithms.tree.BinaryTree;
+import algorithms.tree.TreeNode;
 
 /*
  * 
  * https://leetcode.com/problems/search-in-a-binary-search-tree/
  */
 
-public class Tree31_SearchInBST {
+public class BST13_SearchInBST {
 
 	@Test
 	public void test()

@@ -1,5 +1,7 @@
 package algorithms.tree.BinarySearchTree;
 
+import java.util.Stack;
+
 import algorithms.tree.TreeNode;
 
 /***
@@ -28,14 +30,35 @@ import algorithms.tree.TreeNode;
 
 public class BST12_RangeSumBST {
 
-	public int rangeSumBST(TreeNode root, int low, int high) {
+	public int rangeSumBST_solution_01(TreeNode root, int low, int high) {
 		if (root == null)
 			return 0;
 		if (root.data > high)
-			return rangeSumBST(root.left, low, high);
+			return rangeSumBST_solution_01(root.left, low, high);
 		if (root.data < low)
-			return rangeSumBST(root.right, low, high);
+			return rangeSumBST_solution_01(root.right, low, high);
 
-		return (root.data + rangeSumBST(root.left, low, high) + rangeSumBST(root.right, low, high));
+		return (root.data + rangeSumBST_solution_01(root.left, low, high) + rangeSumBST_solution_01(root.right, low, high));
 	}
+	
+	public int rangeSumBST_solution_02(TreeNode root, int low, int high) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        int result = 0;
+       while(true){
+           if(root != null){
+               stack.push(root);
+               root = root.left;
+           }else{
+               if(stack.isEmpty()) break;
+               
+               TreeNode temp = stack.pop();
+               root = temp.right;
+               
+               if(low <= temp.data && temp.data <= high){
+                   result+= temp.data;
+               }
+           }
+       }
+       return result;
+   }
 }
