@@ -60,6 +60,8 @@ public class BinaryTree12_IsCousins {
 
 			for (int i = 0; i < size; i++) {
 				TreeNode currentNode = queueNodes.poll();
+				
+				//Check x and y has the same parent - if yes return FALSE
 				if (currentNode.left != null && currentNode.right != null) {
 					if (currentNode.left.data == x && currentNode.right.data == y)
 						return false;
@@ -72,8 +74,11 @@ public class BinaryTree12_IsCousins {
 				if (currentNode.data == y)
 					yfound = true;
 
+				//If both the values are found return true
 				if (xfound && yfound)
 					return true;
+				
+				// If one of the value is found but if the queue is empty return FALSE;
 				if (xfound || yfound) {
 					if (queueNodes.isEmpty())
 						return false;
