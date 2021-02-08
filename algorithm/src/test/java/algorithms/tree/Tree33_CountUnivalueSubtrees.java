@@ -10,8 +10,16 @@ package algorithms.tree;
  */
 public class Tree33_CountUnivalueSubtrees {
 	int count =0;
+	
+    public int countUnivalSubtrees(TreeNode root) {
+        if(root == null) return 0;
+            is_uni(root);
+        return count;
+    }
+    
     private boolean is_uni(TreeNode node){
-        if(node.left == null && node.right == null){
+    	
+        if(node.left == null && node.right == null){ //To handle the LEAF node
             count++;
             return true;
         }
@@ -25,14 +33,11 @@ public class Tree33_CountUnivalueSubtrees {
         }
         
         if(!is_unival) return false;
+       
         count++;
         return true;
     }
     
-    public int countUnivalSubtrees(TreeNode root) {
-        if(root == null) return 0;
-            is_uni(root);
-        return count;
-    }
+
 
 }

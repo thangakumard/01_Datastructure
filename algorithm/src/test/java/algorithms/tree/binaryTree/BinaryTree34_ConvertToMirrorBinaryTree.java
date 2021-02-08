@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
-public class BinaryTree33_ConvertToMirrorBinaryTree {
+public class BinaryTree34_ConvertToMirrorBinaryTree {
 
 	
 	/* creating a binary tree and entering 

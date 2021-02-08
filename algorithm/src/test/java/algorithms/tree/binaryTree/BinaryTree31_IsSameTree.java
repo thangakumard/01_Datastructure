@@ -38,7 +38,7 @@ import org.testng.annotations.Test;
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
-public class BinaryTree30_IsSameTree {
+public class BinaryTree31_IsSameTree {
 
 	@Test
 	private void test() {

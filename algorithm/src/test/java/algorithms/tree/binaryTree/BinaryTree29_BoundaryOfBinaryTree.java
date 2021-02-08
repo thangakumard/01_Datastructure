@@ -58,7 +58,7 @@ import algorithms.tree.TreeNode;
  *
  * 
  */
-public class BinaryTree28_BoundaryOfBinaryTree {
+public class BinaryTree29_BoundaryOfBinaryTree {
 
 	List<Integer> result = new ArrayList<>();
 

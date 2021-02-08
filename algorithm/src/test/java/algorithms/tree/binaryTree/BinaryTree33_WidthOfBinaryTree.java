@@ -66,7 +66,7 @@ Explanation:The maximum width existing in the fourth level with the length 8 (6,
  *
  */
 
-public class BinaryTree32_WidthOfBinaryTree {
+public class BinaryTree33_WidthOfBinaryTree {
 
 	
 	public int widthOfBinaryTree(TreeNode root) {

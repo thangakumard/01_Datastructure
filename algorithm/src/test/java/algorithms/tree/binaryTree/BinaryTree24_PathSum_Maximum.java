@@ -1,4 +1,4 @@
-package algorithms.tree;
+package algorithms.tree.binaryTree;
 /*
  * 
  * 
@@ -10,7 +10,9 @@ in the tree along the parent-child connections.
 The path must contain at least one node and does not need to go through the root.
  */
 
-public class Tree35_maximumPathSum {
+import algorithms.tree.TreeNode;
+
+public class BinaryTree24_PathSum_Maximum {
 
 int max_sum = Integer.MIN_VALUE;
     

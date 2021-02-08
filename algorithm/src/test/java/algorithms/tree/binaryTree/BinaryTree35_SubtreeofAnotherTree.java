@@ -11,7 +11,7 @@ import algorithms.tree.TreeNode;
  * and node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this node's descendants. 
  * The tree s could also be considered as a subtree of itself.
  */
-public class BinaryTree34_SubtreeofAnotherTree {
+public class BinaryTree35_SubtreeofAnotherTree {
 
 	public boolean isSubtree(TreeNode s, TreeNode t) {
 		if(s == null)

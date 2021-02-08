@@ -27,7 +27,7 @@ Explanation:
   5     4       <---
  *
  */
-public class BinaryTree24_RightView {
+public class BinaryTree25_RightView {
 	
 	/* creating a binary tree and entering 
     the TreeNodes 

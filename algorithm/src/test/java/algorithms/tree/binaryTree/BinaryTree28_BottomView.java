@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
-public class BinaryTree27_BottomView {
+public class BinaryTree28_BottomView {
 
 	/* creating a binary tree and entering 
     the TreeNodes 
