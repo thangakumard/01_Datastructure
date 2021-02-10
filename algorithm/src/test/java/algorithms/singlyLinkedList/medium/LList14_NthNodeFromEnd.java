@@ -2,8 +2,6 @@ package algorithms.singlyLinkedList.medium;
 
 import org.testng.annotations.*;
 
-import com.sun.jna.platform.win32.OaIdl.CURRENCY;
-
 import algorithms.singlyLinkedList.ListNode;
 import algorithms.singlyLinkedList.SinglyLinkedList;
 

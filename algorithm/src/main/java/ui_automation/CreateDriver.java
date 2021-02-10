@@ -1,5 +1,9 @@
 package ui_automation;
 
+/***
+ * Reference : https://subscription.packtpub.com/book/web_development/9781788473576/1/ch01lvl1sec11/the-singleton-driver-class
+ */
+
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -7,6 +11,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -84,7 +90,21 @@ public class CreateDriver {
         switch (browser) {
             case "firefox":
                 caps = DesiredCapabilities.firefox();
-               // webDriver.set(new FirefoxDriver(caps));
+
+        FirefoxOptions ffOpts = new FirefoxOptions();
+        FirefoxProfile ffProfile = new FirefoxProfile();
+                ffProfile.setPreference("browser.autofocus",
+                                        true);
+
+                caps.setCapability(FirefoxDriver.PROFILE,
+                                   ffProfile);
+                caps.setCapability("marionette",
+                                   true);
+
+                //webDriver.set(new FirefoxDriver(caps));
+
+                // Selenium 3.7.x
+                //webDriver.set(new FirefoxDriver(ffOpts.setProfile(caps)));
 
                 break;
             case "chrome":
