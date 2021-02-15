@@ -60,7 +60,7 @@ public class BinaryTree10_PerimeterOfBinaryTree {
 	    if(root == null || (root.right == null && root.left == null)) return;
 	    if(root.right == null)rightBoundary(root.left);
 	    else rightBoundary(root.right);
-	    nodes.add(root.data); // add after child visit(reverse)
+	    nodes.add(root.data); // add after child visit(reverse) ******** IMPORTANT
 	}
 	public void leaves(TreeNode root) {
 	    if(root == null) return;

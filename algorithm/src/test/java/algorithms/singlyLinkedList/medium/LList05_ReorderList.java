@@ -58,6 +58,7 @@ public class LList05_ReorderList {
 	        if(head == null) return;
 	        ListNode fast = head, slow = head;
 	        
+	        //Find Middle
 	        while(fast != null && fast.next != null){
 	            slow = slow.next;
 	            fast = fast.next.next;
@@ -65,6 +66,7 @@ public class LList05_ReorderList {
 	        
 	        ListNode prev = null, next = null, current = slow;
 	        
+	        //Reverse from the middle
 	        while(current != null){
 	            next = current.next;
 	            current.next = prev;
@@ -75,13 +77,13 @@ public class LList05_ReorderList {
 	        
 	        ListNode first = head, second = prev;
 	        while(second.next != null){
-	            current = first.next;
+	            next = first.next;
 	            first.next = second;
-	            first = current;
+	            first = next;
 	            
-	            current = second.next;
+	            next = second.next;
 	            second.next = first;
-	            second = current;
+	            second = next;
 	        }
 	    }
 	 	

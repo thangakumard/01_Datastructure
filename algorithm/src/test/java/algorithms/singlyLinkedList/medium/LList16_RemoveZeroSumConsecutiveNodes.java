@@ -43,13 +43,20 @@ public class LList16_RemoveZeroSumConsecutiveNodes {
 	@Test
 	private void test() {
 		SinglyLinkedList list1 = new SinglyLinkedList();
-		list1.push(new ListNode(5));
-		list1.push(new ListNode(-3));
-		list1.push(new ListNode(-4));
+//		list1.push(new ListNode(5));
+//		list1.push(new ListNode(-3));
+//		list1.push(new ListNode(-4));
+//		list1.push(new ListNode(1));
+//		list1.push(new ListNode(6));
+//		list1.push(new ListNode(-2));
+//		list1.push(new ListNode(-5));
+		
 		list1.push(new ListNode(1));
-		list1.push(new ListNode(6));
-		list1.push(new ListNode(-2));
-		list1.push(new ListNode(-5));
+		list1.push(new ListNode(2));
+		list1.push(new ListNode(-3));
+		list1.push(new ListNode(3));
+		list1.push(new ListNode(1));
+
 		ListNode currentNode = removeZeroSumSublists(list1.head);
 	}
 		
