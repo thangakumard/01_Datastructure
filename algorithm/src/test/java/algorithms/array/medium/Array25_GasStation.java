@@ -1,5 +1,6 @@
 package algorithms.array.medium;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
@@ -55,7 +56,11 @@ public class Array25_GasStation {
 	private void test() {
 		int[] gas = new int[] { 1, 2, 3, 4, 5 };
 		int[] cost = new int[] { 3, 4, 5, 1, 2 };
-		System.out.println(canCompleteCircuit(gas, cost));
+		Assert.assertEquals(canCompleteCircuit(gas, cost), 3);
+		
+		int[] gas1 = new int[] { 2, 3, 4 };
+		int[] cost1 = new int[] { 3, 4, 3 };
+		Assert.assertEquals(canCompleteCircuit(gas1, cost1), -1);
 	}
 
 	public int canCompleteCircuit(int[] gas, int[] cost) {

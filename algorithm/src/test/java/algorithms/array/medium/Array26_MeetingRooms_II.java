@@ -8,8 +8,9 @@ public class Array26_MeetingRooms_II {
 
 	@Test
 	private void test() {
-		int[][] intervals= {{9,10},{4,9},{4,17}};
-		System.out.println(minMeetingRooms_2(intervals));
+		//int[][] intervals= {{9,10},{4,9},{4,17}};
+		int[][] intervals= {{2,15},{36,45},{9,29},{16,23},{4,9}};
+		System.out.println(minMeetingRooms(intervals));
 	}
 	
 	public int minMeetingRooms(int[][] intervals) {
@@ -18,8 +19,8 @@ public class Array26_MeetingRooms_II {
         for(int[] i:intervals){
             if(!pq.isEmpty()&&pq.peek()[1]<=i[0]){
                 pq.poll();
-            }
-            pq.add(i);
+            }else
+            	pq.add(i);
         }
         return pq.size();
     }

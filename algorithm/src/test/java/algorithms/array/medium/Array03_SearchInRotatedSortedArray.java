@@ -42,19 +42,21 @@ public class Array03_SearchInRotatedSortedArray {
 
 			if (input[mid] == target)
 				return mid;
-			else if (input[mid] >= input[start]) {
-				if (target >= input[start] && target < input[mid]) {
-					end = mid - 1;
-				} else {
-					start = mid + 1;
-				}
-			} else {
-				if (target <= input[end] && target > input[mid]) {
-					start = mid + 1;
-				} else {
-					end = mid - 1;
-				}
-			}
+			else if(input[mid] >= input[start]){
+
+                if(input[start] <= target && target < input[mid]){
+                    end = mid-1;
+                }else{
+                    start = mid+1;
+                }
+
+            }else{
+                if(input[mid] < target && target <= input[end]){
+                    start = mid+1;
+                }else{
+                    end = mid-1;
+                }
+            }
 		}
 
 		return -1;
