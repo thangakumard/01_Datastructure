@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.meetingScheduler;
 
 import java.util.*;
 
@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
 	intervals[i].length == 2
 	0 <= starti <= endi <= 104
  */
-public class Array15_MergeInterval {
+public class Array01_MergeInterval {
 	
 	@Test
 	private void test() {

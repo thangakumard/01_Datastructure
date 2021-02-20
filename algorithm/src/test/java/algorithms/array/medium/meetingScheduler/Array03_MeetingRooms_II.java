@@ -1,10 +1,10 @@
-package algorithms.array.medium;
+package algorithms.array.medium.meetingScheduler;
 
 import java.util.*;
 
 import org.testng.annotations.Test;
 
-public class Array26_MeetingRooms_II {
+public class Array03_MeetingRooms_II {
 
 	@Test
 	private void test() {
