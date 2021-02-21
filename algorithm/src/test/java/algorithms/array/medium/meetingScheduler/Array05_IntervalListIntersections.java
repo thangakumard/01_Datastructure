@@ -4,7 +4,7 @@ import java.util.*;
 
 import org.testng.annotations.Test;
 
-public class IntervalListIntersections {
+public class Array05_IntervalListIntersections {
 	
 	
 	@Test
