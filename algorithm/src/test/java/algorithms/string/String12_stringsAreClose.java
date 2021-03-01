@@ -32,9 +32,11 @@ import org.testng.annotations.Test;
  * Operation 1: "acb" -> "bca"
  * 
  * 
- * Input: word1 = "cabbba", word2 = "abbccc" Output: true Explanation: You can
- * attain word2 from word1 in 3 operations. Apply Operation 1: "cabbba" ->
- * "caabbb" Apply Operation 2: "caabbb" -> "baaccc" Apply Operation 2: "baaccc"
+ * Input: word1 = "cabbba", word2 = "abbccc" 
+ * Output: true Explanation: You can
+ * attain word2 from word1 in 3 operations. 
+ * Apply Operation 1: "cabbba" -> "caabbb" 
+ * Apply Operation 2: "caabbb" -> "baaccc" Apply Operation 2: "baaccc"
  * -> "abbccc"
  * 
  * 

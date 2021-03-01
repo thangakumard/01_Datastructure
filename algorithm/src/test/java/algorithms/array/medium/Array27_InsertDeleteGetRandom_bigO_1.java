@@ -42,7 +42,7 @@ public class Array27_InsertDeleteGetRandom_bigO_1 {
 				lstList.set(indexToDelete, valToReplace);
 				map.put(valToReplace, indexToDelete);
 
-				map.remove(val);
+				map.remove(val); 
 				lstList.remove(lstList.size() - 1);
 				return true;
 

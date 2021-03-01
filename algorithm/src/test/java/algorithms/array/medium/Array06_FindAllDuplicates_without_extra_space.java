@@ -32,7 +32,7 @@ public class Array06_FindAllDuplicates_without_extra_space {
 
 		for (int i = 0; i < nums.length; i++) {
 			if (nums[Math.abs(nums[i]) - 1] < 0) { // GIVEN : 1 ≤ a[i] ≤ n 
-				result.add(Math.abs(nums[i]));
+				result.add(Math.abs(nums[i])); // If the index has negative value it should be a duplicate value
 			} else {
 				nums[Math.abs(nums[i]) - 1] = -nums[Math.abs(nums[i]) - 1];
 			}

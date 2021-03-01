@@ -33,16 +33,22 @@ public class Array04_smallestCommonElementInAllRows {
 	 }
 	
 	 public int smallestCommonElement(int[][] mat) {
-	        int[] count = new int[10001];
-	        int n= mat.length, m = mat[0].length;
+	        if(mat == null || mat.length == 0)
+	            return 0;
 	        
-	        for(int j=0; j < m; j++){
-	            for(int i =0; i< n; i++){
-	                if(++count[mat[i][j]] == n){
-	                    return mat[i][j];
-	                }
+	        int[] counter = new int[10001];
+	        
+	        int row = mat.length;
+	        int col = mat[0].length;
+	        
+	        for(int c=0; c < col; c++){
+	            for(int r=0; r < row; r++){
+	                counter[mat[r][c]]++;
+	                if(counter[mat[r][c]] == mat.length)
+	                    return mat[r][c];
 	            }
 	        }
+	        
 	        return -1;
 	    }
 }

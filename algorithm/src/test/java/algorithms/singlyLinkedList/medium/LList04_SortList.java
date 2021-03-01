@@ -32,19 +32,19 @@ public class LList04_SortList {
 
     ListNode merge(ListNode list1, ListNode list2) {
         ListNode dummyHead = new ListNode(0);
-        ListNode tail = dummyHead;
+        ListNode currentNode = dummyHead;
         while (list1 != null && list2 != null) {
             if (list1.value < list2.value) {
-                tail.next = list1;
+            	currentNode.next = list1;
                 list1 = list1.next;
-                tail = tail.next;
+                currentNode = currentNode.next;
             } else {
-                tail.next = list2;
+            	currentNode.next = list2;
                 list2 = list2.next;
-                tail = tail.next;
+                currentNode = currentNode.next;
             }
         }
-        tail.next = (list1 != null) ? list1 : list2;
+        currentNode.next = (list1 != null) ? list1 : list2;
         return dummyHead.next;
     }
 
@@ -55,7 +55,7 @@ public class LList04_SortList {
             head = head.next.next;
         }
         ListNode mid = slow.next;
-        slow.next = null;
+        slow.next = null; // IMPORTANT TO MAKE slow.next = null to split the linked list
         return mid;
     }
     

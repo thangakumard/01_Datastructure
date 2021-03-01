@@ -15,7 +15,11 @@ import algorithms.tree.TreeNode;
  * 
  * Input:
  * 
- * 1 / \ 2 3 \ 5
+ *   1 
+ *  / \ 
+ * 2   3 
+ *  \ 
+ *   5
  * 
  * Output: ["1->2->5", "1->3"]
  * 

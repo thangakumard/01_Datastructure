@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.meetingScheduler;
 
 import java.util.*;
 
@@ -29,16 +29,23 @@ import org.testng.annotations.Test;
 	intervals[i].length == 2
 	0 <= starti <= endi <= 104
  */
-public class Array15_MergeInterval {
+public class Array01_MergeInterval {
 	
 	@Test
 	private void test() {
-		LinkedList<int[]> result = new LinkedList<int[]>();
-		result.add(new int[]{1,3});
-		result.add(new int[]{2,6});
-		result.add(new int[]{8,10});
-		result.add(new int[]{15,18});
-		System.out.println(mergeInterval(result.toArray(new int[result.size()][])));
+//		LinkedList<int[]> inputIntervals = new LinkedList<int[]>();
+//		inputIntervals.add(new int[]{1,3});
+//		inputIntervals.add(new int[]{2,6});
+//		inputIntervals.add(new int[]{8,10});
+//		inputIntervals.add(new int[]{15,18});
+//		System.out.println(mergeInterval(inputIntervals.toArray(new int[inputIntervals.size()][])));
+//		
+		
+		int[][] intervals= {{2,15},{36,45},{9,29},{16,23},{4,9}};
+		int[][] result = mergeInterval(intervals);
+		for(int[] interval: result) {
+			System.out.println(interval[0] + "," + interval[1]);
+		}
 	}
 	
 	private int[][] mergeInterval(int[][] input){
