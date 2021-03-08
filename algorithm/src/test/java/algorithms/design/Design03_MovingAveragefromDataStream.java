@@ -55,16 +55,12 @@ public class Design03_MovingAveragefromDataStream {
 	    
 	    public double next(int val) {
 	        if(queueData.size() >= CAPACITY){
-	            int remove_val = queueData.poll();
+	            int remove_val = queueData.poll();	            
+	            total  -= remove_val;
+	         }
 	            queueData.add(val);
-	            
-	            total = total - remove_val + val;
-	            return total/CAPACITY;
-	        }else{
-	            queueData.add(val);
-	            total = total + val;
+	            total += val;
 	            return total/queueData.size();
-	        }
 	    }
 	}
 

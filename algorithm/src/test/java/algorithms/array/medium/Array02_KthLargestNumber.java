@@ -1,5 +1,7 @@
 package algorithms.array.medium;
 
+import java.util.PriorityQueue;
+
 import org.testng.annotations.Test;
 /*
  * https://leetcode.com/problems/kth-largest-element-in-an-array/
@@ -28,13 +30,14 @@ public class Array02_KthLargestNumber {
 		// int[] input = {3,2,1,5,6,4};
 
 		int[] input = { 3, 2, 3, 1, 2, 4, 5, 5, 6 };
-		System.out.println(findKthLargest(input, 9));
+		System.out.println(findKthLargest_big_o_n(input, 9));
+		System.out.println(findKthLargest_big_o_nlogn(input, 9));
 		int a = 10;
 	}
 
 	int result = -1;
 
-	public int findKthLargest(int[] nums, int k) {
+	public int findKthLargest_big_o_nlogn(int[] nums, int k) {
 
 		int result = quickSort(nums, 0, nums.length - 1, k);
 
@@ -77,4 +80,16 @@ public class Array02_KthLargestNumber {
         return result;
 	}
 
+    public int findKthLargest_big_o_n(int[] nums, int k) {
+        PriorityQueue<Integer> minQueue = new PriorityQueue<Integer>();
+        
+        for(int i=0; i < nums.length; i++){
+            minQueue.add(nums[i]);
+            if(minQueue.size() > k){
+                minQueue.remove();
+            }
+        }
+        
+        return minQueue.remove();
+    }
 }

@@ -21,9 +21,10 @@ public int[][] flipAndInvertImage(int[][] A) {
         
         int[][] result = new int[A.length][A[0].length];
         
-        for(int i=0; i < A.length; i++){
+        for(int i=0; i < A.length; i++){//Starting index 0
             int k=0;
-            for(int j=A[0].length-1; j>=0;j--){                
+            for(int j=A[0].length-1; j>=0;j--){//starting index length-1
+            	System.out.println(A[i][j]);
                 result[i][k] = 1 ^ A[i][j];               
                 k++;
             }
