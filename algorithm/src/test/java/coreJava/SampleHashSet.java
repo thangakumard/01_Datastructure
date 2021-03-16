@@ -1,6 +1,7 @@
 package coreJava;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -155,6 +156,34 @@ public class SampleHashSet {
 	        List<String> list = new ArrayList<String>(arrset1); 
 	        Collections.sort(list);
 	     
+	        /****** ArrayList to Set ****/
+	        List<Integer> lstNumbers = new ArrayList<Integer>();
+	        lstNumbers.add(10);
+	        lstNumbers.add(20);
+	        lstNumbers.add(40);
+	        lstNumbers.add(100);
+	        lstNumbers.add(50);
+	        lstNumbers.add(50);
+	        lstNumbers.add(50);
+	        HashSet<Integer> setNumbers = new HashSet<Integer>();
+	        setNumbers.addAll(lstNumbers);
+	        
+	        Iterator nums = setNumbers.iterator();
+		    System.out.println("ArrayList to HashSet:");
+		    while(nums.hasNext()) {
+		    	 System.out.println(nums.next());
+		    }
+		    
+		    /****** Array to Set ****/
+		    Integer[] arrNumbers = new Integer[] {10,10,20,20,30,30};
+		    HashSet<Integer> setNumArr= new HashSet<Integer>();
+		    setNumArr.addAll(Arrays.asList(arrNumbers));
+	        
+	        Iterator nums1 = setNumArr.iterator();
+		    System.out.println("Array to HashSet:");
+		    while(nums1.hasNext()) {
+		    	 System.out.println(nums1.next());
+		    }
 	}
 
 }

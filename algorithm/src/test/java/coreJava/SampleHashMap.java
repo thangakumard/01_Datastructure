@@ -149,6 +149,7 @@ public class SampleHashMap {
 	     aMap.put('C', 3);
 	     for(Map.Entry<Character, Integer> entry : aMap.entrySet()) {
 	    	 
+	    	 entry.getValue(); entry.getKey();
 	     }
 	     
 	    
