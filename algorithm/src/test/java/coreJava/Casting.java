@@ -21,11 +21,24 @@ public class Casting {
 	
 	@Test
 	public void CharToInt() {
-		String str = "123";
+		String str = "198";
 		System.out.println(Character.getNumericValue(str.charAt(0)));
 		System.out.println(Character.getNumericValue(str.charAt(1)));
 		System.out.println(Character.getNumericValue(str.charAt(2)));
-
+		
+		
+		/******* WITHOUT USING INBUILT FUNCTIONS *********/
+		System.out.println("Char using 0 subtraction :" + (str.charAt(0) - '0'));//returns 1
+		System.out.println("Char using 0 subtraction :" + (str.charAt(1) - '0'));//returns 9
+		System.out.println("Char using 0 subtraction :" + (str.charAt(2) - '0'));//returns 8
+		
+		/****WRONG CASTING ****/
+		System.out.println("Char using 0 addition :" + str.charAt(0) + '0'); //returns 10
+		System.out.println("Char using 0 addition :" + str.charAt(1) + '0'); //returns 90
+		System.out.println("Char using 0 addition :" + str.charAt(2) + '0'); //returns 80
+		
+		
+		
 	}
 
 	@Test
@@ -159,7 +172,12 @@ public class Casting {
 		lstInput.add(30);
 		
 		Set<Integer> set = new HashSet<>(lstInput);
-		
+	}
+	
+	@Test
+	public void ListofArraytoArrayOfArray() {
+		List<int[]> lstArray = new ArrayList<>();
+		int[][] output = lstArray.toArray(new int[lstArray.size()][]);
 	}
 	
 }

@@ -40,7 +40,7 @@ public class String01_AddString {
         StringBuilder sb = new StringBuilder();
         while(l1 > -1 || l2 >-1 || carry > 0){
             
-            x = l1 < 0 ? 0 : num1.charAt(l1) - '0';
+            x = l1 < 0 ? 0 : num1.charAt(l1) - '0'; /****** IMPORTANT TO USE SUBRACTION, NOT ADDITION OF ZERO ****/
             y = l2 < 0 ? 0 : num2.charAt(l2) - '0';
             sb.insert(0,(x + y + carry) %10);
             carry = (x+y+carry)/10;

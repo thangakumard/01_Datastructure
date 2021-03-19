@@ -36,7 +36,7 @@ public class Backtrack_Array04_Permutations_II {
 	
 	public List<List<Integer>> permuteUnique(int[] nums) {
 		List<List<Integer>> list = new ArrayList<>();
-		Arrays.sort(nums);
+		Arrays.sort(nums); /************** IMPORTANT STEP ****************/
 		backtrack(list, new ArrayList<>(), nums, new boolean[nums.length]);
 		return list;
 	}
