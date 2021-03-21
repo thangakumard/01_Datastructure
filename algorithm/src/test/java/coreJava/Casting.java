@@ -37,8 +37,14 @@ public class Casting {
 		System.out.println("Char using 0 addition :" + str.charAt(1) + '0'); //returns 90
 		System.out.println("Char using 0 addition :" + str.charAt(2) + '0'); //returns 80
 		
-		
-		
+	}
+	
+	@Test
+	public void IntToChar() {
+		int a = 10;
+		System.out.println("Integer to Character :");
+		char c = (char)a;
+		System.out.print(c);
 	}
 
 	@Test

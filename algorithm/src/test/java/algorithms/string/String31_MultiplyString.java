@@ -33,7 +33,7 @@ public class String31_MultiplyString {
 
 	@Test
 	private void test() {
-		System.out.println(multiply("99", "9"));
+		System.out.println(multiply("99", "99"));
 	}
 
 	public String multiply(String num1, String num2) {
@@ -41,16 +41,15 @@ public class String31_MultiplyString {
 			return "0";
 		int m = num1.length();
 		int n = num2.length();
-		int[] result = new int[m + n];
+		int[] result = new int[m + n]; // size of 4
 		for (int i = m - 1; i >= 0; i--) {
 			for (int j = n - 1; j >= 0; j--) {
-				int product = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
-				int sum = result[i + j + 1] + product;
-				result[i + j] = result[i + j] + sum / 10;
-				result[i + j + 1] = sum % 10;
+				int product = (num1.charAt(i) - '0') * (num2.charAt(j) - '0'); //81
+				int sum = result[i + j + 1] + product; //Get the existing value in the index + current value
+				result[i + j] = result[i + j] + sum / 10; //Keep the Quotient in the previous index
+				result[i + j + 1] = sum % 10; // Assign the remainder to the current index
 			}
-		}
-
+		} 
 		StringBuilder sb = new StringBuilder();
 		for (int val : result) {
 			if (sb.length() != 0 || val != 0) {

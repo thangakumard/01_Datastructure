@@ -27,7 +27,7 @@ public class String24_ReorganizeString {
 	@Test
 	private void test() {
 		
-		System.out.println(reorganizeString("aaaabbb"));
+		System.out.println(reorganizeString("aaaabbbbbbbbbbbbbbbb"));
 	}
 
 	public String reorganizeString(String s) {

@@ -59,6 +59,7 @@ public class String25_StringCompression {
 	@Test
 	private void test() {
 
+		/******** IMPORTANT TEST CASE : Char count > 9 *******/
 		char[] input_01 = { 'a', 'a', 'b', 'b', 'c', 'c', 'c' };
 		char[] input_02 = { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
 		char[] input_03 = { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
