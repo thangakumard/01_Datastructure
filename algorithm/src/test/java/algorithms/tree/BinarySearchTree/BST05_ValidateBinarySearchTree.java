@@ -35,6 +35,10 @@ import algorithms.tree.TreeNode;
 	-231 <= Node.val <= 231 - 1
  */
 public class BST05_ValidateBinarySearchTree {
+	/*************** NOTE ********
+	 *  Think about test cases with same node value [1,1]
+	 *  Think about test cases with node value = Integer.MIN_VALUE
+	*************/
 
 	public boolean isValidBST(TreeNode root) {
 		if (root == null)

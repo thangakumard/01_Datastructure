@@ -23,6 +23,14 @@ public class BST06_BuildBSTFromInOrderPreOrder {
 		System.out.print(root.data + " ");
 		printInOrder(root.right);
 	}
+	/********** Pseudocode *************
+	 * Keep In-order node values and index in the HashMap
+	 * start with preorder array's 0th index => which is root node of the tree
+	 * Find the index of the root node in the inorder traversal using the HashMap we built
+	 * root.left will be all the elements left of the root index in the inorder array 
+	 * root.right will be all the elements right of the root index in the inorder array 
+	 * 
+	 * */
 	
 	HashMap<Integer,Integer> inOrderMap = new HashMap<Integer,Integer>();
 	

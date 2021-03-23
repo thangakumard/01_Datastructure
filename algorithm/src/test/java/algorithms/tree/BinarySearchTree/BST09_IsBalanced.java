@@ -10,7 +10,6 @@ import algorithms.tree.TreeNode;
  */
 public class BST09_IsBalanced {
 
-	boolean result = true;
 	
 	@Test
 	public void isBalanced(){
@@ -20,20 +19,19 @@ public class BST09_IsBalanced {
 		t1.root.right = new TreeNode(3);
 		t1.root.left.left = new TreeNode(4);
 		t1.root.left.right = new TreeNode(5);
-		isBalancedTree(t1.root);
-		Assert.assertTrue(result);
+		Assert.assertTrue(isBalanced(t1.root));
 	}
 	
-	private int isBalancedTree(TreeNode root){
-		if(root == null)
-			return 0;
-		int l = isBalancedTree(root.left);
-		int r = isBalancedTree(root.right);
-		
-		if(Math.abs(l-r) > 1){
-			result = false;
-		}
-		
-		return 1+Math.max(l, r);
-	}
+	 public boolean isBalanced(TreeNode root) {
+	        if(root == null) return true;
+	        return Math.abs(heightOfBST(root.left) - heightOfBST(root.right)) < 2
+	            && isBalanced(root.left)
+	            && isBalanced(root.right);
+	    }
+	    
+	    public int heightOfBST(TreeNode root){
+	        if(root == null)return 0;
+	        
+	        return Math.max(heightOfBST(root.left), heightOfBST(root.right)) + 1;
+	    }
 }

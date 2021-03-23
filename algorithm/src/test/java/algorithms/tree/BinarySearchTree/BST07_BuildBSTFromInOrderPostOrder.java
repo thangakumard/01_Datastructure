@@ -53,6 +53,17 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 		}
 	}
 
+	/********** Pseudocode *************
+	 * Keep In-order node values and index in the HashMap
+	 * start with postorder array's last index => which is root node of the tree
+	 * Find the index of the root node in the inorder traversal using the HashMap we built
+	 * root.right will be all the elements right of the root index in the inorder array
+	 * root.left will be all the elements left of the root index in the inorder array 
+	 *  
+	 * 
+	 * */
+	
+	
 	HashMap<Integer, Integer> inorderMap = new HashMap<Integer, Integer>();
 	int postIndex = 0;
 

@@ -11,10 +11,10 @@ public class BST04_InorderPredecessorBST {
 		if (root == null)
 			return null;
 
-		if (root.data >= p.data) {
+		if (root.data >= p.data) { //move to left until root.data >= p.data
 			return predecessor(root.left, p);
 		} else {
-			TreeNode right = predecessor(root.right, p);
+			TreeNode right = predecessor(root.right, p); // root node will be the result if it is not null
 			return (right != null) ? right : root;
 		}
 	}
