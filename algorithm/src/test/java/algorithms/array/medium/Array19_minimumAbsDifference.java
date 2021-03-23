@@ -30,8 +30,8 @@ public class Array19_minimumAbsDifference {
 	private void test() {
 		int[] input_01 = {4, 6, 10};
 		System.out.println(searchMinDiffElement(input_01,7));
-		int[] input_02 = {1,3,6,10,15};
-		int[] input_03 = {3,8,-10,23,19,-4,-14,27};
+//		int[] input_02 = {1,3,6,10,15};
+//		int[] input_03 = {3,8,-10,23,19,-4,-14,27};
 
 	}
 

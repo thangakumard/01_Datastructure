@@ -46,7 +46,7 @@ public class Array14_MinimumSwaps {
 		for (int i = 0; i < arr.length; i++) {
 			while (arr[i] - 1 != i) {
 				int temp = arr[i];
-				arr[i] = arr[arr[i] - 1];
+				arr[i] = arr[temp-1];
 				arr[temp - 1] = temp;
 				min_swap++;
 			}

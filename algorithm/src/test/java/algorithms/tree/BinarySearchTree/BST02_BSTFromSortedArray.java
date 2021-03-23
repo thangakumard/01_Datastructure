@@ -8,6 +8,8 @@ import algorithms.tree.TreeNode;
 public class BST02_BSTFromSortedArray {
 
 	/**************
+	 * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+	 * 
 	 * -------Approach-------
 	 * 1. Find the middle element and set that as root TreeNode
 	 * 2. Repeat that for left half of the array and keep that left of root TreeNode in the step 1
@@ -28,7 +30,7 @@ public class BST02_BSTFromSortedArray {
 	public TreeNode buildBST(int[] input, int left, int right){
 		if(left > right)
 			return null;
-		int middle = (left+right)/2;
+		int middle = left + (right-left)/2;
 		TreeNode TreeNode = new TreeNode(input[middle]);
 		
 		TreeNode.left = buildBST(input, left, middle-1);
