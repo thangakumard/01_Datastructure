@@ -40,7 +40,7 @@ public class String23_Partitionlabels {
 		List<Integer> list = new ArrayList<>();
 		for (int i = 0; i < S.length(); i++) {
 
-			last = Math.max(last, map.get(S.charAt(i)));
+			last = Math.max(last, map.get(S.charAt(i))); //***** MATH.MAX is core logic *****/
 			if (last == i) {
 				list.add(last - start + 1);
 				start = last + 1;
