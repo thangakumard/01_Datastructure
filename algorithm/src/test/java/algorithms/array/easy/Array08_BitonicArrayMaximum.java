@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 /*
  * https://www.educative.io/module/lesson/data-structures-in-java/g7O2GrxYo9Y
  * 
- * Find the maximum value in a given Bitonic array. An array is considered bitonic if it is monotonically increasing and then monotonically decreasing. Monotonically increasing or decreasing means that for any index i in the array arr[i] != arr[i+1].
+ * Find the maximum value in a given Bitonic array. An array is considered bitonic if it is monotonically increasing and then monotonically decreasing. 
+ * Monotonically increasing or decreasing means that for any index i in the array arr[i] != arr[i+1].
 
 Example 1:
 
