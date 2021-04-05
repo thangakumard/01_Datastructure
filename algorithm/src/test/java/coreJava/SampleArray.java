@@ -81,6 +81,17 @@ public class SampleArray {
 		System.out.println(s);
 		System.out.println(s.length()); //length is  METHOD
 		
+		double[] input_1 = {3,4.5,6,7,8,9,10};
+		System.out.println(Arrays.binarySearch(input_1, 1));
+		System.out.println(Arrays.binarySearch(input_1, 2));
+		System.out.println(Arrays.binarySearch(input_1, 3));
+		System.out.println(Arrays.binarySearch(input_1, 4));
+		System.out.println(Arrays.binarySearch(input_1, 5));
+		System.out.println(Arrays.binarySearch(input_1, 7));
+		System.out.println(Arrays.binarySearch(input_1, 9));
+		System.out.println(Arrays.binarySearch(input_1, 10));
+		System.out.println(Arrays.binarySearch(input_1, 11));
+		
 	}
 	
 

@@ -36,7 +36,7 @@ public class topKFrequentWords {
 	  @Test
 	  public void gettopKFrequent() {
 		  String[] input = {"i", "love", "leetcode", "i", "love", "coding"};
-		  List<String> result = topKFrequent_01(input , 2);
+		  List<String> result = topKFrequent_worng_order_result(input , 2);
 		  for(String word : result) {
 			  System.out.println(word);
 		  }
@@ -47,7 +47,7 @@ public class topKFrequentWords {
 		  }
 	  }
 	  
-	  public List<String> topKFrequent_01(String[] words, int k) {
+	  public List<String> topKFrequent_worng_order_result(String[] words, int k) {
 	        List<String> result = new LinkedList<>();
 	        Map<String, Integer> map = new HashMap<>();
 	        for(int i=0; i<words.length; i++)

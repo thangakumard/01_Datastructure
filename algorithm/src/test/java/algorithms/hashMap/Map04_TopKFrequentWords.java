@@ -1,4 +1,8 @@
 package algorithms.hashMap;
+
+import java.util.*;
+import org.testng.annotations.Test;
+
 /*****
  * https://leetcode.com/problems/top-k-frequent-words/
 
@@ -25,4 +29,28 @@ Try to solve it in O(n log k) time and O(n) extra space.
  */
 public class Map04_TopKFrequentWords {
 
+	@Test
+	  public void gettopKFrequent() {
+		  String[] input = {"i", "love", "leetcode", "i", "love", "coding"};
+		  List<String> result = topKFrequent(input , 2);
+		  for(String word : result) {
+			  System.out.println(word);
+		  }
+	  }
+	
+	public List<String> topKFrequent(String[] words, int k) {
+        List<String> result = new ArrayList<>();
+        
+        if(words == null || words.length == 0)return result;
+        
+        HashMap<String, Integer> mapInput = new HashMap<String,Integer>();
+        for(String s: words){
+            mapInput.put(s, mapInput.getOrDefault(s,0)+1);
+        }
+        result.addAll(mapInput.keySet());
+        Collections.sort(result, (a,b) -> mapInput.get(b).equals(mapInput.get(a)) ?
+                         a.compareTo(b) : mapInput.get(b) - mapInput.get(a));
+        
+        return result.subList(0,k);
+    }
 }

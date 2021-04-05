@@ -19,8 +19,13 @@ public class Array03_MeetingRooms_II {
         for(int[] i:intervals){
             if(!pq.isEmpty()&&pq.peek()[1]<=i[0]){
                 pq.poll();
-            }else
+                /****** IMPORTANT Priority Queue will not re-arrange after the value update. 
+                 * so instead of poll(), if we do pq.peek()[1] that will not work
+                 */
+            	//pq.peek()[1] = Math.max(i[1], pq.peek()[1]);
+            }else {
             	pq.add(i);
+            }
         }
         return pq.size();
     }
