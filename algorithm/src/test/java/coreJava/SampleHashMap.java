@@ -148,8 +148,8 @@ public class SampleHashMap {
 	     aMap.put('B', 2);
 	     aMap.put('C', 3);
 	     for(Map.Entry<Character, Integer> entry : aMap.entrySet()) {
-	    	 
-	    	 entry.getValue(); entry.getKey();
+	    	 entry.getValue(); 
+	    	 entry.getKey();
 	     }
 	     
 	    
