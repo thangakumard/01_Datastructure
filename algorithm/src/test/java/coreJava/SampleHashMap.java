@@ -147,9 +147,11 @@ public class SampleHashMap {
 	     aMap.put('A', 1);
 	     aMap.put('B', 2);
 	     aMap.put('C', 3);
+	     aMap.computeIfAbsent('C', k->4);//Add if the key is not present
+	     aMap.computeIfAbsent('D', k->5);
 	     for(Map.Entry<Character, Integer> entry : aMap.entrySet()) {
-	    	 entry.getValue(); 
-	    	 entry.getKey();
+	    	System.out.println(entry.getValue()); 
+	    	System.out.println(entry.getKey());
 	     }
 	     
 	    

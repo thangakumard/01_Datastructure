@@ -69,6 +69,8 @@ public class sampleBitOperation {
 	      
 	      
 	      //<< (left shift)
+	      System.out.println("a << 0 = " + (a << 0));
+	      System.out.println("a << 1 = " + (a << 1));
 	      c = a << 2;       /* 240 = 1111 0000 */
 	      System.out.println("a << 2 = " + c );
 	      
