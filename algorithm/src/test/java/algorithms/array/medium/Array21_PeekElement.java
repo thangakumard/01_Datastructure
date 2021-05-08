@@ -52,7 +52,7 @@ public class Array21_PeekElement {
 	            else
 	                l = mid + 1;
 	        }
-	        return nums[l];
+	        return l; //NOT the value return the index
 	    }
 	
 	private int Old_Solution(int[] input, int left, int right, int length)

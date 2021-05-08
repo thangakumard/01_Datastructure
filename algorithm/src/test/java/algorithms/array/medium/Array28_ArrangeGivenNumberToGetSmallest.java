@@ -26,7 +26,7 @@ public class Array28_ArrangeGivenNumberToGetSmallest {
 		System.out.println(ArrangeGivenNumberToGetSmallest(arr));
 		System.out.println(ArrangeGivenNumberToGetSmallest(arr1));
 	}
-	
+	//This question was asked to me in an Amazon interview
 	private String ArrangeGivenNumberToGetSmallest(int[] input) {
 		
 		for(int i=0; i < input.length; i++) {
