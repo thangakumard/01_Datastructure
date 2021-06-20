@@ -16,6 +16,8 @@ public class String01_Palindrome_I {
 	/*
 	 * Time Complexity O(n)
 	 * Space Complexity O(1)
+	 * This approach works better than using regular expression
+	 *  s = s.replaceAll("[^A-Za-z0-9]","").toLowerCase();
 	 */
 	 public boolean isPalindrome(String s) {
 	        
