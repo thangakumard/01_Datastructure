@@ -24,12 +24,12 @@ public class String05_Palindrome_Longest_Substring {
 
 		String longest = s.substring(0, 1);
 		for (int i = 0; i < s.length(); i++) {
-			String tmp = expandFromMiddle(s, i, i); //Covers even odd length of Palindrome
+			String tmp = expandFromMiddle(s, i, i); //Covers odd length of Palindrome
 			if (tmp.length() > longest.length()) {
 				longest = tmp;
 			}
 
-			tmp = expandFromMiddle(s, i, i + 1); //Covers even even length of Palindrome
+			tmp = expandFromMiddle(s, i, i + 1); //Covers even length of Palindrome
 			if (tmp.length() > longest.length()) {
 				longest = tmp;
 			}
