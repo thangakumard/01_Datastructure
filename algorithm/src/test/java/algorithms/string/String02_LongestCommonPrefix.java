@@ -48,15 +48,7 @@ public class String02_LongestCommonPrefix {
 	 * Time complexity : O(S)O(S) , 
 	 * where S is the sum of all characters in all strings.
 	 * In the worst case all nn strings are the same. 
-	 * The algorithm compares the string S1S1 with the other strings [S_2 \ldots S_n][S 
-2
-​	
- …S 
-n
-​	
- ] There are SS character comparisons, where SS is the sum of all characters in the input array.
-
-Space complexity : O(1)O(1). We only used constant extra space.
+	 * Space complexity : O(1)O(1). We only used constant extra space.
 	 */
 	private String longestPrefix(String[] inputs){
 		if(inputs == null || inputs.length == 0)

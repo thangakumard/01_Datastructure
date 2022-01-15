@@ -1,4 +1,9 @@
 package coreJava.collections.set;
+
+import java.util.TreeSet;
+
+import org.testng.annotations.Test;
+
 /***************
  * 
  * A NavigableSet implementation based on a TreeMap. The elements are ordered using their natural ordering, 
@@ -30,5 +35,21 @@ Note that the fail-fast behavior of an iterator cannot be guaranteed as it is, g
  *
  */
 public class Set02_TreeSet {
-
+  
+	@Test
+	public void treesetSample() {
+		TreeSet<Object> treeSet = new TreeSet<Object>();
+	      treeSet.add(45);
+	      treeSet.add(15);
+	      treeSet.add(99);
+	      treeSet.add(70);
+	      treeSet.add(65);
+	      treeSet.add(30);
+	      treeSet.add(10);
+	      treeSet.add(60);
+	      treeSet.add(80);
+	      System.out.println("TreeSet\n" + treeSet);
+	      TreeSet<Object> res = (TreeSet<Object>)treeSet.descendingSet();
+	      System.out.println("TreeSet after sorting in descending order\n" + res);
+	}
 }

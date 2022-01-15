@@ -1,4 +1,4 @@
-package algorithms.array.easy;
+	package algorithms.array.easy;
 
 /*https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/
  * 

@@ -60,7 +60,7 @@ public class Array17_FixedPointInAnArray {
 	
 	public int devideAndSearch(int[] input,int left,int right){
 		if(left < right){
-			int mid = (left+right)/2;
+			int mid = left + (right-left)/2;
 			if(mid == input[mid]){
 				return mid;
 			}

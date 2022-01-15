@@ -14,8 +14,10 @@ The length of both num1 and num2 is < 5100.
 Both num1 and num2 contains only digits 0-9.
 Both num1 and num2 does not contain any leading zero.
 You must not use any built-in BigInteger library or convert the inputs to integer directly.
- *
- */
+ **********************************
+ *Before solving think about the test case 
+ *addition of num1 and num2 goes beyond integer.MAX_VALUE
+ **********************************/
 
 public class String01_AddString {
 	
@@ -31,6 +33,13 @@ public class String01_AddString {
 	 System.out.println(addStrings("0","0"));
 	}
 	
+	/**
+	 * Time complexity O(max(n1,n2))
+	 * Space complexity O(n) 
+	 * @param num1
+	 * @param num2
+	 * @return
+	 */
 	public String addStrings(String num1, String num2) {
         if(num1.isEmpty()) return num2;
         if(num2.isEmpty()) return num1;

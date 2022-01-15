@@ -186,6 +186,10 @@ public class Casting {
 		int[][] output = lstArray.toArray(new int[lstArray.size()][]);
 	}
 	
-	
+	@Test
+	public void doubleValue() {
+		double x = 2, y = 3;
+		System.out.println((x+y)/2);
+	}
 	
 }

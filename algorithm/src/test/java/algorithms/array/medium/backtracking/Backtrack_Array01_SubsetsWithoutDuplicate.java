@@ -42,7 +42,7 @@ public class Backtrack_Array01_SubsetsWithoutDuplicate {
 		List<List<Integer>> list = new ArrayList<>();
 		backtrack(list, new ArrayList<>(), nums, 0);
 		return list;
-	}
+	} 
 
 	private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int start) {
 		list.add(new ArrayList<>(tempList));

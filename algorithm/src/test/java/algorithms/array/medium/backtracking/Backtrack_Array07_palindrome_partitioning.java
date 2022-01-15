@@ -49,7 +49,7 @@ public class Backtrack_Array07_palindrome_partitioning {
 					tempList.add(s.substring(start, i + 1));
 					backtrack(list, tempList, s, i + 1);
 					tempList.remove(tempList.size() - 1);
-				}
+				} 
 			}
 		}
 	}

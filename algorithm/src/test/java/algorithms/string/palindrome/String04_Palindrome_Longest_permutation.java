@@ -1,5 +1,7 @@
 package algorithms.string.palindrome;
 
+import org.testng.annotations.Test;
+
 public class String04_Palindrome_Longest_permutation {
 
 	/*
@@ -27,6 +29,10 @@ public class String04_Palindrome_Longest_permutation {
 	 * 1 <= s.length <= 2000 s consists of lowercase and/or uppercase English
 	 * letters only.
 	 */
+	@Test
+	private void test() {
+		longestPalindrome("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+	}
 	public int longestPalindrome(String s) {
 		int[] char_counts = new int[128];
 		char[] char_input = s.toCharArray();

@@ -35,7 +35,7 @@ public class String07_Palindrome_Longest_Subsequence_length {
 	@Test
 	private void test() {
 		//for the input bbbab => expected output is 4
-		System.out.println(longestPalindromeSubseq("bbbab"));
+		System.out.println(longestPalindromeSubseq("bab"));
 	}
 	
 	

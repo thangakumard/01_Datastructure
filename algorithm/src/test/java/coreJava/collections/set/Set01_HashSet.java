@@ -1,5 +1,9 @@
 package coreJava.collections.set;
 
+import java.util.HashSet;
+
+import org.testng.annotations.Test;
+
 /********
 ***********************
 java.util 
@@ -45,4 +49,18 @@ This class is a member of the Java Collections Framework.
 
 public class Set01_HashSet {
 
+	@Test
+	public void hasSetSample() {
+		HashSet<Object> hashSet = new HashSet<Object>();
+		hashSet.add(45);
+	      hashSet.add(15);
+	      hashSet.add(99);
+	      hashSet.add(70);
+	      hashSet.add(65);
+	      hashSet.add(30);
+	      hashSet.add(10);
+	      hashSet.add(60);
+	      hashSet.add(80);
+	      System.out.println("HashSet\n" + hashSet); /***** Will not maintain the insertion order ****/
+	}
 }

@@ -16,16 +16,15 @@ public class LList03_PrintNodesInReverse {
 		list.push(new ListNode(6));
 		list.push(new ListNode(7));
 		
-		PrintInReverse(list.head);
+		printInReverse(list.head);
 	}
 	
-	
-	public void PrintInReverse(ListNode node)
-	{
-		if(node == null)
+	public void printInReverse(ListNode node) {
+		if(node.next == null) {
 			return;
-		
-		PrintInReverse(node.next);
+		}
+		printInReverse(node.next);
 		System.out.println(node.value);
 	}
+	
 }

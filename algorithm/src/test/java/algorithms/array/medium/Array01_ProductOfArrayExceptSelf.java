@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+ package algorithms.array.medium;
 
 import org.testng.annotations.Test;
 

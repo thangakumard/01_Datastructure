@@ -21,6 +21,22 @@ import java.util.*;
  */
 public class String03_LengthOfLongestSubstringTwoDistinctChar {
 
+	/*
+	 * Test Cases
+	 * a
+	 * b
+	 * aa
+	 * ab
+	 * aba
+	 * abc
+	 * abcdefab
+	 * 
+	 */
+/******
+ * 
+ * @param s
+ * @return
+ */
 public int lengthOfLongestSubstringTwoDistinct(String s) {
         
         if(s.length() < 3) return s.length();
