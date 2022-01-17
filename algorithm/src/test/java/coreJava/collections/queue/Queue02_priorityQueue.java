@@ -15,6 +15,30 @@ import java.util.PriorityQueue;
 public class Queue02_priorityQueue {
 
     @Test
+    public void int_sort(){
+        int[] input = {1,1,2,2,3,3,4,5};
+
+        PriorityQueue<int[]> subsequences = new PriorityQueue<>((int[] subsequence1, int[] subsequence2) -> {
+            if (subsequence1[1] == subsequence2[1]) {
+                return (subsequence1[1] - subsequence1[0]) - (subsequence2[1] - subsequence2[0]);
+            }
+            return (subsequence1[1] - subsequence2[1]);
+        });
+
+        subsequences.add(new int[]{1, 2});
+        subsequences.add(new int[]{2, 5});
+        subsequences.add(new int[]{10, 20});
+        subsequences.add(new int[]{50, 40});
+
+        while(!subsequences.isEmpty()){
+            System.out.println(subsequences.peek()[0]);
+            System.out.println(subsequences.peek()[1]);
+            subsequences.poll();
+        }
+
+    }
+
+    @Test
     public void int_priorityQueue_ascending(){
         // Creating empty priority queue
         PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
@@ -67,4 +91,6 @@ public class Queue02_priorityQueue {
 
             System.out.println(pq);
     }
+
+
 }

@@ -39,7 +39,7 @@ public class Backtrack_Array09_Combinations {
 	
 	public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
-        backtrack(result,n,k,new ArrayList<>(),1);
+        backtrack(result,n,k,new ArrayList<>(),1);/** STARTS WITH 1 **/
         return result;
     }
     

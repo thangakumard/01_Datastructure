@@ -29,7 +29,7 @@ import org.testng.annotations.Test;
  * 
  */
 
-public class Backtrack_Array03_Permutations {
+public class  Backtrack_Array03_Permutations {
 
 	@Test
 	private void test() {
