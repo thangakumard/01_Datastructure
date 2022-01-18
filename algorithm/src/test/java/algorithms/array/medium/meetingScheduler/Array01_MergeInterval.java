@@ -54,9 +54,12 @@ public class Array01_MergeInterval {
 		LinkedList<int[]> result = new LinkedList<int[]>();
 		
 		for(int[] interval: input) {
+
 			if(result.isEmpty() || result.getLast()[1] < interval[0]) {
+				//If no overlap add to the result
 				result.add(interval);
 			}else {
+				//If it has overlap merge the time window
 				result.getLast()[1] = Math.max(result.getLast()[1], interval[1]);
 			}
 		}

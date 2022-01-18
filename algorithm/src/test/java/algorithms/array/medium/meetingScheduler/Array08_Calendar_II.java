@@ -3,6 +3,18 @@ package algorithms.array.medium.meetingScheduler;
 import java.util.ArrayList;
 import java.util.List;
 
+/***
+ * https://leetcode.com/problems/my-calendar-ii/
+ *
+ * Example 1:
+ *
+ * Input
+ * ["MyCalendarTwo", "book", "book", "book", "book", "book", "book"]
+ * [[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]]
+ * Output
+ * [null, true, true, true, false, true, true]
+ */
+
 public class Array08_Calendar_II {
 
 	class MyCalendarTwo {

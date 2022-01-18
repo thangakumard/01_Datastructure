@@ -13,7 +13,7 @@ public class Map04_TreeMap {
 		TreeMap<Integer, Integer> treeMap1 = new TreeMap<Integer,Integer>();
 		
 		treeMap1.put(1, 100);
-		treeMap1.put(3, 300);
+		treeMap1.put(5, 300);
 		treeMap1.put(4, 400);
 		treeMap1.put(2, 500);
 		
@@ -36,6 +36,9 @@ public class Map04_TreeMap {
 		System.out.println("treeMap1.get(10) : " + treeMap1.get(10));
 		
 		System.out.println("treeMap1.getOrDefault(10,10000) : " + treeMap1.getOrDefault(10, 10000));
-		
+
+		System.out.println("floor key: " + treeMap1.floorKey(3));
+
+		System.out.println("ceilingKey : " + treeMap1.ceilingKey(3));
 	}
 }
