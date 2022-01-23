@@ -3,13 +3,37 @@ package algorithms.array.medium.meetingScheduler;
 import java.util.*;
 
 import org.testng.annotations.Test;
+/*
+https://leetcode.com/problems/meeting-rooms-ii/
+
+Given an array of meeting time intervals intervals
+where intervals[i] = [starti, endi],
+return the minimum number of conference rooms required.
+
+Example 1:
+Input: intervals = [[0,30],[5,10],[15,20]]
+Output: 2
+
+Example 2:
+Input: intervals = [[7,10],[2,4]]
+Output: 1
+
+Constraints:
+1 <= intervals.length <= 104
+0 <= starti < endi <= 106
+Accepted
+565,681
+Submissions
+
+ */
 
 public class Array03_MeetingRooms_II {
 
 	@Test
 	private void test() {
 		//int[][] intervals= {{9,10},{4,9},{4,17}};
-		int[][] intervals= {{2,15},{36,45},{9,29},{16,23},{4,9}};
+		//int[][] intervals= {{2,15},{36,45},{9,29},{16,23},{4,9}};
+        int[][] intervals= {{9,10},{9,11},{11,12}};
 		System.out.println(minMeetingRooms(intervals));
 	}
 	
