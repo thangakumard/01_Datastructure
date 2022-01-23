@@ -48,15 +48,13 @@ public class Array04_MeetingScheduler {
 	        List<Integer> result = new ArrayList<>();
 	        
 	        while(i < l1 && j < l2){
+				int intersect_start = Math.max(slots1[i][0], slots2[j][0]);
+				int intersect_end = Math.min(slots1[i][1], slots2[j][1]);
 	            
-	                int[] time = new int[2];
-	                time[0] = Math.max(slots1[i][0], slots2[j][0]);
-	                time[1] = Math.min(slots1[i][1], slots2[j][1]);
-	            
-	            if(time[1] - time[0] >= duration){
-	                result.add(time[0]);
-	                 result.add(time[0]+duration);
-	                return result;
+	            if(intersect_end - intersect_start >= duration){
+	                 result.add(intersect_start);
+	                 result.add(intersect_start + duration);
+	                 return result;
 	            }
 	            if(slots1[i][1] < slots2[j][1]){
 	                i++;

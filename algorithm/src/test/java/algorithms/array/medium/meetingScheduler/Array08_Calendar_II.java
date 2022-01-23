@@ -6,8 +6,9 @@ import java.util.List;
 /***
  * https://leetcode.com/problems/my-calendar-ii/
  *
- * Example 1:
+ *  DOUBLE BOOKING IS ALLOWED
  *
+ * Example 1:
  * Input
  * ["MyCalendarTwo", "book", "book", "book", "book", "book", "book"]
  * [[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]]
@@ -28,8 +29,8 @@ public class Array08_Calendar_II {
 	    }
 	    
 	    public boolean book(int start, int end) {
-	        for(int[] slot: overlaps){
-	            if(slot[0] < end && start < slot[1]){
+	        for(int[] overlap: overlaps){
+	            if(overlap[0] < end && start < overlap[1]){
 	                return false;
 	            }
 	        }
