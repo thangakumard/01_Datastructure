@@ -72,10 +72,12 @@ public class Array11_EmployeeFreeTime {
             }
         }
         Collections.sort(intervals, (a, b) -> a.start - b.start);
+
         for(Interval intv: intervals){
             System.out.println(intv.start + "," + intv.end);
         }
         System.out.println("*************");
+
         Interval temp = intervals.get(0);
         List<Interval> res = new ArrayList<>();
         for (int i = 1; i < intervals.size(); i++) {

@@ -38,8 +38,8 @@ public class Array03_MeetingRooms_II {
 	}
 	
 	public int minMeetingRooms(int[][] intervals) {
-        Arrays.sort(intervals,(a,b)->(a[0]-b[0]));
-        PriorityQueue<int[]> pq=new PriorityQueue<>((a,b)->(a[1]-b[1]));
+        Arrays.sort(intervals,(a,b)-> Integer.compare(a[0],b[0]));
+        PriorityQueue<int[]> pq=new PriorityQueue<>((a,b)-> Integer.compare(a[1],b[1]));
         for(int[] i:intervals){
             if(!pq.isEmpty()&&pq.peek()[1]<=i[0]){
                 /****** IMPORTANT Priority Queue will not re-arrange after the value update.
