@@ -50,7 +50,7 @@ public class Array36_SplitArraySubSequence {
             }
             // If a valid subsequence exists with the last element = num - 1.
             if (subsequences.getOrDefault(num - 1, 0) > 0) {
-                subsequences.put(num - 1, subsequences.getOrDefault(num - 1, 0) - 1);
+                subsequences.put(num - 1, subsequences.get(num - 1) - 1);
                 subsequences.put(num, subsequences.getOrDefault(num, 0) + 1);
             } else if (frequency.getOrDefault(num + 1, 0) > 0 &&
                     frequency.getOrDefault(num + 2, 0) > 0) {

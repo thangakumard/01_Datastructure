@@ -21,7 +21,7 @@ public class MergeSort {
 
 	public void splitAndSort(int[] input, int left, int right) {
 		if (left < right) {
-			int mid = (left + right) / 2;
+			int mid = left + (right- left) / 2;
 			splitAndSort(input, left, mid);
 			splitAndSort(input, mid + 1, right);
 			mergeAndSort(input, left, mid + 1, right);

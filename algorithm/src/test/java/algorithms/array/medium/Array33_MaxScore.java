@@ -52,7 +52,7 @@ public class Array33_MaxScore {
 	@Test
 	public void test() {
 		int[] input = new int[] {1,2,3,4,5,6,1};
-		Assert.assertEquals(maxScore(input,3), 12);
+		Assert.assertEquals(maxScore(input,1), 6);
 	}
 
 	public int maxScore(int[] cardPoints, int k) {

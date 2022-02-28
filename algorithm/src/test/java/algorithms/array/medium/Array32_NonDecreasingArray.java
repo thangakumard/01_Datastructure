@@ -34,9 +34,16 @@ n == nums.length
  */
 public class Array32_NonDecreasingArray {
 
+    /******* IMPORTANT Tests *********
+     * [4,2,3]
+     * [0,0,3]
+     * [3,4,2,3]
+     * [1,1,1]
+     */
+
 	@Test
 	private void test() {
-		int[] input = new int[] {4,2,3};
+		int[] input = new int[] {1,1,1};
 		Assert.assertEquals(checkPossibility(input), true);
 	}
 	

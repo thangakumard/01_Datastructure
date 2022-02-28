@@ -3,6 +3,10 @@ package algorithms.array.medium;
 import java.util.*;
 import org.testng.annotations.*;
 
+/***
+ * https://leetcode.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/
+ */
+
 public class Array35_MinimumDifferenceInThreeMoves {
 
 	@Test
