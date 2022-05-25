@@ -6,6 +6,9 @@ import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
 //https://www.geeksforgeeks.org/get-level-of-a-node-in-a-binary-tree/
+/*
+      In a tree, each step from top to bottom is called as level of a tree
+*/
 public class BinaryTree02_LevelOfNode {
 
 	@Test
