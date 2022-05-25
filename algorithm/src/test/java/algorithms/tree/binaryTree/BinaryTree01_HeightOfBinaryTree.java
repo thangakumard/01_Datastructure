@@ -5,6 +5,11 @@ import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 import algorithms.tree.BinarySearchTree.BST02_BSTFromSortedArray;
 
+/*
+The height of a tree is the number of edges on the longest downward path between the root and a leaf. 
+So the height of a tree is the height of its root.
+*/
+
 public class BinaryTree01_HeightOfBinaryTree {
 
 	@Test
