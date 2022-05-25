@@ -35,21 +35,12 @@ public class BinaryTree20_MinimumDepthBinaryTree {
 		System.out.println(minDepth(tree.root));
 	}
 	
-	public int minDepth(TreeNode root) {
-        if(root == null) return 0;
+    public int maxDepth(TreeNode root) {
+        if(root == null)
+            return 0;
+        int leftDepth = maxDepth(root.left);
+        int rightDepth = maxDepth(root.right);
         
-        if((root.left == null) && (root.right == null)){
-            return 1;
-        }
-        
-        int min_depth = Integer.MAX_VALUE;
-        if(root.left != null){
-            min_depth = Math.min(minDepth(root.left), min_depth);
-        }
-        if(root.right != null){
-            min_depth = Math.min(minDepth(root.right), min_depth);
-        }
-        
-        return min_depth+1;
+        return 1 + Math.max(leftDepth, rightDepth);
     }
 }
