@@ -34,16 +34,16 @@ public class BinaryTree30_isSymmetric {
         if(root == null)
             return true;
         else
-            return isSymmetric_tree(root.left, root.right);
+            return isSymmetricSubTree(root.left, root.right);
     }
     
-    private boolean isSymmetric_tree(TreeNode x, TreeNode y){
-        if(x == null && y == null)
-            return true;
-        else if(x == null || y == null)
-            return false;
-        else if(x.data != y.data) 
-            return false;
-        return isSymmetric_tree(x.left, y.right) && isSymmetric_tree(x.right, y.left);
+    private boolean isSymmetricSubTree(TreeNode left, TreeNode right){
+        if(left == null && right == null) return true;
+        
+        if(left != null && right != null)
+            return (left.val == right.val && isSymmetricSubTree(left.left, right.right) &&
+                   isSymmetricSubTree(left.right, right.left));
+        
+        return false;
     }
 }
