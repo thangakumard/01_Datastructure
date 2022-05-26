@@ -19,7 +19,7 @@ public class BinaryTree35_SubtreeofAnotherTree {
 		else if(isSameTree(s,t)) {
 			return true;
 		}else {
-			return isSubtree(s.left, t) || isSubtree(s.right, t);
+			return isSubtree(s.left, t) || isSubtree(s.right, t); //IMPORTRAN HERE YOU NEED TO CALL isSubtree method NOT isSameTree method
 		}
     }
     
