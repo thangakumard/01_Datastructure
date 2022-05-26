@@ -8,8 +8,10 @@ import algorithms.tree.TreeNode;
 public class BinaryTree34_ConvertToMirrorBinaryTree {
 
 	
-	/* creating a binary tree and entering 
-    the TreeNodes 
+	/* https://leetcode.com/problems/invert-binary-tree/
+	
+	Invert / mirror image the given binary tree
+	
     				10
     		5				15
     	2		8       13		20
