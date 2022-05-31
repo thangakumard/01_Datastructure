@@ -65,7 +65,7 @@ public class Array23_RotateArray_Right {
 	private void reverse(int[] input, int start, int end){
 		
 		int temp = 0;
-		while(start < end){			
+		while(start < end){		//use proper looping statement. Last time mistakenly I used If condition 	
 			temp = input[start];
 			input[start] = input[end];
 			input[end] = temp;
