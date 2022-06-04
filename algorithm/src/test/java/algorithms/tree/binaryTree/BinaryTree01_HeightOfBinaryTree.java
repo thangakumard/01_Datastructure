@@ -8,6 +8,8 @@ import algorithms.tree.BinarySearchTree.BST02_BSTFromSortedArray;
 /*
 The height of a tree is the number of edges on the longest downward path between the root and a leaf. 
 So the height of a tree is the height of its root.
+
+https://leetcode.com/problems/maximum-depth-of-binary-tree
 */
 
 public class BinaryTree01_HeightOfBinaryTree {
