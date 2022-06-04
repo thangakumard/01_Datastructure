@@ -10,7 +10,6 @@ import algorithms.tree.TreeNode;
  * 
  */
 
-public class BinaryTree04_LCA_LowestCommonAncestor_III {
 
 /*
 // Definition for a Node.
@@ -22,7 +21,7 @@ class Node {
 };
 */
 
-class Solution {
+public class BinaryTree04_LCA_LowestCommonAncestor_III {
     public Node lowestCommonAncestor(Node p, Node q) {
         Set<Node> pSet = new HashSet<>();
         
