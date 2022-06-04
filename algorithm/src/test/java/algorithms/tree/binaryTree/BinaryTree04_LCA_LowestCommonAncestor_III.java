@@ -10,7 +10,7 @@ import algorithms.tree.TreeNode;
  * 
  */
 
-public class BinaryTree04_LCA_LowestCommonAncestor_II {
+public class BinaryTree04_LCA_LowestCommonAncestor_III {
 
 /*
 // Definition for a Node.
