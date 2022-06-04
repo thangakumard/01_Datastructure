@@ -47,13 +47,20 @@ public class BinaryTree04_LCA_LowestCommonAncestor_II {
 		if(root == null)
 			return root;
 		
+		/***
+		It is important to have line 57 and 58 before line 60.
+		To make the below test pass
+		[3,5,1,6,2,0,8,null,null,7,4]
+		5
+		4
+		**/
+		TreeNode left = LCAOfBinaryTree(root.left, x, y);
+		TreeNode right = LCAOfBinaryTree(root.right, x, y);
+		
 		if(root.data == x || root.data == y) {
 			counter++; // need this for (5,10) and (5,4) case
 			return root;
 		}
-
-		TreeNode left = LCAOfBinaryTree(root.left, x, y);
-		TreeNode right = LCAOfBinaryTree(root.right, x, y);
 		
 		if(left != null && right != null)
 			return root;
