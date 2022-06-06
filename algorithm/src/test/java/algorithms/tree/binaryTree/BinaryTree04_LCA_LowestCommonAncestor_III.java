@@ -1,9 +1,7 @@
 package algorithms.tree.binaryTree;
 
-import org.testng.annotations.Test;
-
-import algorithms.tree.BinaryTree;
-import algorithms.tree.TreeNode;
+import java.util.HashSet;
+import java.util.Set;
 
 /*
  * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree-iii
@@ -11,15 +9,12 @@ import algorithms.tree.TreeNode;
  */
 
 
-/*
-// Definition for a Node.
 class Node {
     public int val;
     public Node left;
     public Node right;
     public Node parent;
 };
-*/
 
 public class BinaryTree04_LCA_LowestCommonAncestor_III {
     public Node lowestCommonAncestor(Node p, Node q) {
@@ -40,5 +35,4 @@ public class BinaryTree04_LCA_LowestCommonAncestor_III {
         
         return null;
     }
-}
 }

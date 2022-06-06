@@ -26,7 +26,7 @@ class BinaryTree04_LCA_LowestCommonAncestor_IV {
         if(root == null) return null;
         
         for(TreeNode currentNode: nodes){
-            if(root.val == currentNode.val){
+            if(root.data == currentNode.data){
                 return root;
             }
         }
