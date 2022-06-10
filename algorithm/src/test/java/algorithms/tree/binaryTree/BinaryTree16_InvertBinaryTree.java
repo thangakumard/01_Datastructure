@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
+/***
+https://leetcode.com/problems/invert-binary-tree/
+***/
 
 public class BinaryTree16_InvertBinaryTree {
 
@@ -46,9 +49,9 @@ public class BinaryTree16_InvertBinaryTree {
         queue.add(root);
         
         while(!queue.isEmpty()){
-        	TreeNode currentTreeNode = queue.remove();
+            TreeNode currentTreeNode = queue.remove();
         	
-        	TreeNode temp = currentTreeNode.left;
+            TreeNode temp = currentTreeNode.left;
             currentTreeNode.left = currentTreeNode.right;
             currentTreeNode.right = temp;
             
