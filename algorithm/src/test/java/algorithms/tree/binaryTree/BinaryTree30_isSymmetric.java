@@ -41,7 +41,7 @@ public class BinaryTree30_isSymmetric {
         if(left == null && right == null) return true;
         
         if(left != null && right != null)
-            return (left.val == right.val && isSymmetricSubTree(left.left, right.right) &&
+            return (left.data == right.data && isSymmetricSubTree(left.left, right.right) &&
                    isSymmetricSubTree(left.right, right.left));
         
         return false;
