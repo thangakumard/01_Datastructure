@@ -99,7 +99,7 @@ public class BinaryTree23_PathSum_III {
             count = 1;
         }
         
-        targetSum = targetSum - root.val;
+        targetSum = targetSum - root.data;
         count += getPathCount(root.left, targetSum);
         count += getPathCount(root.right, targetSum);
         
