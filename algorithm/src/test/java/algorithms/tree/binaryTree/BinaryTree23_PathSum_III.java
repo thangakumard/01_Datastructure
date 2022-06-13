@@ -84,11 +84,11 @@ public class BinaryTree23_PathSum_III {
 	
    /**** Big O(n ^ 2) Solution ****/
      @Test
-     public int pathSum(TreeNode root, int targetSum) {
+     public int pathSum_BigO_N(TreeNode root, int targetSum) {
         if(root == null) return 0;
         return getPathCount(root, targetSum) + 
-            pathSum(root.left, targetSum) + 
-            pathSum(root.right, targetSum);
+            pathSum_BigO_N(root.left, targetSum) + 
+            pathSum_BigO_N(root.right, targetSum);
     }
    
     private int getPathCount(TreeNode root, int targetSum){
