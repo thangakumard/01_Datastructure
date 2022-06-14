@@ -8,6 +8,9 @@ import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
 /***
+
+  https://leetcode.com/problems/delete-nodes-and-return-forest/submissions/
+
  * Given the root of a binary tree, each node in the tree has a distinct value.
 
 After deleting all nodes with a value in to_delete, we are left with a forest (a disjoint union of trees).
