@@ -3,6 +3,8 @@ package algorithms.tree.binaryTree;
 import algorithms.tree.TreeNode;
 
 /*
+https://leetcode.com/problems/count-univalue-subtrees/
+
 Given the root of a binary tree, return the number of uni-value subtrees.
 A uni-value subtree means all nodes of the subtree have the same value.
 
@@ -13,7 +15,7 @@ Input: root = [5,5,5,5,5,null,5]
 Output: 6
 */
 
-public class BinaryTree41_IsFlipEquivalentBinaryTrees {
+public class BinaryTree41_CountUnivalSubtrees {
   
   int counter = 0;
     public int countUnivalSubtrees(TreeNode root) {
