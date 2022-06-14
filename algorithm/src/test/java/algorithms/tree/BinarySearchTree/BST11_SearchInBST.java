@@ -10,7 +10,7 @@ import algorithms.tree.TreeNode;
  * https://leetcode.com/problems/search-in-a-binary-search-tree/
  */
 
-public class BST13_SearchInBST {
+public class BST11_SearchInBST {
 
 	@Test
 	public void test()
