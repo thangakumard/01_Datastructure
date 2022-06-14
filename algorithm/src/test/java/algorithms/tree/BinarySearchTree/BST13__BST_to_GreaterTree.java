@@ -23,7 +23,7 @@ https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
 
  *
  */
-public class BST16__BST_to_GreaterTree {
+public class BST13__BST_to_GreaterTree {
 
 	@Test
 	public void successor() {
