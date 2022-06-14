@@ -9,6 +9,7 @@ import algorithms.tree.TreeNode;
 
 /*****
 	https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/
+	This solution is copied from: https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree/discuss/143798/1ms-beat-100-simple-Java-dfs-with(without)-hashmap-including-explanation
 *****/
 
 public class BinaryTree36_DistanceK_BinaryTree {
