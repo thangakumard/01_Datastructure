@@ -40,7 +40,7 @@ All the values Node.val are unique.
 It's guaranteed that val does not exist in the original BST.
  *
  */
-public class BST14_InsertIntoBST {
+public class BST12_InsertIntoBST {
 	
 	public TreeNode insertIntoBST(TreeNode root, int val) {
         if(root == null) return new TreeNode(val);
