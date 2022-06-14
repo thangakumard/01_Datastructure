@@ -28,7 +28,7 @@ import algorithms.tree.TreeNode;
  *
  */
 
-public class BST12_RangeSumBST {
+public class BST10_RangeSumBST {
 
 	public int rangeSumBST_solution_01(TreeNode root, int low, int high) {
 		if (root == null)
