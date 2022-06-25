@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /********
  https://leetcode.com/problems/task-scheduler/description/
  
- https://www.youtube.com/watch?v=ySTQCRya6B0
+ https://www.youtube.com/watch?v=eGf-26OTI-A
  
  Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks.Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.
 
@@ -34,35 +34,26 @@ public class TaskScheduler {
 		System.out.println("Least Interval :" + leastInterval(input.toCharArray(), 2));
 	}
 	
-	    public int leastInterval(char[] tasks, int n) {
-	        int[] map = new int[26];
-	        for (char c: tasks)
-	            map[c - 'A']++;
-	        PriorityQueue < Integer > queue = new PriorityQueue < > (26, Collections.reverseOrder());
-	        for (int f: map) {
-	            if (f > 0)
-	                queue.add(f);
-	        }
-	        int time = 0;
-	        while (!queue.isEmpty()) {
-	            int i = 0;
-	            List < Integer > temp = new ArrayList < > ();
-	            while (i <= n) {
-	                if (!queue.isEmpty()) {
-	                    if (queue.peek() > 1)
-	                        temp.add(queue.poll() - 1);
-	                    else
-	                        queue.poll();
-	                }
-	                time++;
-	                if (queue.isEmpty() && temp.size() == 0)
-	                    break;
-	                i++;
-	            }
-	            for (int l: temp)
-	                queue.add(l);
-	        }
-	        return time;
-	    }
+	public int leastInterval(char[] tasks, int n) {
+	       // frequencies of the tasks
+        int[] frequencies = new int[26];
+        for (int t : tasks) {
+            frequencies[t - 'A']++;
+        }
+
+        // max frequency
+        int f_max = 0;
+        for (int f : frequencies) {
+            f_max = Math.max(f_max, f);
+        }
+        
+        // count the most frequent tasks
+        int n_max = 0;
+        for (int f : frequencies) {
+            if (f == f_max) n_max++;
+        }
+        
+        return Math.max(tasks.length, (f_max - 1) * (n + 1) + n_max);
+	}
  
 }
