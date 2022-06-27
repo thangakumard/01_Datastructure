@@ -82,4 +82,36 @@ public class String15_StringToInteger_atoi {
         }
         return isNegative ? -Integer.parseInt(sb.toString()) : Integer.parseInt(sb.toString());
     }
+	
+    public int myAtoi_02(String s) {
+        if(s == null || s.length() == 0)
+            return 0;
+        boolean isNegative = false;
+        int result = 0;
+        s = s.trim();
+        
+        if(s.length() > 0){
+            if(s.charAt(0) == '-')
+                isNegative = true;
+
+            int start =0;
+
+            if(s.charAt(0) == '-' || s.charAt(0) == '+'){
+                start = 1;
+            }
+
+            for(int i = start; i < s.length(); i++){
+                if(Character.isDigit(s.charAt(i))){
+                    int digit = s.charAt(i) - '0';
+                    if(result > Integer.MAX_VALUE/10 || (result == Integer.MAX_VALUE/10 && digit > Integer.MAX_VALUE%10)){
+                        return isNegative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+                    }
+                    result = result * 10 + digit;
+                }else{
+                    break;
+                }
+            }
+        }
+        return  isNegative ? -1 * result : result;
+    }
 }
