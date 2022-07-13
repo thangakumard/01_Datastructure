@@ -1,4 +1,4 @@
-package algorithms.string.palindrome;
+package algorithms.string.palindrome.subsequence;
 
 import org.testng.annotations.Test;
 /*
