@@ -11,12 +11,12 @@ public class SampleChar {
 		System.out.println("s.charAt(1) :" + s.charAt(1));
 		char[] input = s.toCharArray();
 		
-		System.out.println("Subtract by 0");
+		System.out.println("Subtract by 0: c - '0'");
 		for(char c: input){
 			System.out.print(c - '0');
 		}
 		System.out.println("");
-		System.out.println("Subtract by 1");
+		System.out.println("Subtract by 1: c - '1'");
 		for(char c: input){
 			System.out.print(c - '1');
 		}
@@ -35,10 +35,6 @@ public class SampleChar {
 	
 	@Test
 	private void charIntValue() {
-		
-	
-		
-		
 		
 		System.out.println("a :"+ Character.getNumericValue('a'));
 		System.out.println("b :"+ Character.getNumericValue('b'));
@@ -80,6 +76,19 @@ public class SampleChar {
 			System.out.println(value[i]- 'a');
 		}
 		
+	}
+
+	@Test
+	private void countCharactersInString(){
+		int[] char_count = new int[256];
+		String input ="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		for(char c: input.toCharArray()){
+			char_count[c]++;
+		}
+
+		for(int i=0; i <char_count.length; i++){
+			System.out.println("index :" + i + " - " + char_count[i] + " - " + (char)i);
+		}
 	}
 	
 }
