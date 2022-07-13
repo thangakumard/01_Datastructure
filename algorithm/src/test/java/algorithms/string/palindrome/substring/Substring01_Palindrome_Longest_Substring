@@ -17,7 +17,7 @@ Input: s = "cbbd"
 Output: "bb"
 *
 ***/
-public class substring01_Palindrome_Longest_Substring {
+public class Substring01_Palindrome_Longest_Substring {
 
 	@Test
 	public void Test() {
