@@ -1,4 +1,4 @@
-package algorithms.string.palindrome;
+package algorithms.string.palindrome.substring;
 
 import java.util.ArrayList;
 import java.util.List;
