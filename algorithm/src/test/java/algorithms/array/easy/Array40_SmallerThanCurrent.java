@@ -36,7 +36,7 @@ public class Array40_SmallerThanCurrent {
         int[] result = new int[nums.length];     
         int[] counter = new int[101];
         
-        //Take count of number of occurance
+        //Take count of number of occurence
         for(int i=0; i < nums.length; i++){
             counter[nums[i]] += 1; 
         }
