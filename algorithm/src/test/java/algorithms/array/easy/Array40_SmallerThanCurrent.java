@@ -3,6 +3,8 @@ package algorithms.array.easy;
 import java.util.*;
 
 /****
+Reference: https://www.youtube.com/watch?v=eHqwoWiMDfY
+
 https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
 
 Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
@@ -34,14 +36,19 @@ public class Array40_SmallerThanCurrent {
         int[] result = new int[nums.length];     
         int[] counter = new int[101];
         
+        //Take count of number of occurance
         for(int i=0; i < nums.length; i++){
             counter[nums[i]] += 1; 
         }
         
+        //Take count of numbers on the left. 
+        //(This will help to get number of smaller number for the current)
         for(int i=1; i < counter.length; i++){
             counter[i] += counter[i-1];
         }
         
+        //Build the result array.
+        //The value in the previous index of counter is the number of smaller number than the current
         for(int i=0; i < nums.length; i++){
             if(nums[i] != 0) {
                result[i] = counter[nums[i]-1]; 
