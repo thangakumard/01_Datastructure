@@ -18,18 +18,17 @@ class Node {
 
 public class BinaryTree04_LCA_LowestCommonAncestor_III {
     public Node lowestCommonAncestor(Node p, Node q) {
-        Set<Node> pSet = new HashSet<>();
+         HashSet<Node> pAncestor = new HashSet<>();
         
         while(p != null){
-            pSet.add(p);
+            pAncestor.add(p);
             p = p.parent;
         }
         
         while(q != null){
-            if(pSet.contains(q)){
+            if(pAncestor.contains(q)){
                 return q;
             }
-            pSet.add(q);
             q = q.parent;
         }
         
