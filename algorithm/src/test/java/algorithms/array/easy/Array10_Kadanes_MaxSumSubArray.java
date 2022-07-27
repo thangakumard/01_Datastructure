@@ -46,10 +46,22 @@ public class Array10_Kadanes_MaxSumSubArray {
 				
 		//int[] input ={1,3,-2,4,-2,1};
 		int[] input ={-2,1,-3,4,-1,2,1,-5,4};
-		System.out.println(maxSubArray(input));
+		System.out.println(maxSubArray_01(input));
+		System.out.println(maxSubArray_02(input));
 	}
 	
-	public int maxSubArray(int[] nums) {
+	public int maxSubArray_01(int[] nums) {
+		int currentSum = nums[0]; // IMPORTANT TO initialize with 1st element in the array for the scenario [-1]
+		int maxSum = nums[0];
+
+		for (int i = 1; i < nums.length; i++){
+		    currentSum = Math.max(nums[i], currentSum + nums[i]);
+		    maxSum = Math.max(maxSum, currentSum);
+		}
+		return maxSum;
+	}
+	
+	public int maxSubArray_02(int[] nums) {
         int size =nums.length;
         int maxValue = Integer.MIN_VALUE;
         int addition = 0;
