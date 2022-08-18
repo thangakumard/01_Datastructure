@@ -74,7 +74,7 @@ public class Array01_ProductOfArrayExceptSelf {
 		}
 
 		int R = 1;
-		for (int i = nums.length - 1; i >= 0; i--) {
+		for (int i = nums.length - 1; i >= 0; i--) { //***IMPORTANT TO START FROM nums.length - 1 NOT nums.length - 2
 			result[i] = result[i] * R;
 			R *= nums[i];
 		}

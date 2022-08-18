@@ -38,7 +38,7 @@ public class Array13_3SumClosest {
 					return sum;
 
 				int diff = Math.abs(target - sum);
-				if (diff < min_difference) {
+				if (diff < min_difference) { // IT IS IMPORTANT TO CAPTURE THE SUM FOR RESULT. WE CANNOT USE Math.min HERE
 					min_difference = diff;
 					result = sum;
 				}

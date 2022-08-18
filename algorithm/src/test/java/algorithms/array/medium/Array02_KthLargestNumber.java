@@ -29,7 +29,7 @@ public class Array02_KthLargestNumber {
 
 		// int[] input = {3,2,1,5,6,4};
 
-		int[] input = { 3, 2, 3, 1, 2, 4, 5, 5, 6 };
+		int[] input = { 6,2,7,8,1,9 };
 		System.out.println(findKthLargest_big_o_n(input, 9));
 		System.out.println(findKthLargest_big_o_nlogn(input, 9));
 		int a = 10;
@@ -44,19 +44,24 @@ public class Array02_KthLargestNumber {
 		return result;
 	}
 
+	//SAMPLE INPUT: 6,2,7,8,1,9
+	//While coding keep-in mind small numbers will move to the right
 	private int quickSort(int[] input, int left, int right, int k) {
 		int pivot = input[left];
 		int initial_left = left;
 		int initial_right = right;
 		while (left < right) {
 			while (pivot >= input[right] && left < right) {
+				//right side value is < than pivot. So we are good. Move right--
 				right--;
 			}
 			if (left != right) {
+				//move the bigger value in the right to the left
 				input[left] = input[right];
 				left++;
 			}
 			while (pivot <= input[left] && left < right) {
+				//Left side value is > than pivot. So we are good. Move left++
 				left++;
 			}
 			if (left != right) {

@@ -2,6 +2,7 @@ package algorithms.array.medium.backtracking;
 
 import java.util.*;
 
+import org.springframework.util.StringUtils;
 import org.testng.annotations.Test;
 
 /***
@@ -49,6 +50,7 @@ public class Backtrack_Array01_SubsetsWithoutDuplicate {
 		for (int i = start; i < nums.length; i++) {
 			System.out.println("Add:" + nums[i]);
 			tempList.add(nums[i]);
+
 			backtrack(list, tempList, nums, i + 1);
 			System.out.println("Remove:" + tempList.get(tempList.size() - 1));
 			tempList.remove(tempList.size() - 1);
