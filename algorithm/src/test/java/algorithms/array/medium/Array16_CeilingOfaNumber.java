@@ -1,4 +1,5 @@
 package algorithms.array.medium;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /*
  * https://www.educative.io/module/lesson/data-structures-in-java/NEG5xqrm576
@@ -29,12 +30,26 @@ Explanation: The smallest number greater than or equal to '-1' is '4' having ind
  */
 public class Array16_CeilingOfaNumber {
 
+	@Test
+	public void test(){
+		int[] input = new int[]{5,10,20,24,30,35,40,45,50}; //Good example
+		Assertions.assertThat(searchCeilingOfANumber(input, 25)).isEqualTo(4);
+
+		Assertions.assertThat(searchCeilingOfANumber(new int[] { 4, 6, 10 }, 6)).isEqualTo(1);
+		Assertions.assertThat(searchCeilingOfANumber(new int[] { 1, 3, 8, 10, 15, 15 }, 12)).isEqualTo(4);
+		Assertions.assertThat(searchCeilingOfANumber(new int[] { 4, 6, 10 }, 17)).isEqualTo(-1);
+		Assertions.assertThat(searchCeilingOfANumber(new int[] { 4, 6, 10 }, -1)).isEqualTo(0);
+	}
+
 	 public int searchCeilingOfANumber(int[] arr, int key) {
 	     if(arr.length == 0) return -1;
+
+	     //Sorted in ascending order. check the first element
 	     if(arr[0] > key) {
 	    	 return 0;
 	     }
-	     if(arr[arr.length-1] < key)
+		 //Sorted in ascending order. check the last element
+		 if(arr[arr.length-1] < key)
 	    	 return -1;
 
 	    int start = 0, end = arr.length-1;
@@ -49,15 +64,6 @@ public class Array16_CeilingOfaNumber {
 	      }
 	    }
 
-	    return start;
+	    return start; // IMPORTANT to return start
 	  }
-
-	  @Test
-	  public void main() {
-	    System.out.println(this.searchCeilingOfANumber(new int[] { 4, 6, 10 }, 6));
-	    System.out.println(this.searchCeilingOfANumber(new int[] { 1, 3, 8, 10, 15, 15 }, 12));
-	    System.out.println(this.searchCeilingOfANumber(new int[] { 4, 6, 10 }, 17));
-	    System.out.println(this.searchCeilingOfANumber(new int[] { 4, 6, 10 }, -1));
-	  }
-	
 }

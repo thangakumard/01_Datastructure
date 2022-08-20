@@ -2,6 +2,7 @@ package algorithms.array.medium;
 
 import java.util.*;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /*
  * https://leetcode.com/problems/find-smallest-letter-greater-than-target/
@@ -45,16 +46,27 @@ Note:
 letters has a length in range [2, 10000].
 letters consists of lowercase letters, and contains at least 2 unique letters.
 target is a lowercase letter.
- * 
+ *
  */
 
 public class Array17_FindSmallestLetterGreaterThanTarget {
 
+	@Test
+	public void test() {
+		Assertions.assertThat(searchNextLetter(new char[] { 'c', 'f', 'j' }, 'j')).isEqualTo('j');
+
+		Assertions.assertThat(searchNextLetter(new char[] { 'c', 'f', 'h' }, 'd')).isEqualTo('f');
+		Assertions.assertThat(searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'f')).isEqualTo('f');
+		Assertions.assertThat(searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'b')).isEqualTo('c');
+		Assertions.assertThat(searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'm')).isEqualTo('h');
+		Assertions.assertThat(searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'h')).isEqualTo('h');
+	}
+
 	public char searchNextLetter(char[] letters, char key) {
 		int start = 0, end = letters.length - 1;
 		int n = letters.length;
-		
-		if (key < letters[0] || key > letters[n - 1])
+
+		if (key < letters[0] || key >= letters[n - 1])
 			return letters[0];
 		while (start <= end) {
 			int mid = start + (end - start) / 2;
@@ -65,15 +77,6 @@ public class Array17_FindSmallestLetterGreaterThanTarget {
 			}
 		}
 
-		return letters[start % n];
-	}
-
-	@Test
-	public void test() {
-		System.out.println(this.searchNextLetter(new char[] { 'c', 'f', 'h' }, 'd'));
-		System.out.println(this.searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'f'));
-		System.out.println(this.searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'b'));
-		System.out.println(this.searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'm'));
-		System.out.println(this.searchNextLetter(new char[] { 'a', 'c', 'f', 'h' }, 'h'));
+		return letters[start];
 	}
 }
