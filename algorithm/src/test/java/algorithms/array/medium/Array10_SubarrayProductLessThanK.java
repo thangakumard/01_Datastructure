@@ -26,6 +26,7 @@ public class Array10_SubarrayProductLessThanK {
 
 	@Test
 	public void test() {
+		System.out.println(this.numSubarrayProductLessThanK(new int[] { 10, 5, 2, 6 }, 100));
 		System.out.println(this.numSubarrayProductLessThanK(new int[] { 2, 5, 3, 10 }, 30));
 		System.out.println(this.numSubarrayProductLessThanK(new int[] { 8, 2, 6, 5 }, 50));
 	}

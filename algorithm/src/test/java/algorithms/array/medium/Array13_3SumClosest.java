@@ -1,16 +1,20 @@
 package algorithms.array.medium;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import java.util.Arrays;
 
 /*
  * https://leetcode.com/problems/3sum-closest/
- * 
- * Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. Return the sum of the three integers. You may assume that each input would have exactly one solution.
 
- 
+Given an array nums of n integers and an integer target,
+* find three integers in nums such that the sum is closest to target.
+* Return the sum of the three integers.
+* You may assume that each input would have exactly one solution.
+
 
 Example 1:
-
 Input: nums = [-1,2,1,-4], target = 1
 Output: 2
 Explanation: The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
@@ -23,6 +27,20 @@ Constraints:
 -10^4 <= target <= 10^4
  */
 public class Array13_3SumClosest {
+
+
+
+	@Test
+	public void test(){
+
+		/*
+	 Example 1:
+	 Input: nums = [-1,2,5,-4], target = -2
+	 Output: 2
+	 */
+		int[] nums = new int[] {-1,2,5,-4};
+		Assert.assertEquals(threeSumClosest(nums, -2), -3);
+	}
 
 	public int threeSumClosest(int[] nums, int target) {
 		int min_difference = Integer.MAX_VALUE;
