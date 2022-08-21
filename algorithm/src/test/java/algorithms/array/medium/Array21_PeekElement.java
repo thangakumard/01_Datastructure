@@ -1,5 +1,6 @@
 package algorithms.array.medium;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,13 +32,9 @@ public class Array21_PeekElement {
 	{
 		//int[] input = {1,3,9,12,15,3,2,4};
 		int[] input = {10, 20, 15, 2, 23, 90, 67};
-		int peek_01 = findPeakElement(input);
 
-		int peek_02 = Old_Solution(input,0,input.length-1,input.length);
-		
-		Assert.assertEquals(peek_01, 90); //Gives better solution
-		Assert.assertEquals(peek_02, 20);
-		
+		Assertions.assertThat(findPeakElement(input)).isEqualTo(5); //Gives better solution
+		Assertions.assertThat(Old_Solution(input,0,input.length-1,input.length)).isEqualTo(1);
 	}
 	
 	/*
@@ -46,7 +43,7 @@ public class Array21_PeekElement {
 	 public int findPeakElement(int[] nums) {
 	        int l = 0, r = nums.length - 1;
 	        while (l < r) {
-	            int mid = (l + r) / 2;
+	            int mid = l + (r - l) / 2;
 	            if (nums[mid] > nums[mid + 1])
 	                r = mid;
 	            else
@@ -70,7 +67,7 @@ public class Array21_PeekElement {
 		if((input[mid] > input[mid-1]) &&
 				(mid == length-1 || input[mid] > input[mid+1]))
 		{
-			peek = input[mid];
+			peek = mid;
 		}
 		 // If middle element is not peak and its left neighbour is greater 
         // than it, then left half must have a peak element

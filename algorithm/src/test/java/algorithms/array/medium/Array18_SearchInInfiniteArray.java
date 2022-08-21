@@ -31,6 +31,19 @@ Output: -1
 Explanation: The key is not present in the array.
  */
 class ArrayReader {
+
+	@Test
+	public void Test() {
+		ArrayReader reader = new ArrayReader(new int[] { 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 });
+
+		System.out.println(SearchInfiniteSortedArray.search(reader, 16));
+		System.out.println(SearchInfiniteSortedArray.search(reader, 11));
+
+		reader = new ArrayReader(new int[] { 1, 3, 8, 10, 15 });
+		System.out.println(SearchInfiniteSortedArray.search(reader, 15));
+		System.out.println(SearchInfiniteSortedArray.search(reader, 200));
+	}
+
 	  int[] arr;
 
 	  ArrayReader(int[] arr) {
@@ -70,13 +83,5 @@ class ArrayReader {
 	    return -1;
 	  }
 
-	  @Test
-	  public void Test() {
-	    ArrayReader reader = new ArrayReader(new int[] { 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 });
-	    System.out.println(SearchInfiniteSortedArray.search(reader, 16));
-	    System.out.println(SearchInfiniteSortedArray.search(reader, 11));
-	    reader = new ArrayReader(new int[] { 1, 3, 8, 10, 15 });
-	    System.out.println(SearchInfiniteSortedArray.search(reader, 15));
-	    System.out.println(SearchInfiniteSortedArray.search(reader, 200));
-	  }
+
 	}

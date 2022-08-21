@@ -42,7 +42,7 @@ public class Array22_ContiguousArray {
 			if(map.containsKey(counter)) {
 				max_length = Math.max(max_length, i-map.get(counter));
 			}else {
-				map.put(counter, i);
+				map.put(counter, i);//** IMPORTANT - Use index as value
 			}
 			
 		}
