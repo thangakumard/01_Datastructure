@@ -1,7 +1,8 @@
-package algorithms.array.medium;
+package algorithms.string.anagram;
 
 import java.util.HashMap;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /*
@@ -40,16 +41,13 @@ import org.testng.annotations.Test;
 	s and t contain lower-case English letters only.
 
  */
-public class Array24_MinimumNumberSwapAnagram {
+public class Anagram01_MakeAnagramInMinSteps_I {
 	
 	@Test
 	private void test() {
-		
 		String A = "gctcxyuluxjuxnsvmomavutrrfb";
 		String B = "qijrjrhqqjxjtprybrzpyfyqtzf";
-		
-		System.out.println(minSteps(A,B));
-		
+        Assertions.assertThat(minSteps(A, B)).isEqualTo(18);
 	}
 
 	public int minSteps(String s, String t) {

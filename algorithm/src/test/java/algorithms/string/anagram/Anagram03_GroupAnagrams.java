@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.string.anagram;
 
 import java.util.*;
 import org.testng.annotations.Test;
@@ -32,7 +32,7 @@ import org.testng.annotations.Test;
  * 
  */
 
-public class String22_GroupAnagrams {
+public class Anagram03_GroupAnagrams {
 
 	@Test
 	private void test() {
