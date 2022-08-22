@@ -1,5 +1,6 @@
 package algorithms.array.medium;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /****
@@ -22,16 +23,17 @@ public class Array28_ArrangeGivenNumberToGetSmallest {
 	@Test
 	private void test() {
 		int[]  arr = {5, 6, 2, 9, 21, 1} ;
+		Assertions.assertThat(ArrangeGivenNumberToGetSmallest(arr)).isEqualTo("1212569");
+
 		int[]  arr1 = {1, 2, 1, 12, 33, 211, 50};
-		System.out.println(ArrangeGivenNumberToGetSmallest(arr));
-		System.out.println(ArrangeGivenNumberToGetSmallest(arr1));
+		Assertions.assertThat(ArrangeGivenNumberToGetSmallest(arr1)).isEqualTo("111221123350");
 	}
 	//This question was asked to me in an Amazon interview
 	private String ArrangeGivenNumberToGetSmallest(int[] input) {
 		
 		for(int i=0; i < input.length; i++) {
 			for(int j=i+1; j < input.length; j++) {
-				if(!compareString(input[i] +""+ input[j],input[j] +""+ input[i])){
+				if(!IsX1SmallerThanX2(input[i] +""+ input[j],input[j] +""+ input[i])){
 					int temp = input[i];
 					input[i] = input[j];
 					input[j] = temp;
@@ -46,8 +48,19 @@ public class Array28_ArrangeGivenNumberToGetSmallest {
 		
 		return sb.toString();
 	}
-	
-	private boolean compareString(String x1, String x2) {
+
+	/**
+	 * Returns 'True' if x1 < x2
+	 * @param x1
+	 * @param x2
+	 * @return
+	 */
+	private boolean IsX1SmallerThanX2(String x1, String x2) {
+		/*
+		 * if x1 > x2, it returns positive number
+		 * if x1 < x2, it returns negative number
+		 * if x1 == x2, it returns 0
+		 */
 		return x1.compareTo(x2) < 0;
 	}
 }
