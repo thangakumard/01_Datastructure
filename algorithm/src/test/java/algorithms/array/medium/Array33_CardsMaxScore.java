@@ -1,12 +1,15 @@
 package algorithms.array.medium;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /***
- * There are several cards arranged in a row, and each card has an associated number of points The points are given in the integer array cardPoints.
+ https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
 
-In one step, you can take one card from the beginning or from the end of the row. You have to take exactly k cards.
+ There are several cards arranged in a row, and each card has an associated number of points The points are given in the integer array cardPoints.
+In one step, you can take one card from the beginning or from the end of the row.
+ You have to take exactly k cards.
 
 Your score is the sum of the points of the cards you have taken.
 
@@ -52,7 +55,20 @@ public class Array33_CardsMaxScore {
 	@Test
 	public void test() {
 		int[] input = new int[] {1,2,3,4,5,6,1};
-		Assert.assertEquals(maxScore(input,1), 6);
+//        Assertions.assertThat(maxScore(input,1)).isEqualTo(1);;
+//
+//        /*** IMPORTANT TEST ***/
+//        input = new int[] {100,40,17,9,73,75};
+//        // Cards Taken 100,75,73 => 248
+//        Assertions.assertThat(maxScore(input,3)).isEqualTo(248);
+
+
+        input = new int[] {1,2,3,4,5,6,1};
+        Assertions.assertThat(maxScore(input,3)).isEqualTo(12);
+
+        input = new int[] {1,1,1000,9,20,10};
+        // Cards Taken 100,75,73 => 248
+        Assertions.assertThat(maxScore(input,3)).isEqualTo(1002);
 	}
 
 	public int maxScore(int[] cardPoints, int k) {
@@ -70,9 +86,11 @@ public class Array33_CardsMaxScore {
             return leftSum;
         }
         
-        result = leftSum;
+        result = leftSum; /***important to assign the result with left sum
         
-        
+        /*
+        Put back leftSum cards in reverse order and take cards from the right side to find the max sum
+         */
         for(int i =0; i < k ; i++){
             leftSum -=  cardPoints[k-1-i];
             rightSum += cardPoints[n-1-i];

@@ -1,6 +1,8 @@
 package algorithms.array.medium;
 
 import java.util.*;
+
+import org.assertj.core.api.Assertions;
 import org.testng.*;
 import org.testng.annotations.Test;
 /*******
@@ -33,8 +35,17 @@ public class Array31_findLeastNumOfUniqueInts {
 	@Test
 	private void test() {
 		int[] input = new int[] {4,3,1,1,3,3,2};
-		Assert.assertEquals(2,findLeastNumOfUniqueInts(input, 3));
-		
+		Assertions.assertThat(findLeastNumOfUniqueInts(input, 3)).isEqualTo(2);
+
+		input = new int[] {4,2,2,2};
+		Assertions.assertThat(findLeastNumOfUniqueInts(input, 3)).isEqualTo(1);
+
+		input = new int[] {1,1,1};
+		Assertions.assertThat(findLeastNumOfUniqueInts(input, 3)).isEqualTo(0);
+
+		input = new int[] {5,4,3,2,1};
+		Assertions.assertThat(findLeastNumOfUniqueInts(input, 2)).isEqualTo(3);
+
 	}
 
 	 public int findLeastNumOfUniqueInts(int[] arr, int k) {
@@ -49,7 +60,8 @@ public class Array31_findLeastNumOfUniqueInts {
 	        
 	        for(int i=0; i < k; i++){
 	            int key = minQueue.remove();
-	            
+
+	            //Reduce the key count and put back to the PriorityQueue
 	            int count = mapInput.get(key) - 1;
 	            if(count == 0){
 	                mapInput.remove(key);

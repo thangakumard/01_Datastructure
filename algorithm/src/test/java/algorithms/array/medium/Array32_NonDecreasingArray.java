@@ -1,5 +1,6 @@
 package algorithms.array.medium;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 /********
@@ -37,14 +38,23 @@ public class Array32_NonDecreasingArray {
     /******* IMPORTANT Tests *********
      * [4,2,3]
      * [0,0,3]
-     * [3,4,2,3]
+     * [3,4,2,3] =====> important test
      * [1,1,1]
      */
 
 	@Test
-	private void test() {
+	private void checkPossibilityTest() {
 		int[] input = new int[] {1,1,1};
-		Assert.assertEquals(checkPossibility(input), true);
+        Assertions.assertThat(checkPossibility(input)).isTrue();
+
+        input = new int[] {0,0,3};
+        Assertions.assertThat(checkPossibility(input)).isTrue();
+
+        input = new int[] {4,2,3};
+        Assertions.assertThat(checkPossibility(input)).isTrue();
+
+        input = new int[] {2,3,4,2,3};
+        Assertions.assertThat(checkPossibility(input)).isFalse();
 	}
 	
 	public boolean checkPossibility(int[] nums) {
@@ -57,10 +67,12 @@ public class Array32_NonDecreasingArray {
                }
                
                numViolations++;
-               
+
+               //If the violation is because of i-1 (created a peek) replace that with i
                if (i < 2 || nums[i - 2] <= nums[i]) {
                    nums[i - 1] = nums[i];
                } else {
+                   //If the violation is because of i (created a dip) replace that with i-1
                    nums[i] = nums[i - 1];
                }
            }
