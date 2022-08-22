@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.subArray;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -30,7 +30,7 @@ Constraints:
  *
  */
 
-public class Array30_MaximumProductSubarray {
+public class Subarray03_MaximumProductSubarray {
 
 	@Test
 	private void test() {

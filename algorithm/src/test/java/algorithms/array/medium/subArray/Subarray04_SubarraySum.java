@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.subArray;
 
 import java.util.HashMap;
 
@@ -17,7 +17,7 @@ import java.util.HashMap;
  * Input: nums = [1,2,3], k = 3
  * Output: 2
  */
-public class Array40_SubarraySum {
+public class Subarray04_SubarraySum {
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
         HashMap<Integer, Integer> mapSum = new HashMap<Integer, Integer>();

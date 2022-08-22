@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.subArray;
 
 import org.testng.annotations.Test;
 
@@ -22,7 +22,7 @@ Note:
 
 
  */
-public class Array10_SubarrayProductLessThanK {
+public class Subarray01_ProductLessThanK {
 
 	@Test
 	public void test() {

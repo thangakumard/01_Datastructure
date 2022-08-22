@@ -47,7 +47,7 @@ Constraints:
 1 <= k <= cardPoints.length
  *
  */
-public class Array33_MaxScore {
+public class Array33_CardsMaxScore {
 	
 	@Test
 	public void test() {
