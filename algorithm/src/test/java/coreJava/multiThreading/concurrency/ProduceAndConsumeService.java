@@ -3,6 +3,9 @@ package coreJava.multiThreading.concurrency;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+/**
+ *  * Reference : https://www.digitalocean.com/community/tutorials/java-blockingqueue-example
+ */
 public class ProduceAndConsumeService {
     public static void main(String[] args) {
         //Creating BlockingQueue of size 10

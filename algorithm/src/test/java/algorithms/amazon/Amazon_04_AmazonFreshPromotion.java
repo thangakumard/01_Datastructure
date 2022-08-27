@@ -1,5 +1,6 @@
 package algorithms.amazon;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
@@ -65,53 +66,56 @@ public class Amazon_04_AmazonFreshPromotion {
 	@Test
 	public void test() {
 		
-		String[][] codeList1 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
+		  String[][] codeList1 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
         String[] shoppingCart1 = {"orange", "apple", "apple", "banana", "orange", "banana"};
+        Assertions.assertThat(winner(codeList1, shoppingCart1)).isEqualTo(1);
+
         String[][] codeList2 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
         String[] shoppingCart2 = {"banana", "orange", "banana", "apple", "apple"};
+        Assertions.assertThat(winner(codeList2, shoppingCart2)).isEqualTo(0);
+
         String[][] codeList3 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
         String[] shoppingCart3 = {"apple", "banana", "apple", "banana", "orange", "banana"};
+        Assertions.assertThat(winner(codeList3, shoppingCart3)).isEqualTo(0);
+
         String[][] codeList4 = { { "apple", "apple" }, { "apple", "apple", "banana" } };
         String[] shoppingCart4 = {"apple", "apple", "apple", "banana"};
+        Assertions.assertThat(winner(codeList4, shoppingCart4)).isEqualTo(0);
+
         String[][] codeList5 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
         String[] shoppingCart5 = {"orange", "apple", "apple", "banana", "orange", "banana"};
+        Assertions.assertThat(winner(codeList5, shoppingCart5)).isEqualTo(1);
+
         String[][] codeList6 = { { "apple", "apple" }, { "banana", "anything", "banana" }  };
         String[] shoppingCart6 = {"apple", "apple", "orange", "orange", "banana", "apple", "banana", "banana"};
+        Assertions.assertThat(winner(codeList6, shoppingCart6)).isEqualTo(1);
+
         String[][] codeList7= { { "anything", "apple" }, { "banana", "anything", "banana" }  };
         String[] shoppingCart7 = {"orange", "grapes", "apple", "orange", "orange", "banana", "apple", "banana", "banana"};
+        Assertions.assertThat(winner(codeList7, shoppingCart7)).isEqualTo(1);
+
         String[][] codeList8 = {{"apple", "orange"}, {"orange", "banana", "orange"}};
         String[] shoppingCart8 = {"apple", "orange", "banana", "orange", "orange", "banana", "orange", "grape"};
+        Assertions.assertThat(winner(codeList8, shoppingCart8)).isEqualTo(1);
+
         String[][] codeList9= { { "anything", "anything", "anything", "apple" }, { "banana", "anything", "banana" }  };
         String[] shoppingCart9 = {"orange", "apple", "banana", "orange", "apple", "orange", "orange", "banana", "apple", "banana"};
-	
-        Assert.assertEquals(winner(codeList1, shoppingCart1), 1);
-        Assert.assertEquals(winner(codeList2, shoppingCart2), 0);
-        Assert.assertEquals(winner(codeList3, shoppingCart3), 0);
-        Assert.assertEquals(winner(codeList4, shoppingCart4), 0);
-        Assert.assertEquals(winner(codeList5, shoppingCart5), 1);
-        Assert.assertEquals(winner(codeList6, shoppingCart6), 1);
-        Assert.assertEquals(winner(codeList7, shoppingCart7), 1);
-        Assert.assertEquals(winner(codeList8, shoppingCart8), 1);
-        Assert.assertEquals(winner(codeList9, shoppingCart9), 1);
+        Assertions.assertThat(winner(codeList9, shoppingCart9)).isEqualTo(1);
+
+         String[][] codeList10= { { "anything", "anything", "anything", "apple" }, { "banana", "anything", "banana" }  };
+         String[] shoppingCart10 = { "apple", "apple", "orange", "banana", "apple", "banana"};
+         Assertions.assertThat(winner(codeList10, shoppingCart10)).isEqualTo(0);
+
 	}
 
-	public  int winner(String[][] codes, String[] shoppingCart){
-        StringBuilder regex = new StringBuilder(".*");
-
-        for(String[] code : codes){
-            for(String str : code){
-                regex.append(str.equals("anything") ? ".+" : str);
-            }
-            regex.append(".*");
+        public  int winner(String[][] codes, String[] shoppingCart){
+                StringBuilder regex = new StringBuilder(".*");
+                for(String[] code : codes){
+                        String codeWithDelimit = String.join("[,]",code).replace("anything","\\w+");
+                        regex.append(codeWithDelimit);
+                        regex.append(".*");
+                }
+                String cart = String.join(",",shoppingCart);
+                return cart.matches(regex.toString()) ? 1 : 0;
         }
-
-        StringBuilder cart = new StringBuilder();
-
-        for(String str : shoppingCart){
-            cart.append(str);
-        }
-
-        return cart.toString().matches(regex.toString()) ? 1 : 0;
-    }
-	
 }
