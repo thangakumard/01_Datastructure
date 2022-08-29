@@ -57,19 +57,19 @@ public class Amazon_05_PairsofSongsWithTotalDurationsDivisibleby60 {
 
 	public int numPairsDivisibleBy60(int[] time) {
 
-		int []fmap = new int[60];
+		int []remainderCounter = new int[60];
 		int res = 0;
 
 		for(int t : time){
 			int val = t % 60;
 
 			if(val == 0){
-				res += fmap[0];
+				res += remainderCounter[0];
 			}else{
-				res += fmap[60-val];
+				res += remainderCounter[60-val];//add the pair remainder counts to the result
 			}
 
-			fmap[val]++;
+			remainderCounter[val]++;
 		}
 
 		return res;

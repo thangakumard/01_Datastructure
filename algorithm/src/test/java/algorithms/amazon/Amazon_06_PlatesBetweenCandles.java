@@ -48,15 +48,14 @@ public class Amazon_06_PlatesBetweenCandles {
     }
 
     public int[] platesBetweenCandles(String input, int[][] queries) {
-        int len = input.length();
-        int[] platsInLeft= new int[len];
+        int[] platsInLeft= new int[input.length()];
+        TreeSet<Integer> candleIndexTreeSet = new TreeSet<>();
 
-        TreeSet<Integer> candlesTreeSet = new TreeSet<>();
         int leftPlateCount = 0;
         for(int i=0;i<input.length();i++){
             if(input.charAt(i)=='|')
             {
-                candlesTreeSet.add(i);
+                candleIndexTreeSet.add(i);
                 platsInLeft[i] = leftPlateCount;
             }else{
                 leftPlateCount++;
@@ -65,10 +64,11 @@ public class Amazon_06_PlatesBetweenCandles {
         int[] result = new int[queries.length];
         int i=0;
         for(int query[] : queries){
-            Integer leftMostCandle = candlesTreeSet.ceiling(query[0]);
-            Integer rightMostCandle = candlesTreeSet.floor(query[1]);
-            if(leftMostCandle!=null && rightMostCandle!=null && leftMostCandle<rightMostCandle)
-                result[i] = platsInLeft[rightMostCandle]-platsInLeft[leftMostCandle];
+            Integer leftMostCandleIndex = candleIndexTreeSet.ceiling(query[0]);
+            Integer rightMostCandleIndex = candleIndexTreeSet.floor(query[1]);
+
+            if(leftMostCandleIndex!=null && rightMostCandleIndex!=null && leftMostCandleIndex<rightMostCandleIndex)
+                result[i] = platsInLeft[rightMostCandleIndex]-platsInLeft[leftMostCandleIndex];
 
             i++;
         }
