@@ -61,4 +61,14 @@ public class Map01_HashMap {
                 + k + ", Value = " + v)); 
     }
 
+    @Test
+    public void GetValueTest(){
+        Map<String,String> mapInput = new HashMap<>();
+        System.out.println(mapInput.getOrDefault("one", "NOT FOUND"));
+        System.out.println(" mapInput.containsKey(\"one\") : " + mapInput.containsKey("one"));
+
+        System.out.println(mapInput.computeIfAbsent("one", (x) -> "NOT FOUND"));
+        System.out.println(" mapInput.containsKey(\"one\") : " + mapInput.containsKey("one"));
+    }
+
 }

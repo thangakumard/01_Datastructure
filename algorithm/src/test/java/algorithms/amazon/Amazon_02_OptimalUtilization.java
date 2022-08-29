@@ -107,19 +107,19 @@ public class Amazon_02_OptimalUtilization {
 	
 	private  List<List<Integer>> solution_TreeMap(int[][] a, int[][] b, int target) {
         List<List<Integer>> res = new ArrayList<>();
-        TreeMap<Integer, List<List<Integer>>> tree = new TreeMap<>();
+        TreeMap<Integer, List<List<Integer>>> treeMap = new TreeMap<>();
 
         for (int i=0; i<a.length; i++) {
             for (int j=0; j<b.length; j++) {
                 int sum = a[i][1] + b[j][1]; 
                 if (sum <= target) {
-                    List<List<Integer>> list = tree.computeIfAbsent(sum, (k) -> new ArrayList<>());
-                    list.add(Arrays.asList(a[i][0], b[j][0]));
+                    List<List<Integer>> list =  treeMap.computeIfAbsent(sum, (k) -> new ArrayList<>());
+                    list.add(Arrays.asList(a[i][0], b[j][0]));//Add the key at 0th index as key
                 }
             }
         }
 
-        return tree.floorEntry(target).getValue();
+        return treeMap.floorEntry(target).getValue();
     }
 
 }

@@ -41,17 +41,17 @@ Output: 20
 public class Amazon_03_MinCosttoConnectRopes {
 	
 	int minimumTime(int numofSubFiles, List<Integer> fileSizeList) {
-	    int minTime = 0;
+	    int totalCost = 0;
 
 	    PriorityQueue<Integer> queue = new PriorityQueue<>(fileSizeList);
 
 	    while (queue.size() > 1) {
 	        int sum = queue.poll() + queue.poll();
 	        queue.offer(sum);
-	        minTime += sum;
+	        totalCost += sum;
 	    }
 
-	    return minTime;
+	    return totalCost;
 	}
 
 	@Test
