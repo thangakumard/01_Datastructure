@@ -1,5 +1,6 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -39,8 +40,18 @@ public class String02_LongestCommonPrefix {
 		inputs[1] = "leetcode";
 		inputs[2] = "leeds";
 		inputs[3] = "leeed";
-		
-		Assert.assertEquals(longestPrefix(inputs), "lee");
+
+		Assertions.assertThat(longestPrefix(inputs)).isEqualTo("lee");
+
+		inputs = new String[1];
+		inputs[0] = "one";
+		Assertions.assertThat(longestPrefix(inputs)).isEqualTo("one");
+
+		inputs = new String[3];
+		inputs[0] = "one";
+		inputs[1] = "two";
+		inputs[2] = "three";
+		Assertions.assertThat(longestPrefix(inputs)).isEqualTo("aw");
 	}
 
 	

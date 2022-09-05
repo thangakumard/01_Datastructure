@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.string.longestSubstring;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class String04_LengthOfLongestSubstringKDistinct {
+public class LongestSubstring02_LengthOfLongestSubstringKDistinct {
 	
 	@Test
 	public void test() {
@@ -42,20 +42,19 @@ public class String04_LengthOfLongestSubstringKDistinct {
 	public int lengthOfLongestSubstringKDistinct(String s, int k) {
         char[] input = s.toCharArray();
         
-        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
-        int max_length = 0, i =0, j = 0;
+        HashMap<Character, Integer> rightmostPositionCharMap = new HashMap<>();
+        int max_length = 0, left =0, right = 0;
         
-        while(j < input.length){
-            if(map.size() <= k){
-                map.put(input[j], j);
-                j++;
+        while(right < input.length){
+			rightmostPositionCharMap.put(input[right], right);
+        	right++;
+
+            if(rightmostPositionCharMap.size() > k){
+                int index_to_delete = Collections.min(rightmostPositionCharMap.values());  /******** Collections.min *******/
+				rightmostPositionCharMap.remove(input[index_to_delete]);
+                left = index_to_delete + 1;  /******** IMPORTANT *******/
             }
-            if(map.size() > k){
-                int index_to_delete = Collections.min(map.values());
-                map.remove(input[index_to_delete]);
-                i = index_to_delete + 1;  /******** IMPORTANT *******/
-            }
-            max_length = Math.max(max_length, j-i);
+            max_length = Math.max(max_length, right-left);
         }
         return max_length;
     }

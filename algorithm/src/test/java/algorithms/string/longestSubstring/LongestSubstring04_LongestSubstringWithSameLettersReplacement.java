@@ -1,8 +1,8 @@
-package algorithms.string;
+package algorithms.string.longestSubstring;
 
 import org.testng.annotations.Test;
 
-public class String04_LongestSubstringWithSameLettersReplacement {
+public class LongestSubstring04_LongestSubstringWithSameLettersReplacement {
 
 	/*
 	 * https://www.youtube.com/watch?v=00FmUN1pkGE
@@ -43,8 +43,7 @@ public class String04_LongestSubstringWithSameLettersReplacement {
 
 	 */
 	 public int findLength(String str, int k) {
-	    int N = str.length();
-	    int[] char_input = new int[128];
+		 int[] char_input = new int[128];
 	    int left = 0;
 	    int max_length = 0;
 	    int current_max = 0;

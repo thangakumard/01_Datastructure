@@ -1,5 +1,6 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /***
  * 
@@ -29,8 +30,12 @@ public class String01_AddString {
 	
 	@Test
 	public void test() {
-		
-	 System.out.println(addStrings("0","0"));
+		Assertions.assertThat(addStrings("0", "0")).isEqualTo("0");
+		Assertions.assertThat(addStrings("0", "9")).isEqualTo("9");
+		Assertions.assertThat(addStrings("5", "5")).isEqualTo("10");
+		Assertions.assertThat(addStrings("5", "9")).isEqualTo("14");
+		Assertions.assertThat(addStrings("99", "9")).isEqualTo("108");
+		Assertions.assertThat(addStrings("9999999999999999999999", "9")).isEqualTo("10000000000000000000008");
 	}
 	
 	/**

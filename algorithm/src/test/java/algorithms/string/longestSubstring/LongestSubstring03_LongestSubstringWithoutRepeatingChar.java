@@ -1,7 +1,8 @@
-package algorithms.string;
+package algorithms.string.longestSubstring;
 
 import java.util.HashSet;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
@@ -21,29 +22,29 @@ import org.testng.annotations.Test;
 
  */
 
-public class String04_LongestSubstringWithoutRepeatingChar {
+public class LongestSubstring03_LongestSubstringWithoutRepeatingChar {
 
 	@Test
 	public void getSubstringLength(){
 		//Assert.assertEquals(4, lengthOfLongestSubstring_01("abccabd"));
 		//Assert.assertEquals(4, lengthOfLongestSubstring_01("abcabcdbbef"));
-		Assert.assertEquals(5, lengthOfLongestSubstring_01("abccbafd"));
+		Assertions.assertThat(lengthOfLongestSubstring_01("abccbafd")).isEqualTo(5);
 	}
 	
 	//from https://www.youtube.com/watch?v=3IETreEybaA&t=69s
 	public int lengthOfLongestSubstring_01(String s) {
 		
-		int a_pointer = 0, b_pointer = 0, max = 0;
-		HashSet<Character> cset = new HashSet<Character>();
-		while(b_pointer < s.length()){
+		int left = 0, right = 0, max = 0;
+		HashSet<Character> uniqueCharSubstringSet = new HashSet<>();
+		while(right < s.length()){
 		
-			if(!cset.contains(s.charAt(b_pointer))) {
-				cset.add(s.charAt(b_pointer));
-				b_pointer++;
-				max = Math.max(cset.size(), max);
+			if(!uniqueCharSubstringSet.contains(s.charAt(right))) {
+				uniqueCharSubstringSet.add(s.charAt(right));
+				right++;
+				max = Math.max(uniqueCharSubstringSet.size(), max);
 			}else {
-				cset.remove(s.charAt(a_pointer));
-				a_pointer++;
+				uniqueCharSubstringSet.remove(s.charAt(left));
+				left++;
 			}	
 		}
 		
