@@ -73,7 +73,7 @@ public class String09_RomanToInteger {
         
         int total =0, previousValue = 0, currentValue = 0;
         char[] input = s.toCharArray();
-        for(int i = s.length()-1; i >=0; i--){
+        for(int i = s.length()-1; i >=0; i--){ //** IMPORTANT TO START FROM THE LAST CHARACTER
         	if(roman.containsKey(input[i])){
         		currentValue = roman.get(input[i]);
         		if(previousValue > currentValue){

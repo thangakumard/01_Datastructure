@@ -1,5 +1,6 @@
 package algorithms.string;
 
+import java.util.Collections;
 import java.util.HashMap;
 
 import org.testng.annotations.Test;
@@ -63,25 +64,17 @@ public class String19_FruitIntoBaskets {
 
 	 public int totalFruit(int[] tree) {
 		 int max_fruites = 0;
-		 
-		 HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
-		 
-		 int i=0, j =0;
-		 while(j < tree.length) {
-			 if(map.size() <= 2) {
-				 map.put(tree[j],j++);
+		 HashMap<Integer, Integer> mapBasket = new HashMap<>();
+		 int left = 0, right = 0;
+		 while(right < tree.length) {
+			 mapBasket.put(tree[right],right++);
+			 if(mapBasket.size() > 2) {
+				 int mix_index = Collections.min(mapBasket.values());
+				 mapBasket.remove(tree[mix_index]);
+				 left = mix_index + 1;
 			 }
-			 if(map.size() > 2) {
-				 int mix_index = tree.length-1;
-				 for(int value: map.values()) {
-					 mix_index = Math.min(mix_index, value);
-				 }
-				 i= mix_index + 1;
-				 map.remove(tree[mix_index]);
-			 }
-			 max_fruites = Math.max(max_fruites, j-i);
+			 max_fruites = Math.max(max_fruites, right-left);
 		 }
-		 
 		 return max_fruites;
 	 }
 }

@@ -1,9 +1,12 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
+
 import java.util.Stack;
 
 /******
- * 
+ * https://leetcode.com/problems/backspace-string-compare/
  * 
  * Given two strings S and T, return if they are equal when both are typed into
  * empty text editors. # means a backspace character.
@@ -33,7 +36,13 @@ import java.util.Stack;
 
 public class String33_BackspaceCompare {
 
-	class Solution {
+	@Test
+	public void backspaceCompareTest(){
+		Assertions.assertThat(backspaceCompare("ab#c", "ad#c")).isTrue();
+		Assertions.assertThat(backspaceCompare("y#fo##f", "y#f#o##f")).isTrue();
+		Assertions.assertThat(backspaceCompare("a##c", "#a#c")).isTrue();
+		Assertions.assertThat(backspaceCompare("a##c", "#a#d")).isFalse();
+	}
 		public boolean backspaceCompare(String S, String T) {
 			Stack<Character> sStack = new Stack<Character>();
 
@@ -66,5 +75,4 @@ public class String33_BackspaceCompare {
 
 			return sStack.isEmpty() && tStack.isEmpty();
 		}
-	}
 }

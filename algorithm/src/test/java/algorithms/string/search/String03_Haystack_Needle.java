@@ -1,5 +1,6 @@
 package algorithms.string.search;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -30,8 +31,7 @@ public class String03_Haystack_Needle {
 
 	@Test
 	public void testString(){
-		Assert.assertEquals(approach_01("heeeoll", "ll"), 5);
-		Assert.assertEquals(approach_02("heeeoll", "ll"), 5);
+		Assertions.assertThat(approach_01("heeeoll", "ll")).isEqualTo(5);
 	}
 	public int approach_01(String haystack, String needle) {
 		  for (int i = 0; ; i++) {

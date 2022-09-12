@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.string.math;
 
 import java.util.Stack;
 
@@ -35,7 +35,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class String28_BasicCalculator_II {
+public class Add06_BasicCalculator_II {
 
 	@Test
 	private void test() {

@@ -11,9 +11,9 @@ import com.google.common.collect.Multiset.Entry;
 public class String10_Sherlock {
 	
   /* https://www.hackerrank.com/challenges/sherlock-and-valid-string/
-   * Sherlock considers a string to be valid if all characters of the string appear the same number of times. 
-   * It is also valid if he can remove just  character at  index in the string, and the remaining characters will occur the same number of times. 
-   * Given a string , determine if it is valid. If so, return YES, otherwise return NO.
+* Sherlock considers a string to be valid if all characters of the string appear the same number of times.
+* It is also valid if he can remove just  character at  index in the string, and the remaining characters will occur the same number of times.
+* Given a string , determine if it is valid. If so, return YES, otherwise return NO.
 
 For example, if , it is a valid string because frequencies are . 
 So is  because we can remove one  and have  of each character in the remaining string. 
@@ -57,16 +57,14 @@ Each character
         int[] frequency = new int[26];
         
         for(int i=0; i < s.length(); i++){
-            int position = (int) s.charAt(i) - (int)'a';
-            frequency[position]++;
+            frequency[s.charAt(i) - 'a']++;
         }
         HashMap<Integer, List<Character>> mapCount = new HashMap<Integer,List<Character>>();
 
         for(int i=0; i< 26; i++)
         {
         	if(frequency[i] > 0) {
-        	 
-        		List<Character> charList = mapCount.getOrDefault(frequency[i], new ArrayList<Character>());
+        		List<Character> charList = mapCount.getOrDefault(frequency[i], new ArrayList<>());
         		charList.add((char)(i+'a'));
         		mapCount.put(frequency[i], charList);
  

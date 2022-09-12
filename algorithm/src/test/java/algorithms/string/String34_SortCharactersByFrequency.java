@@ -44,19 +44,31 @@ public class String34_SortCharactersByFrequency {
 			charMap.put(c, charMap.getOrDefault(c, 0) + 1);
 		}
 
-		PriorityQueue<Character> maxQueue = new PriorityQueue<Character>((a, b) -> charMap.get(b) - charMap.get(a));
+//		PriorityQueue<Character> maxQueue = new PriorityQueue<Character>((a, b) -> charMap.get(b) - charMap.get(a));
+//
+//		maxQueue.addAll(charMap.keySet());
+//		StringBuilder sb = new StringBuilder();
+//		while (!maxQueue.isEmpty()) {
+//			char c = maxQueue.remove();
+//			int count = charMap.get(c);
+//			for (int i = 0; i < count; i++) {
+//				sb.append(c + "");
+//			}
+//		}
 
-		maxQueue.addAll(charMap.keySet());
-		StringBuilder result = new StringBuilder();
-		while (!maxQueue.isEmpty()) {
-			char c = maxQueue.remove();
+		List<Character> lstChar = new ArrayList<>(charMap.keySet());
+		Collections.sort(lstChar, (a,b) -> charMap.get(b) - charMap.get(a));
+
+		StringBuilder sb = new StringBuilder();
+		for(char c: lstChar){
 			int count = charMap.get(c);
-			for (int i = 0; i < count; i++) {
-				result.append(c + "");
+			while(count > 0){
+				sb.append(c);
+				count--;
 			}
 		}
 
-		return result.toString();
+		return sb.toString();
 	}
 
 }

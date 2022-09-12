@@ -33,13 +33,13 @@ public class String24_ReorganizeString {
 	public String reorganizeString(String s) {
 		if (s == null || s.isEmpty())
 			return "";
-		HashMap<Character, Integer> charMap = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> charCountMap = new HashMap<>();
 		for (char c : s.toCharArray()) {
-			charMap.put(c, charMap.getOrDefault(c, 0) + 1);
+			charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
 		}
 
-		PriorityQueue<Character> maxHeap = new PriorityQueue<Character>((a, b) -> charMap.get(b) - charMap.get(a));
-		maxHeap.addAll(charMap.keySet());
+		PriorityQueue<Character> maxHeap = new PriorityQueue<>((a, b) -> charCountMap.get(b) - charCountMap.get(a));
+		maxHeap.addAll(charCountMap.keySet());
 		StringBuilder sb = new StringBuilder();
 
 		while (maxHeap.size() > 1) {
@@ -50,20 +50,20 @@ public class String24_ReorganizeString {
 			sb.append(first);
 			sb.append(next);
 
-			charMap.put(first, charMap.get(first) - 1);
-			charMap.put(next, charMap.get(next) - 1);
+			charCountMap.put(first, charCountMap.get(first) - 1);
+			charCountMap.put(next, charCountMap.get(next) - 1);
 
-			if (charMap.get(first) > 0) {
+			if (charCountMap.get(first) > 0) {
 				maxHeap.add(first);
 			}
-			if (charMap.get(next) > 0) {
+			if (charCountMap.get(next) > 0) {
 				maxHeap.add(next);
 			}
 		}
 
 		if (maxHeap.size() > 0) {
 			char last = maxHeap.remove();
-			if (charMap.get(last) > 1)
+			if (charCountMap.get(last) > 1)
 				return "";
 			else
 				sb.append(last);

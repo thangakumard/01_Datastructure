@@ -1,5 +1,6 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -51,17 +52,19 @@ import org.testng.annotations.Test;
 public class String26_intToRoman {
 	
 	@Test
-	private void test() {
-	
-		intToRoman(10);
-//		Assert.assertEquals("III", intToRoman(3));
-//		Assert.assertEquals("IX", intToRoman(9));
-//		Assert.assertEquals("MCMXCIV", intToRoman(1994));
+	private void intToRomanTest() {
+		Assertions.assertThat(intToRoman(3)).isEqualTo("III");
+		Assertions.assertThat(intToRoman(10)).isEqualTo("X");
+		Assertions.assertThat(intToRoman(1994)).isEqualTo("MCMXCIV");
 	}
 
 	public String intToRoman(int num) {
 		int[] decimal = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
-		String[] roman = { "I", "IV", "V", "IX", "X", "XL", "L", "XC", "C", "CD", "D", "CM", "M" };
+		String[] roman = {
+				"I", "IV", "V", "IX",
+				"X", "XL", "L", "XC",
+				"C", "CD", "D", "CM",
+				"M" };
 		StringBuilder sb = new StringBuilder();
 		for (int i = decimal.length - 1; i >= 0 && num > 0; i--) {
 			while (num >= decimal[i]) {

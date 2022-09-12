@@ -14,15 +14,15 @@ public class String21_UniqueEmailAddresses {
 	}
 	
     public int numUniqueEmails(String[] emails) {
-        HashSet<String> emailSet = new HashSet<String>();
+        HashSet<String> emailSet = new HashSet<>();
         
         for(String email: emails){
             String local = email.substring(0,email.indexOf('@'));
             local = local.replaceAll("\\.","");
-            String domain = email.substring(email.indexOf('@'), email.length());
+            String domain = email.substring(email.indexOf('@'));
             if(local.indexOf('+') > -1){
                  local = local.substring(0,local.indexOf('+'));
-                 domain = email.substring(email.indexOf('@'), email.length());
+                 domain = email.substring(email.indexOf('@'));
             }
             emailSet.add(local+domain);
         }

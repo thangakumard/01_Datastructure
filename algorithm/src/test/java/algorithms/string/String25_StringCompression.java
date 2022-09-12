@@ -1,5 +1,6 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /***
@@ -62,29 +63,28 @@ public class String25_StringCompression {
 		/******** IMPORTANT TEST CASE : Char count > 9 *******/
 		char[] input_01 = { 'a', 'a', 'b', 'b', 'c', 'c', 'c' };
 		char[] input_02 = { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
-		char[] input_03 = { 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b' };
-
-		compress(input_01);
+		Assertions.assertThat(compress(input_01)).isEqualTo(6);
+		Assertions.assertThat(compress(input_02)).isEqualTo(4);
 	}
 
 	public int compress(char[] chars) {
 
-		int index = 0;
-		int i = 0;
-		while (i < chars.length) {
-			int j = i;
-			while (j < chars.length && chars[i] == chars[j]) {
-				j++;
+		int writer = 0;
+		int left = 0;
+		while (left < chars.length) {
+			int right = left;
+			while (right < chars.length && chars[left] == chars[right]) {
+				right++;
 			}
-			chars[index++] = chars[i];
-			if (j - i > 1) {
-				String count = j - i + "";
+			chars[writer++] = chars[left];
+			if (right - left > 1) {
+				String count = right - left + "";
 				for (char c : count.toCharArray()) {
-					chars[index++] = c;
+					chars[writer++] = c;
 				}
 			}
-			i = j;
+			left = right;
 		}
-		return index;
+		return writer;
 	}
 }

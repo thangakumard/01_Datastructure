@@ -1,5 +1,6 @@
-package algorithms.string;
+package algorithms.string.math;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /******
@@ -29,11 +30,13 @@ import org.testng.annotations.Test;
  * 
  */
 
-public class String31_MultiplyString {
+public class Add04_MultiplyString {
 
 	@Test
-	private void test() {
-		System.out.println(multiply("99", "99"));
+	private void StringMultiply_test() {
+		Assertions.assertThat(multiply("99", "99")).isEqualTo("9801");
+		Assertions.assertThat(multiply("2", "3")).isEqualTo("6");
+		Assertions.assertThat(multiply("123", "456")).isEqualTo("56088");
 	}
 
 	public String multiply(String num1, String num2) {
@@ -46,13 +49,13 @@ public class String31_MultiplyString {
 			for (int j = n - 1; j >= 0; j--) {
 				int product = (num1.charAt(i) - '0') * (num2.charAt(j) - '0'); //81
 				int sum = result[i + j + 1] + product; //Get the existing value in the index + current value
-				result[i + j] = result[i + j] + sum / 10; //Keep the Quotient in the previous index
 				result[i + j + 1] = sum % 10; // Assign the remainder to the current index
+				result[i + j] = result[i + j] + sum / 10; //Keep the Quotient in the previous index
 			}
 		} 
 		StringBuilder sb = new StringBuilder();
 		for (int val : result) {
-			if (sb.length() != 0 || val != 0) {
+			if (sb.length() != 0 || val != 0) { //"2" * "3" = "06" => To avoid prefix "0" in the result
 				sb.append(val);
 			}
 		}

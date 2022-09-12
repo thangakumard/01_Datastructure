@@ -60,8 +60,8 @@ public class String27_minRemoveToMakeValid {
 	
 	
 	public String minRemoveToMakeValid(String s) {
-        Stack<Integer> stackChar = new Stack<Integer>();
-        HashSet<Integer> indexToRemove = new HashSet<Integer>();
+        Stack<Integer> stackChar = new Stack<>();
+        HashSet<Integer> indexToRemove = new HashSet<>();
         
         for(int i=0; i < s.length(); i++){
             if(s.charAt(i) == '(') stackChar.push(i);

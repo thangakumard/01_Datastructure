@@ -26,28 +26,21 @@ public class String23_Partitionlabels {
 	}
 
 	public List<Integer> partitionLabels(String S) {
-
-		Map<Character, Integer> map = new HashMap<>();
-
+		Map<Character, Integer> lastOccurrenceMap = new HashMap<>();
 		// Get the last index the character.
 		for (int i = 0; i < S.length(); i++) {
-			map.put(S.charAt(i), i);
+			lastOccurrenceMap.put(S.charAt(i), i);
 		}
-
-		int last = 0;
-		int start = 0;
-
-		List<Integer> list = new ArrayList<>();
+		int max_lastOccurrence_index = -1;
+		int start_Index = 0;
+		List<Integer> partitionList = new ArrayList<>();
 		for (int i = 0; i < S.length(); i++) {
-
-			last = Math.max(last, map.get(S.charAt(i))); //***** MATH.MAX is core logic *****/
-			if (last == i) {
-				list.add(last - start + 1);
-				start = last + 1;
+			max_lastOccurrence_index = Math.max(max_lastOccurrence_index, lastOccurrenceMap.get(S.charAt(i))); //***** MATH.MAX is core logic *****/
+			if (max_lastOccurrence_index == i) {
+				partitionList.add(max_lastOccurrence_index - start_Index + 1);
+				start_Index = max_lastOccurrence_index + 1; //** IMPORTANT
 			}
 		}
-
-		return list;
+		return partitionList;
 	}
-
 }

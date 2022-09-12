@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.string.math;
 
 import java.util.Stack;
 
@@ -26,7 +26,7 @@ import org.testng.annotations.Test;
  * represents a valid expression.
  */
 
-public class String29_BasicCalculator {
+public class Add05_BasicCalculator {
 
 	@Test
 	public void test() {
@@ -34,21 +34,21 @@ public class String29_BasicCalculator {
 	}
 
 	public int calculate(String s) {
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new Stack<>();
 		int result = 0;
-		int number = 0;
+		int tempResult = 0;
 		int sign = 1;
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			if (Character.isDigit(c)) {
-				number = 10 * number + (int) (c - '0');
+				tempResult = 10 * tempResult + (c - '0');
 			} else if (c == '+') {
-				result += sign * number;
-				number = 0;
+				result += sign * tempResult;
+				tempResult = 0;
 				sign = 1;
 			} else if (c == '-') {
-				result += sign * number;
-				number = 0;
+				result += sign * tempResult;
+				tempResult = 0;
 				sign = -1;
 			} else if (c == '(') {
 				// we push the result first, then sign;
@@ -58,15 +58,15 @@ public class String29_BasicCalculator {
 				sign = 1;
 				result = 0;
 			} else if (c == ')') {
-				result += sign * number;
-				number = 0;
+				result += sign * tempResult;
+				tempResult = 0;
 				result *= stack.pop(); // stack.pop() is the sign before the parenthesis
 				result += stack.pop(); // stack.pop() now is the result calculated before the parenthesis
 
 			}
 		}
-		if (number != 0)
-			result += sign * number;
+		if (tempResult != 0)
+			result += sign * tempResult;
 		return result;
 	}
 }

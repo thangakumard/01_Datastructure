@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.string.parenthesis;
 
 import java.util.Stack;
 
@@ -31,7 +31,7 @@ public class String30_checkValidString {
                                         // For example: ())(
             cmin = Math.max(cmin, 0);   // It's invalid if open parentheses count < 0 that's why cmin can't be negative
         }
-        return cmin == 0; // Return true if can found `openCount == 0` in range [cmin, cmax]
+        return cmin == 0; // Return true if you find `openCount == 0` in range [cmin, cmax]
     }
 
 //	public boolean checkValidString(String s) {

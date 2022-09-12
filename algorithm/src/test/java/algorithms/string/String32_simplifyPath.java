@@ -2,6 +2,7 @@ package algorithms.string;
 
 import java.util.Stack;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /******
 https://leetcode.com/problems/simplify-path/
@@ -54,12 +55,12 @@ path is a valid absolute Unix path.
 
 public class String32_simplifyPath {
 	
-	@Test
-	private void test() {
-//		System.out.println(simplifyPath("/home/"));
-//		System.out.println(simplifyPath("/home/../"));
-		System.out.println(simplifyPath("/a/./b/../../c/d/"));
-	}
+		@Test
+		private void simplifyPathTest() {
+			Assertions.assertThat(simplifyPath("/home/")).isEqualTo("/home");
+			Assertions.assertThat(simplifyPath("/home/../")).isEqualTo("/");
+			Assertions.assertThat(simplifyPath("/a/./b/../../c/d/")).isEqualTo("/c/d");
+		}
 		/****
 		 1. Split string based on /
 		 2. If the directory is empty string or '.' ignore the directory
@@ -71,7 +72,7 @@ public class String32_simplifyPath {
 	    public String simplifyPath(String path) {
 
 	        // Initialize a stack
-	        Stack<String> stack = new Stack<String>();
+	        Stack<String> stack = new Stack<>();
 	        String[] components = path.split("/");
 
 	        // Split the input string on "/" as the delimiter
@@ -96,14 +97,23 @@ public class String32_simplifyPath {
 	            }
 	        }
 
+			/*** stack in the for loop will read the stack from bottom to top
+			 * In an interview situation, its likely that the interviewer would not want you to iterate over a stack using a for loop.
+			 * It defeats the whole purpose of using a stack.
+			 * So in situations like these, the smallest change which works on most of the cases is
+			 * to insert at index 0 of the StringBuilder instead of appending.
+
 	        // Stich together all the directory names together
-	        StringBuilder result = new StringBuilder();
 	        for (String dir : stack) {
 	            result.append("/");
 	            result.append(dir);
 	        }
-
+			*/
+			StringBuilder result = new StringBuilder();
+			while(!stack.isEmpty()){
+				result.insert(0, stack.pop());
+				result.insert(0, "/");
+			}
 	        return result.length() > 0 ? result.toString() : "/" ;
 	    }
-	
 }

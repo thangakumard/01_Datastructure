@@ -1,16 +1,9 @@
-package algorithms.string;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+package algorithms.string.compareTwoStrings;
 
 import org.junit.Assert;
 import org.testng.annotations.Test;
+
+import java.util.Arrays;
 
 /***
  * https://leetcode.com/problems/determine-if-two-strings-are-close/
@@ -45,7 +38,7 @@ import org.testng.annotations.Test;
  * operations.
  */
 
-public class String12_stringsAreClose {
+public class CompareTwoStrings03_stringsAreClose {
 
 	@Test
 	public void test() {
@@ -54,10 +47,9 @@ public class String12_stringsAreClose {
 	}
 
 	/****
-	 * 
-	 * Need to check 2 conditions 1. Both strings should have common Alphabets . but
-	 * it's count may differ 2. The pattern of number of times a character appears
-	 * should match
+	 * Need to check 2 conditions
+	 * 1. Both strings should have common Alphabets . It's count may differ
+	 * 2. The pattern of number of times a character appears should match
 	 */
 
 	public boolean isCloseString(String word1, String word2) {
@@ -77,8 +69,12 @@ public class String12_stringsAreClose {
 		// if one has a letter which another one doesn't have, dont exist
 		for (int i = 0; i < N; i++) {
 			if (arr1[i] == arr2[i]) {
+				//both string has the same chat count.
+				//both has non-zero value or ZERO value
 				continue;
 			}
+			//If both string's char count does not match, both string should have the char.
+			//Char count should not be zero
 			if (arr1[i] == 0 || arr2[i] == 0) {
 				return false;
 			}

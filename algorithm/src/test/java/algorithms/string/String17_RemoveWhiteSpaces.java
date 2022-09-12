@@ -1,18 +1,18 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 public class String17_RemoveWhiteSpaces {
 	@Test
 	private void test() {
 		char[] input = "We love 	Java".toCharArray();
-		;
-		removeWhiteSpaces(null);
+		Assertions.assertThat(removeWhiteSpaces(input)).isEqualTo("WeloveJava\u0000\u0000\u0000");
 	}
 	
-	private void removeWhiteSpaces(char[] input) {
+	private String removeWhiteSpaces(char[] input) {
 		if (input == null || input.length == 0 || input[0] == '\0') {
-		      return;
+		      return "";
 		}
 		int read=0, write = 0;
 		while(read < input.length) {
@@ -26,6 +26,6 @@ public class String17_RemoveWhiteSpaces {
 			input[write] = Character.MIN_VALUE;
 			write++;
 		}
-		System.out.println(input);
+		return new String(input);
 	}
 }

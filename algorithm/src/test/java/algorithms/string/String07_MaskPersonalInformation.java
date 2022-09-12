@@ -56,21 +56,8 @@ public class String07_MaskPersonalInformation {
 	    }
 	    
 	    private String maskEmail(String S){
-//	        S = S.toLowerCase(); 
-//	        if(S.indexOf('@') == 2){
-//	            StringBuilder email = new StringBuilder();
-//	            email.append(S.charAt(0));
-//	            email.append("*****");
-//	            email.append(S.charAt(1));
-//	            email.append(S.substring(2,S.length()));
-//	            S = email.toString();
-//	        }
-//	        else{
-//	            String toReplace = S.substring(1,S.indexOf('@')-1);
-//	            S = S.replaceFirst(toReplace, "*****");           
-//	        }
-//	        return S;
-	    	return S.substring(0,1) + "*****" + S.substring(S.indexOf('@')-1).toLowerCase();
+	    	return S.substring(0,1) + "*****"
+					+ S.substring(S.indexOf('@')-1).toLowerCase();
 	    }
 	    
 	    private String maskPhoneNumber(String S){

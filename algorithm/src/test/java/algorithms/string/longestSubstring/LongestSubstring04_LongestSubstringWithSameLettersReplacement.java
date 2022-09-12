@@ -1,5 +1,6 @@
 package algorithms.string.longestSubstring;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 public class LongestSubstring04_LongestSubstringWithSameLettersReplacement {
@@ -42,32 +43,39 @@ public class LongestSubstring04_LongestSubstringWithSameLettersReplacement {
 	The substring "BBBB" has the longest repeating letters, which is 4.
 
 	 */
+
+	@Test
+	public  void test() {
+		Assertions.assertThat(this.findLength("AABCCBB", 2)).isEqualTo(5);
+		Assertions.assertThat(this.findLength("ABBCB", 1)).isEqualTo(4);
+		Assertions.assertThat(this.findLength("ABCCDE", 1)).isEqualTo(3);
+	}
+
+	/*
+		Using sliding window approach to solve the problem
+	 */
 	 public int findLength(String str, int k) {
 		 int[] char_input = new int[128];
 	    int left = 0;
-	    int max_length = 0;
-	    int current_max = 0;
+	    int maxLengthSubstring = 0;
+	    int maxCharFrequency = 0;
 
 	    for(int right =0; right < str.length(); right++){
-	      char_input[str.charAt(right) - 'a']++;
-	      int char_count = char_input[str.charAt(right)-'a'];
-	      current_max = Math.max(current_max, char_count);
+	      char_input[str.charAt(right) - 'A']++;
+	      int char_count = char_input[str.charAt(right)-'A'];
+	      maxCharFrequency = Math.max(maxCharFrequency, char_count);
 
-	      while(right - left - current_max + 1 > k){
-	        char_input[str.charAt(left)-'a']--;
+	      //When this condition breaks, remove a char from the sliding window start and
+		  //increment the window start index
+	      while(right - left - maxCharFrequency + 1 > k){
+	        char_input[str.charAt(left)-'A']--;
 	        left++;
 	      }
-	      max_length = Math.max(max_length, right-left + 1);
+			maxLengthSubstring = Math.max(maxLengthSubstring, right-left + 1);
 	    }
 
-	    return max_length;
+	    return maxLengthSubstring;
 	  }
 
-	  @Test
-	  public  void test() {
-	    System.out.println(this.findLength("aabccbb", 2)); //"bbbbb" (after replacing c with b)
-	    System.out.println(this.findLength("abbcb", 1));
-	    System.out.println(this.findLength("abccde", 1));
-	  }
-	
+
 }

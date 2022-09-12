@@ -1,4 +1,4 @@
-package algorithms.string;
+package algorithms.string.math;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
@@ -20,7 +20,7 @@ You must not use any built-in BigInteger library or convert the inputs to intege
  *addition of num1 and num2 goes beyond integer.MAX_VALUE
  **********************************/
 
-public class String01_AddString {
+public class Add01_AddString {
 	
 	/*
 	 * 

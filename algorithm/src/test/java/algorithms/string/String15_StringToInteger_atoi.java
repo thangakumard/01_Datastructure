@@ -49,46 +49,34 @@ Constraints:
 
 0 <= s.length <= 200
 s consists of English letters (lower-case and upper-case), digits, ' ', '+', '-' and '.'.
- */
+ ***/
+
+
+import org.assertj.core.api.Assertions;
+import org.testng.annotations.Test;
+
 public class String15_StringToInteger_atoi {
 
-	public int myAtoi(String s) {
-        if(s == null || s.isEmpty()){
-            return 0;
-        }
-        s = s.trim();
-        boolean isNegative = s.charAt(0) == '-' ? true : false;
-        
-        if(s.charAt(0) == '-' || s.charAt(0) == '+'){
-            s = s.substring(1,s.length());
-        }
-        
-        char[] input = s.toCharArray();
-        StringBuilder sb = new StringBuilder();
-        for(char c: input){
-            if(Character.isDigit(c)){
-                sb.append(c);
-                
-                if(Long.parseLong(sb.toString()) > Integer.MAX_VALUE){
-                    return isNegative? Integer.MIN_VALUE : Integer.MAX_VALUE;
-                }
-                
-            }else
-                break;
-        }
-        
-        if(sb.length() == 0){
-            return 0;
-        }
-        return isNegative ? -Integer.parseInt(sb.toString()) : Integer.parseInt(sb.toString());
+    @Test
+    public void atoi_tests(){
+        Assertions.assertThat(myAtoi_01("")).isEqualTo(0);
+        Assertions.assertThat(myAtoi_01("42")).isEqualTo(42);
+        Assertions.assertThat(myAtoi_01("  -42")).isEqualTo(-42);
+        Assertions.assertThat(myAtoi_01("  -42some")).isEqualTo(-42);
+        Assertions.assertThat(myAtoi_01("  +50sd43545")).isEqualTo(50);
+        Assertions.assertThat(myAtoi_01("  -999999999999999sdfsg")).isEqualTo(-2147483648);
+        Assertions.assertThat(myAtoi_01("  +999999999999999sdfsg")).isEqualTo(2147483647);
+        Assertions.assertThat(myAtoi_01("  -2147483647dsfgasdgg")).isEqualTo(-2147483647);
+        Assertions.assertThat(myAtoi_01("  -999999999999999sdfsg")).isEqualTo(-2147483648);
     }
-	
-    public int myAtoi_02(String s) {
+
+
+    public int myAtoi_01(String s) {
         if(s == null || s.length() == 0)
             return 0;
         boolean isNegative = false;
         int result = 0;
-        s = s.trim();
+        s = s.trim(); /*** IMPORTANT - After trim string may be empty */
         
         if(s.length() > 0){
             if(s.charAt(0) == '-')
@@ -114,4 +102,36 @@ public class String15_StringToInteger_atoi {
         }
         return  isNegative ? -1 * result : result;
     }
+
+    public int myAtoi_02(String s) {
+        if(s == null || s.isEmpty()){
+            return 0;
+        }
+        s = s.trim();
+        boolean isNegative = s.charAt(0) == '-' ? true : false;
+
+        if(s.charAt(0) == '-' || s.charAt(0) == '+'){
+            s = s.substring(1,s.length());
+        }
+
+        char[] input = s.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        for(char c: input){
+            if(Character.isDigit(c)){
+                sb.append(c);
+
+                if(Long.parseLong(sb.toString()) > Integer.MAX_VALUE){
+                    return isNegative? Integer.MIN_VALUE : Integer.MAX_VALUE;
+                }
+
+            }else
+                break;
+        }
+
+        if(sb.length() == 0){
+            return 0;
+        }
+        return isNegative ? -Integer.parseInt(sb.toString()) : Integer.parseInt(sb.toString());
+    }
+
 }

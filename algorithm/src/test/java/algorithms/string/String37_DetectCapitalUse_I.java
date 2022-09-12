@@ -1,5 +1,8 @@
 package algorithms.string;
 
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
+
 /*******
  * 
  * https://leetcode.com/problems/detect-capital/
@@ -28,7 +31,16 @@ Output: False
  */
 public class String37_DetectCapitalUse_I {
 
-    public boolean detectCapitalUse(String word) {
+    @Test
+    public void detectCapitalUseTest(){
+        Assertions.assertThat(detectCapitalUse_01("USA")).isTrue();
+        Assertions.assertThat(detectCapitalUse_01("uSA")).isFalse();
+        Assertions.assertThat(detectCapitalUse_01("Leetcode")).isTrue();
+        Assertions.assertThat(detectCapitalUse_01("leetcode")).isTrue();
+        Assertions.assertThat(detectCapitalUse_01("leetCode")).isFalse();
+
+    }
+    public boolean detectCapitalUse_01(String word) {
         int upperCaseCount = 0;
         for(char c: word.toCharArray()){
             if(Character.isUpperCase(c)){
@@ -42,4 +54,47 @@ public class String37_DetectCapitalUse_I {
         }
         return false;
     }
+
+    public boolean detectCapitalUse_02(String word) {
+        if(word.length() == 1){
+            return true;
+        }
+        if(word.charAt(0) - 'a' >= 0){
+            return isAllSmall(word);
+        }
+        else if(word.charAt(0) - 'a' < 0){
+            if(word.charAt(1) - 'a' >= 0){
+                return isAllCamelCase(word);
+            }else{
+                return isAllUpper(word);
+            }
+        }
+        return true;
+    }
+
+    private boolean isAllSmall(String s){
+        for(char c: s.toCharArray()){
+            if(c - 'a' < 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean isAllUpper(String s){
+        for(char c: s.toCharArray()){
+            if(c - 'a' >= 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    private boolean isAllCamelCase(String s){
+        for(int i=2; i < s.length(); i++){
+            if(s.charAt(i) - 'a' < 0){
+                return false;
+            }
+        }
+        return true;
+    }
+
 }
