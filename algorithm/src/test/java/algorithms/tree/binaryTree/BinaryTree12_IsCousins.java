@@ -48,7 +48,7 @@ public class BinaryTree12_IsCousins {
 		if (root == null)
 			return false;
 
-		Queue<TreeNode> queueNodes = new LinkedList<TreeNode>();
+		Queue<TreeNode> queueNodes = new LinkedList<>();
 		queueNodes.add(root);
 		boolean xfound = false, yfound = false, isCousins = false;
 

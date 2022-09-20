@@ -15,9 +15,9 @@ public class BinaryTree06_AverageLevelsBinaryTree {
 		if (root == null)
 			return null;
 
-		Queue<TreeNode> queueNode = new LinkedList<TreeNode>();
+		Queue<TreeNode> queueNode = new LinkedList<>();
 		queueNode.add(root);
-		List<Double> result = new ArrayList<Double>();
+		List<Double> result = new ArrayList<>();
 
 		while (!queueNode.isEmpty()) {
 

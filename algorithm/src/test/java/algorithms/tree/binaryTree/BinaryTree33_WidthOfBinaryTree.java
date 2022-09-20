@@ -75,7 +75,7 @@ public class BinaryTree33_WidthOfBinaryTree {
         int start=0, end=0, currentWidth=0, maxWidth=0;
 
         queueNode.add(root);
-        map.put(root,1);
+        map.put(root,1);//index of root node.
         
         while(!queueNode.isEmpty()){
             int size = queueNode.size();
@@ -86,11 +86,11 @@ public class BinaryTree33_WidthOfBinaryTree {
                 
                 if(CurrentNode.left != null){
                     queueNode.add(CurrentNode.left);
-                    map.put(CurrentNode.left, map.get(CurrentNode) * 2);
+                    map.put(CurrentNode.left, map.get(CurrentNode) * 2);//index of left node
                 }
                 if(CurrentNode.right != null){
                     queueNode.add(CurrentNode.right);
-                    map.put(CurrentNode.right, map.get(CurrentNode) * 2 + 1);
+                    map.put(CurrentNode.right, map.get(CurrentNode) * 2 + 1);//index of left node
                 }
             }
             currentWidth = end - start + 1;

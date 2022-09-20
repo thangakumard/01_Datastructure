@@ -2,6 +2,7 @@ package algorithms.tree.binaryTree;
 
 import java.util.Stack;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
@@ -71,14 +72,15 @@ public class BinaryTree14_KthSmallest {
 		tree.root.right.left = new TreeNode(150);
 		tree.root.right.right = new TreeNode(300);
 		tree.root.right.right.right = new TreeNode(400);
-		System.out.println(kthSmallest_01(tree.root, 1));
-		System.out.println(kthSmallest_02(tree.root,1));
+		Assertions.assertThat(kthSmallest_01(tree.root, 1)).isEqualTo(20);
+		Assertions.assertThat(kthSmallest_02(tree.root, 1)).isEqualTo(20);
+
 	}
 	
 	public int kthSmallest_02(TreeNode root, int k) {
 		if (root == null)
 			return -1;
-		Stack<TreeNode> stackNodes = new Stack<TreeNode>();
+		Stack<TreeNode> stackNodes = new Stack<>();
 		while (true) {
 			if (root != null) {
 				stackNodes.add(root);

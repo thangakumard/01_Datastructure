@@ -37,15 +37,13 @@ public class BinaryTree32_BinaryTreePaths {
 	private void getPaths(TreeNode root, List<String> result, String path) {
 		if (root == null)
 			return;
-
-		path += path.isEmpty() ? String.valueOf(root.data) : "->" + String.valueOf(root.data);
+		path += path.isEmpty() ? root.data : "->" + root.data;
 
 		if (root.left == null && root.right == null) {
 			result.add(path);
 			return;
-		} else {
-			getPaths(root.left, result, path);
-			getPaths(root.right, result, path);
 		}
+		getPaths(root.left, result, path);
+		getPaths(root.right, result, path);
 	}
 }

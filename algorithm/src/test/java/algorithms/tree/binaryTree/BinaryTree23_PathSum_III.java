@@ -62,22 +62,24 @@ public class BinaryTree23_PathSum_III {
 	}
 
 	public int pathSum(TreeNode root, int target) {
-        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-        map.put(0,1);
+        HashMap<Long, Integer> map = new HashMap<>();
+        map.put(0L,1);
         return countPaths(root, target, 0, map);
     }
     
    /**** Big O(n) Solution ****/
-    private int countPaths(TreeNode root, int target, int currentSum, HashMap<Integer, Integer> map){
-        int count = 0;
-        
+    private int countPaths(TreeNode root, int target, long currentSum, HashMap<Long, Integer> map){
         if(root == null) return 0;
         
         currentSum += root.data;
-        count = map.getOrDefault((currentSum - target), 0);
-        
+        //Get the matching count from the map
+        int count = map.getOrDefault((currentSum - target), 0);
+
+        //Increment the currentSum count the map
         map.put(currentSum , map.getOrDefault(currentSum, 0) + 1);
-        count += countPaths(root.left, target, currentSum,map) + countPaths(root.right, target, currentSum,map);
+        count += countPaths(root.left, target, currentSum,map) +
+                countPaths(root.right, target, currentSum,map);
+        //Decrement the currentSum count the map
         map.put(currentSum , map.get(currentSum) - 1);
         return count;
     }
@@ -91,7 +93,7 @@ public class BinaryTree23_PathSum_III {
             pathSum_BigO_N2(root.right, targetSum);
     }
    
-    private int getPathCount(TreeNode root, int targetSum){
+    private int getPathCount(TreeNode root, long targetSum){
         if(root == null) return 0;
         
         int count = 0;
@@ -105,4 +107,5 @@ public class BinaryTree23_PathSum_III {
         
         return count;
     }
+
 }

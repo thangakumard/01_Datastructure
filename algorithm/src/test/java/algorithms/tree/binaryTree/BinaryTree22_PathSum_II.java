@@ -81,7 +81,7 @@ public class BinaryTree22_PathSum_II {
 	            return;
 	        }
 	        
-	        findPaths(root.left, sum - root.data , new ArrayList<Integer>(current), paths);
-	        findPaths(root.right, sum - root.data , new ArrayList<Integer>(current), paths);
+	        findPaths(root.left, sum - root.data , new ArrayList<>(current), paths);
+	        findPaths(root.right, sum - root.data , new ArrayList<>(current), paths);
 	    }
 }

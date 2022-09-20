@@ -1,12 +1,10 @@
 package algorithms.tree.binaryTree;
 
-import java.util.*;
-
-import org.testng.annotations.Test;
-
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
-import algorithms.tree.BinarySearchTree.BST02_BSTFromSortedArray;
+import org.testng.annotations.Test;
+
+import java.util.Stack;
 
 /*
  * https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
@@ -38,7 +36,7 @@ public class BinaryTree09_PushAllNodestoRight {
 
 	public void flatten(TreeNode root) {
 		if (root != null) {
-			Stack<TreeNode> stackNodes = new Stack<TreeNode>();
+			Stack<TreeNode> stackNodes = new Stack<>();
 			stackNodes.push(root);
 
 			while (!stackNodes.isEmpty()) {

@@ -3,6 +3,8 @@ package algorithms.tree.binaryTree;
 import java.util.*;
 
 import algorithms.tree.TreeNode;
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
 
 /*
  * https://leetcode.com/problems/serialize-and-deserialize-binary-tree/
@@ -35,7 +37,16 @@ import algorithms.tree.TreeNode;
  */
 
 public class BinaryTree13_SerializeDeserializeBinaryTree {
-
+	@Test
+	public void SerializeDeserializeTest(){
+		TreeNode root = new TreeNode(10);
+		root.left = new TreeNode(5);
+		root.right = new TreeNode(15);
+		root.right.right = new TreeNode(30);
+		String serializeTree = serialize(root);
+		TreeNode resultTree = deserialize(serializeTree);
+//		Assertions.assertThat(resultTree).isEqualTo(root);
+	}
 	private final String spliter = ",";
 	private final String nullNode = "NULL";
 

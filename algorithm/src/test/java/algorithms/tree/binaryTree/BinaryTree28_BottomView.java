@@ -35,7 +35,7 @@ public class BinaryTree28_BottomView {
 	
 	int start = 0, end = 0;
 	private void printbottomView(TreeNode node) {
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		HashMap<Integer, Integer> map = new HashMap<>();
 		
 		buildHorizondalDistanceMap(node, 0, map);
 		while(start <= end) {

@@ -79,7 +79,7 @@ public class BinaryTree38_FindDuplicateSubtrees {
     HashMap<String,Integer> mapPath;
     List<TreeNode> result;
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
-        mapPath = new HashMap<String,Integer>();
+        mapPath = new HashMap<>();
         result = new ArrayList<>();
         collect(root);
         return result;
