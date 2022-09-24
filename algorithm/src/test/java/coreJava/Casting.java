@@ -42,9 +42,10 @@ public class Casting {
 	@Test
 	public void IntToChar() {
 		int a = 10;
-		System.out.println("Integer to Character :");
-		char c = (char)a;
-		System.out.print(c);
+		while(a > 0){
+			System.out.println("Integer to Character :" + (char)a%10);
+			a = a/10;
+		}
 	}
 
 	@Test
@@ -52,7 +53,7 @@ public class Casting {
 		
 		String str = "10";
 		int i = Integer.parseInt(str); // To covert String to int (Primitive Type)
-		@SuppressWarnings("unused")
+
 		Integer j = Integer.valueOf(i); // To covert int to Integer
 		//Double d = new Double(0); Deprecated
 	}
@@ -126,7 +127,7 @@ public class Casting {
 		List<Integer> lstInput_01 = Arrays.asList(input_primitive); //only if the input array is in Primitive type;
 		
 		//Method 2
-		List<Integer> lstInput_02 =new ArrayList<Integer>();
+		List<Integer> lstInput_02 = new ArrayList<>();
 		Collections.addAll(lstInput_02, input_primitive);
 		Collections.addAll(lstInput_02, 5 ,6 ,7);
 		
@@ -162,7 +163,7 @@ public class Casting {
 	@Test
 	public void HashSetToArrayList() {
 	
-		HashSet<Integer> set = new HashSet<Integer>();
+		HashSet<Integer> set = new HashSet<>();
 		set.add(10);
 		set.add(20);
 		set.add(30);
@@ -176,8 +177,12 @@ public class Casting {
 		lstInput.add(10);
 		lstInput.add(20);
 		lstInput.add(30);
+		lstInput.add(10);
 		
 		Set<Integer> set = new HashSet<>(lstInput);
+		for(int value: set){
+			System.out.println(value);
+		}
 	}
 	
 	@Test

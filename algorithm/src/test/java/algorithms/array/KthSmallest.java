@@ -18,7 +18,6 @@ public class KthSmallest {
 	}
 
 	private int doQuickSort(int[] input, int left, int right, int k) {
-		
 		int initialLeft = left;
 		int initialRight = right;
 		int pivotValue = input[left];		

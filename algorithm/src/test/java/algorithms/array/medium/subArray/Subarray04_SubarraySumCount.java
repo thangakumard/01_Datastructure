@@ -17,10 +17,10 @@ import java.util.HashMap;
  * Input: nums = [1,2,3], k = 3
  * Output: 2
  */
-public class Subarray04_SubarraySum {
+public class Subarray04_SubarraySumCount {
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum = 0;
-        HashMap<Integer, Integer> mapSum = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> mapSum = new HashMap<>();
         mapSum.put(0,1);
         for(int i: nums){
             sum += i;

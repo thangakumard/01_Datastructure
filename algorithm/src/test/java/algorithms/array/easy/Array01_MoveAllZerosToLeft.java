@@ -9,9 +9,8 @@ public class Array01_MoveAllZerosToLeft {
 		int[] input = {1,2,0,0,6,0,5,7};
 		moveZerosToLeft(input);
 		for(int i: input) {
-			System.out.println(i);
+			System.out.print(i);
 		}
-		
 	}
 	/*
 	 * Time complexity O(n)

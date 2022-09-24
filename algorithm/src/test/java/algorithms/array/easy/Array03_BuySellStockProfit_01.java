@@ -51,19 +51,15 @@ public class Array03_BuySellStockProfit_01 {
 	 * Space complexity O(1)
 	 */
 	 public int maxProfit(int[] prices) {
-		  if(prices.length < 2) return 0;
-		 
-	        int min_price = prices[0], max_profit = 0;
-	        
+		 if(prices == null || prices.length < 2) return 0;
+	        int maxProfit = prices[0], max_profit = 0;
 	        for(int i=1; i< prices.length; i++) {
-	        	if(prices[i] <= min_price) {
-	        		min_price = prices[i];
-	        	}else if(prices[i] - min_price > max_profit) {
-	        			max_profit = prices[i] - min_price;
-	        	}
-	        	
+				int minBuyPrice = prices[0];
+				for(int todayPrice: prices){
+					minBuyPrice = Math.min(minBuyPrice, todayPrice);
+					maxProfit = Math.max(maxProfit, todayPrice - minBuyPrice);
+				}
 	        }
-	        
 	      return max_profit;
 	 }
 }

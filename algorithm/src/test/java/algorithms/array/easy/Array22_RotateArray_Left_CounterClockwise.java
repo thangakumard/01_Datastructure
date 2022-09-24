@@ -1,15 +1,13 @@
 package algorithms.array.easy;
 
-import org.testng.Assert;
 import org.testng.annotations.*;
 /******
  * 
 	https://www.geeksforgeeks.org/array-rotation/
-	https://leetcode.com/problems/rotate-array/
-	
+
  */
 
-public class Array22_RotateArray_Left {
+public class Array22_RotateArray_Left_CounterClockwise {
 
 	@Test
 	public void rotateArrayLeft() {

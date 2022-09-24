@@ -2,7 +2,7 @@ package algorithms.array.easy;
 import org.testng.annotations.*;
 
 /****
- https://leetcode.com/problems/rotate-array/description/
+ https://leetcode.com/problems/rotate-array/
 
 	Given an array, rotate the array to the right by k steps, where k is non-negative.
 	
@@ -22,7 +22,7 @@ import org.testng.annotations.*;
 	rotate 1 steps to the right: [99,-1,-100,3]
 	rotate 2 steps to the right: [3,99,-1,-100]
 */
-public class Array23_RotateArray_Right {
+public class Array23_RotateArray_Right_Clockwise {
 
 	@Test
 	public void Test(){
@@ -43,7 +43,7 @@ public class Array23_RotateArray_Right {
         int[] result = new int[nums.length];
         
         if(k == 0) return;
-        int j = 0;
+        int j;
         for(int i =0; i < l; i++){
             j = (i+k) % l;
             result[j] = nums[i];
@@ -52,13 +52,19 @@ public class Array23_RotateArray_Right {
        System.arraycopy(result,0,nums,0,l);
     }
 	
-	public void rightRotate_02(int[] input, int d){
+	public void rightRotate_02(int[] input, int k){
 		
 		int l = input.length;
-		d = d % l;
-		
-		reverse(input, 0, l-1-d);
-		reverse(input, l-d, l-1);
+		k = k % l;
+
+		/*
+		Input: [1,2,3,4,5,6,7] and k = 3
+		Step 1: [4,3,2,1,5,6,7]
+		Step 2: [4,3,2,1,7,6,5]
+		Step 3: [5,6,7,1,2,3,4]
+		*/
+		reverse(input, 0, l-k-1);
+		reverse(input, l-k, l-1);
 		reverse(input,0, l-1);
 	}
 	
