@@ -65,8 +65,8 @@ public class Amazon_04_AmazonFreshPromotion {
 	
 	@Test
 	public void test() {
-		
-		  String[][] codeList1 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
+
+            String[][] codeList1 = { { "apple", "apple" }, { "banana", "anything", "banana" } };
         String[] shoppingCart1 = {"orange", "apple", "apple", "banana", "orange", "banana"};
         Assertions.assertThat(winner(codeList1, shoppingCart1)).isEqualTo(1);
 
@@ -111,6 +111,7 @@ public class Amazon_04_AmazonFreshPromotion {
         public  int winner(String[][] codes, String[] shoppingCart){
                 StringBuilder regex = new StringBuilder(".*");
                 for(String[] code : codes){
+                        //{ { "apple", "apple" }, { "banana", "anything", "banana" }  } into .*apple[,]apple.*banana[,]\w+[,]banana.*
                         String codeWithDelimit = String.join("[,]",code).replace("anything","\\w+");
                         regex.append(codeWithDelimit);
                         regex.append(".*");

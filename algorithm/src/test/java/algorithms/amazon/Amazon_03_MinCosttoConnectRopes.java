@@ -45,7 +45,7 @@ public class Amazon_03_MinCosttoConnectRopes {
 
 	    PriorityQueue<Integer> queue = new PriorityQueue<>(fileSizeList);
 
-	    while (queue.size() > 1) {
+	    while (!queue.isEmpty()) {
 	        int sum = queue.poll() + queue.poll();
 	        queue.offer(sum);
 	        totalCost += sum;

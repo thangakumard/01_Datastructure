@@ -44,7 +44,6 @@ public class Amazon_09_MergeInterval {
 		int[] current_Interval = intervals[0];
 		
 		for(int[] interval: intervals) {
-			int current_begin = current_Interval[0];
 			int current_end = current_Interval[1];
 			
 			int next_begin = interval[0];
