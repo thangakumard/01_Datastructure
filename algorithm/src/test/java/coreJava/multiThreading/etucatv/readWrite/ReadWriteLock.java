@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.practice;
+package coreJava.multiThreading.etucatv.readWrite;
 
 
 public class ReadWriteLock {
