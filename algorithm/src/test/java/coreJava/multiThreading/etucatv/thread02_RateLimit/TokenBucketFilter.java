@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.rateLimit;
+package coreJava.multiThreading.etucatv.thread02_RateLimit;
 
 public class TokenBucketFilter {
     private int maxTokens;

@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.readWrite;
+package coreJava.multiThreading.etucatv.thread05_readWrite;
 
 public class ReadWriteTest {
 

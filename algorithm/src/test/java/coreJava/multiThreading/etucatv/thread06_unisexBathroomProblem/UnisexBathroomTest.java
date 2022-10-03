@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.unisexBathroomProblem;
+package coreJava.multiThreading.etucatv.thread06_unisexBathroomProblem;
 
 import org.testng.annotations.Test;
 

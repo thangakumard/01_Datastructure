@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.rateLimit.factoryPattern;
+package coreJava.multiThreading.etucatv.thread02_RateLimit.factoryPattern;
 
 public final class TokenBucketFilterFactory {
     // Force users to interact with the factory

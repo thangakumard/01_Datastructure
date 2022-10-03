@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.semaphore;
+package coreJava.multiThreading.etucatv.thread04_semaphore;
 
 class Demonstration {
     public static void main( String args[] ) throws InterruptedException {
@@ -43,7 +43,6 @@ class Demonstration {
 }
 
 class CountingSemaphore {
-
     int usedPermits = 0;
     int maxCount;
 
@@ -53,17 +52,14 @@ class CountingSemaphore {
     }
 
     public synchronized void acquire() throws InterruptedException {
-
         while (usedPermits == maxCount)
             wait();
 
         notify();
         usedPermits++;
-
     }
 
     public synchronized void release() throws InterruptedException {
-
         while (usedPermits == 0)
             wait();
 

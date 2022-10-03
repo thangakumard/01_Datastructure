@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.callbackExecutor;
+package coreJava.multiThreading.etucatv.thread03_callbackExecutor;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;

@@ -1,4 +1,4 @@
-package coreJava.multiThreading.etucatv.rateLimit;
+package coreJava.multiThreading.etucatv.thread02_RateLimit;
 
 /**
  * 1. Improvement is creating daemonThread to add a token/sec
