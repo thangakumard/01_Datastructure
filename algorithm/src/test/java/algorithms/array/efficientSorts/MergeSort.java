@@ -10,10 +10,12 @@ public class MergeSort {
 		int[] input = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 9, 2 };
 		int[] output = { 1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 9 };
 
+		long start = System.currentTimeMillis();
 		splitAndSort(input, 0, input.length - 1);
-
+		long end = System.currentTimeMillis();
+		System.out.println("\n\nTime taken to sort = " + (end - start) + " milliseconds");
 		for (int i = 0; i < input.length; i++) {
-			System.out.println("input : " + input[i]);
+			System.out.print(input[i] + ",");
 		}
 
 		Assert.assertEquals(input, output, "Merge sort fails!!!");
