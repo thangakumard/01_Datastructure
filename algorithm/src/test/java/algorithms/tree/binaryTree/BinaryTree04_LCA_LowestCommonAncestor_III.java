@@ -14,6 +14,9 @@ class Node {
     public Node left;
     public Node right;
     public Node parent;
+    public Node(int v){
+        val = v;
+    }
 };
 
 public class BinaryTree04_LCA_LowestCommonAncestor_III {
