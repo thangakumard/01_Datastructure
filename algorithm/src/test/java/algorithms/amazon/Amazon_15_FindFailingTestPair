@@ -1,0 +1,49 @@
+/***
+
+https://leetcode.com/discuss/interview-experience/2673932/Amazon-SDE-II
+
+
+I was asked this question and i had no clue of solving it.
+
+You are given n test casses in a array
+
+test[] = {t1, t2, t3....tn}
+
+The test cases run on common DB because of that tow cases fails when ran togther.
+
+eg tn and tk when ran togther fails
+
+but tn and tk passes when the ran indeoendently, or with outer test cases,
+
+eg. t4,tn would pass when ran togther.
+
+we are given ia testing service, which we can use to test test cases =:
+
+runTest(t1, t2, ....tn)
+
+we need to find out two failing test cases in most optimum way.
+
+The only thing i could think of was a n^2 solution which would test each pai of test cases. Is there anythig better than that.
+
+I assume i could dowomething with binray search or Merge Sort. Dividing into two groups and rejoining them. and executing.
+
+eg {t1 .. tn/2 }.. {tn/2+1..tn}
+
+t1,t2 execute with t3,t4 & t5,t6 and so on.
+
+But i do not know the solution. Please help
+****/
+
+/********* Discussion /***************
+In my point of view it can solve in O(N).
+
+divide array of tests into two parts = (t1, .... tn/2) and (tn/2+1, .... tn)
+if both of the sets passes, shuffle the array like round robin :
+now two parts (tn,t1, .... tn/2-1) and (tn/2, .... tn-1) and again run the both sets similarly do when one of the sets fails
+else if one of the sets fails,
+divide that failed set into two parts and loop the same algorithm.
+
+at last you will got two tests which are failing with each other
+Time Complexity = O(N + N/2 + N/4 .....) = O(N)
+
+****/

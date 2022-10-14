@@ -37,7 +37,18 @@ public class Subsequence01_Palindrome_Longest_Subsequence_length {
 		//for the input bbbab => expected output is 4
 		System.out.println(longestPalindromeSubseq("bab"));
 	}
-	
+		/***
+	 *       b  b
+	 *       0  1
+	 * b  0  1  2 ====> dp[0][s.length()-1] result is 2
+	 * a  1  0  1
+	 *
+	 *       b  a  b
+	 *       0  1  2
+	 * b  0  1  1  3  ====> dp[0][s.length()-1] result is 3
+	 * a  1  0  1  1
+	 * b  2  0  0  1
+	 */
 	
 	public int longestPalindromeSubseq(String s) {
 		
