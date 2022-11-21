@@ -1,4 +1,4 @@
-package algorithms.amazon;
+package algorithms.companies.amazon.amazon;
 
 /*
  * https://leetcode.com/problems/plates-between-candles/

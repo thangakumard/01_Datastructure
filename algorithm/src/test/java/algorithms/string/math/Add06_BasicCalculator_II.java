@@ -2,6 +2,7 @@ package algorithms.string.math;
 
 import java.util.Stack;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -52,31 +53,36 @@ public class Add06_BasicCalculator_II {
 	 Once it is performed operation will assigned as *
 	 */
 
+	@Test
+	public void calculateTest(){
+		Assertions.assertThat(calculate("5*5")).isEqualTo(25);
+	}
+
 	public int calculate(String s) {
 
 		if (s == null || s.isEmpty())
 			return 0;
 		int len = s.length();
 		Stack<Integer> stack = new Stack<Integer>();
-		int currentNumber = 0;
+		int tempResult = 0;
 		char operation = '+';
 		for (int i = 0; i < len; i++) {
 			char currentChar = s.charAt(i);
 			if (Character.isDigit(currentChar)) {
-				currentNumber = (currentNumber * 10) + (currentChar - '0');
+				tempResult = (tempResult * 10) + (currentChar - '0');
 			}
 			if (!Character.isDigit(currentChar) && !Character.isWhitespace(currentChar) || i == len - 1) {
 				if (operation == '-') {
-					stack.push(-currentNumber);
+					stack.push(-tempResult);
 				} else if (operation == '+') {
-					stack.push(currentNumber);
+					stack.push(tempResult);
 				} else if (operation == '*') {
-					stack.push(stack.pop() * currentNumber);
+					stack.push(stack.pop() * tempResult);
 				} else if (operation == '/') {
-					stack.push(stack.pop() / currentNumber);
+					stack.push(stack.pop() / tempResult);
 				}
 				operation = currentChar;
-				currentNumber = 0;
+				tempResult = 0;
 			}
 		}
 		int result = 0;

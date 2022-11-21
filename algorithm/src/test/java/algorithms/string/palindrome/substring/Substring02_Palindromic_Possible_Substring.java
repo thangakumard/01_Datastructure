@@ -23,7 +23,7 @@ The substrings with different start indexes or end indexes are counted as differ
  */
 public class Substring02_Palindromic_Possible_Substring {
 
-	List<String> palindrome = new ArrayList<String>();
+	List<String> palindrome = new ArrayList<>();
 	int Counter = 0;
 	@Test
 	/*

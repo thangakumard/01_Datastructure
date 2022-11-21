@@ -45,9 +45,9 @@ public class Anagram01_MakeAnagramInMinSteps_I {
 	
 	@Test
 	private void test() {
-		String A = "gctcxyuluxjuxnsvmomavutrrfb";
-		String B = "qijrjrhqqjxjtprybrzpyfyqtzf";
-        Assertions.assertThat(minSteps(A, B)).isEqualTo(18);
+		String A = "abc";
+		String B = "xyz";
+        Assertions.assertThat(minSteps(A, B)).isEqualTo(3);
 	}
 
 	public int minSteps(String s, String t) {

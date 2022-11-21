@@ -1,4 +1,4 @@
-package algorithms.amazon;
+package algorithms.companies.amazon.amazon;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;

@@ -44,14 +44,14 @@ public class permutation03_Palindrome_All_Permutation {
 		return result;
 	}
 
-	private void backtrack(List<String> r, int[] counts, String Curr, int len) {
-		if (Curr.length() == len) { // once string
-			r.add(Curr);
+	private void backtrack(List<String> r, int[] counts, String temp, int len) {
+		if (temp.length() == len) { // once string
+			r.add(temp);
 		} else {
 			for (int i = 0; i < counts.length; i++) {
 				if (counts[i] > 1) {
 					counts[i] -= 2;
-					backtrack(r, counts, ((char) i) + Curr + ((char) i), len);
+					backtrack(r, counts, ((char) i) + temp + ((char) i), len);
 					counts[i] += 2;
 				}
 			}

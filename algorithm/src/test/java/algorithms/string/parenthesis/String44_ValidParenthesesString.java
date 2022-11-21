@@ -4,6 +4,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 /**
+ * https://leetcode.com/problems/valid-parenthesis-string/
+ *
  * Given a string s containing only three types of characters: '(', ')' and '*', return true if s is valid.
  *
  * The following rules define a valid string:

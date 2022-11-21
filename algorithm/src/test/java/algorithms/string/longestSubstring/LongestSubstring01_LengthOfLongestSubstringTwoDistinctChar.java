@@ -37,7 +37,7 @@ public class LongestSubstring01_LengthOfLongestSubstringTwoDistinctChar {
 	 */
 /******
  * 
- * @param s
+ * @param
  * @return
  */
 

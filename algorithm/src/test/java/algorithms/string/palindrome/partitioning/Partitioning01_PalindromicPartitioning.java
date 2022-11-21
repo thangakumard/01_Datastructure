@@ -35,7 +35,7 @@ public class Partitioning01_PalindromicPartitioning {
 
 	@Test
 	private void test() {
-		List<List<String>> result = partition("aabaacd");
+		List<List<String>> result = partition("ab");
 		for (List<String> lst : result) {
 			System.out.println(lst.toString());
 		}
