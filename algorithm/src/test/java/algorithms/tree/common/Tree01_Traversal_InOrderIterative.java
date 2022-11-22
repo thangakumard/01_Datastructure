@@ -39,7 +39,7 @@ public class Tree01_Traversal_InOrderIterative {
 	public void inorderIterative(TreeNode root) {
 		if(root == null) return;
 		
-		Stack<TreeNode> stack = new Stack<TreeNode>();
+		Stack<TreeNode> stack = new Stack<>();
 		
 		while(true){
 			if(root != null){

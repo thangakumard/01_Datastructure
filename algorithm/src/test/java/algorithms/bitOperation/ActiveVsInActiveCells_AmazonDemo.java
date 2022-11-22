@@ -1,9 +1,9 @@
 package algorithms.bitOperation;
 
 import org.testng.annotations.Test;
-import java.util.List;
+
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 public class ActiveVsInActiveCells_AmazonDemo {
 	

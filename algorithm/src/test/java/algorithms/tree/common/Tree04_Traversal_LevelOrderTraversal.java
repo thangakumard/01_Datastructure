@@ -50,7 +50,7 @@ public class Tree04_Traversal_LevelOrderTraversal {
 	
 	private void LevelTraversal(TreeNode root){
 		
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
+		Queue<TreeNode> queue = new LinkedList<>();
 		queue.add(root);
 		
 		while(!queue.isEmpty()){

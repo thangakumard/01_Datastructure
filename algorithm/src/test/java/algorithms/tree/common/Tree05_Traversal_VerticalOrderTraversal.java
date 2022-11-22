@@ -42,7 +42,7 @@ public class Tree05_Traversal_VerticalOrderTraversal {
 	
 public List<List<Integer>> verticalTraversal(TreeNode root) {
         
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        List<List<Integer>> result = new ArrayList<>();
         Deque<TreeNode> TreeNodeQueue = new ArrayDeque<TreeNode>();
         Deque<Integer> orderQueue = new ArrayDeque<Integer>();
         HashMap<Integer,List<Integer>> verticalMap = new HashMap<Integer, List<Integer>>();
@@ -59,7 +59,7 @@ public List<List<Integer>> verticalTraversal(TreeNode root) {
         	maxValue = Math.max(maxValue, vertical);
         	
         	if(!verticalMap.containsKey(vertical)) {
-        		verticalMap.put(vertical, new ArrayList<Integer>());
+        		verticalMap.put(vertical, new ArrayList<>());
         	}
         	verticalMap.get(vertical).add(currentTreeNode.data);
 
