@@ -1,4 +1,11 @@
 package myInterviews;
+
+import org.assertj.core.api.Assertions;
+import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /*
 
 Each character of the lowercase English alphabet has been mapped to digits as shown in the figure. The numerical value corresponding to each letter is its mapped value.
@@ -77,4 +84,106 @@ Explanation
 The extraordinary substrings are 'b', 'd', 'h' and 'bdh'.
  */
 public class Tiktok_extraordinaryNumber {
+
+    @Test
+    public void sampleTests(){
+        //Assertions.assertThat(countSubstrings("bdh")).isEqualTo(4);
+        Assertions.assertThat(countSubstrings("asdf")).isEqualTo(6);
+    }
+
+    private static int[] values = new int[26];
+
+    public static int countSubstrings(String input_str) {
+
+        //a,b
+        values[0] = 1;
+        values[1] = 1;
+
+        //c,d,e
+        values[2] = 2;
+        values[3] = 2;
+        values[4] = 2;
+
+        //fgh
+        values[5] = 3;
+        values[6] = 3;
+        values[7] = 3;
+
+        //i,j,k
+        values[8] = 4;
+        values[9] = 4;
+        values[10] = 4;
+
+        //l,m,n
+        values[8] = 5;
+        values[9] = 5;
+        values[10] = 5;
+
+        //o,p,q
+        values[8] = 6;
+        values[9] = 6;
+        values[10] = 6;
+
+        //r,s,t
+        values[8] = 7;
+        values[9] = 7;
+        values[10] = 7;
+
+        //u,v,w
+        values[8] = 8;
+        values[9] = 8;
+        values[10] =8;
+
+        //x,y,z
+        values[8] = 9;
+        values[9] = 9;
+        values[10] =9;
+
+        int result = 0;
+        if(input_str == null || input_str.length() == 0)
+            return 0;
+
+        List<String> allSubString = new ArrayList<>();
+        for (int start = 0; start < input_str.length(); start++) {
+            for (int end = start +1; end <= input_str.length(); end++) {
+                allSubString.add(input_str.substring(start,end));
+            }
+        }
+
+//        getSubStringsNew(input_str ,allSubString, 0, 0+1);// for odd length
+        for(int i=0; i <allSubString.size(); i++){
+
+            if(isExtraOdinary(allSubString.get(i)) == true)
+            {
+                result++;
+            }
+
+
+        }
+
+        return result;
+    }
+
+//    private static void getSubStrings(String input_str, List<String> resultSubString, int index){
+//        for(int i=index; i < input_str.length(); i ++){
+//            resultSubString.add(input_str.substring(index,i));
+//        }
+//    }
+
+    private static void getSubStringsNew(String input,List<String> allSubstrings, int start, int end){
+        for(int i=start; i < input.length(); i++){
+            allSubstrings.add(input.substring(start, input.length())); //IMPORTANT TO COLLECT THE SUBSTRING WITHIN THE WHILE LOOP
+            getSubStringsNew(input, allSubstrings, start+1, input.length());
+        }
+    }
+
+
+    private static boolean isExtraOdinary(String input){
+        int sum = 0;
+        for(int i=0; i < input.length(); i++){
+            sum += values[input.charAt(i) - 'a'];
+        }
+        return sum%input.length() == 0;
+    }
+
 }
