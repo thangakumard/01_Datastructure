@@ -13,8 +13,21 @@ public class Array34_FirstNonRepeatingChar {
 	@Test
 	private void test() {
 		String input = "Thangakumar";
-		System.out.println(firstUniqChar(input));
+		System.out.println(firstUniqChar_array(input));
 	}
+
+	public int firstUniqChar_array(String s) {
+
+     int[] counter = new int[26];
+     for(char c: s.toCharArray()){
+        counter[c-'a'] ++;
+     }
+
+     for(int i=0; i < s.length(); i++){
+        if(counter[s.charAt(i) - 'a'] == 1) return i;
+     }
+        return -1;
+    }
 	
 	 public int firstUniqChar(String s) {
      HashMap<Character, Integer> map = new HashMap<Character, Integer>();
@@ -30,5 +43,7 @@ public class Array34_FirstNonRepeatingChar {
 
 	return -1;
     }
+
+	
 
 }
