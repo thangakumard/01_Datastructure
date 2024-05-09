@@ -48,7 +48,7 @@ public class Backtrack_GenerateParantheses {
 		}
 		if (open < max)
 			backtrack(result, current_string + "(", open + 1, close, max);
-		if (close < open)
+		if (close < open) // compare close < open NOT close < max
 			backtrack(result, current_string + ")", open, close + 1, max);
 	}
 }
