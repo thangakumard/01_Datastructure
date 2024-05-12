@@ -8,23 +8,15 @@ import java.util.List;
 
 /*
 
-Each character of the lowercase English alphabet has been mapped to digits as shown in the figure. The numerical value corresponding to each letter is its mapped value.
+Each character of the lowercase English alphabet has been mapped to digits as shown in the figure.
+The numerical value corresponding to each letter is its mapped value.
 
-
-
-
-
-
-
-An extraordinary substring is one whose sum of the mapped values of each letter is divisible by its length. Given string input_str, count its total number of non-empty extraordinary substrings.
-
-
+An extraordinary substring is one whose sum of the mapped values of each letter is divisible by its length.
+Given string input_str, count its total number of non-empty extraordinary substrings.
 
 Example:
 
 input_str = 'asdf'
-
-
 
 All non-empty substrings of input_str are tested in the table.
 
@@ -153,7 +145,7 @@ public class Tiktok_extraordinaryNumber {
 //        getSubStringsNew(input_str ,allSubString, 0, 0+1);// for odd length
         for(int i=0; i <allSubString.size(); i++){
 
-            if(isExtraOdinary(allSubString.get(i)) == true)
+            if(isExtraordinary(allSubString.get(i)) == true)
             {
                 result++;
             }
@@ -178,7 +170,7 @@ public class Tiktok_extraordinaryNumber {
     }
 
 
-    private static boolean isExtraOdinary(String input){
+    private static boolean isExtraordinary(String input){
         int sum = 0;
         for(int i=0; i < input.length(); i++){
             sum += values[input.charAt(i) - 'a'];

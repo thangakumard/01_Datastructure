@@ -87,7 +87,7 @@ public class Queue02_priorityQueue {
 
             pq.add("Geeks");
             pq.add("For");
-            pq.add("Geeks");
+            pq.add("Gate");
 
             System.out.println(pq);
     }
