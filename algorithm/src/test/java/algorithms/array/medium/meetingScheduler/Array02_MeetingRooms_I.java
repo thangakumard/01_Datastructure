@@ -1,5 +1,8 @@
 package algorithms.array.medium.meetingScheduler;
 
+import org.assertj.core.api.Assertions;
+import org.testng.annotations.Test;
+
 import java.util.Arrays;
 
 /***
@@ -25,14 +28,23 @@ import java.util.Arrays;
  */
 public class Array02_MeetingRooms_I {
 
+    @Test
+    private void test() {
+        int[][] intervals= {{0,30},{60,240},{90,120}};
+        Assertions.assertThat(canAttendMeetings(intervals)).isFalse();
+    }
+
     public boolean canAttendMeetings(int[][] intervals) {
-        Arrays.sort(intervals, (a,b) -> (a[0] - b[0]));
-        for(int i=0; i< intervals.length-1; i++){
-            if(intervals[i][1] > intervals[i+1][0]){
+        if(intervals == null || intervals.length < 2)
+            return true;
+
+        Arrays.sort(intervals, (a,b) -> Integer.compare(a[0],b[0]));
+
+        for(int i =1; i < intervals.length; i++){
+            if(intervals[i-1][1] > intervals[i][0]){
                 return false;
             }
         }
-        
         return true;
     }
 }

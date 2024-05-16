@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.binarySearch;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /*
@@ -28,7 +28,7 @@ Input: [4, 6, 10], key = -1
 Output: 0
 Explanation: The smallest number greater than or equal to '-1' is '4' having index '0'.
  */
-public class Array16_CeilingOfaNumber {
+public class BinarySearch03_CeilingOfaNumber {
 
 	@Test
 	public void test(){

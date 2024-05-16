@@ -1,7 +1,7 @@
 package algorithms.array.medium;
 
 import java.util.*;
-/*
+/***
  * https://leetcode.com/problems/find-all-duplicates-in-an-array/
  * Given an array of integers, 1 ≤ a[i] ≤ n (n = size of array), some elements appear twice and others appear once.
 
@@ -15,6 +15,13 @@ import java.util.*;
 	
 	Output:
 	[2,3]
+	*
+	* Constraints:
+
+	n == nums.length
+	1 <= n <= 105
+	1 <= nums[i] <= n
+	Each element in nums appears once or twice.
  */
 
 import org.testng.annotations.Test;

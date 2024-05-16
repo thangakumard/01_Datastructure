@@ -60,7 +60,7 @@ public int[][] intervalIntersection(int[][] firstList, int[][] secondList) {
             if(intersect_start <= intersect_end)
                 result.add(new int[]{intersect_start,intersect_end});
             
-            if(firstList[i][1] < secondList[j][1]){
+            if(firstList[i][1] < secondList[j][1]){ //IMPORTANT to compare the end time
                 i++;
             }else{
                 j++;

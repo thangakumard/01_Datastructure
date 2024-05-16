@@ -1,10 +1,17 @@
-package algorithms.array.medium;
+package algorithms.array.medium.subArray;
 import java.util.*;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/*
+/***
+ * https://stackoverflow.com/questions/26568560/difference-between-subarray-subset-subsequence
+ *
+ * A subarray has Order and Continuity.
+ * A subsequence has Order but not Continuity.
+ * A subset does not Order nor Continuity.
+
  * https://leetcode.com/problems/contiguous-array/
  * Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
 
@@ -12,22 +19,23 @@ import org.testng.annotations.Test;
 	Input: [0,1]
 	Output: 2
 	Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.
-	Example 2:
+
+ 	Example 2:
 	Input: [0,1,0]
 	Output: 2
 	Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
 	Note: The length of the given binary array will not exceed 50,000.
  */
-public class Array22_ContiguousArray {
+public class Subarray07_findMaxLengthOfBinarySubarray {
 
 	@Test
 	private void test() {
 		int[] input = {1,1,1,0,1,0};
-		Assert.assertEquals(findMaxLength(input), 4);
+		Assertions.assertThat(findMaxLength(input)).isEqualTo(4);
 	}
 	
 	public int findMaxLength(int[] nums) {
-		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+		HashMap<Integer,Integer> map = new HashMap<>();
 		map.put(0,-1);
 		int max_length = 0;
 		int counter = 0;

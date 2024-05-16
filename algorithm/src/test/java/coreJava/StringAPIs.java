@@ -41,8 +41,10 @@ public class StringAPIs {
 		
 		String value = "ABC";
 		System.out.println("Compare: ABC with abc : " + value.compareTo("abc"));
+		System.out.println("Compare: abc with ABC : " + "abc".compareTo("ABC"));
 		System.out.println("Compare: ABC with Abc : " + value.compareTo("Abc"));
-		
+		System.out.println("Compare: ABC with ABC : " + value.compareTo("ABC"));
+
 		value = "Apple";
 		System.out.println("Compare: Apple with Banana : " + value.compareTo("Banana"));
 		System.out.println("Compare: Apple with apple : " + value.compareTo("apple"));

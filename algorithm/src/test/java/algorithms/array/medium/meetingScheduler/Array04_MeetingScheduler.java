@@ -56,7 +56,7 @@ public class Array04_MeetingScheduler {
 	                 result.add(intersect_start + duration);
 	                 return result;
 	            }
-	            if(slots1[i][1] < slots2[j][1]){
+	            if(slots1[i][1] < slots2[j][1]){ //IMPORTANT to compare the end time
 	                i++;
 	            }else{
 	                j++;

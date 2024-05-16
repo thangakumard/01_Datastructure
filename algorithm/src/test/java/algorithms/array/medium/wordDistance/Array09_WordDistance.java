@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.wordDistance;
 
 import java.util.ArrayList;
 import java.util.HashMap;

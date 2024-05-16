@@ -2,6 +2,7 @@ package algorithms.array.medium.meetingScheduler;
 
 import java.util.*;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /*
 https://leetcode.com/problems/meeting-rooms-ii/
@@ -31,10 +32,11 @@ public class Array03_MeetingRooms_II {
 
 	@Test
 	private void test() {
-		//int[][] intervals= {{9,10},{4,9},{4,17}};
+		int[][] intervals= {{9,10},{4,9},{4,17}}; //IMPORTANT TEST CASE
+        Assertions.assertThat(minMeetingRooms(intervals)).isEqualTo(2);
 		//int[][] intervals= {{2,15},{36,45},{9,29},{16,23},{4,9}};
-        int[][] intervals= {{9,10},{9,11},{11,12}};
-		System.out.println(minMeetingRooms(intervals));
+        //int[][] intervals= {{9,10},{9,11},{11,12}};
+
 	}
 	
 	public int minMeetingRooms(int[][] intervals) {

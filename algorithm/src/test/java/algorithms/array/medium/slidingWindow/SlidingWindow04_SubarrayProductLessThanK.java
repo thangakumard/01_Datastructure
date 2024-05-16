@@ -1,5 +1,6 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.medium.slidingWindow;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /*
@@ -22,13 +23,15 @@ Note:
 
 
  */
-public class Subarray01_ProductLessThanK {
+public class SlidingWindow04_SubarrayProductLessThanK {
 
 	@Test
 	public void test() {
-		System.out.println(this.numSubarrayProductLessThanK(new int[] { 10, 5, 2, 6 }, 100));
-		System.out.println(this.numSubarrayProductLessThanK(new int[] { 2, 5, 3, 10 }, 30));
-		System.out.println(this.numSubarrayProductLessThanK(new int[] { 8, 2, 6, 5 }, 50));
+		Assertions.assertThat(numSubarrayProductLessThanK((new int[] {1,1,1}), 1)).isEqualTo(18);
+		//Assertions.assertThat(numSubarrayProductLessThanK((new int[] {10,9,10,4,3,8,3,3,6,2,10,10,9,3}), 19)).isEqualTo(18);
+//		System.out.println(this.numSubarrayProductLessThanK(new int[] { 10, 5, 2, 6 }, 100));
+//		System.out.println(this.numSubarrayProductLessThanK(new int[] { 2, 5, 3, 10 }, 30));
+//		System.out.println(this.numSubarrayProductLessThanK(new int[] { 8, 2, 6, 5 }, 50));
 	}
 
 	public int numSubarrayProductLessThanK(int[] nums, int k) {
@@ -42,15 +45,13 @@ public class Subarray01_ProductLessThanK {
 		int left = 0, right = 0;
 
 		while (right < nums.length) {
-
 			product *= nums[right];
-
-			while (product >= k) {
+			while (product >= k) { // note : While loop not IF
 				product /= nums[left];
-				left++;
+				left++; // Move left pointer only when product >= k
 			}
 			result += right - left + 1;
-			right++;
+			right++; //for each setup increment the right pointer
 		}
 		return result;
 	}

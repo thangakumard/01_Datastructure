@@ -1,6 +1,4 @@
-package algorithms.array.medium;
-
-import java.util.*;
+package algorithms.array.medium.binarySearch;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
@@ -49,7 +47,7 @@ target is a lowercase letter.
  *
  */
 
-public class Array17_FindSmallestLetterGreaterThanTarget {
+public class BinarySearch05_FindSmallestLetterGreaterThanTarget {
 
 	@Test
 	public void test() {

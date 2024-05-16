@@ -2,6 +2,7 @@ package algorithms.array.medium;
 
 import java.util.PriorityQueue;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 /*
  * https://leetcode.com/problems/kth-largest-element-in-an-array/
@@ -29,14 +30,22 @@ public class Array02_KthLargestNumber {
 
 		// int[] input = {3,2,1,5,6,4};
 
-		int[] input = { 6,2,7,8,1,9 };
-		System.out.println(findKthLargest_big_o_n(input, 9));
-		System.out.println(findKthLargest_big_o_nlogn(input, 9));
+		int[] input = { 5,2,4,1,3,6,0};
+		Assertions.assertThat(findKthLargest_big_o_nlogK(input, 4)).isEqualTo(3);
+		Assertions.assertThat(findKthLargest_big_o_nlogn(input, 4)).isEqualTo(3);
 		int a = 10;
 	}
 
 	int result = -1;
 
+	/***
+	 * The average-case time complexity of Quicksort is O(n*log(n)),
+	 * which is quicker than Merge Sort, Bubble Sort, and other sorting algorithms.
+	 * However, the worst-case time complexity is O(n^2) when the pivot choice consistently results in unbalanced partitions.
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
 	public int findKthLargest_big_o_nlogn(int[] nums, int k) {
 
 		int result = quickSort(nums, 0, nums.length - 1, k);
@@ -52,7 +61,7 @@ public class Array02_KthLargestNumber {
 		int initial_right = right;
 		while (left < right) {
 			while (pivot >= input[right] && left < right) {
-				//right side value is < than pivot. So we are good. Move right--
+				//right side value is < than pivot. So we are good. Move the right pointer--
 				right--;
 			}
 			if (left != right) {
@@ -85,7 +94,15 @@ public class Array02_KthLargestNumber {
         return result;
 	}
 
-    public int findKthLargest_big_o_n(int[] nums, int k) {
+	/**
+	 * Time complexity O(n⋅logk)
+	 * n is the size of array
+	 * heap is limited to a size of k
+	 * @param nums
+	 * @param k
+	 * @return
+	 */
+    public int findKthLargest_big_o_nlogK(int[] nums, int k) {
         PriorityQueue<Integer> minQueue = new PriorityQueue<Integer>();
         
         for(int i=0; i < nums.length; i++){

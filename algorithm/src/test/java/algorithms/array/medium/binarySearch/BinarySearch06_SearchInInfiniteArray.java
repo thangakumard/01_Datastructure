@@ -1,7 +1,7 @@
-package algorithms.array.medium;
+package algorithms.array.medium.binarySearch;
 import org.testng.annotations.Test;
 
-public class Array18_SearchInInfiniteArray {
+public class BinarySearch06_SearchInInfiniteArray {
 
 }
 /*https://www.educative.io/module/lesson/data-structures-in-java/JEWE7KEMAoo

@@ -1,8 +1,8 @@
-package algorithms.array.medium;
+package algorithms.array.medium.binarySearch;
 
 import org.testng.annotations.Test;
 
-public class Array20_FloorOfaNumber {
+public class BinarySearch03_FloorOfaNumber {
 
 	 @Test
 	  public void main() {

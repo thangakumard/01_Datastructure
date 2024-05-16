@@ -1,7 +1,6 @@
-package algorithms.array.medium;
+package algorithms.array.medium.binarySearch;
 
 import org.assertj.core.api.Assertions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
@@ -24,7 +23,7 @@ import org.testng.annotations.Test;
  *
  *
  */
-public class Array21_PeekElement {
+public class BinarySearch04_PeekElement {
 
 	
 	@Test

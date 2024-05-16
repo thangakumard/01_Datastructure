@@ -1,6 +1,6 @@
-package algorithms;
+package algorithms.priorityQueue;
 
-import java.util.ArrayList;
+import java.util.*;
 /********
  https://leetcode.com/problems/task-scheduler/description/
  
@@ -20,18 +20,18 @@ import java.util.ArrayList;
 	The number of tasks is in the range [1, 10000].
 	The integer n is in the range [0, 100].
  */
-import java.util.Collections;
-import java.util.List;
-import java.util.PriorityQueue;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 public class TaskScheduler {
 
 	@Test
 	public void Test(){
-		String input = "AABCCCEEE"; 
+		String input = "AAABBB";
 		System.out.println("Least Interval :" + leastInterval(input.toCharArray(), 2));
+
+		Assertions.assertThat(leastInterval_queue(input.toCharArray(), 2)).isEqualTo(8);
 	}
 	
 	public int leastInterval(char[] tasks, int n) {
@@ -54,6 +54,33 @@ public class TaskScheduler {
         }
         
         return Math.max(tasks.length, (f_max - 1) * (n + 1) + n_max);
+	}
+
+	public int leastInterval_queue(char[] tasks, int n){
+		HashMap<Character, Integer> charMap = new HashMap<>();
+		for(char c: tasks){
+			charMap.put(c , charMap.getOrDefault(c, 0)+1);
+		}
+
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>();
+		maxHeap.addAll(charMap.values());
+
+		int cycle = 0;
+		while(!maxHeap.isEmpty()){
+			List<Integer> temp = new ArrayList<>();
+			for (int i=0; i <= n ; i++){
+				if(!maxHeap.isEmpty()){
+					temp.add(maxHeap.poll());
+				}
+			}
+			for(int i: temp){
+				if(--i > 0){
+					maxHeap.add(i);
+				}
+			}
+			cycle += maxHeap.isEmpty() ? temp.size() : n + 1;
+		}
+		return cycle;
 	}
  
 }

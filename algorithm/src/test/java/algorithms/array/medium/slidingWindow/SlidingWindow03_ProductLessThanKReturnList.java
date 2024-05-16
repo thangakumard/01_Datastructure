@@ -1,4 +1,4 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.medium.slidingWindow;
 import java.util.*;
 
 import org.testng.annotations.Test;
@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 /*
  * https://www.educative.io/module/lesson/data-structures-in-java/R1XgYW2PZzK
  */
-public class Subarray02_ProductLessThanKReturnList {
+public class SlidingWindow03_ProductLessThanKReturnList {
 
 	 @Test
 	 public  void test() {

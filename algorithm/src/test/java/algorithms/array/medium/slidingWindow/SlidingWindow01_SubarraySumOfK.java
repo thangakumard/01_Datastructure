@@ -1,11 +1,11 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.medium.slidingWindow;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 
-public class Subarray05_SubarraySum {
+public class SlidingWindow01_SubarraySumOfK {
 
     @Test
     public void subarraySumTest(){

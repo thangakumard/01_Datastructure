@@ -1,5 +1,4 @@
-package algorithms.array.medium;
-import java.util.*;
+package algorithms.array.medium.binarySearch;
 import org.testng.annotations.*;
 
 /*
@@ -25,7 +24,7 @@ Input: [4, 6, 10], key = 17
 Output: 10
 
  */
-public class Array19_minimumAbsDifference {
+public class BinarySearch07_minimumAbsDifference {
 	@Test
 	private void test() {
 		int[] input_01 = {4, 6, 10};
