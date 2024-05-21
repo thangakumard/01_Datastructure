@@ -153,10 +153,23 @@ public class SampleHashMap {
 	    	System.out.println(entry.getValue()); 
 	    	System.out.println(entry.getKey());
 	     }
-	     
-	    
-	      
-	      
 	}
-	
+
+	@Test
+	private void printAllValues() {
+		HashMap<Object, String> mapData = new HashMap<Object, String>();
+		/********* Insert a record *********/
+		mapData.put(1, "one");
+		mapData.put(2, "Two");
+		mapData.put(3, "Three");
+		mapData.put(4, "Four");
+		mapData.put(5, "Five");
+		mapData.put(6, "Six");
+		mapData.put(7, null);
+		mapData.put(null, null);
+		mapData.put(null, null);// This record will update the record with "null" key value.
+		// it will not throw any exception
+		System.out.println(mapData.values());
+	}
+
 }

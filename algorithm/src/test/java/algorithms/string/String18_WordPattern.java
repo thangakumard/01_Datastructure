@@ -35,10 +35,13 @@ public class String18_WordPattern {
 
     @Test
     public void wordPatternTest(){
-        Assertions.assertThat(wordPattern("abba", "dog cat cat dog")).isTrue();
-        Assertions.assertThat(wordPattern("abba", "dog dog dog dog")).isFalse();
+        Assertions.assertThat(twoHashMapSolution("abba", "dog cat cat dog")).isTrue();
+        Assertions.assertThat(twoHashMapSolution("abba", "dog dog dog dog")).isFalse();
+
+        Assertions.assertThat(singleHashMapSolution("abba", "dog cat cat dog")).isTrue();
+        Assertions.assertThat(singleHashMapSolution("abba", "dog dog dog dog")).isFalse();
     }
-    public boolean wordPattern(String pattern, String s) {
+    public boolean twoHashMapSolution(String pattern, String s) {
         String[] input = s.split(" ");
 
         if(input.length != pattern.length())
@@ -65,5 +68,28 @@ public class String18_WordPattern {
 
         }
         return true;
+    }
+
+    public boolean singleHashMapSolution(String pattern, String s){
+            HashMap map_index = new HashMap();
+            String[] words = s.split(" ");
+
+            if (words.length != pattern.length())
+                return false;
+
+            for(Integer i=0; i < words.length; i++){
+                char c = pattern.charAt(i);
+                String w = words[i];
+
+                if (!map_index.containsKey(c))
+                    map_index.put(c, i);
+
+                if (!map_index.containsKey(w))
+                    map_index.put(w, i);
+
+                if (map_index.get(c) != map_index.get(w))
+                    return false;
+            }
+            return true;
     }
 }

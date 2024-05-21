@@ -1,6 +1,6 @@
 package algorithms.array.medium.waterTank;
 
-import org.testng.Assert;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /***
@@ -24,7 +24,11 @@ import org.testng.annotations.Test;
  * 0 <= height[i] <= 104
  */
 public class Array02_ContainerWithMostWater {
-
+    @Test
+    public void test(){
+        int[] input = new int[]{1,8,6,2,5,4,8,3,7};
+        Assertions.assertThat(maxArea(input)).isEqualTo(49);
+    }
     public int maxArea(int[] height) {
         int left = 0, right = height.length -1;
         int area = Integer.MIN_VALUE;
@@ -42,12 +46,7 @@ public class Array02_ContainerWithMostWater {
         return area;
     }
 
-    @Test
-    public void test(){
-        int[] input = new int[]{1,8,6,2,5,4,8,3,7};
-        int result = maxArea(input);
-        Assert.assertEquals(49,result);
-    }
+
 
 
 }

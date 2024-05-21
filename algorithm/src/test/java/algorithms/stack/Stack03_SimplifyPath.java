@@ -80,9 +80,8 @@ public class Stack03_SimplifyPath {
         for (String directory : components) {
 
             // A no-op for a "." or an empty string
-            if (directory.equals(".") || directory.isEmpty()) {
-                continue;
-            } else if (directory.equals("..")) {
+            if (directory.equals(".") || directory.isEmpty()) continue;
+            else if (directory.equals("..")) {
 
                 // If the current component is a "..", then
                 // we pop an entry from the stack if it's non-empty

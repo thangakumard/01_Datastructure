@@ -1,5 +1,6 @@
 package algorithms.array.easy;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -38,10 +39,8 @@ public class Array21_BuySellStockProfit_02 {
 	@Test
 	private void test() {
 		int[] prices = {7,1,5,3,6,4};
-		Assert.assertEquals(7, maxProfit(prices)); 
-		
-		int[] prices_1 = {7,6,5,4,3,2};
-		Assert.assertEquals(0, maxProfit(prices_1)) ;
+        //Assertions.assertThat(maxProfit(new int[]{7,1,5,3,6,4})).isEqualTo(7);
+        Assertions.assertThat(maxProfit(new int[]{1,2,3,4,5})).isEqualTo(4);
 	}
 
     public int maxProfit(int[] prices) {

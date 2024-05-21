@@ -5,7 +5,9 @@ import org.testng.annotations.Test;
 
 import java.util.HashMap;
 
-
+/***
+ * https://leetcode.com/problems/first-unique-character-in-a-string/description/
+ */
 public class String03_FirstUniqChar {
 	
 	@Test
@@ -14,6 +16,15 @@ public class String03_FirstUniqChar {
 		Assertions.assertThat(withSingleArray("loveleetcode")).isEqualTo(2);
 		Assertions.assertThat(withSingleArray("aabb")).isEqualTo(-1);
 	}
+
+		public int firstUniqChar(String s) {
+			int index = -1;
+			for(int i=0; i < s.length(); i++){
+				if(s.indexOf(s.charAt(i)) == i && s.indexOf(s.charAt(i) , i+1) == -1)
+					return i;
+			}
+			return -1;
+		}
 
  	/*
  	 * With the assumption of input string will have only lower case alphabets

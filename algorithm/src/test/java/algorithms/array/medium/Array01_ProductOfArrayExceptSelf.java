@@ -66,18 +66,21 @@ public class Array01_ProductOfArrayExceptSelf {
 	 * doesn't add to the space complexity
 	 */
 	public int[] WithSpacecomplex_1(int[] nums) {
+		//[1,2,3,4]
 		int[] result = new int[nums.length];
 
-		result[0] = 1;
+		result[0] = 1; //1
 		for (int i = 1; i < nums.length; i++) {
 			result[i] = nums[i - 1] * result[i - 1];
 		}
+		//result = [1,1,2,6]
 
 		int R = 1;
 		for (int i = nums.length - 1; i >= 0; i--) { //***IMPORTANT TO START FROM nums.length - 1 NOT nums.length - 2
 			result[i] = result[i] * R;
 			R *= nums[i];
 		}
+		//result = [24,12,8,6]
 
 		return result;
 	}

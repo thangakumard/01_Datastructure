@@ -6,8 +6,6 @@ import java.util.*;
 import org.junit.Assert;
 import org.testng.annotations.Test;
 
-import com.google.common.collect.Multiset.Entry;
-
 public class String10_Sherlock {
 	
   /* https://www.hackerrank.com/challenges/sherlock-and-valid-string/

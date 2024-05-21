@@ -2,6 +2,7 @@ package algorithms.stack;
 
 import java.util.ArrayDeque;
 
+import org.assertj.core.api.Assertions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -44,7 +45,9 @@ public class Stack01_ValidateParentheses {
 
 	@Test
 	public void TestParentheses(){
-		Assert.assertTrue(hasValidParentheses("{{()}}"));
+		Assertions.assertThat(hasValidParentheses("{{()}}")).isTrue();
+		Assertions.assertThat(hasValidParentheses("{{")).isFalse(); // IMPORTANT
+		Assertions.assertThat(hasValidParentheses("{)")).isFalse(); // IMPORTANT
 	}
 	
 	private boolean hasValidParentheses(String s){

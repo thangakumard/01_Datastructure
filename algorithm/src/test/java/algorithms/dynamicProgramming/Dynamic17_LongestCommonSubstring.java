@@ -1,5 +1,6 @@
 package algorithms.dynamicProgramming;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /**
@@ -10,13 +11,9 @@ public class Dynamic17_LongestCommonSubstring {
 
 	@Test
 	 public void test() {
-		    System.out.println(this.findLCSLength("abdca", "cbda"));
-		    System.out.println(this.findLCSLength("passport", "ppsspt"));
-		    
-		    
-		    System.out.println(this.recursive("abdca", "cbda"));
-		    System.out.println(this.recursive("passport", "ppsspt"));
-		  }
+		Assertions.assertThat(findLCSLength("abdca", "cbda")).isEqualTo(2);
+		Assertions.assertThat(findLCSLength("passport", "ppsspt")).isEqualTo(3);
+	 }
 	 
 	/*
 	 * Time complexity O(m * n)

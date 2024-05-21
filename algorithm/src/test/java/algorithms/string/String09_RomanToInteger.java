@@ -62,7 +62,7 @@ public class String09_RomanToInteger {
 	}
 	
 	private int RomanToNumber(String s){
-		HashMap<Character, Integer> roman = new HashMap<Character, Integer>();
+		HashMap<Character, Integer> roman = new HashMap<>();
 		roman.put('I',1);
         roman.put('V',5);
         roman.put('X',10);

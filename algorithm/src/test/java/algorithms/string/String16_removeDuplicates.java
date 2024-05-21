@@ -20,7 +20,7 @@ public class String16_removeDuplicates {
 	}
 
 		private void removeDuplicates(char[] str){
-	      Set<Character> targetSet = new HashSet<Character>();
+	      Set<Character> targetSet = new HashSet<>();
 	      int write =0;
 	      for(int read=0; read< str.length; read++){
 	        if(!targetSet.contains(str[read])){

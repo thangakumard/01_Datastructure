@@ -1,7 +1,6 @@
 package algorithms.string.compareTwoStrings;
 
 import org.assertj.core.api.Assertions;
-import org.junit.Assert;
 import org.testng.annotations.Test;
 
 /**
