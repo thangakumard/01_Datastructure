@@ -3,6 +3,7 @@ package algorithms.string.longestSubstring;
 import java.util.Collections;
 import java.util.HashMap;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /*****
@@ -34,12 +35,39 @@ public class LongestSubstring02_LengthOfLongestSubstringKDistinct {
 	
 	@Test
 	public void test() {
-	    System.out.println("Length of the longest substring: " + this.lengthOfLongestSubstringKDistinct("araaci", 2));
-	    System.out.println("Length of the longest substring: " + this.lengthOfLongestSubstringKDistinct("araaci", 1));
-	    System.out.println("Length of the longest substring: " + this.lengthOfLongestSubstringKDistinct("cbbebi", 3));
+	    System.out.println("Length of the longest substring: " + this.lengthOfLongestSubstringKDistinct_slidingwindow2("araaci", 2));
+	    System.out.println("Length of the longest substring: " + this.lengthOfLongestSubstringKDistinct_slidingwindow2("araaci", 1));
+	    System.out.println("Length of the longest substring: " + this.lengthOfLongestSubstringKDistinct_slidingwindow2("cbbebi", 3));
+
+		Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1("abaccc",2)).isEqualTo(4);
+
 	  }
-	
-	public int lengthOfLongestSubstringKDistinct(String s, int k) {
+	public int lengthOfLongestSubstringKDistinct_slidingwindow1(String s, int k) {
+		int[] counter = new int[256];
+
+		int left =0, right =0, maxLength = 0, distinctChar = 0;
+
+		while(right < s.length()){
+			if(counter[s.charAt(right)] == 0){
+				distinctChar++;
+			}
+			counter[s.charAt(right)]++;
+			right++;
+
+			while(distinctChar > k){
+				if(counter[s.charAt(left)] == 1)
+				{
+					distinctChar--;
+				}
+				counter[s.charAt(left)]--;
+				left++;
+			}
+			maxLength = Math.max(maxLength, right - left);
+		}
+
+		return maxLength;
+	}
+	public int lengthOfLongestSubstringKDistinct_slidingwindow2(String s, int k) {
         char[] input = s.toCharArray();
         
         HashMap<Character, Integer> rightmostPositionCharMap = new HashMap<>();
@@ -58,5 +86,7 @@ public class LongestSubstring02_LengthOfLongestSubstringKDistinct {
         }
         return max_length;
     }
+
+
 
 }

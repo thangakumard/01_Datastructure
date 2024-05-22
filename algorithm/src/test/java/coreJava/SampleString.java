@@ -98,6 +98,10 @@ public class SampleString {
 		System.out.println("abcd.substring(4) : " + s1.substring(4));
 		
 		System.out.println("abcd.substring(0,1) : " + s1.substring(0,1));
+
+		String math = "2*(5+5)";
+		System.out.println("math.substring(2,3) : " + math.substring(3,6));
+
 	}
 	
 }

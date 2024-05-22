@@ -28,11 +28,37 @@ public class LongestSubstring03_LongestSubstringWithoutRepeatingChar {
 	public void getSubstringLength(){
 		//Assert.assertEquals(4, lengthOfLongestSubstring_01("abccabd"));
 		//Assert.assertEquals(4, lengthOfLongestSubstring_01("abcabcdbbef"));
-		Assertions.assertThat(lengthOfLongestSubstring_01("abccbafd")).isEqualTo(5);
+		Assertions.assertThat(lengthOfLongestSubstring_slidingWindow1("abccbafd")).isEqualTo(5);
+		Assertions.assertThat(lengthOfLongestSubstring_slidingWindow2("abccbafd")).isEqualTo(5);
+	}
+
+	/**
+	 * 		int[26] for Letters 'a' - 'z' or 'A' - 'Z'
+	 * 		int[128] for ASCII
+	 * 		int[256] for Extended ASCII  ****** [IMPORTANT] *****
+	 * @param s
+	 * @return
+	 */
+	public int lengthOfLongestSubstring_slidingWindow1(String s) {
+		int[] counter = new int[256];
+		int left =0, right =0, maxLength =0;
+
+		while(right < s.length()){
+			if(counter[s.charAt(right)] == 0){
+				counter[s.charAt(right)]++;
+				right++;
+			}else{
+				counter[s.charAt(left)]--;
+				left++;
+			}
+			maxLength = Math.max(maxLength, right -left);
+		}
+
+		return maxLength;
 	}
 	
 	//from https://www.youtube.com/watch?v=3IETreEybaA&t=69s
-	public int lengthOfLongestSubstring_01(String s) {
+	public int lengthOfLongestSubstring_slidingWindow2(String s) {
 		
 		int left = 0, right = 0, max = 0;
 		HashSet<Character> uniqueCharSubstringSet = new HashSet<>();

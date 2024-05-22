@@ -46,23 +46,29 @@ public class LongestSubstring04_LongestSubstringWithSameLettersReplacement {
 
 	@Test
 	public  void test() {
-//		Assertions.assertThat(this.findLength("AABCCBB", 2)).isEqualTo(5);
-		Assertions.assertThat(this.findLength("ABBCB", 1)).isEqualTo(4);
-//		Assertions.assertThat(this.findLength("ABCCDE", 1)).isEqualTo(3);
+//		Assertions.assertThat(this.findLength_slidingWindow("AABCCBB", 2)).isEqualTo(5);
+		Assertions.assertThat(this.findLength_slidingWindow("ABBCB", 1)).isEqualTo(4);
+//		Assertions.assertThat(this.findLength_slidingWindow("ABCCDE", 1)).isEqualTo(3);
 	}
 
-	/*
-		Using sliding window approach to solve the problem
+
+	/**
+	 * 		int[26] for Letters 'a' - 'z' or 'A' - 'Z'
+	 * 		int[128] for ASCII
+	 * 		int[256] for Extended ASCII  ****** [IMPORTANT] *****
+	 * @param str
+	 * @param k
+	 * @return
 	 */
-	 public int findLength(String str, int k) {
+	 public int findLength_slidingWindow(String str, int k) {
 		 int[] char_input = new int[128];
 	    int left = 0;
 	    int maxLengthSubstring = 0;
 	    int maxCharFrequency = 0;
 
 	    for(int right =0; right < str.length(); right++){
-	      char_input[str.charAt(right) - 'A']++;
-	      int char_count = char_input[str.charAt(right)-'A'];
+//	      char_input[str.charAt(right) - 'A']++;
+	      int char_count = ++char_input[str.charAt(right)-'A'];
 	      maxCharFrequency = Math.max(maxCharFrequency, char_count);
 
 	      //When this condition breaks, remove a char from the sliding window start and

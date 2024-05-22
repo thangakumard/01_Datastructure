@@ -44,28 +44,52 @@ public class LongestSubstring01_LengthOfLongestSubstringTwoDistinctChar {
 @Test
 public void lengthOfLongestSubstringTwoDistinct_test1(){
     String input = "a";
-    Assertions.assertThat(lengthOfLongestSubstringTwoDistinct(input)).isEqualTo(1);
+    Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1(input)).isEqualTo(1);
 }
 
 @Test
 public void lengthOfLongestSubstringTwoDistinct_test2(){
     String input = "ab";
-    Assertions.assertThat(lengthOfLongestSubstringTwoDistinct(input)).isEqualTo(2);
+    Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1(input)).isEqualTo(2);
 }
 
 @Test
 public void lengthOfLongestSubstringTwoDistinct_test3(){
     String input = "ababbac";
-    Assertions.assertThat(lengthOfLongestSubstringTwoDistinct(input)).isEqualTo(6);
+    Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1(input)).isEqualTo(6);
 }
 
 @Test
 public void lengthOfLongestSubstringTwoDistinct_test4(){
     String input = "abcdef";
-    Assertions.assertThat(lengthOfLongestSubstringTwoDistinct(input)).isEqualTo(2);
+    Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1(input)).isEqualTo(2);
 }
+    public int lengthOfLongestSubstringKDistinct_slidingwindow1(String s) {
+        int[] counter = new int[256];
 
-public int lengthOfLongestSubstringTwoDistinct(String s) {
+        int left =0, right =0, maxLength = 0, distinctChar = 0;
+
+        while(right < s.length()){
+            if(counter[s.charAt(right)] == 0){
+                distinctChar++;
+            }
+            counter[s.charAt(right)]++;
+            right++;
+
+            while(distinctChar > 2){
+                if(counter[s.charAt(left)] == 1)
+                {
+                    distinctChar--;
+                }
+                counter[s.charAt(left)]--;
+                left++;
+            }
+            maxLength = Math.max(maxLength, right - left);
+        }
+
+        return maxLength;
+    }
+    public int lengthOfLongestSubstringTwoDistinct_slidingwindow2(String s) {
         
         if(s.length() < 3) return s.length();
         //Keep the character as Key and it's index

@@ -2,6 +2,7 @@ package algorithms.string.math;
 
 import java.util.Stack;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 /**********
@@ -26,11 +27,12 @@ import org.testng.annotations.Test;
  * represents a valid expression.
  */
 
-public class Add05_BasicCalculator {
+public class Math05_BasicCalculator {
 
 	@Test
 	public void test() {
 		calculate("11+(4+5+2)-3");
+		Assertions.assertThat(calculate("(1+(4+5+2)-3)+(6+8)")).isEqualTo(23);
 	}
 
 	public int calculate(String s) {

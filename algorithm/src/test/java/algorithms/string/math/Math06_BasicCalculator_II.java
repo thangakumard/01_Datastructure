@@ -36,7 +36,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class Add06_BasicCalculator_II {
+public class Math06_BasicCalculator_II {
 
 	@Test
 	private void test() {
@@ -50,20 +50,20 @@ public class Add06_BasicCalculator_II {
 	 
 	 Operation always will have previous operation sign, 
 	 ex: 3+2*2 => when reaches * operation will be the previous sign +. 
-	 Once it is performed operation will assigned as *
+	 Once it is performed operation will assign as *
 	 */
 
 	@Test
 	public void calculateTest(){
-		Assertions.assertThat(calculate("5*5")).isEqualTo(25);
+		//Assertions.assertThat(calculate("5*5")).isEqualTo(25);
+		Assertions.assertThat(calculate("3+2*2")).isEqualTo(7);
 	}
 
 	public int calculate(String s) {
-
 		if (s == null || s.isEmpty())
 			return 0;
 		int len = s.length();
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new Stack<>();
 		int tempResult = 0;
 		char operation = '+';
 		for (int i = 0; i < len; i++) {

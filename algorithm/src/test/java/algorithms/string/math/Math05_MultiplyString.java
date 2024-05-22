@@ -30,7 +30,7 @@ import org.testng.annotations.Test;
  * 
  */
 
-public class Add04_MultiplyString {
+public class Math05_MultiplyString {
 
 	@Test
 	private void StringMultiply_test() {

@@ -36,7 +36,7 @@ import java.util.List;
  * num does not contain any leading zeros except for the zero itself.
  * 1 <= k <= 104
  */
-public class Add02_AddToArrayForm {
+public class Math02_AddToArrayForm {
 
     @Test
     public void addToArrayFormTest(){

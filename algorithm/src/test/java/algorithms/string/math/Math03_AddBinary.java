@@ -25,7 +25,7 @@ import java.util.List;
  *
  */
 
-public class Add03_AddBinary {
+public class Math03_AddBinary {
 
 	@Test
 	public void add(){
@@ -51,7 +51,7 @@ public class Add03_AddBinary {
 		
 		while(x > -1 || y > -1 || carry == 1){
 			i = (x > -1 ? Character.getNumericValue(a.charAt(x)) : 0);
-			j = (y > -1 ? Character.getNumericValue(a.charAt(y)) : 0);
+			j = (y > -1 ? Character.getNumericValue(b.charAt(y)) : 0);
 			sb.insert(0, i ^ j ^ carry);
 			carry = (i + j + carry) >= 2 ? 1 : 0;
 			x--;y--;
