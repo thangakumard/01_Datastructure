@@ -29,7 +29,7 @@ public class Substring01_Palindrome_Longest_Substring {
 
 	public String longestPalindrome(String s) {
 		
-		if (s.isEmpty() && s.length() < 1) {
+		if (s.isEmpty() || s.length() < 1) {
 			return "";
 		}
 

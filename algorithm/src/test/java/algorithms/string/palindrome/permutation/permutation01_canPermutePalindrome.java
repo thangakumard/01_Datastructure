@@ -20,6 +20,34 @@ public class permutation01_canPermutePalindrome {
 	 * 
 	 * Time complexity O(n) Space complexity O(1)
 	 */
+
+	public boolean canPermutePalindrome_counter(String s) {
+
+		int[] counter = new int[26];
+		int oddChar = 0;
+
+		for(int i=0; i < s.length(); i++){
+			counter[s.charAt(i) - 'a']++;
+		}
+		for(int i=0; i < 26; i++)
+		{
+			if(counter[i] % 2 != 0)
+			{
+				oddChar++;
+				if(oddChar > 1) return false;
+			}
+		}
+		return true;
+	}
+
+	public boolean canPermutePalindrome_bitManipulation(String s) {
+		int bitMask = 0;
+		for (int i = 0; i < s.length(); i++) {
+			int step = s.charAt(i) - 'a';
+			bitMask ^= (1 << step);
+		}
+		return ((bitMask) & (bitMask - 1)) == 0;
+	}
 	public boolean canPermutePalindrome(String s) {
 		Set<Character> set_Input = new HashSet<Character>();
 		for (int i = 0; i < s.length(); i++) {
@@ -33,4 +61,6 @@ public class permutation01_canPermutePalindrome {
 			return true;
 		return false;
 	}
+
+
 }
