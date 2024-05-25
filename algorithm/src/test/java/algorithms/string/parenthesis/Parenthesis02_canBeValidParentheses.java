@@ -45,7 +45,7 @@ import org.junit.Test;
  * locked[i] is either '0' or '1'.
  */
 
-public class String43_canBeValidParentheses {
+public class Parenthesis02_canBeValidParentheses {
 
     @Test
     public void canBeValidTest(){

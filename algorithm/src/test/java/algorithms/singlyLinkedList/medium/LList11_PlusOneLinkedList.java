@@ -1,6 +1,6 @@
 package algorithms.singlyLinkedList.medium;
 
-import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.base.ListNode;
 
 /*
  * https://leetcode.com/problems/plus-one-linked-list/

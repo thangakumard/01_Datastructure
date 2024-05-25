@@ -36,8 +36,8 @@ Each node in the linked list has -1000 <= node.val <= 1000.
 
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 public class LList10_removeZeroSumSublists {
 

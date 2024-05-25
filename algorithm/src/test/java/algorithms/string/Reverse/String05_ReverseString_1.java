@@ -33,19 +33,19 @@ public class String05_ReverseString_1 {
 //		Assert.assertEquals(reverseGivenString("12345"), "54321");
 		Assert.assertEquals(reverseGivenString_02("hello"), "olleh");
 	}
-	
-	private String reverseGivenString(String input){
-		int length = input.length();
-		int j = length-1;
-		char c;
-		char[] charInput = input.toCharArray();
-		for(int i=0; i < j; i++){
-			c = charInput[i];
-			charInput[i] = charInput[j];
-			charInput[j] = c;
-			j--;
+
+	public void reverseString_01(char[] s) {
+		int left = 0, right = s.length-1;
+		char temp = Character.MIN_VALUE;
+		while(left < right){
+			temp = s[left];
+			s[left] = s[right];
+			s[right] = temp;
+
+			right--;
+			left++;
 		}
-		return new String(charInput);
+
 	}
 	
 	public String reverseGivenString_02(String input) {

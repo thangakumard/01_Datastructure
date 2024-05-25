@@ -1,8 +1,8 @@
 package algorithms.singlyLinkedList.easy;
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 public class LList08_IntersectionOfTwoList {
 
@@ -25,10 +25,20 @@ public class LList08_IntersectionOfTwoList {
 
 		list2.head.next.next = list1.head.next.next.next; 
 		
-		System.out.println("INTERSECTION IS : " + getIntersection(list1.head, list2.head).value);
+		System.out.println("INTERSECTION IS : " + getIntersectionNode_01(list1.head, list2.head).value);
+	}
+
+	public ListNode getIntersectionNode_01(ListNode headA, ListNode headB) {
+		ListNode pA = headA;
+		ListNode pB = headB;
+		while(pA != pB){
+			pA = pA != null ? pA.next : headB;
+			pB = pB != null ? pB.next : headA;
+		}
+		return pA;
 	}
 	
-	private ListNode getIntersection(ListNode nodeA, ListNode nodeB){
+	private ListNode getIntersectionNode_02(ListNode nodeA, ListNode nodeB){
 		
 		if(nodeA == null || nodeB == null)
 			return null;

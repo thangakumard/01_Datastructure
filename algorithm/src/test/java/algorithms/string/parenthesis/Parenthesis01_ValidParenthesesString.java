@@ -33,7 +33,7 @@ import org.junit.Test;
  *
  */
 
-public class String44_ValidParenthesesString {
+public class Parenthesis01_ValidParenthesesString {
 
     @Test
     public void checkValidStringTest_01(){

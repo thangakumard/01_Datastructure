@@ -1,11 +1,10 @@
-package algorithms.singlyLinkedList.easy;
+package algorithms.singlyLinkedList.deleteNode;
 import org.testng.annotations.*;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
-public class LList11_DeleteNode {
-
+public class LList11_DeleteNode_self {
 	@Test
 	public void Test(){
 		
@@ -21,7 +20,6 @@ public class LList11_DeleteNode {
 		ListNode currentNode = deleteNodeAt(list1.head, 7);		
 						
 		while(currentNode != null){
-			System.out.print(currentNode.value + "-->");
 			currentNode = currentNode.next;
 		}
 		System.out.print("NULL");

@@ -2,8 +2,8 @@ package algorithms.singlyLinkedList.easy;
 
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 public class LList01_ReverseLinkedList_I {
 	
@@ -21,29 +21,24 @@ public class LList01_ReverseLinkedList_I {
 	    
         System.out.println("Given Linked list");
         printList(list.head);
-        list.head = reverse(list.head);
+        list.head = reverseList(list.head);
         System.out.println(" ");
         System.out.println("Reversed linked list ");
         printList(list.head);		
 	}
-	
-	public ListNode reverse(ListNode node){
-		ListNode prev = null;
-		ListNode next = null;
-		ListNode CurrentNode = node;
-		
-		while(CurrentNode != null){			
-			next = CurrentNode.next;
-			CurrentNode.next = prev;
-			
-			prev = CurrentNode;
-			CurrentNode = next;			
-		}		
-		node = prev;	
-		
-        printList(node);
 
-		return node;
+	public ListNode reverseList(ListNode head) {
+		//1->2->3->4->5
+		// currentNode = 1
+		ListNode previous = null, next = null, currentNode = head;
+		while(currentNode != null){
+			next = currentNode.next; // next = 2->3->4->5 //3->4->5
+			currentNode.next = previous; // 1->null(previous) //2->1
+			previous = currentNode; // previous = 1-> // previous = 2->1
+			currentNode = next;// currentNode = 2->3-4->5 // currentNode = >3-4->5
+		}
+		head = previous;
+		return head;
 	}
 	
     void printList(ListNode node) {

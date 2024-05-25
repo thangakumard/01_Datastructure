@@ -1,13 +1,13 @@
-package algorithms.singlyLinkedList.easy;
+package algorithms.singlyLinkedList.deleteNode;
 
 import java.util.*;
 
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
-public class LList06_RemoveDuplicates_UnSortedList {
+public class Delete02_RemoveDuplicates_UnSortedList {
 
 	@Test
 	public void test(){

@@ -2,9 +2,12 @@ package algorithms.singlyLinkedList.easy;
 
 import org.testng.annotations.*;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
+/***
+ * https://leetcode.com/problems/merge-two-sorted-lists/description/
+ */
 public class LList02_Merge2SortedLinkedList {
 	
 	@Test
@@ -25,7 +28,7 @@ public class LList02_Merge2SortedLinkedList {
 		list2.push(new ListNode(80));		
 		list2.push(new ListNode(100));
 		
-		ListNode newHead = mergeLists(list1.head, list2.head);
+		ListNode newHead = mergeTwoLists(list1.head, list2.head);
 		
 		while(newHead != null){
 			System.out.print(newHead.value + " --> ");
@@ -34,34 +37,38 @@ public class LList02_Merge2SortedLinkedList {
 		System.out.print("NULL");
 		System.out.println();
 	}
-	
-	private ListNode mergeLists(ListNode list1, ListNode list2){
-		
-		ListNode tempNode = new ListNode(0);
-		ListNode newHead = tempNode;
-		
+
+	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+		if(list1 == null)
+			return list2;
+		if(list2 == null)
+			return list1;
+
+		ListNode root = new ListNode(0);
+		ListNode currentNode = root;
+
 		while(list1 != null && list2 != null){
-			
 			if(list1.value < list2.value){
-				newHead.next = list1;
+				currentNode.next = list1;
 				list1 = list1.next;
 			}
-			else{
-				newHead.next = list2;
+			else {
+				currentNode.next = list2;
 				list2 = list2.next;
 			}
-			newHead =  newHead.next;
+			currentNode = currentNode.next;
 		}
-		
-		if(list1 != null){
-			newHead.next = list1;
-		}
-		if(list2 != null){
-			newHead.next = list2;
-		}
-		
-		
-		return tempNode.next;		
-	}
 
+		while(list1 != null){
+			currentNode.next = list1;
+			list1 = list1.next;
+			currentNode = currentNode.next;
+		}
+		while(list2 != null){
+			currentNode.next = list2;
+			list2 = list2.next;
+			currentNode = currentNode.next;
+		}
+		return root.next;
+	}
 }

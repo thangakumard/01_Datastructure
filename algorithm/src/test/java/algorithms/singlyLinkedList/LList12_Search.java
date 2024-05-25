@@ -1,5 +1,7 @@
 package algorithms.singlyLinkedList;
 
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 import org.testng.annotations.*;
 
 public class LList12_Search {
@@ -7,7 +9,7 @@ public class LList12_Search {
 	@Test
 	public void test(){
 		SinglyLinkedList list1 = new SinglyLinkedList();
-		list1.push(new ListNode(10));		
+		list1.push(new ListNode(10));
 		list1.push(new ListNode(30));
 		list1.push(new ListNode(40));		
 		list1.push(new ListNode(60));		

@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.base.ListNode;
 
 public class List01_LinkedList {
 

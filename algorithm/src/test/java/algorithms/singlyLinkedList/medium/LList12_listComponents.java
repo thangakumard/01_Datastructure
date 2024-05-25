@@ -36,8 +36,8 @@ The value of each node in the linked list will be in the range [0, N - 1].
 G is a subset of all values in the linked list
  */
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 public class LList12_listComponents {
 

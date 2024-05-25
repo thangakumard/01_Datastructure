@@ -4,8 +4,8 @@ import java.util.*;
 
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
-import algorithms.singlyLinkedList.SinglyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 /*
  * https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/

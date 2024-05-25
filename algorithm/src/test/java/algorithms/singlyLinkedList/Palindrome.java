@@ -1,5 +1,7 @@
 package algorithms.singlyLinkedList;
 
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

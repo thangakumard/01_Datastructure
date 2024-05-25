@@ -1,8 +1,8 @@
 package algorithms.singlyLinkedList;
+import algorithms.singlyLinkedList.base.ListNode;
+import algorithms.singlyLinkedList.base.SinglyLinkedList;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import bsh.Console;
 
 /*Detect and Remove Loop in a Linked List
 Write a function detectAndRemoveLoop() that checks whether a given Linked List contains loop and if loop is present then removes the loop and returns true. 

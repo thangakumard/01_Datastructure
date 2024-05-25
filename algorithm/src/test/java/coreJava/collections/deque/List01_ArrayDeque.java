@@ -4,7 +4,7 @@ import java.util.Deque;
 
 import org.testng.annotations.Test;
 
-import algorithms.singlyLinkedList.ListNode;
+import algorithms.singlyLinkedList.base.ListNode;
 
 /***
  * ******* Why is ArrayDeque better than LinkedList ??? **********
