@@ -57,7 +57,7 @@ public class LList12_listComponents {
 	
 	public int numComponents(ListNode head, int[] G) {
         int result = 0;
-        Set<Integer> subSet = new HashSet<Integer>();
+        Set<Integer> subSet = new HashSet<>();
         for(int i: G){
             subSet.add(i);
         }

@@ -53,39 +53,44 @@ public class LList05_ReorderList {
 		
 		printList(list.head);
 	}
-	
-	 	public void reorderList(ListNode head) {
-	        if(head == null) return;
-	        ListNode fast = head, slow = head;
-	        
-	        //Find Middle
-	        while(fast != null && fast.next != null){
-	            slow = slow.next;
-	            fast = fast.next.next;
-	        }
-	        
-	        ListNode prev = null, next = null, current = slow;
-	        
-	        //Reverse from the middle
-	        while(current != null){
-	            next = current.next;
-	            current.next = prev;
-	            
-	            prev = current;
-	            current = next;
-	        }
-	        
-	        ListNode first = head, second = prev;
-	        while(second.next != null){
-	            next = first.next;
-	            first.next = second;
-	            first = next;
-	            
-	            next = second.next;
-	            second.next = first;
-	            second = next;
-	        }
-	    }
+
+		public void reorderList(ListNode head) {
+		if(head == null) return;
+
+		// find the middle of linked list [Problem 876]
+		// in 1->2->3->4->5->6 find 4
+		ListNode slow = head, fast = head;
+		while(fast != null && fast.next != null){
+			slow = slow.next;
+			fast = fast.next.next;
+		}
+
+		// reverse the second part of the list [Problem 206]
+		// convert 1->2->3->4->5->6 into 1->2->3->4 and 6->5->4
+		// reverse the second half in-place
+		ListNode currentNode = slow;
+		ListNode prev = null, next = null;
+		while(currentNode != null){
+			next = currentNode.next;
+			currentNode.next = prev;
+
+			prev = currentNode;
+			currentNode = next;
+		}
+
+		// merge two sorted linked lists [Problem 21]
+		// merge 1->2->3->4 and 6->5->4 into 1->6->2->5->3->4
+		ListNode first = head, second = prev;
+		while (second.next != null) {
+			next = first.next;
+			first.next = second;
+			first = next;
+
+			next = second.next;
+			second.next = first;
+			second = next;
+		}
+	}
 	 	
 	 	void printList(ListNode node) {
 	        while (node != null) {

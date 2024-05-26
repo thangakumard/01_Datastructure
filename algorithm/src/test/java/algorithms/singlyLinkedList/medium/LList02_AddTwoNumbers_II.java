@@ -42,10 +42,50 @@ public class LList02_AddTwoNumbers_II {
 		list2.push(new ListNode(4));
 		
 		ListNode result1 = addTwoNumbers(list1.head, list2.head);
-		ListNode result2 = addTwoNumbers_approach_01(list1.head, list2.head);
+		ListNode result2 = addTwoNumbers_usingStack(list1.head, list2.head);
 		printList(result1);
 		printList(result2);
 	}
+
+	/************* USING 2 STACK ****************/
+
+	public ListNode addTwoNumbers_usingStack(ListNode l1, ListNode l2) {
+
+		Stack<Integer> stack1 = new Stack<>();
+		Stack<Integer> stack2 = new Stack<>();
+
+		while(l1 != null){
+			stack1.push(l1.value);
+			l1 = l1.next;
+		}
+
+		while(l2 != null){
+			stack2.push(l2.value);
+			l2 = l2.next;
+		}
+
+		int val1 =0, val2 =0, carry = 0, sum = 0;
+		ListNode currentNode = new ListNode(0);
+
+
+		while(!stack1.isEmpty() || !stack2.isEmpty() || carry > 0)
+		{
+			val1 = !stack1.isEmpty() ? stack1.pop() : 0;
+			val2 = !stack2.isEmpty() ? stack2.pop() : 0;
+
+			sum = carry + val1 + val2;
+			carry = sum / 10;
+
+			currentNode.value = sum % 10;
+
+			ListNode head = new ListNode(carry);
+			head.next = currentNode;
+			currentNode = head;
+		}
+
+		return currentNode.next;
+	}
+
 
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 		// find the length of both lists
@@ -119,41 +159,6 @@ public class LList02_AddTwoNumbers_II {
 		return head;
 	}
 
-	/************* USING 2 STACK ****************/
-
-	Stack<Integer> l1_stack = new Stack<Integer>();
-	Stack<Integer> l2_stack = new Stack<Integer>();
-	Stack<Integer> result = new Stack<Integer>();
-	int carry = 0;
-
-	public ListNode addTwoNumbers_approach_01(ListNode l1, ListNode l2) {
-		//recursive(l1, l1_stack);
-		//recursive(l2, l2_stack);
-		while (l1 != null) {
-			l1_stack.push(l1.value);
-			l1 = l1.next;
-		} 
-		while (l2 != null) {
-			l2_stack.push(l2.value);
-			l2 = l2.next;
-		} 
-		ListNode dummy = new ListNode(0);
-		ListNode head = dummy;
-		while (!l1_stack.isEmpty() || !l2_stack.isEmpty() || carry > 0) {
-			int v1 = !l1_stack.isEmpty() ? l1_stack.pop() : 0;
-			int v2 = !l2_stack.isEmpty() ? l2_stack.pop() : 0;
-
-			int sum = v1 + v2 + carry;
-			result.push(sum % 10);
-			carry = sum / 10;
-		}
-		while (!result.isEmpty()) {
-			head.next = new ListNode(result.pop());
-			head = head.next;
-		}
-
-		return dummy.next;
-	}
 
 
 	public void printList(ListNode node) {

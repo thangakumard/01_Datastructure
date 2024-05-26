@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.medium;
+package algorithms.doublyLinkedList;
 
 import algorithms.tree.TreeNode;
 
@@ -52,41 +52,27 @@ import algorithms.tree.TreeNode;
 
 public class LList06_BSTtoDoublyLinkedList {
 	// the smallest (first) and the largest (last) nodes
-	TreeNode first = null;
-	TreeNode last = null;
+	TreeNode head = null;
+	TreeNode tail = null;
 
 	public TreeNode treeToDoublyList(TreeNode root) {
-		if (root == null)
-			return null;
 
-		helper(root);
-		
-		// close DLL
-		last.right = first;
-		first.left = last;
-		
-		return first;
-	}
-
-	public void helper(TreeNode node) {
-		if (node != null) {
-			// left
-			helper(node.left);
-			// node
-			if (last != null) {
-				// link the previous node (last)
-				// with the current one (node)
-				last.right = node;
-				node.left = last;
-			} else {
-				// keep the smallest node
-				// to close DLL later on
-				first = node;
-			}
-			last = node;
-			// right
-			helper(node.right);
+		if(root == null) return null;
+		treeToDoublyList(root.left); //Visit all the left nodes
+		if(tail == null){
+			head = root;
+		}else{
+			root.left = tail;
+			tail.right = root;
 		}
+		tail = root;
+		treeToDoublyList(root.right); //Visit all the right nodes
+
+		//Link head and tail
+		tail.right = head;
+		head.left = tail;
+
+		return head;
 	}
 
 }

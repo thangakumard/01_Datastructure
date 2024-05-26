@@ -62,20 +62,29 @@ public class LList16_RemoveZeroSumConsecutiveNodes {
 		
 		
 	public ListNode removeZeroSumSublists(ListNode head) {
-		int prefix = 0;
-		ListNode dummy = new ListNode(0);
-		dummy.next = head;
-		Map<Integer, ListNode> seen = new HashMap<>();
-		seen.put(0, dummy);
-		for (ListNode i = dummy; i != null; i = i.next) {
-			prefix += i.value;
-			seen.put(prefix, i);
+		ListNode sentinel = new ListNode(0);
+		ListNode currentNode = sentinel;
+		sentinel.next = head;
+		int sum = 0;
+
+		Map<Integer,ListNode> nodeMap = new HashMap<>();
+		nodeMap.put(0, sentinel);
+
+		while (currentNode!= null){
+			sum += currentNode.value;
+			nodeMap.put(sum,currentNode);
+			currentNode = currentNode.next;
 		}
-		prefix = 0;
-		for (ListNode i = dummy; i != null; i = i.next) {
-			prefix += i.value;
-			i.next = seen.get(prefix).next;
+
+		sum =0;
+		currentNode = sentinel; //**IMPORTANT to rest currentNode and sum
+
+		while (currentNode != null){
+			sum += currentNode.value;
+			currentNode.next =  nodeMap.get(sum).next;
+			currentNode = currentNode.next;
 		}
-		return dummy.next;
+
+		return sentinel.next;
 	}
 }

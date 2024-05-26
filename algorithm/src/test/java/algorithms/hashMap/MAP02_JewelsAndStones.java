@@ -33,7 +33,7 @@ public class MAP02_JewelsAndStones {
 	
 	public int numJewelsInStones(String J, String S) {
         int result = 0;
-        Set<Character> numSet = new HashSet<Character>();
+        Set<Character> numSet = new HashSet<>();
         Map<Character, Integer> numMap = new HashMap<Character, Integer>();
         
         for(int i=0; i< J.length(); i++){

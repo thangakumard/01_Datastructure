@@ -1,11 +1,10 @@
-package algorithms.singlyLinkedList.medium;
-
-import java.util.PriorityQueue;
-
-import org.testng.annotations.Test;
+package algorithms.priorityQueue;
 
 import algorithms.singlyLinkedList.base.ListNode;
 import algorithms.singlyLinkedList.base.SinglyLinkedList;
+import org.testng.annotations.Test;
+
+import java.util.PriorityQueue;
 
 /****
  * 
