@@ -2,7 +2,7 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
-import algorithms.tree.common.Tree01_Traversal_InOrderIterative;
+import algorithms.tree.traversal.Tree01_Traversal_InOrderIterative;
 
 public class Tree22_AVL_Tree {
 	

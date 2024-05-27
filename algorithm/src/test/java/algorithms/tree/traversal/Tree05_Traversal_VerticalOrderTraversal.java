@@ -1,4 +1,4 @@
-package algorithms.tree.common;
+package algorithms.tree.traversal;
 
 import java.util.*;
 
