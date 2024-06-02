@@ -90,7 +90,7 @@ public class BinaryTree10_PerimeterOfBinaryTree {
 	List<Integer> nodes = new ArrayList<>(1000);
 	public List<Integer> boundaryOfBinaryTree(TreeNode root) {
 	    
-	    if(root == null) return nodes;
+	    if(root == null) return null;
 
 	    nodes.add(root.data);
 	    leftBoundary(root.left);

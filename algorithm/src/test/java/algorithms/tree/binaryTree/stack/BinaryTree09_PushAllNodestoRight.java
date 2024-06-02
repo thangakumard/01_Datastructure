@@ -1,4 +1,4 @@
-package algorithms.tree.binaryTree;
+package algorithms.tree.binaryTree.stack;
 
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;

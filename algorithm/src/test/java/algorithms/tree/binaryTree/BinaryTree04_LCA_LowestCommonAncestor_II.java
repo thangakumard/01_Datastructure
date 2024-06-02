@@ -29,43 +29,30 @@ public class BinaryTree04_LCA_LowestCommonAncestor_II {
 		
 //		TreeNode lca1 = LCAOfBinaryTree(tree.root, 5,10);		
 //		System.out.println("LCAOfBinaryTree(tree.root, 5, 10) :" + lca1 == null ? "null" : lca1.data);
-		System.out.println(LCAOfBinaryTree(tree.root, 5,10));
-		
-		TreeNode lca2 = LCAOfBinaryTree(tree.root, 5,4);		
-		System.out.println("LCAOfBinaryTree(tree.root, 5, 4) :" + lca2.data);
+//		System.out.println(LCAOfBinaryTree(tree.root, 5,10));
+//
+//		TreeNode lca2 = LCAOfBinaryTree(tree.root, 5,4);
+//		System.out.println("LCAOfBinaryTree(tree.root, 5, 4) :" + lca2.data);
 	}
 	
 	int counter = 0;
 	
-	private TreeNode LCAOfBinaryTree(TreeNode TreeNode, int x, int y){
+	private TreeNode LCAOfBinaryTree(TreeNode TreeNode, TreeNode x, TreeNode y){
 	
-		 TreeNode node = LCA_II(TreeNode, x, y);
+		 TreeNode node = helper(TreeNode, x, y);
 		 return counter == 2 ? node : null;
 	}
 	
-	private TreeNode LCA_II(TreeNode root, int x, int y){		
-		if(root == null)
-			return root;
-		
-		/***
-		It is important to have line 57 and 58 before line 60.
-		To make the below test pass
-		[3,5,1,6,2,0,8,null,null,7,4]
-		5
-		4
-		**/
-		TreeNode left = LCAOfBinaryTree(root.left, x, y);
-		TreeNode right = LCAOfBinaryTree(root.right, x, y);
-		
-		if(root.data == x || root.data == y) {
-			counter++; // need this for (5,10) and (5,4) case
+	private TreeNode helper(TreeNode root, TreeNode p, TreeNode q){
+		if(root == null) return null;
+
+		TreeNode left = helper(root.left, p, q);
+		TreeNode right = helper(root.right, p, q);
+
+		if(root == p || root == q){
+			counter++;
 			return root;
 		}
-		
-		if(left != null && right != null)
-			return root;
-		
-		return (left != null ? left : right); 
-		
+		return left == null ? right : right == null ? left : root;
 	}
 }

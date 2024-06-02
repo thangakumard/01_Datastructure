@@ -29,29 +29,29 @@ public class BST06_BuildBSTFromInOrderPreOrder {
 	 * Find the index of the root node in the inorder traversal using the HashMap we built
 	 * root.left will be all the elements left of the root index in the inorder array 
 	 * root.right will be all the elements right of the root index in the inorder array 
-	 * 
 	 * */
 	
-	HashMap<Integer,Integer> inOrderMap = new HashMap<Integer,Integer>();
+	HashMap<Integer,Integer> inOrderMap = new HashMap<>();
+	int preOrderIndex = 0;
 	
 	private TreeNode buildTree(int[] inorder, int[] preorder) {
 		
 		for(int i=0; i < inorder.length; i++) {
 			inOrderMap.put(inorder[i], i);
 		}
-		return helper(inorder, preorder, 0, inorder.length-1,0);
+		return helper(preorder, 0, inorder.length-1);
 	}
 	
-	private TreeNode helper(int[] inorder, int[] preorder, int start, int end,int preOrderIndex) {
+	private TreeNode helper(int[] preorder, int start, int end) {
 		
 		if(start > end)
 			return null;
 		
 		TreeNode currentNode = new TreeNode(preorder[preOrderIndex]);
 		int inOrderIndex = inOrderMap.get(preorder[preOrderIndex]);
-		
-		currentNode.left = helper(inorder, preorder, start, inOrderIndex-1, preOrderIndex+1);
-		currentNode.right = helper(inorder, preorder, inOrderIndex+1, end, preOrderIndex+1 + (inOrderIndex-start));
+		preOrderIndex++;
+		currentNode.left = helper(preorder, start, inOrderIndex-1);
+		currentNode.right = helper(preorder, inOrderIndex+1, end);
 		
 		return currentNode;
 	}

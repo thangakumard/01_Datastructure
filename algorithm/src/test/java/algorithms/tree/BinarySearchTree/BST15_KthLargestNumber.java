@@ -1,11 +1,17 @@
-package algorithms.tree.binaryTree;
+package algorithms.tree.BinarySearchTree;
 
 import org.testng.annotations.Test;
 
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
 
-public class BinaryTree15_KthLargestNumber {
+/***
+ *
+ * https://www.geeksforgeeks.org/kth-largest-element-bst-using-constant-extra-space/
+ *
+ * With Space Complexity of O(1)
+ */
+public class BST15_KthLargestNumber {
 
 	
 	

@@ -43,7 +43,7 @@ public class BST05_ValidateBinarySearchTree {
 	public boolean isValidBST(TreeNode root) {
 		if (root == null)
 			return true;
-		Stack<TreeNode> stackNodes = new Stack<TreeNode>();
+		Stack<TreeNode> stackNodes = new Stack<>();
 		long previousValue = Long.MIN_VALUE;
 		while (true) {
 			if (root != null) {

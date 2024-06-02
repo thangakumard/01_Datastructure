@@ -1,4 +1,4 @@
-package algorithms.tree.binaryTree;
+package algorithms.tree.binaryTree.levelOrder;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

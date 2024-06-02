@@ -1,4 +1,4 @@
-package algorithms.tree.binaryTree;
+package algorithms.tree.BinarySearchTree;
 
 import java.util.Stack;
 
@@ -46,7 +46,7 @@ The number of elements of the BST is between 1 to 10^4.
 You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
 
  */
-public class BinaryTree14_KthSmallest {
+public class BST14_KthSmallestInBST {
 	
 	@Test
 	public void test()
@@ -100,21 +100,21 @@ public class BinaryTree14_KthSmallest {
 	
     public int kthSmallest_01(TreeNode root, int k) {
     	int[] i = new int[2];
-    	inorder_Traversal(root,k,0,i);
+    	inorder_Traversal(root,k, i);
         return i[1];
     }
     
-    private void inorder_Traversal(TreeNode node, int k, int currentMinIndex, int[] i){
+    private void inorder_Traversal(TreeNode node, int k, int[] i){
         if(node == null)
             return;
-        inorder_Traversal(node.left,k,currentMinIndex,i);
+        inorder_Traversal(node.left,k, i);
         
         if(++i[0] == k)
         {
             i[1] = node.data;
             return;
         }
-        inorder_Traversal(node.right,k,currentMinIndex,i);
+        inorder_Traversal(node.right,k, i);
     }
 
 	

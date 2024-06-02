@@ -38,9 +38,6 @@ public class BinaryTree20_MinimumDepthBinaryTree {
     public int minDepth(TreeNode root) {
         if(root == null)
             return 0;
-        int leftDepth = minDepth(root.left);
-        int rightDepth = minDepth(root.right);
-        
-        return 1 + Math.min(leftDepth, rightDepth);
+        return 1 + Math.min(minDepth(root.left), minDepth(root.right));
     }
 }

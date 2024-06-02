@@ -36,7 +36,7 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 		if (root == null)
 			return;
 
-		Stack<TreeNode> stack = new Stack<TreeNode>();
+		Stack<TreeNode> stack = new Stack<>();
 
 		while (true) {
 			if (root != null) {
@@ -73,10 +73,10 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 			inorderMap.put(inorder[i], i);
 		}
 		postIndex = postorder.length - 1;
-		return helper(inorder, postorder, 0, inorder.length - 1);
+		return helper(postorder, 0, inorder.length - 1);
 	}
 
-	private TreeNode helper(int[] inorder, int[] postorder, int start, int end) {
+	private TreeNode helper(int[] postorder, int start, int end) {
 		if (start > end)
 			return null;
 
@@ -84,8 +84,8 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 		int rootIndex = inorderMap.get(postorder[postIndex]);
 		postIndex--;
 
-		currentNode.right = helper(inorder, postorder, rootIndex + 1, end);
-		currentNode.left = helper(inorder, postorder, start, rootIndex - 1);
+		currentNode.right = helper(postorder, rootIndex + 1, end);
+		currentNode.left = helper(postorder, start, rootIndex - 1);
 		return currentNode;
 	}
 

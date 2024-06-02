@@ -12,7 +12,7 @@ import algorithms.tree.TreeNode;
  * 
  * Expected Output: [7, 6]
  */
-public class BinaryTree17_DeleteZeroSumSubtree {
+public class   BinaryTree17_DeleteZeroSumSubtree {
 	
 	
 	@Test
@@ -37,7 +37,6 @@ public class BinaryTree17_DeleteZeroSumSubtree {
 	}
 
 	public void deleteZeroSumSubtree(BinaryTree tree) {
-	    	
 	    if(0 == deleteZeroSum(tree.root)) tree.root = null;
 	  }
 
