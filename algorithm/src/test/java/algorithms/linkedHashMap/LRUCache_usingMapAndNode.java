@@ -52,7 +52,7 @@ public class LRUCache_usingMapAndNode {
 	    private int count = 0;
 	    Node head = null;
 	    Node tail = null;
-	    HashMap<Integer, Node> nodeMap = new HashMap<Integer,Node>();
+	    HashMap<Integer, Node> nodeMap = new HashMap<>();
 	    
 	    public LRUCache(int capacity) {
 	        CAPACITY = capacity;

@@ -12,7 +12,6 @@ public class APITest {
     @Test
     public void testGetRequest() {
         Response response = RestAssuredSingleton.get("/posts/1");
-
         assertEquals(200, response.getStatusCode());
         assertEquals(1, response.jsonPath().getInt("userId"));
         assertEquals(1, response.jsonPath().getInt("id"));
@@ -22,8 +21,7 @@ public class APITest {
     @Test
     public void testPostRequest() {
         String requestBody = "{ \"title\": \"foo\", \"body\": \"bar\", \"userId\": 1 }";
-        Response response = RestAssuredSingleton.post("/posts", requestBody);
-        //response.body(matchesJsonSchemaInClasspath("schemas/post-schema.json"));
+        Response response = RestAssuredSingleton.post("/posts", requestBody, null);
 
         assertEquals(201, response.getStatusCode());
         assertEquals("foo", response.jsonPath().getString("title"));

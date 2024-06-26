@@ -93,7 +93,7 @@ public class List01_ArrayList {
        System.out.println("To get index value of required index : " + list1.get(0));
        
        //EQUALS
-       List<Integer> list4 = new ArrayList<Integer>();
+       List<Integer> list4 = new ArrayList<>();
        list4.add(100);
        list4.add(200);
        list4.add(300);

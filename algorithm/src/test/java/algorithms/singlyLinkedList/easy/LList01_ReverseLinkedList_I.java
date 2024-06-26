@@ -30,7 +30,7 @@ public class LList01_ReverseLinkedList_I {
 	public ListNode reverseList(ListNode head) {
 		//1->2->3->4->5
 		// currentNode = 1
-		ListNode previous = null, next = null, currentNode = head;
+		ListNode previous = null, next, currentNode = head;
 		while(currentNode != null){
 			next = currentNode.next; // next = 2->3->4->5 //3->4->5
 			currentNode.next = previous; // 1->null(previous) //2->1

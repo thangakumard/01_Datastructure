@@ -25,13 +25,11 @@ public class BinarySearch01_SearchInRotatedSortedArray {
             if (input[mid] == target)
                 return mid;
             else if(input[mid] >= input[start]){
-
                 if(input[start] <= target && target < input[mid]){
                     end = mid-1;
                 }else{
                     start = mid+1;
                 }
-
             }else{
                 if(input[mid] < target && target <= input[end]){
                     start = mid+1;

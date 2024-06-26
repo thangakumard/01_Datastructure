@@ -43,8 +43,8 @@ public class Tree05_Traversal_VerticalOrderTraversal {
 public List<List<Integer>> verticalTraversal(TreeNode root) {
         
         List<List<Integer>> result = new ArrayList<>();
-        Deque<TreeNode> TreeNodeQueue = new ArrayDeque<TreeNode>();
-        Deque<Integer> orderQueue = new ArrayDeque<Integer>();
+        Deque<TreeNode> TreeNodeQueue = new ArrayDeque<>();
+        Deque<Integer> orderQueue = new ArrayDeque<>();
         HashMap<Integer,List<Integer>> verticalMap = new HashMap<Integer, List<Integer>>();
         
         TreeNodeQueue.offerFirst(root);

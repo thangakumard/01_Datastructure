@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 /*
 https://leetcode.com/problems/meeting-rooms-ii/
 
-Given an array of meeting time intervals intervals
+Given an array of meeting time intervals
 where intervals[i] = [starti, endi],
 return the minimum number of conference rooms required.
 

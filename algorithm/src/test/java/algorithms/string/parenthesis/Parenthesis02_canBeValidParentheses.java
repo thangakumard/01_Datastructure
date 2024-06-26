@@ -69,32 +69,26 @@ public class Parenthesis02_canBeValidParentheses {
     }
 
     public boolean canBeValid(String s, String locked) {
-        int n =s.length();
-        if(n%2==1)return false;
-        int minLeft=0, maxLeft=0;
-        for(int i=0;i<n;i++)
-        {
-            if(locked.charAt(i)=='0')
-            {
-                maxLeft++;
-                minLeft--;
-            }
-            else
-            {
-                if(s.charAt(i)=='(')
-                {
-                    maxLeft++;
-                    minLeft++;
-                }
-                else if(s.charAt(i)==')')
-                {
-                    maxLeft--;
-                    minLeft--;
+        if(s.length() % 2 == 1) return false;
+
+        int minCount = 0, maxCount = 0;
+        for(int i=0; i < s.length(); i++){
+            if(locked.charAt(i) == '0'){
+                minCount--;
+                maxCount++;
+            }else{
+                if(s.charAt(i) == '('){
+                    minCount++;
+                    maxCount++;
+                }else if(s.charAt(i) == ')'){
+                    minCount--;
+                    maxCount--;
                 }
             }
-            if(maxLeft < 0) return false;// Excess closing
-            minLeft = Math.max(minLeft,0);
+
+            if(maxCount < 0) return false;
+            minCount = Math.max(minCount, 0);
         }
-        return minLeft == 0; //Checks the opening
+        return minCount == 0;
     }
 }

@@ -31,12 +31,12 @@ public class BST02_BSTFromSortedArray {
 		if(left > right)
 			return null;
 		int middle = left + (right-left)/2;
-		TreeNode TreeNode = new TreeNode(input[middle]);
+		TreeNode treeNode = new TreeNode(input[middle]);
 		
-		TreeNode.left = buildBST(input, left, middle-1);
-		TreeNode.right = buildBST(input, middle+1, right);
+		treeNode.left = buildBST(input, left, middle-1);
+		treeNode.right = buildBST(input, middle+1, right);
 		
-		return TreeNode;
+		return treeNode;
 	}
 	
 	void inOrderTraversal(TreeNode TreeNode){

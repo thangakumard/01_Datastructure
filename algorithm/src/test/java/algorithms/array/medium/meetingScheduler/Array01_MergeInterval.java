@@ -4,14 +4,12 @@ import java.util.*;
 
 import org.testng.annotations.Test;
 
-/*
+/***
  * https://leetcode.com/problems/merge-intervals/
  * 
  * Given an array of intervals where intervals[i] = [starti, endi],
  * merge all overlapping intervals,
  * and return an array of the non-overlapping intervals that cover all the intervals in the input.
-
- 
 
 	Example 1:
 	
@@ -52,11 +50,8 @@ public class Array01_MergeInterval {
 	
 	private int[][] mergeInterval(int[][] input){
 		Arrays.sort(input, (a,b) -> Integer.compare(a[0], b[0]));
-		
 		LinkedList<int[]> result = new LinkedList<>();
-		
 		for(int[] interval: input) {
-
 			if(result.isEmpty() || result.getLast()[1] < interval[0]) {
 				//If no overlap add to the result
 				result.add(interval);

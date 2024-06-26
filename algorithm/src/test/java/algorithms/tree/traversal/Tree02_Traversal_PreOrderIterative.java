@@ -32,7 +32,7 @@ public class Tree02_Traversal_PreOrderIterative {
 	
 	ArrayDeque<TreeNode> stack = new ArrayDeque<>();
 	private void preOrderTraversal(TreeNode root){
-		TreeNode currentTreeNode = null;
+		TreeNode currentTreeNode;
 		if(root == null) return;
 		stack.addFirst(root);
 		while(!stack.isEmpty()){

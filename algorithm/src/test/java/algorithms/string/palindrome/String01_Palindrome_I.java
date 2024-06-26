@@ -50,7 +50,7 @@ public class String01_Palindrome_I {
 	                j--;
 	            }
 	            if(i<j){
-	                if(Character.compare(s.charAt(i), s.charAt(j)) != 0){
+	                if(s.charAt(i) != s.charAt(j)){
 	                    return false;
 	                }
 	                i++;
@@ -60,4 +60,24 @@ public class String01_Palindrome_I {
 	        
 	        return true;
 	    }
+
+	public boolean isPalindrome2(String s) {
+		if(s == null || s.length() < 2) return true;
+
+		s = s.toLowerCase();
+		s = s.replaceAll("\\s","");
+		s = s.replaceAll("[^A-Za-z0-9]","");
+		int start = 0, end = s.length()-1;
+
+		while(start < end){
+			if(s.charAt(start) != s.charAt(end))
+				return false;
+			else{
+				start++;
+				end--;
+			}
+		}
+
+		return true;
+	}
 }

@@ -7,8 +7,8 @@ import java.util.*;
  * https://leetcode.com/problems/meeting-scheduler/
  *
  * Given the availability time slots arrays slots1 and slots2 of two people and
- * a meeting duration duration, return the earliest time slot that works for
- * both of them and is of duration duration.
+ * a meeting duration, return the earliest time slot that works for
+ * both of them and is of duration.
  * 
  * If there is no common time slot that satisfies the requirements, return an
  * empty array.
@@ -25,7 +25,8 @@ import java.util.*;
  * Example 1:
  * 
  * Input: slots1 = [[10,50],[60,120],[140,210]], slots2 = [[0,15],[60,70]],
- * duration = 8 Output: [60,68] Example 2:
+ * duration = 8
+ * Output: [60,68] Example 2:
  * 
  * Input: slots1 = [[10,50],[60,120],[140,210]], slots2 = [[0,15],[60,70]],
  * duration = 12 Output: []

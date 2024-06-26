@@ -27,7 +27,7 @@ public class String09_ReverseWords_I {
 		StringBuilder result = new StringBuilder();
 		
 		for(int i=0; i < input.length; i++){
-			result.append(new StringBuilder(input[i]).reverse().toString());
+			result.append(new StringBuilder(input[i]).reverse());
 			result.append(" ");
 		}		
 		return result.toString().trim();

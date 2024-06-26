@@ -7,13 +7,11 @@ public class Array27_InsertDeleteGetRandom_bigO_1 {
 	public class RandomizedSet {
 		HashMap<Integer, Integer> map;
 		List<Integer> lstList;
-		Random rand;
 
 		/** Initialize your data structure here. */
 		public RandomizedSet() {
-			map = new HashMap<Integer, Integer>();
+			map = new HashMap<>();
 			lstList = new ArrayList<>();
-			rand = new Random();
 		}
 
 		/**
@@ -53,6 +51,7 @@ public class Array27_InsertDeleteGetRandom_bigO_1 {
 
 		/** Get a random element from the set. */
 		public int getRandom() {
+			Random rand = new Random();
 			return lstList.get(rand.nextInt(lstList.size()));
 		}
 	}

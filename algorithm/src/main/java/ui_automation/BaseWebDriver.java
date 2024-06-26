@@ -21,9 +21,9 @@ public class BaseWebDriver {
 		
 	}
 	
-	private ThreadLocal<WebDriver> webDriver = new ThreadLocal<WebDriver>();
+	private ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 	private  WebDriver _webDriver;
-	private ThreadLocal<String> browser = new ThreadLocal<String>();
+	private ThreadLocal<String> browser = new ThreadLocal<>();
 	
 	
 	

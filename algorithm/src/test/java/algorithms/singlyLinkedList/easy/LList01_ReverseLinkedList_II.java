@@ -35,7 +35,7 @@ public class LList01_ReverseLinkedList_II {
         }
 
         ListNode current = prev.next;
-        ListNode next = null;
+        ListNode next;
         for(int i=0; i < right - left; i++){
             next = current.next;
             current.next = next.next;

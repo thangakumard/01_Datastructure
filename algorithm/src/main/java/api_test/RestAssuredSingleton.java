@@ -3,6 +3,9 @@ package api_test;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.response.Response;
+
+import java.util.Map;
+
 import static io.restassured.RestAssured.*;
 
 public class RestAssuredSingleton {
@@ -48,10 +51,19 @@ public class RestAssuredSingleton {
     }
 
     // Static method for POST request
-    public static Response post(String url, String body) {
-        return given()
+    public static Response post(String url, String body, Map<String, String> headers) {
+        RequestSpecification request = given()
                 .spec(getInstance().getRequestSpecification())
-                .body(body)
+                .body(body);
+
+        // Add custom headers
+        if (headers != null) {
+            for (Map.Entry<String, String> header : headers.entrySet()) {
+                request.header(header.getKey(), header.getValue());
+            }
+        }
+
+        return request
                 .when()
                 .post(url)
                 .then()

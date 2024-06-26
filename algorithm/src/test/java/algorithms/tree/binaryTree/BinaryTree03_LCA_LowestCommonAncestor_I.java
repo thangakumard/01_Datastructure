@@ -35,7 +35,6 @@ public class BinaryTree03_LCA_LowestCommonAncestor_I {
 	private TreeNode LCAOfBinaryTree(TreeNode root, int x, int y){		
 		if(root == null)
 			return null;
-		
 		if(root.data == x || root.data == y)
 			return root;
 		
@@ -44,8 +43,6 @@ public class BinaryTree03_LCA_LowestCommonAncestor_I {
 		
 		if(left != null && right != null)
 			return root;
-		
-		return (left != null ? left : right); 
-		
+		return (left != null ? left : right);
 	}
 }

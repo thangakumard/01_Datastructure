@@ -59,7 +59,7 @@ public class Backtrack_Array05_combination_sum {
 	
 	public List<List<Integer>> combinationSum(int[] nums, int target) {
 		List<List<Integer>> list = new ArrayList<>();
-		Arrays.sort(nums);
+		//Arrays.sort(nums); // NOT REQUIRED
 		backtrack(list, new ArrayList<>(), nums, target, 0);
 		return list;
 	}

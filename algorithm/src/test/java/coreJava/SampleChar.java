@@ -146,13 +146,13 @@ public class SampleChar {
 	@Test
 	public void charCounter_subtracting_with_uppercase_A(){
 		String input = "abcde";
-		int[] counter = new int[26];
+		int[] counter = new int[128];
 		for(char c: input.toCharArray()){
 			counter[c - 'A']++;
 		}
 
 		System.out.println("Character counts are below for subtracting_with_uppercase_A :");
-		for(int i=0; i < 5; i ++){
+		for(int i=0; i < 128; i ++){
 			System.out.println(counter[i]);
 		}
 	}

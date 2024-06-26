@@ -59,14 +59,17 @@ public class String26_intToRoman {
 	}
 
 	public String intToRoman(int num) {
-		int[] decimal = { 1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000 };
+		int[] decimal = { 1, 4, 5, 9,
+					10, 40, 50, 90,
+					100, 400, 500, 900,
+					1000 };
 		String[] roman = {
 				"I", "IV", "V", "IX",
 				"X", "XL", "L", "XC",
 				"C", "CD", "D", "CM",
 				"M" };
 		StringBuilder sb = new StringBuilder();
-		for (int i = decimal.length - 1; i >= 0 && num > 0; i--) {
+		for (int i = decimal.length - 1; i >= 0; i--) {
 			while (num >= decimal[i]) {
 				sb.append(roman[i]);
 				num -= decimal[i];
