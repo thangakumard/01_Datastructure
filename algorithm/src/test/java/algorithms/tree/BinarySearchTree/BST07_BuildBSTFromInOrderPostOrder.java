@@ -64,7 +64,7 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 	 * */
 	
 	
-	HashMap<Integer, Integer> inorderMap = new HashMap<Integer, Integer>();
+	HashMap<Integer, Integer> inorderMap = new HashMap<>();
 	int postIndex = 0;
 
 	private TreeNode buildTree(int[] inorder, int[] postorder) {
@@ -81,11 +81,11 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 			return null;
 
 		TreeNode currentNode = new TreeNode(postorder[postIndex]);
-		int rootIndex = inorderMap.get(postorder[postIndex]);
+		int inOrderIndex = inorderMap.get(postorder[postIndex]);
 		postIndex--;
 
-		currentNode.right = helper(postorder, rootIndex + 1, end);
-		currentNode.left = helper(postorder, start, rootIndex - 1);
+		currentNode.right = helper(postorder, inOrderIndex + 1, end);
+		currentNode.left = helper(postorder, start, inOrderIndex - 1);
 		return currentNode;
 	}
 

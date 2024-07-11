@@ -35,15 +35,12 @@ public class BinaryTree11_PopulatingNextRightPointers {
 		queueNodes.add(root);
 
 		while (!queueNodes.isEmpty()) {
-
 			int size = queueNodes.size();
 			for (int i = 0; i < size; i++) {
 				Node currentNode = queueNodes.poll();
-
 				if (i < size - 1) {
 					currentNode.next = queueNodes.peek();
 				}
-
 				if (currentNode.left != null)
 					queueNodes.add(currentNode.left);
 				if (currentNode.right != null)

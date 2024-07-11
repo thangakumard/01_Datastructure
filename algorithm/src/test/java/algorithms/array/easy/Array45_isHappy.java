@@ -43,6 +43,18 @@ public class Array45_isHappy {
         return n == 1;
     }
 
+    public boolean isHappy_approach_02(int n) {
+        int slow = n;
+        int fast = n;
+
+        do{
+            slow = getNext(slow);
+            fast = getNext(getNext(fast));
+        } while(slow != fast);
+
+        return slow == 1;
+    }
+
     private int getNext(int n){
         int total = 0;
         while(n > 0){
