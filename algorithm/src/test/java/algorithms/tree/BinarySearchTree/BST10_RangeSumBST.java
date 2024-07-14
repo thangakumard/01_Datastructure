@@ -30,6 +30,24 @@ import algorithms.tree.TreeNode;
 
 public class BST10_RangeSumBST {
 
+
+    int sum = 0;
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        sum = 0;
+        getList(root, low, high);
+        return sum;
+    }
+
+    private void getList(TreeNode currentNode , int low, int high){
+        if(currentNode != null){
+            if(low <= currentNode.data && high >= currentNode.data){
+                sum += currentNode.data;
+            }
+            if( low < currentNode.data) getList(currentNode.left, low, high);
+            if( currentNode.data < high) getList(currentNode.right, low, high);
+        }
+    }
+
 	public int rangeSumBST_solution_01(TreeNode root, int low, int high) {
 		if (root == null)
 			return 0;

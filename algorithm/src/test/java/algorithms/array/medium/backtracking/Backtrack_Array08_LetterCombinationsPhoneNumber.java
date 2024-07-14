@@ -54,13 +54,10 @@ public List<String> letterCombinations(String digits) {
         for(char number: digits.toCharArray()){
              input[i++] = dial_map.get(Character.getNumericValue(number));
         }
-        
         backtrack(result, "", input, 0);
-        
         return result;
-        
     }
-    
+
     private void backtrack(List<String> result, String current, String[] input, int start){
         if(start == input.length){
             result.add(current);

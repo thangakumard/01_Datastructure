@@ -65,4 +65,5 @@ public class SlidingWindow05_minDifference {
         }
         return minDiff;
     }
+
 }
