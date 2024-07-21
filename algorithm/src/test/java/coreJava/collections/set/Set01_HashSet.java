@@ -51,7 +51,7 @@ public class Set01_HashSet {
 
 	@Test
 	public void hasSetSample() {
-		HashSet<Object> hashSet = new HashSet<Object>();
+		HashSet<Object> hashSet = new HashSet<>();
 		hashSet.add(45);
 	      hashSet.add(15);
 	      hashSet.add(99);

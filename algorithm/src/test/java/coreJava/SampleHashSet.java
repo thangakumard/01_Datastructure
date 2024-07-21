@@ -153,7 +153,7 @@ public class SampleHashSet {
 	        System.out.println("Are First Set and Second Set are equal : " + arrset1.equals(arrset2)); 
 	        
 	        /**** Sort Sets */
-	        List<String> list = new ArrayList<String>(arrset1); 
+	        List<String> list = new ArrayList<>(arrset1);
 	        Collections.sort(list);
 	     
 	        /****** ArrayList to Set ****/

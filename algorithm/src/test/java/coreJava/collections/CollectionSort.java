@@ -43,7 +43,7 @@ public class CollectionSort
     
     @Test
     public void test() {
-    	ArrayList<Student> ar = new ArrayList<Student>(); 
+    	ArrayList<Student> ar = new ArrayList<>();
         ar.add(new Student(111, "bbbb", "london")); 
         ar.add(new Student(131, "aaaa", "nyc")); 
         ar.add(new Student(121, "cccc", "jaipur")); 

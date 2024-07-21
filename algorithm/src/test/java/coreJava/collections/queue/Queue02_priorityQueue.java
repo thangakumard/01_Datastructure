@@ -41,7 +41,7 @@ public class Queue02_priorityQueue {
     @Test
     public void int_priorityQueue_ascending(){
         // Creating empty priority queue
-        PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> pQueue = new PriorityQueue<>();
 
         // Adding items to the pQueue using add()
         pQueue.add(10);
@@ -63,7 +63,7 @@ public class Queue02_priorityQueue {
     public void int_priorityQueue_descending(){
         // Creating empty priority queue
         PriorityQueue<Integer> pQueue
-                = new PriorityQueue<Integer>(Collections.reverseOrder());
+                = new PriorityQueue<>(Collections.reverseOrder());
 
         // Adding items to the pQueue using add()
         pQueue.add(10);
