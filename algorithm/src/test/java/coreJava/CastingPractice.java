@@ -27,7 +27,7 @@ public class CastingPractice {
 	
 	@Test
 	public void IntToChar() {
-		int a = 10;
+		int a = 97;
 		//Convert Integer to char and print it
 	}
 
@@ -35,7 +35,7 @@ public class CastingPractice {
 	public void StringToInt(){
 		String str = "10";
 		// To covert String to int (Primitive Type)
-
+		System.out.println(Integer.parseInt(str));
 		// To covert int to Integer
 	}
 	
