@@ -43,18 +43,17 @@ public class Tree05_Traversal_VerticalOrderTraversal {
 public List<List<Integer>> verticalTraversal(TreeNode root) {
         
         List<List<Integer>> result = new ArrayList<>();
-        Deque<TreeNode> TreeNodeQueue = new ArrayDeque<>();
-        Deque<Integer> orderQueue = new ArrayDeque<>();
-        HashMap<Integer,List<Integer>> verticalMap = new HashMap<Integer, List<Integer>>();
-        
-        TreeNodeQueue.offerFirst(root);
-        orderQueue.offerFirst(0);
+        Queue<TreeNode> TreeNodeQueue = new LinkedList<>();
+		Queue<Integer> verticalIndexQueue = new LinkedList<>();
+        HashMap<Integer,List<Integer>> verticalMap = new HashMap<>();
+
+        TreeNodeQueue.add(root);
+        verticalIndexQueue.add(0);
         TreeNode currentTreeNode;
         int vertical = 0, minValue =0, maxValue = 0;
         while(!TreeNodeQueue.isEmpty()) {
-        	
-        	currentTreeNode = TreeNodeQueue.pollFirst();
-        	vertical = orderQueue.pollFirst();
+        	currentTreeNode = TreeNodeQueue.poll();
+        	vertical = verticalIndexQueue.poll();
         	minValue = Math.min(minValue, vertical);
         	maxValue = Math.max(maxValue, vertical);
         	
@@ -64,13 +63,13 @@ public List<List<Integer>> verticalTraversal(TreeNode root) {
         	verticalMap.get(vertical).add(currentTreeNode.data);
 
         	if(currentTreeNode.left != null) {
-        		TreeNodeQueue.offerLast(currentTreeNode.left);
-        		orderQueue.offerLast(vertical -1);
+        		TreeNodeQueue.add(currentTreeNode.left);
+        		verticalIndexQueue.add(vertical -1);
         	}
         	
         	if(currentTreeNode.right != null) {
-        		TreeNodeQueue.offerLast(currentTreeNode.right);
-        		orderQueue.offerLast(vertical + 1);
+        		TreeNodeQueue.add(currentTreeNode.right);
+        		verticalIndexQueue.add(vertical + 1);
         	}
         	
         }
