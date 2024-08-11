@@ -13,9 +13,11 @@ public class Casting {
 			short - 16 bit signed integer
 			int - 32 bit signed integer
 			long - 64 bit signed integer
+
 			float - 32 bit floating point number that can have decimal places
 			double - 64 bit floating point number that can have decimal places
-			boolean - represents logical operation that can either be true or false
+
+	 		boolean - represents logical operation that can either be true or false
 			char - represents a single unicode (16 bit) character.
 	 */
 	
@@ -26,7 +28,6 @@ public class Casting {
 		System.out.println(Character.getNumericValue(str.charAt(1)));
 		System.out.println(Character.getNumericValue(str.charAt(2)));
 		
-		
 		/******* WITHOUT USING INBUILT FUNCTIONS *********/
 		System.out.println("Char using 0 subtraction :" + (str.charAt(0) - '0'));//returns 1
 		System.out.println("Char using 0 subtraction :" + (str.charAt(1) - '0'));//returns 9
@@ -36,15 +37,18 @@ public class Casting {
 		System.out.println("Char using 0 addition :" + str.charAt(0) + '0'); //returns 10
 		System.out.println("Char using 0 addition :" + str.charAt(1) + '0'); //returns 90
 		System.out.println("Char using 0 addition :" + str.charAt(2) + '0'); //returns 80
-		
+
+		for(int i='a'-'0'; i < 'z'-'0'; i++){
+			System.out.println("Character value: "+i);
+		}
 	}
 	
 	@Test
 	public void IntToChar() {
-		int a = 10;
+		int a = 1;
 		while(a > 0){
-			System.out.println("Integer to Character :" + (char)a%10);
-			a = a/10;
+			System.out.println("Integer to Character :" + (char)a);
+			a = a-1;
 		}
 	}
 
@@ -183,6 +187,7 @@ public class Casting {
 		for(int value: set){
 			System.out.println(value);
 		}
+
 	}
 	
 	@Test

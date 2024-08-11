@@ -45,7 +45,7 @@ public class BinaryTree16_InvertBinaryTree {
 	private TreeNode invertTreeIterative(TreeNode root) {
         if(root == null)
             return null;
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         
         while(!queue.isEmpty()){

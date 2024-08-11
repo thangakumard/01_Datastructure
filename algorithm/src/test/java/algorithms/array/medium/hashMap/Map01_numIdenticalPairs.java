@@ -4,10 +4,10 @@ import java.util.*;
 
 import org.testng.annotations.Test;
 
-/*
- * Given an array of integers nums.
+/*https://leetcode.com/problems/number-of-good-pairs/description/
 
-A pair (i,j) is called good if nums[i] == nums[j] and i < j.
+ * Given an array of integers nums.
+ A pair (i,j) is called good if nums[i] == nums[j] and i < j.
 
 Return the number of good pairs.
 
@@ -17,7 +17,7 @@ Example 1:
 
 Input: nums = [1,2,3,1,1,3]
 Output: 4
-Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.
+Explanation: There are 4 good pairs (0,3), (0,4), (2,4), (2,5) 0-indexed.
 Example 2:
 
 Input: nums = [1,1,1,1]
@@ -35,21 +35,15 @@ public class Map01_numIdenticalPairs {
 		System.out.println(numIdenticalPairs(a));
 	}
 
-	public int numIdenticalPairs(int[] nums) {
-        
-        Map<Integer, Integer> pairMap = new HashMap<Integer,Integer>();
-        
-        for(int i=0; i < nums.length; i++){
-            pairMap.put(nums[i], pairMap.getOrDefault(nums[i], 0) + 1);
+    public int numIdenticalPairs(int[] guestList) {
+        HashMap<Integer, Integer> hm = new HashMap<>();
+        int ans = 0;
+        for(int friend:guestList)
+        {
+            int friendCount = hm.getOrDefault(friend,0);
+            ans+=friendCount;
+            hm.put(friend,friendCount+1);
         }
-        
-        int result =0;
-        for(Map.Entry<Integer, Integer> pSet: pairMap.entrySet()){
-            if(pSet.getValue() > 1)
-            {
-                result += (pSet.getValue() * (pSet.getValue()-1))/2;
-            }
-        }
-        return result;
+        return ans;
     }
 }

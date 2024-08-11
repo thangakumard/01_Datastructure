@@ -47,6 +47,23 @@ public class Array01_MergeInterval {
 			System.out.println(interval[0] + "," + interval[1]);
 		}
 	}
+
+	/*** C# ***
+	 * public int[][] Merge(int[][] intervals) {
+	 *         Array.Sort(intervals, (a,b) => {return a[0] - b[0];});
+	 *         LinkedList<int[]> mergedIntervals = new LinkedList<int[]>();
+	 *
+	 *         foreach(int[] interval in intervals){
+	 *             if(mergedIntervals.Count > 0 && mergedIntervals.Last.Value[1] >= interval[0]){
+	 *                 mergedIntervals.Last.Value[1] = Math.Max(mergedIntervals.Last.Value[1], interval[1]);
+	 *             }else{
+	 *                 mergedIntervals.AddLast(interval);
+	 *             }
+	 *         }
+	 *
+	 *         return mergedIntervals.ToArray();
+	 *     }
+	 */
 	
 	private int[][] mergeInterval(int[][] input){
 		Arrays.sort(input, (a,b) -> Integer.compare(a[0], b[0]));

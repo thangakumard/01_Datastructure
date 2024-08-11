@@ -37,7 +37,8 @@ public class   BinaryTree17_DeleteZeroSumSubtree {
 	}
 
 	public void deleteZeroSumSubtree(BinaryTree tree) {
-	    if(0 == deleteZeroSum(tree.root)) tree.root = null;
+	    if(0 == deleteZeroSum(tree.root))
+			tree.root = null;
 	  }
 
 	  private int deleteZeroSum(TreeNode currentNode){

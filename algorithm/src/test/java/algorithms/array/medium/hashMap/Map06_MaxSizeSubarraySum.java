@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 /**
  * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
- * Given an integer array nums and an integer k, return the maximum length of a subarray that sums to k. If there is not one, return 0 instead.
+ * Given an integer array nums and an integer k, return the maximum length of a subarray that sums to k.
+ * If there is not one, return 0 instead.
  *
  * Example 1:
  * Input: nums = [1,-1,5,-2,3], k = 3

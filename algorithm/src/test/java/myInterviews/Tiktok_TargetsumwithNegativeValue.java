@@ -3,8 +3,27 @@ package myInterviews;
 import java.util.HashMap;
 
 /**
+ * https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/
+ * Given an integer array nums and an integer k, return the maximum length of a subarray that sums to k. If there is not one, return 0 instead.
+ * Example 1:
+ * Input: nums = [1,-1,5,-2,3], k = 3
+ * Output: 4
+ *
+ * Explanation: The subarray [1, -1, 5, -2] sums to 3 and is the longest.
+ * Example 2:
+ * Input: nums = [-2,-1,2,1], k = 1
+ * Output: 2
+ * Explanation: The subarray [-1, 2] sums to 1 and is the longest.
+ *
+ * Constraints:
+ * 1 <= nums.length <= 2 * 105
+ * -104 <= nums[i] <= 104
+ * -109 <= k <= 109
+ * ==========================
+ *
  * https://www.geeksforgeeks.org/find-subarray-with-given-sum-in-array-of-integers/
- * Given an unsorted array of integers, find a subarray that adds to a given number. If there is more than one subarray with the sum of the given number, print any of them.
+ * Given an unsorted array of integers, find a subarray that adds to a given number.
+ * If there is more than one subarray with the sum of the given number, print any of them.
  *
  * Examples:
  * Input: arr[] = {1, 4, 20, 3, 10, 5}, sum = 33
@@ -95,20 +114,30 @@ public class Tiktok_TargetsumwithNegativeValue {
      * -105 <= sum <= 105
      */
 
-    public int subArraySum_02(int[] arr, int n, int sum)
-    {
-        HashMap<Integer,Integer> sumMap = new HashMap<>();
-        sumMap.put(0, 1);
-        int counter = 0;
-        int presum = 0;
-        for(int i=0; i < n; i++){
-            presum += arr[i];
-            if(sumMap.containsKey(presum-sum))
-            {
-                counter += sumMap.get(presum-sum);
+    public int maxSubArrayLen(int[] nums, int k) {
+        int prefixSum = 0;
+        int longestSubarray = 0;
+        HashMap<Integer, Integer> indices = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            prefixSum += nums[i];
+
+            // Check if all of the numbers seen so far sum to k.
+            if (prefixSum == k) {
+                longestSubarray = i + 1;
             }
-            sumMap.put(presum, sumMap.getOrDefault(presum,0)+1);
+
+            // If any subarray seen so far sums to k, then update the length of the longest_subarray.
+            if (indices.containsKey(prefixSum - k)) {
+                longestSubarray = Math.max(longestSubarray, i - indices.get(prefixSum - k));
+            }
+
+            // Only add the current prefix_sum index pair to the
+            // map if the prefix_sum is not already in the map.
+            if (!indices.containsKey(prefixSum)) {
+                indices.put(prefixSum, i);
+            }
         }
-        return counter;
+
+        return longestSubarray;
     }
 }

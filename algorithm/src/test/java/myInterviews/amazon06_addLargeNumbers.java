@@ -5,23 +5,41 @@ import org.testng.annotations.Test;
  * 
  * 19/June/2018
  * Write a library to add two big numbers
- *
+ *https://leetcode.com/problems/add-strings/description/
  */
 
 public class amazon06_addLargeNumbers {
 	
 	@Test
 	public void Test(){
-		System.out.println(add("10","10"));
-		System.out.println(add("99","99"));
-		System.out.println(add("99999","99999"));
-		System.out.println(add("9999999999","9999999999"));
-		System.out.println(add("99999999999999999999","99999999999999999999"));
-		System.out.println(add("9999999999999999999999999999999999999999","9999999999999999999999999999999999999999"));
-		System.out.println(add("99999999999999999999999999999999999999999999999999999999999999999999999999999999","99999999999999999999999999999999999999999999999999999999999999999999999999999999"));
+		System.out.println(addStrings("10","10"));
+		System.out.println(addStrings("99","99"));
+		System.out.println(addStrings("99999","99999"));
+		System.out.println(addStrings("9999999999","9999999999"));
+		System.out.println(addStrings("99999999999999999999","99999999999999999999"));
+		System.out.println(addStrings("9999999999999999999999999999999999999999","9999999999999999999999999999999999999999"));
+		System.out.println(addStrings("99999999999999999999999999999999999999999999999999999999999999999999999999999999","99999999999999999999999999999999999999999999999999999999999999999999999999999999"));
 	}
-	
-	public String add(String x1, String x2){		
+
+	public String addStrings(String num1, String num2) {
+
+		StringBuilder result = new StringBuilder();
+
+		int i = num1.length()-1, j = num2.length()-1, carry = 0, x = 0, y = 0;
+
+		while(i >= 0 || j >= 0 || carry > 0){
+			x = i < 0 ? 0 : num1.charAt(i) - '0'; /****** IMPORTANT TO USE SUBRACTION, NOT ADDITION OF ZERO ****/
+			y = j < 0 ? 0 : num2.charAt(j) - '0';
+			result.insert(0,(x + y + carry) %10);
+			carry = (x+y+carry)/10;
+			i--;
+			j--;
+		}
+		return new String(result);
+	}
+
+
+	public String add_old(String x1, String x2){
 		if(x1 == null || x1==""){
 			x1 = "0";
 		}
