@@ -30,7 +30,7 @@ Constraints:
  *
  */
 
-public class Subarray03_MaximumProductSubarray {
+public class Subarray02_MaximumProductSubarray {
 
 	@Test
 	private void test() {
@@ -50,22 +50,25 @@ public class Subarray03_MaximumProductSubarray {
      * @return
      */
 	public int maxProduct(int[] nums) {
-        if(nums.length == 0) return 0;
-        
+        if(nums == null || nums.length == 0) return 0;
+
         int max_so_far = nums[0];
-        int min_so_far = nums[0];
-        int result = max_so_far; //********* Important to initialize result with nums[0] not with 0
-        
+        int min_so_far = nums[0]; //IMPORTANT to initialize with nums[0];
+        int maxProduct = max_so_far;
+
+        int currentMax;
+        int currentMin;
+
         for(int i=1; i < nums.length; i++){
-            int curr = nums[i];
-            
-            int temp = Math.max(curr,Math.max(max_so_far * curr , min_so_far * curr));
-            min_so_far = Math.min(curr,Math.min(max_so_far * curr , min_so_far * curr));
-            
-            max_so_far = temp;
-            result = Math.max(result, max_so_far);
+            currentMax = Math.max(max_so_far * nums[i], min_so_far * nums[i]);
+            currentMin = Math.min(max_so_far * nums[i], min_so_far * nums[i]);
+
+            max_so_far =  Math.max(nums[i], currentMax);
+            min_so_far =  Math.min(nums[i], currentMin);
+
+            maxProduct = Math.max(maxProduct, max_so_far);
         }
-        
-        return result;
+
+        return maxProduct;
     }
 }

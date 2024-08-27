@@ -42,19 +42,18 @@ public class SlidingWindow02_SubarrayMinimumSizeSum {
     }
 
     public int minSubArrayLen(int target, int[] nums) {
-        if(nums == null || nums.length < 0)
-            return 0;
-        int min_subarray = Integer.MAX_VALUE, left = 0, right = 0, current_sum = 0;
+        if(nums == null || nums.length == 0) return 0;
+        int currentSum = 0,  i =0, minLength = Integer.MAX_VALUE;
 
-        while(right < nums.length){
-            current_sum += nums[right];
-            right++;
-            while(current_sum >= target){
-                min_subarray = Math.min(min_subarray, right-left);
-                current_sum -= nums[left++];
+        for(int j = 0; j < nums.length; j++){
+            currentSum += nums[j];
+
+            while(currentSum >= target){
+                minLength =  Math.min(minLength,j-i+1);
+                currentSum -= nums[i];
+                i++;
             }
         }
-
-        return min_subarray == Integer.MAX_VALUE ? 0 : min_subarray;
+        return minLength == Integer.MAX_VALUE ? 0 : minLength;
     }
 }

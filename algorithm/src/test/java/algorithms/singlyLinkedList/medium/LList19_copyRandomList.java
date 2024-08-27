@@ -1,5 +1,7 @@
 package algorithms.singlyLinkedList.medium;
 
+import java.util.HashMap;
+
 /***********
  * 
  * 
@@ -65,12 +67,31 @@ public class LList19_copyRandomList {
 		}
 	}
 
-public RandomNode copyRandomList(RandomNode head) {
+    public RandomNode copyRandomList(RandomNode head) {
+        if(head == null) return null;
+        HashMap<RandomNode , RandomNode> oldToNew = new HashMap<>();
+
+        RandomNode current = head;
+        while (current != null) {
+            oldToNew.put(current, new RandomNode(current.val));
+            current = current.next;
+        }
+
+        current = head;
+        while (current != null) {
+            oldToNew.get(current).next = oldToNew.get(current.next);
+            oldToNew.get(current).random = oldToNew.get(current.random);
+            current = current.next;
+        }
+
+        return oldToNew.get(head);
+    }
+
+public RandomNode copyRandomList_old(RandomNode head) {
         
         //Created a copy from the original list
         RandomNode currentNode = head;   
         while(currentNode != null){
-            
             RandomNode next = currentNode.next;
             
             RandomNode temp = new RandomNode(currentNode.val);
@@ -86,7 +107,6 @@ public RandomNode copyRandomList(RandomNode head) {
             if(currentNode.random != null){
                 currentNode.next.random = currentNode.random.next;
             }
-            
             currentNode = currentNode.next.next;
         }
         

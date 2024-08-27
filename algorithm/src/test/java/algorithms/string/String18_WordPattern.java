@@ -35,6 +35,9 @@ public class String18_WordPattern {
 
     @Test
     public void wordPatternTest(){
+        String input = "172.16.254.1";
+        String[] words = input.split(".");
+
         Assertions.assertThat(twoHashMapSolution("abba", "dog cat cat dog")).isTrue();
         Assertions.assertThat(twoHashMapSolution("abba", "dog dog dog dog")).isFalse();
 

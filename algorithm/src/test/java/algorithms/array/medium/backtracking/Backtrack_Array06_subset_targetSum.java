@@ -1,5 +1,7 @@
 package algorithms.array.medium.backtracking;
 
+import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,13 @@ import java.util.List;
 
 
 public class Backtrack_Array06_subset_targetSum {
+
+    @Test
+    private void test() {
+        int[] input = { 10, 20, 3 };
+        System.out.println(findTargetSumWays(input, 3));
+    }
+
     int counter = 0;
     public int findTargetSumWays(int[] nums, int target) {
         if(nums == null) return 0;

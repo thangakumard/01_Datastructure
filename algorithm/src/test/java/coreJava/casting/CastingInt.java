@@ -11,35 +11,56 @@ public class CastingInt {
         System.out.println(Character.getNumericValue(str.charAt(2)));
 
 
-        /******* WITHOUT USING INBUILT FUNCTIONS *********/
-        System.out.println("Char using 0 subtraction :" + (str.charAt(0) - '0'));//returns 1
-        System.out.println("Char using 0 subtraction :" + (str.charAt(1) - '0'));//returns 9
-        System.out.println("Char using 0 subtraction :" + (str.charAt(2) - '0'));//returns 8
+        /******* Get integer value in the index WITHOUT USING INBUILT FUNCTIONS *********/
+        System.out.println("integer value in the index 0 :" + (str.charAt(0) - '0'));//returns 1
+        System.out.println("integer value in the index 1 :" + (str.charAt(1) - '0'));//returns 9
+        System.out.println("integer value in the index 2 :" + (str.charAt(2) - '0'));//returns 8
+        /****WRONG Way to get integer value in the index ****/
+        System.out.println("WRONG Way to get integer value :" + str.charAt(0) + '0'); //returns 10
+        System.out.println("WRONG Way to get integer value :" + str.charAt(1) + '0'); //returns 90
 
-        /****WRONG CASTING ****/
-        System.out.println("Char using 0 addition :" + str.charAt(0) + '0'); //returns 10
-        System.out.println("Char using 0 addition :" + str.charAt(1) + '0'); //returns 90
-        System.out.println("Char using 0 addition :" + str.charAt(2) + '0'); //returns 80
+        /***** Get integer ASCII value in the index *********/
+        str = "123";
+        System.out.println("ASCII value in the index 0 :" + (str.charAt(0) - 0));//returns 1
+        System.out.println("ASCII value in the index 1:" + (str.charAt(1) - 0));//returns 1
+        System.out.println("ASCII value in the index 2 :" + (str.charAt(2) - 0));//returns 1
 
+        /***** To get ASCII values *********/
+        str = "abc";
+        System.out.println("ASCII value in the index 0 with -0:" + (str.charAt(0) - 0));//returns 1
+        System.out.println("ASCII value in the index 1 with -0 :" + (str.charAt(1) - 0));//returns 1
+        System.out.println("ASCII value in the index 2 with -0 :" + (str.charAt(2) - 0));//returns 1
+
+        System.out.println("ASCII value in the index 0  with +0:" + (str.charAt(0) + 0));//returns 1
+        System.out.println("ASCII value in the index 0  with +0 :" + (str.charAt(1) + 0));//returns 1
+        System.out.println("ASCII value in the index 0  with +0 :" + (str.charAt(1) + 0));//returns 1
+
+        /***ASCII value for a = 97 , z = 122 **/
         for(int i='a'-0; i <= 'z'-0; i++){
+            System.out.println("Int value of "+  (char) (i - 0) + " is " +i);
+        }
+        /***ASCII value for a = 65 , z = 90 **/
+        for(int i='A'-0; i <= 'Z'-0; i++){
             System.out.println("Int value of "+  (char) (i - 0) + " is " +i);
         }
     }
     @Test
-    public void StringToInt(){
-
+    public void StringToInt() {
         String str = "10";
         int i = Integer.parseInt(str); // To covert String to int (Primitive Type)
+    }
 
+    @Test
+    public void intToInteger() {
+        int i = 10;
         Integer j = Integer.valueOf(i); // To covert int to Integer
-        //Double d = new Double(0); Deprecated
     }
 
     @Test
     public void IntegerToInt(){
-        int i = 10; // To covert String to int (Primitive Type)
-        Integer j = Integer.valueOf(i); // To covert int to Integer
-        //Double d = new Double(0); Deprecated
+        int IntegerValue = 10; // To covert String to int (Primitive Type)
+        int intValue = IntegerValue; // To covert int to Integer
+        System.out.println("intValue is :" + intValue);
     }
 
     @Test

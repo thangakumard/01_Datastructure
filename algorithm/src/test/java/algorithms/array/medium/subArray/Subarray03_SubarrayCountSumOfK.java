@@ -10,7 +10,7 @@ import java.util.HashMap;
  *
  * Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
  *
- * A subarray is a contiguous nzzzon-empty sequence of elements within an array.
+ * A subarray is a contiguous non-empty sequence of elements within an array.
  *
  * Example 1:
  * Input: nums = [1,1,1], k = 2
@@ -20,7 +20,7 @@ import java.util.HashMap;
  * Input: nums = [1,2,3], k = 3
  * Output: 2
  */
-public class Subarray04_SubarrayCountSumOfK {
+public class Subarray03_SubarrayCountSumOfK {
 
     @Test
     public void Test(){

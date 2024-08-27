@@ -34,7 +34,7 @@ import java.util.HashMap;
  * 1 <= k <= nums.length <= 105
  * 1 <= nums[i] <= 105
  */
-public class Subarray01_maximumDistSubarraySumWithLengthK {
+public class Subarray04_maximumDistSubarraySumWithLengthK {
     public long maximumSubarraySum(int[] A, int k) {
         HashMap<Integer, Integer> mapCounter = new HashMap<>();
         long maxSum = 0, sum = 0;
