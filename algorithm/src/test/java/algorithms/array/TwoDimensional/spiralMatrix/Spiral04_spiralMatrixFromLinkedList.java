@@ -5,7 +5,6 @@ import algorithms.singlyLinkedList.base.ListNode;
 public class Spiral04_spiralMatrixFromLinkedList {
     public int[][] spiralMatrix(int m, int n, ListNode head) {
         int[][] result = new int[m][n];
-
         int rowStart = 0, rowEnd = m-1;
         int colStart = 0, colEnd = n-1;
         ListNode currentNode = head;
