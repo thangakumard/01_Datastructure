@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking;
+package algorithms.array.medium.backtracking.permutation;
 
 import java.util.*;
 
@@ -28,7 +28,6 @@ import org.testng.annotations.Test;
  * 
  */
 public class Backtrack_Array04_Permutations_II {
-
 	@Test
 	private void test() {
 		int[] input = { 1, 2, 2 };

@@ -1,8 +1,7 @@
-package algorithms.array.medium.backtracking;
+package algorithms.array.medium.backtracking.subset;
 
 import java.util.*;
 
-import org.springframework.util.StringUtils;
 import org.testng.annotations.Test;
 
 /***
@@ -49,7 +48,7 @@ public class Backtrack_Array01_SubsetsWithoutDuplicate {
 		list.add(new ArrayList<>(tempList));
 		for (int i = start; i < nums.length; i++) {
 			tempList.add(nums[i]);
-			backtrack(list, tempList, nums, i + 1);
+			backtrack(list, tempList, nums, i + 1);//IMPORTANT to increment i not start
 			tempList.remove(tempList.size() - 1);
 		}
 	}

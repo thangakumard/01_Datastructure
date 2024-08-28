@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking;
+package algorithms.array.medium.backtracking.subset;
 
 import java.util.*;
 
@@ -40,7 +40,7 @@ public class Backtrack_Array02_SubsetsII_WithDuplicates {
 			if (i > start && nums[i] == nums[i - 1])
 				continue; // skip duplicates
 			tempList.add(nums[i]);
-			backtrack(list, tempList, nums, i + 1);
+			backtrack(list, tempList, nums, i + 1); //IMPORTANT to increment i not start
 			tempList.remove(tempList.size() - 1);
 		}
 	}

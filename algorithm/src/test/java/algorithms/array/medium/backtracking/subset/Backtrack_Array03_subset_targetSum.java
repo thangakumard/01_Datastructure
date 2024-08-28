@@ -1,9 +1,6 @@
-package algorithms.array.medium.backtracking;
+package algorithms.array.medium.backtracking.subset;
 
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /***
  * https://leetcode.com/problems/target-sum/
@@ -33,7 +30,7 @@ import java.util.List;
  */
 
 
-public class Backtrack_Array06_subset_targetSum {
+public class Backtrack_Array03_subset_targetSum {
 
     @Test
     private void test() {

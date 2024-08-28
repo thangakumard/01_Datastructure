@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking;
+package algorithms.array.medium.backtracking.combination;
 
 import java.util.*;
 
@@ -27,7 +27,7 @@ import org.testng.annotations.Test;;
  * 0 <= digits.length <= 4 digits[i] is a digit in the range ['2', '9'].
  * 
  */
-public class Backtrack_Array08_LetterCombinationsPhoneNumber {
+public class Backtrack_Array07_CombinationsPhoneNumber {
 	
 	@Test
 	private void test() {
