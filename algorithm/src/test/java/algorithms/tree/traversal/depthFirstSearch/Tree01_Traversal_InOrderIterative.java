@@ -1,4 +1,4 @@
-package algorithms.tree.traversal;
+package algorithms.tree.traversal.depthFirstSearch;
 
 import java.util.Stack;
 

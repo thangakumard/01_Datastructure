@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.medium;
+package algorithms.singlyLinkedList.medium.swap;
 
 import org.testng.annotations.Test;
 
@@ -7,7 +7,7 @@ import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 /***
  * 
- * https://leetcode.com/problems/reorder-list/
+	 * https://leetcode.com/problems/reorder-list/
  * Given a singly linked list L:
  * L0→L1→…→Ln-1→Ln, reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…
  * 
@@ -23,7 +23,7 @@ import algorithms.singlyLinkedList.base.SinglyLinkedList;
  * 
  *
  */
-public class LList05_ReorderList {
+public class Swap03_ReorderList {
 	
 	/**
 	  This problem is a combination of these three easy problems:

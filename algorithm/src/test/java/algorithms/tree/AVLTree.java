@@ -2,7 +2,7 @@ package algorithms.tree;
 
 import org.testng.annotations.Test;
 
-import algorithms.tree.traversal.Tree01_Traversal_InOrderIterative;
+import algorithms.tree.traversal.depthFirstSearch.Tree01_Traversal_InOrderIterative;
 
 /****************
  * Bainary search search is a special kind of binaray tree where every TreeNodes in the left subtree is less than or equal to root and 

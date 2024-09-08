@@ -1,11 +1,11 @@
-package algorithms.singlyLinkedList.easy;
+package algorithms.singlyLinkedList.medium.reverse;
 
 import org.testng.annotations.Test;
 
 import algorithms.singlyLinkedList.base.ListNode;
 import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
-public class LList01_ReverseLinkedList_I {
+public class RL01_ReverseLinkedList_I {
 	
 	@Test
 	public void ReverseTheList(){

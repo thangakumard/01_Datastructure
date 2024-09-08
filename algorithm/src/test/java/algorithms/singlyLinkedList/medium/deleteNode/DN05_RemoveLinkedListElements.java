@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.deleteNode;
+package algorithms.singlyLinkedList.medium.deleteNode;
 
 import algorithms.singlyLinkedList.base.ListNode;
 import algorithms.singlyLinkedList.base.SinglyLinkedList;
@@ -24,7 +24,7 @@ import org.testng.annotations.Test;
  * 1 <= Node.val <= 50
  * 0 <= val <= 50
  */
-public class Delete01_RemoveLinkedListElements {
+public class DN05_RemoveLinkedListElements {
 
 	@Test
 	public void Test(){

@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.easy;
+package algorithms.singlyLinkedList.medium.reverse;
 
 import algorithms.singlyLinkedList.base.ListNode;
 
@@ -22,7 +22,7 @@ import algorithms.singlyLinkedList.base.ListNode;
  * -500 <= Node.val <= 500
  * 1 <= left <= right <= n
  */
-public class LList01_ReverseLinkedList_II {
+public class RL02_ReverseLinkedList_II {
     public ListNode reverseBetween(ListNode head, int left, int right) {
         if(head == null || left == right ) return head;
 

@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.medium;
+package algorithms.singlyLinkedList.medium.deleteNode;
 
 import java.util.*;
 
@@ -38,7 +38,7 @@ import algorithms.singlyLinkedList.base.SinglyLinkedList;
 	The given linked list will contain between 1 and 1000 nodes.
 	Each node in the linked list has -1000 <= node.val <= 1000.
  */
-public class LList16_RemoveZeroSumConsecutiveNodes {
+public class DN04_RemoveZeroSumConsecutiveNodes {
 
 	@Test
 	private void test() {

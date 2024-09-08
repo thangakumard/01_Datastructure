@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.medium;
+package algorithms.singlyLinkedList.medium.reverse;
 
 import org.testng.annotations.Test;
 
@@ -40,7 +40,7 @@ import algorithms.singlyLinkedList.base.SinglyLinkedList;
  * The number of nodes in the list is in the range sz. 1 <= sz <= 5000 0 <=
  * Node.val <= 1000 1 <= k <= sz
  */
-public class LList13_ReverseLinkedList_K_Group {
+public class RL03_ReverseLinkedList_K_Group {
 	
 	@Test
 	private void test() {
@@ -57,8 +57,44 @@ public class LList13_ReverseLinkedList_K_Group {
 		ListNode result = reverseKGroup(list.head, 2);
 		printList(result);
 	}
-	
+
 	public ListNode reverseKGroup(ListNode head, int k) {
+		ListNode sentinal = new ListNode(0);
+		sentinal.next = head;
+		ListNode pointer = sentinal;
+
+		while(pointer != null){
+			ListNode currentNode = pointer;
+
+			//check if we have
+			for(int i=0; i < k && currentNode != null; i++){
+				currentNode = currentNode.next;
+			}
+			if(currentNode == null) break;
+
+			ListNode next = null;
+			ListNode prev = null;
+			ListNode curr = pointer.next;
+
+			for(int i=0; i < k; i++){
+				next = curr.next;
+				curr.next = prev;
+
+				prev = curr;
+				curr = next;
+			}
+
+			ListNode tail = pointer.next;
+			tail.next = curr;
+
+			pointer.next = prev;
+			pointer = tail;
+		}
+
+		return sentinal.next;
+	}
+	
+	public ListNode reverseKGroup02(ListNode head, int k) {
 		int count = 0;
 		ListNode currentNode = head;
 		while (count < k && currentNode != null) {

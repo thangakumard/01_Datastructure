@@ -4,9 +4,9 @@ import java.util.HashMap;
 import org.testng.annotations.Test;
 
 /***
+ https://leetcode.com/problems/lru-cache/
 
 Example 1:
-
 Input
 ["LRUCache", "put", "put", "get", "put", "get", "put", "get", "get", "get"]
 [[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
@@ -71,7 +71,7 @@ public class LRUCache_usingMapAndNode {
 	        return -1;
 	    }
 	    
-	    public void put(int key, int value) {
+	    public void put(int key, int value){
 	        Node currentNode = nodeMap.get(key);
 	        if(currentNode == null){
 	            Node new_node = new Node(key, value);
