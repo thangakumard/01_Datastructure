@@ -1,4 +1,4 @@
-package algorithms.array.TwoDimensional.spiralMatrix;
+package algorithms.matrix.spiralMatrix;
 
 import org.testng.annotations.Test;
 

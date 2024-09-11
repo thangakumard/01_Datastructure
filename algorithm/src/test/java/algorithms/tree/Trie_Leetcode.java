@@ -1,5 +1,7 @@
 package algorithms.tree;
 
+import algorithms.tree.Trie.TrieNode;
+
 public class Trie_Leetcode {
 	    /** Initialize your data structure here. */
 	    private TrieNode root;

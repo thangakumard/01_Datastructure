@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.twoPointer;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -26,7 +26,7 @@ Constraints:
 -10^3 <= nums[i] <= 10^3
 -10^4 <= target <= 10^4
  */
-public class Array13_3SumClosest {
+public class twoPointer03_3SumClosest {
 
 
 

@@ -1,4 +1,4 @@
-package algorithms.array.TwoDimensional;
+package algorithms.matrix;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

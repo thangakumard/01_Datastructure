@@ -58,27 +58,6 @@ public class Graph03_AccountsMerge {
 				graph.get(account.get(i - 1)).add(account.get(i));
 			}
 		}
-		//graph
-		/*
-		 {
-			 johnnybravo@mail.com=[], 
-			 johnsmith@mail.com=[john00@mail.com, john_newyork@mail.com], 
-			 john00@mail.com=[johnsmith@mail.com], 
-			 john_newyork@mail.com=[johnsmith@mail.com], 
-			 mary@mail.com=[]
-		 }
-		 */
-		//name
-		/*
-		 {
-			 johnnybravo@mail.com=John, 
-			 johnsmith@mail.com=John, 
-			 john00@mail.com=John, 
-			 john_newyork@mail.com=John, 
-			 mary@mail.com=Mary
-		 }
-		 */
-
 		Set<String> visited = new HashSet<>();
 		List<List<String>> res = new LinkedList<>();
 		// DFS search the graph;

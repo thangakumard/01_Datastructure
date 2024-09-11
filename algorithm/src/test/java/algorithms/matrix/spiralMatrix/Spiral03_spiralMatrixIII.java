@@ -1,4 +1,4 @@
-package algorithms.array.TwoDimensional.spiralMatrix;
+package algorithms.matrix.spiralMatrix;
 
 /***
  * You start at the cell (rStart, cStart) of an rows x cols grid facing east. The northwest corner is at the first row and column in the grid, and the southeast corner is at the last row and column.

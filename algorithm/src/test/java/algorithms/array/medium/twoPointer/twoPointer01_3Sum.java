@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.twoPointer;
 
 import java.util.*;
 
@@ -28,7 +28,7 @@ Constraints:
 -105 <= nums[i] <= 105
  */
 
-public class Array12_3Sum {
+public class twoPointer01_3Sum {
 
 	@Test
 	public void test() {

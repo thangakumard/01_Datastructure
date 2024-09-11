@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array.medium.twoPointer;
 
 import java.util.Arrays;
 
@@ -29,7 +29,7 @@ import java.util.Arrays;
  * -100 <= target <= 100
  */
 
-public class Array13_3SumSmaller {
+public class twoPointer02_3SumSmaller {
         int count;
         public int threeSumSmaller(int[] nums, int target) {
             count = 0;

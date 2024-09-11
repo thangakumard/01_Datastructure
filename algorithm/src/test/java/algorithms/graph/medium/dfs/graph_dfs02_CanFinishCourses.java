@@ -1,4 +1,4 @@
-package algorithms.matrix.dfs;
+package algorithms.graph.medium.dfs;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +30,7 @@ import java.util.List;
  * All the pairs prerequisites[i] are unique.
  */
 
-public class DFS04_CanFinishCourses {
+public class graph_dfs02_CanFinishCourses {
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         if(numCourses == 0 || prerequisites == null || prerequisites.length == 0) return true; //??

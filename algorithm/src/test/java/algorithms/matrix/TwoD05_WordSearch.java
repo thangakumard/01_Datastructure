@@ -1,4 +1,4 @@
-package algorithms.array.TwoDimensional;
+package algorithms.matrix;
 
 /*
  * 	https://leetcode.com/problems/word-search/

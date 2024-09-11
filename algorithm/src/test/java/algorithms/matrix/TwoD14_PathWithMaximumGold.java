@@ -1,4 +1,4 @@
-package algorithms.array.TwoDimensional;
+package algorithms.matrix;
 import org.testng.annotations.*;
 /*****
  * https://leetcode.com/problems/path-with-maximum-gold/

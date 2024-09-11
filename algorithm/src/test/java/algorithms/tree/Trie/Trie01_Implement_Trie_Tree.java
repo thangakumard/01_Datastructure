@@ -1,12 +1,12 @@
-package algorithms.tree;
+package algorithms.tree.Trie;
 
 import org.testng.annotations.Test;
 
-public class Tree37_Implement_Trie_Tree {
+public class Trie01_Implement_Trie_Tree {
 
     @Test
 	public void test() {
-    	Tree37_Implement_Trie_Tree tree = new Tree37_Implement_Trie_Tree();
+    	Trie01_Implement_Trie_Tree tree = new Trie01_Implement_Trie_Tree();
     	tree.insert("apple");
 //    	System.out.println("Apple :" + tree.search("apple"));
 //    	System.out.println("Act :" + tree.search("act"));
@@ -19,7 +19,7 @@ public class Tree37_Implement_Trie_Tree {
     TrieNode root;
     
     /** Initialize your data structure here. */
-    public Tree37_Implement_Trie_Tree() {
+    public Trie01_Implement_Trie_Tree() {
         root = new TrieNode();    
     }
     
