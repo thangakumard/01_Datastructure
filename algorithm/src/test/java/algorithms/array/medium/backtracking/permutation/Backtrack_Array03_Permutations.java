@@ -46,6 +46,10 @@ public class  Backtrack_Array03_Permutations {
 		return list;
 	}
 
+	/**
+	 * Time: O(N!)
+	 * Space: O(N)
+	 */
 	private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums) {
 		if (tempList.size() == nums.length) {
 			list.add(new ArrayList<>(tempList));

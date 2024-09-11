@@ -58,6 +58,9 @@ public List<String> letterCombinations(String digits) {
         return result;
     }
 
+    /**
+     * Time and Space: O(3^N ∗ 4^M)
+     */
     private void backtrack(List<String> result, String current, String[] input, int start){
         if(start == input.length){
             result.add(current);

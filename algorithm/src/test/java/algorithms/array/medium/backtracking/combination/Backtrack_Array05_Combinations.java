@@ -33,7 +33,10 @@ public class Backtrack_Array05_Combinations {
 		System.out.println(combine(4,2));
 		System.out.println(combine(4,3));
 	}
-	
+
+    /**
+     Time and Space : O(K∗(NChooseK))
+     */
 	public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(result,n,k,new ArrayList<>(),1);/** STARTS WITH 1 **/

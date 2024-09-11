@@ -30,8 +30,7 @@ import algorithms.tree.TreeNode;
  */
 public class BinaryTree24_PathSum_Maximum {
 
-int max_sum = Integer.MIN_VALUE;
-    
+
 @Test
 public void test(){
 		
@@ -52,6 +51,8 @@ public void test(){
 	
 	System.out.println("Max Path Count :" + maxPathSum(tree.root));
 }
+
+    int max_sum = Integer.MIN_VALUE;
 
     public int maxPathSum(TreeNode root) {
         max_gain(root);

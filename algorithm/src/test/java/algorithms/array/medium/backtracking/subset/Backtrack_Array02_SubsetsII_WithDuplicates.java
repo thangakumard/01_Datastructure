@@ -34,6 +34,9 @@ public class Backtrack_Array02_SubsetsII_WithDuplicates {
 		return list;
 	}
 
+	/**
+	 * Time: O(2 ^ N) Space: O(N)
+	 */
 	private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int start) {
 		list.add(new ArrayList<>(tempList));
 		for (int i = start; i < nums.length; i++) {

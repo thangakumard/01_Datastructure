@@ -57,7 +57,7 @@ public class BinaryTree25_RightView {
 	public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if(root == null) return result;
-        Queue<TreeNode> queueNode = new LinkedList<TreeNode>();
+        Queue<TreeNode> queueNode = new LinkedList<>();
         queueNode.add(root);
         
         while(!queueNode.isEmpty()){

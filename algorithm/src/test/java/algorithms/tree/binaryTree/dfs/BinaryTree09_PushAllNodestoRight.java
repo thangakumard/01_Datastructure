@@ -1,4 +1,4 @@
-package algorithms.tree.binaryTree.stack;
+package algorithms.tree.binaryTree.dfs;
 
 import algorithms.tree.BinaryTree;
 import algorithms.tree.TreeNode;
@@ -29,8 +29,7 @@ public class BinaryTree09_PushAllNodestoRight {
 		tree.root.left.left = new TreeNode(4);
 		tree.root.left.right = new TreeNode(5);
 		tree.root.left.right.right = new TreeNode(7);
-		
-		
+
 		flatten(tree.root);
 	}
 

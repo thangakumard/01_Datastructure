@@ -55,6 +55,10 @@ public class Backtrack_Array06_combination_sum {
 		return list;
 	}
 
+	/**
+	 Time: O(2 ^N)
+	 Space: O(N)
+	 */
 	private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
 		if (remain < 0)
 			return;

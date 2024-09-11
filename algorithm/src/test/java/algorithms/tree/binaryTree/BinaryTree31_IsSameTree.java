@@ -60,12 +60,12 @@ public class BinaryTree31_IsSameTree {
 	}
 
 	public boolean isSameTree(TreeNode p, TreeNode q) {
-
 		if (p == null && q == null)
 			return true;
-
 		if (p != null && q != null) {
-			return p.data == q.data && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+			return p.data == q.data
+					&& isSameTree(p.left, q.left)
+					&& isSameTree(p.right, q.right);
 		}
 		return false;
 

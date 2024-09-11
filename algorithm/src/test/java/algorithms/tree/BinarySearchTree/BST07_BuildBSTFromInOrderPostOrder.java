@@ -80,13 +80,13 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 		if (start > end)
 			return null;
 
-		TreeNode currentNode = new TreeNode(postorder[postIndex]);
+		TreeNode root = new TreeNode(postorder[postIndex]);
 		int inOrderIndex = inorderMap.get(postorder[postIndex]);
 		postIndex--;
 
-		currentNode.right = helper(postorder, inOrderIndex + 1, end);
-		currentNode.left = helper(postorder, start, inOrderIndex - 1);
-		return currentNode;
+		root.right = helper(postorder, inOrderIndex + 1, end);
+		root.left = helper(postorder, start, inOrderIndex - 1);
+		return root;
 	}
 
 }

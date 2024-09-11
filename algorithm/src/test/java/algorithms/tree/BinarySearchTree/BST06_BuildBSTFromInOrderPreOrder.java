@@ -47,12 +47,12 @@ public class BST06_BuildBSTFromInOrderPreOrder {
 		if(start > end)
 			return null;
 		
-		TreeNode currentNode = new TreeNode(preorder[preOrderIndex]);
+		TreeNode root = new TreeNode(preorder[preOrderIndex]);
 		int inOrderIndex = inOrderMap.get(preorder[preOrderIndex]);
 		preOrderIndex++;
-		currentNode.left = helper(preorder, start, inOrderIndex-1);
-		currentNode.right = helper(preorder, inOrderIndex+1, end);
+		root.left = helper(preorder, start, inOrderIndex-1);
+		root.right = helper(preorder, inOrderIndex+1, end);
 		
-		return currentNode;
+		return root;
 	}
 }
