@@ -33,7 +33,7 @@ import org.testng.annotations.Test;
  * an integer in [0, 65535].
  *
  */
-public class DFS01_floodFill {
+public class DFS02_floodFill {
 	
 	@Test
 	private void test() {

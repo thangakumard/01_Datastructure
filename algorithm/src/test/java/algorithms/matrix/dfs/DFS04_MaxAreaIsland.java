@@ -33,7 +33,7 @@ import org.testng.annotations.Test;
  * dimension in the given grid does not exceed 50.
  *
  */
-public class DFS03_MaxAreaIsland {
+public class DFS04_MaxAreaIsland {
 
 	@Test
 	private void test() {

@@ -95,8 +95,9 @@ public class CastingInt {
 
     @Test
     public void handleMaxIntValue(){
+
         System.out.println("Int MaxValue is " + Integer.MAX_VALUE);
         int i = 1000000000; //1 Billion
-        int j = 2000000000; //2 Billion
+        int j = 2000000000; //2 Billion (Max value : 2,147,483,647)
     }
 }

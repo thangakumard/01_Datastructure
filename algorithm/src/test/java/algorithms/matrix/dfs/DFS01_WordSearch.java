@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking;
+package algorithms.matrix.dfs;
 
 /***
  * https://leetcode.com/problems/word-search/
@@ -27,7 +27,7 @@ package algorithms.array.medium.backtracking;
  * m == board.length n = board[i].length 1 <= m, n <= 200 1 <= word.length <=
  * 103 board and word consists only of lowercase and uppercase English letters.
  */
-public class Backtrack_Array11_WordSearch {
+public class DFS01_WordSearch {
 
 	public boolean exist(char[][] board, String word) {
         

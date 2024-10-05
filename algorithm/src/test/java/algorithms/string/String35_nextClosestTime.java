@@ -33,8 +33,12 @@ import java.util.HashSet;
  * MM < 60
  *
  */
+/***
+ * Time Complexity O(1)
+ * Space Complexity O(1)
+ ***/
 
-public class String35_nextClosestTime {
+ public class String35_nextClosestTime {
 
 	public String nextClosestTime(String time) {
 

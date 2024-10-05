@@ -38,7 +38,6 @@ public class Subarray03_SubarrayCountSumOfK {
             }
             mapSum.put(sum_so_far, mapSum.getOrDefault(sum_so_far, 0)+1);
         }
-
         return count;
     }
 }

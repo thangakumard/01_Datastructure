@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.easy;
+package algorithms.singlyLinkedList.medium.merge;
 import org.testng.annotations.Test;
 
 import algorithms.singlyLinkedList.base.ListNode;
@@ -6,7 +6,6 @@ import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
 public class LList08_IntersectionOfTwoList {
 
-	
 	@Test
 	public void Test(){
 		
@@ -28,6 +27,10 @@ public class LList08_IntersectionOfTwoList {
 		System.out.println("INTERSECTION IS : " + getIntersectionNode_01(list1.head, list2.head).value);
 	}
 
+	/**
+	 * Time: O(N)
+	 * Space: O(1)
+	 */
 	public ListNode getIntersectionNode_01(ListNode headA, ListNode headB) {
 		ListNode pA = headA;
 		ListNode pB = headB;

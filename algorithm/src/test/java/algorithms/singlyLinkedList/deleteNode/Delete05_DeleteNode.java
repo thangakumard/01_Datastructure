@@ -45,7 +45,11 @@ import algorithms.singlyLinkedList.base.ListNode;
  * The value of each node in the list is unique.
  * The node to be deleted is in the list and is not a tail node.
  */
-public class Delete04_DeleteNode {
+public class Delete05_DeleteNode {
+    /**
+     * Time O(1)
+     * Space O(1)
+     */
     public void deleteNode(ListNode node) {
         node.value = node.next.value;
         node.next = node.next.next;

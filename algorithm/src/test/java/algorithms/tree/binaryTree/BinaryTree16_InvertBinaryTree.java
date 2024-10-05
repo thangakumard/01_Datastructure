@@ -34,7 +34,6 @@ public class BinaryTree16_InvertBinaryTree {
 		TreeNode temp = root.left;
 		root.left = invertTreeRecursive(root.right);
 		root.right = invertTreeRecursive(temp);
-		
 		return root;
 	}
 	

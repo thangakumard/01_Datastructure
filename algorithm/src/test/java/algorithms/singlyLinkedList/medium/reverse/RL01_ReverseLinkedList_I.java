@@ -5,6 +5,10 @@ import org.testng.annotations.Test;
 import algorithms.singlyLinkedList.base.ListNode;
 import algorithms.singlyLinkedList.base.SinglyLinkedList;
 
+/**
+ * https://leetcode.com/problems/reverse-linked-list/description/
+ *
+ */
 public class RL01_ReverseLinkedList_I {
 	
 	@Test
@@ -27,6 +31,10 @@ public class RL01_ReverseLinkedList_I {
         printList(list.head);		
 	}
 
+	/**
+	 * Time: O(n)
+	 * Space: O(1)
+	 */
 	public ListNode reverseList(ListNode head) {
 		//1->2->3->4->5
 		// currentNode = 1

@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
  *
  */
 
-public class DFS02_NumberOfIslands {
+public class DFS03_NumberOfIslands {
 
 	@Test
 	public void GetNumberOfIslands() {

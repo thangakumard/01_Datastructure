@@ -1,4 +1,4 @@
-package algorithms.singlyLinkedList.easy;
+package algorithms.singlyLinkedList.medium.merge;
 
 import org.testng.annotations.*;
 
@@ -38,14 +38,16 @@ public class LList02_Merge2SortedLinkedList {
 		System.out.println();
 	}
 
+	/**
+	 * Time: O(N + M)
+	 * Space: O(1)
+	 */
 	public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-		if(list1 == null)
-			return list2;
-		if(list2 == null)
-			return list1;
+		if(list1 == null) return list2;
+		if(list2 == null) return list1;
 
-		ListNode root = new ListNode(0);
-		ListNode currentNode = root;
+		ListNode sentinal = new ListNode(0);
+		ListNode currentNode = sentinal;
 
 		while(list1 != null && list2 != null){
 			if(list1.value < list2.value){
@@ -69,6 +71,6 @@ public class LList02_Merge2SortedLinkedList {
 			list2 = list2.next;
 			currentNode = currentNode.next;
 		}
-		return root.next;
+		return sentinal.next;
 	}
 }
