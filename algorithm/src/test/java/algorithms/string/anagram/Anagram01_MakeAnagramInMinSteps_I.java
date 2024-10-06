@@ -52,11 +52,10 @@ public class Anagram01_MakeAnagramInMinSteps_I {
 
 	public int minSteps(String s, String t) {
         int[] char_count = new int[26];
-        
         char[] first_input = s.toCharArray();
         char[] second_input = t.toCharArray();
         
-        HashMap<Integer, Integer> map = new HashMap<Integer,Integer>();
+        HashMap<Integer, Integer> map = new HashMap<>();
         
         for(int i=0; i < first_input.length; i++){
             char_count[first_input[i] - 'a']++;

@@ -34,6 +34,11 @@ public class Subarray01_Kadanes_MaxSumSubArray {
     public void Test(){
         Assertions.assertThat(maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4})).isEqualTo(6);
     }
+
+    /**
+     * Time O(N)
+     * Space O(N)
+     */
     public int maxSubArray(int[] nums) {
         // Initialize our variables using the first element.
         int currentSum = nums[0];

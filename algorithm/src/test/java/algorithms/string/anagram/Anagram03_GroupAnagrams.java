@@ -44,7 +44,7 @@ public class Anagram03_GroupAnagrams {
 	public List<List<String>> groupAnagrams(String[] strs) {
 
 		List<List<String>> result = new ArrayList<>();
-		HashMap<String, List<String>> map = new HashMap<String, List<String>>();
+		HashMap<String, List<String>> map = new HashMap<>();
 
 		for (String word : strs) {
 			char[] current = word.toCharArray();

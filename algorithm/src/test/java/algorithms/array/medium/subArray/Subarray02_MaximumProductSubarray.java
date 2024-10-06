@@ -46,8 +46,8 @@ public class Subarray02_MaximumProductSubarray {
 
     /**
      * Dynamic programming approach
-     * @param nums
-     * @return
+     * Time: O(N)
+     * Space: O(N)
      */
 	public int maxProduct(int[] nums) {
         if(nums == null || nums.length == 0) return 0;

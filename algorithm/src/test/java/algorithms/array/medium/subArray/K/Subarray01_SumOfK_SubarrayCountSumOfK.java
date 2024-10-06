@@ -1,4 +1,4 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.medium.subArray.K;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -20,16 +20,20 @@ import java.util.HashMap;
  * Input: nums = [1,2,3], k = 3
  * Output: 2
  */
-public class Subarray03_SubarrayCountSumOfK {
+public class Subarray01_SumOfK_SubarrayCountSumOfK {
 
     @Test
     public void Test(){
         Assertions.assertThat(subarraySum(new int[]{1,2,3}, 3)).isEqualTo(2);
     }
 
+    /**
+     * Time: O(N)
+     * Space: O(N)
+     **/
     public int subarraySum(int[] nums, int k) {
         int count = 0, sum_so_far = 0;
-        HashMap<Integer, Integer> mapSum = new HashMap<>();
+        HashMap<Integer, Integer> mapSum = new HashMap<>();//num is key and counter is value
         mapSum.put(0,1);
         for(int i: nums){
             sum_so_far += i;

@@ -43,15 +43,15 @@ public class Backtrack_Array05_Combinations {
         return result;
     }
     
-    private void backtrack(List<List<Integer>> result,int n, int k, List<Integer> current, int start){
-        if(current.size()  == k){
-            result.add(new ArrayList<>(current));
-        }
-        for(int i=start; i < n+1; i++){
-            if(current.contains(i)) continue;
-            current.add(i);
-            backtrack(result,n,k,current,i+1);
-            current.remove(current.size()-1);
+    private void backtrack(List<List<Integer>> result,int n, int k, List<Integer> tempList, int start){
+        if(tempList.size() == k){
+            result.add(new ArrayList<>(tempList));
+        }else{
+            for(int i=start; i <= n; i++){
+                tempList.add(i);
+                backtrack(result, n, k,tempList, i+1);
+                tempList.remove(tempList.size() -1);
+            }
         }
     }
 }

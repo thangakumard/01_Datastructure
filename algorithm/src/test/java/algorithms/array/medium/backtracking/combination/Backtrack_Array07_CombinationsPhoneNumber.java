@@ -59,7 +59,11 @@ public List<String> letterCombinations(String digits) {
     }
 
     /**
-     * Time and Space: O(3^N ∗ 4^M)
+     * Time : O((4 ^ N) * N) === O(4 ^ N)
+     * N is the length of digits.
+     * Note that 4 in this expression is referring to the maximum value length in the hash map
+     *
+     * Space: O(4 ^ N)
      */
     private void backtrack(List<String> result, String current, String[] input, int start){
         if(start == input.length){
