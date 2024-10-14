@@ -30,6 +30,5 @@ public class Array01_MoveAllZerosToLeft {
 	     A[write] = 0;
 	     write--;
 	   }
-
 	  }
 }
