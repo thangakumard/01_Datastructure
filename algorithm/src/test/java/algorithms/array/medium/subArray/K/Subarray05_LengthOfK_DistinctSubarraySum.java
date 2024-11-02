@@ -54,7 +54,8 @@ public class Subarray05_LengthOfK_DistinctSubarraySum {
     }
 
     /***
-     * Meta Interview Quest : Give the maximum sum of a contiguous subarray of size k in an array of size n.
+     * Meta Interview Quest : Give the maximum sum of a contiguous subarray of size k
+     * in an array of size n.
      */
     public long maximumSubarraySum_(int[] A, int k) {
         long maxSum = 0, sum = 0;

@@ -66,7 +66,8 @@ public class Array01_MergeInterval {
 	 */
 	
 	private int[][] mergeInterval(int[][] input){
-		Arrays.sort(input, (a,b) -> Integer.compare(a[0], b[0]));
+		//Arrays.sort(input, (a,b) -> Integer.compare(a[0], b[0]));
+		Arrays.sort(input, (a,b) -> a[0] - b[0]);
 		LinkedList<int[]> result = new LinkedList<>();
 		for(int[] interval: input) {
 			if(result.isEmpty() || result.getLast()[1] < interval[0]) {

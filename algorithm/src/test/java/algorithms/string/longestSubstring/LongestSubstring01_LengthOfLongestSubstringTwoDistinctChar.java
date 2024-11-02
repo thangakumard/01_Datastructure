@@ -64,6 +64,15 @@ public void lengthOfLongestSubstringTwoDistinct_test4(){
     String input = "abcdef";
     Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1(input)).isEqualTo(2);
 }
+
+    /***
+     * Time : O(N)
+     * Space: O(1) (Hashmap will hold at the max 3 distinct char O(3))
+     *
+     *  int[26] for Letters 'a' - 'z' or 'A' - 'Z'
+     * 	int[128] for ASCII
+     *  int[256] for Extended ASCII  ****** [IMPORTANT] *****
+     */
     public int lengthOfLongestSubstringKDistinct_slidingwindow1(String s) {
         int[] counter = new int[256];
 

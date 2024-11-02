@@ -21,7 +21,7 @@ import java.util.HashMap;
 public class Subarray04_DivisibleByK_SubarraySumWithDivisibleByK {
     public int subarraysDivByK(int[] nums, int k) {
         int prefixMod = 0;
-        HashMap<Integer, Integer> modSeen = new HashMap<>();// Mod is key. Counter is value
+        HashMap<Integer, Integer> modSeen = new HashMap<>();// prefixMod is key. Counter is value
         modSeen.put(0, 1);
         int counter =0;
 

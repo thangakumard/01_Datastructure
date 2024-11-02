@@ -23,6 +23,10 @@ import org.testng.annotations.Test;
  * 1 <= n <= 8
  *
  */
+/*
+ Time: O(2 ^ N)
+ Sapce: O(N)
+*/
 public class Backtrack_GenerateParantheses {
 
 	@Test
@@ -34,6 +38,12 @@ public class Backtrack_GenerateParantheses {
 		System.out.println("All combinations of balanced parentheses are: " + result);
 	}
 
+	/**
+	 *  Time: O(2 ^ N)
+	 *  Space: O(N)
+	 * @param num
+	 * @return
+	 */
 	public static List<String> generateValidParentheses(int num) {
 		List<String> result = new ArrayList<String>();
 		backtrack(result, "", 0, 0, num);

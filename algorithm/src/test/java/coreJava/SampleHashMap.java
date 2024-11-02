@@ -23,9 +23,9 @@ public class SampleHashMap {
 	
 	@Test
 	public void test(){
-		HashMap<Integer, Boolean> testmap = new HashMap<Integer,Boolean>();
-		HashMap<Object, String> mapData = new HashMap<Object,String>();
-        HashMap<Integer, String[]> input = new HashMap<Integer,String[]>();
+		HashMap<Integer, Boolean> testmap = new HashMap<>();
+		HashMap<Object, String> mapData = new HashMap<>();
+        HashMap<Integer, String[]> input = new HashMap<>();
         input.put(1, new String[]{"asdasd","dsfdgfg"});
 		/********* Insert a record *********/
 		mapData.put(1, "one");

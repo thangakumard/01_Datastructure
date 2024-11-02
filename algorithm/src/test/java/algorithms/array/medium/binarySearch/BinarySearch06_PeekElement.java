@@ -49,7 +49,7 @@ public class BinarySearch06_PeekElement {
 	                l = mid + 1;
 	        }
 	        return l; //NOT the value return the index
-	    }
+	 }
 	
 	private int Old_Solution(int[] input, int left, int right, int length)
 	{

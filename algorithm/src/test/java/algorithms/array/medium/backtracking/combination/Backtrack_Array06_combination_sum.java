@@ -43,9 +43,15 @@ public class Backtrack_Array06_combination_sum {
 
 	@Test
 	private void test() {
-		int[] input = { 2,3,6,7 };
-		System.out.println(combinationSum(input, 7));
-		String a = "";
+		int[] input = { 1,1,2,3,4};
+		//System.out.println(combinationSum(input, 7));
+		List<List<Integer>> result = combinationSum(input,5);
+		for(List<Integer> sets : result){
+			System.out.println("");
+			for(Integer x: sets){
+				System.out.print(x);
+			}
+		}
 	}
 	
 	public List<List<Integer>> combinationSum(int[] nums, int target) {

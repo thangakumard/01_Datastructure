@@ -12,7 +12,8 @@ public class BinarySearch01_SearchInRotatedSortedArray {
     }
 
     /*
-     * Time complexity O(n) Space complexity O(1)
+     * Time complexity O(n)
+     * Space complexity O(1)
      * Approach : Binary search
      */
     private int search(int[] input, int target) {

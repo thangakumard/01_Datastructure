@@ -1,4 +1,4 @@
-package algorithms.array;
+package algorithms.string.palindrome;
 import org.testng.annotations.Test;
 /*****
  	https://leetcode.com/problems/valid-palindrome/description/

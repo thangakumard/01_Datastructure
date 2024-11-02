@@ -29,6 +29,10 @@ package algorithms.matrix.dfs;
  */
 public class DFS01_WordSearch {
 
+    /**
+     * Time : (N * 4 ^ L) n is board size where L is length of the word
+     * Space: O(L)
+     */
 	public boolean exist(char[][] board, String word) {
         
         for (int row = 0; row < board.length; ++row){

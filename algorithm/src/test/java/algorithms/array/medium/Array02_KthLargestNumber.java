@@ -103,7 +103,7 @@ public class Array02_KthLargestNumber {
 	 * @return
 	 */
     public int findKthLargest_big_o_nlogK(int[] nums, int k) {
-        PriorityQueue<Integer> minQueue = new PriorityQueue<Integer>();
+        PriorityQueue<Integer> minQueue = new PriorityQueue<>();
         
         for(int i=0; i < nums.length; i++){
             minQueue.add(nums[i]);

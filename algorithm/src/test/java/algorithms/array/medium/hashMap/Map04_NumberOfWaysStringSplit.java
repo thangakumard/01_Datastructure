@@ -29,6 +29,11 @@ import java.util.HashMap;
  * 1 <= s.length <= 105
  * s consists of only lowercase English letters.
  */
+
+/**
+ * Time O(N)
+ * Space O(N)
+ */
 public class Map04_NumberOfWaysStringSplit {
     public int numSplits(String s) {
         HashMap<Character, Integer> set1 = new HashMap<>();

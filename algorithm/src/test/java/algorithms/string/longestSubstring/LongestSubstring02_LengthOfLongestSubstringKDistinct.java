@@ -42,6 +42,18 @@ public class LongestSubstring02_LengthOfLongestSubstringKDistinct {
 		Assertions.assertThat(lengthOfLongestSubstringKDistinct_slidingwindow1("abaccc",2)).isEqualTo(4);
 
 	  }
+
+	/**
+	 * Time: O(N)
+	 * Space: O(k)
+	 * We need to record the occurrence of each distinct character in the valid window.
+	 * During the iteration,there might be at most O(k+1) unique characters in the window,
+	 * which takes O(k) space.
+	 *
+	 *  int[26] for Letters 'a' - 'z' or 'A' - 'Z'
+	 * 	int[128] for ASCII
+	 *  int[256] for Extended ASCII  ****** [IMPORTANT] *****
+	 */
 	public int lengthOfLongestSubstringKDistinct_slidingwindow1(String s, int k) {
 		int[] counter = new int[256];
 

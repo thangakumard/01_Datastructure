@@ -26,7 +26,7 @@ public class Subarray02_SumOfK_maximumLengthSubArraySumOfK {
     public int maxSubArrayLen(int[] nums, int k) {
         int prefixSum = 0;
         int longestSubarray = 0;
-        HashMap<Integer, Integer> indices = new HashMap<>();//num is key and index is value
+        HashMap<Integer, Integer> indicesMap = new HashMap<>();//prefixSum is key and index is value
         for (int i = 0; i < nums.length; i++) {
             prefixSum += nums[i];
 
@@ -36,14 +36,14 @@ public class Subarray02_SumOfK_maximumLengthSubArraySumOfK {
             }
 
             // If any subarray seen so far sums to k, then update the length of the longest_subarray.
-            if (indices.containsKey(prefixSum - k)) {
-                longestSubarray = Math.max(longestSubarray, i - indices.get(prefixSum - k));
+            if (indicesMap.containsKey(prefixSum - k)) {
+                longestSubarray = Math.max(longestSubarray, i - indicesMap.get(prefixSum - k));
             }
 
             // Only add the current prefix_sum index pair to the
             // map if the prefix_sum is not already in the map.
-            if (!indices.containsKey(prefixSum)) {
-                indices.put(prefixSum, i);
+            if (!indicesMap.containsKey(prefixSum)) {
+                indicesMap.put(prefixSum, i);
             }
         }
 

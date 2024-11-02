@@ -33,6 +33,13 @@ public class Backtrack_Array07_palindrome_partitioning {
 		String input = "aaab";
 		System.out.println(partition(input));
 	}
+
+	/**
+	 * Time O(N * 2^ N)
+	 * Space O(N)
+	 * @param s
+	 * @return
+	 */
 	
 	public List<List<String>> partition(String s) {
 		List<List<String>> list = new ArrayList<>();
@@ -40,7 +47,8 @@ public class Backtrack_Array07_palindrome_partitioning {
 		return list;
 	}
 
-	public void backtrack(List<List<String>> list, List<String> tempList, String s, int start) {
+	public void backtrack(List<List<String>> list, List<String> tempList,
+						  String s, int start) {
 		if (start == s.length())
 			list.add(new ArrayList<>(tempList));
 		else {

@@ -12,9 +12,29 @@ public class regexSamples {
 
     @Test
     public void removeWhiteSpace(){
-        String regex = "\\s";
         String input = "apple apple         apple";
-        Assertions.assertThat(input.replaceAll(regex,"")).isEqualTo("appleappleapple");
+        String result = input.replaceAll("\\s","");
+        Assertions.assertThat(result).isEqualTo("appleappleapple");
+    }
+
+    @Test
+    public void String_RemoveSpecialChar() {
+        String inout = "I_ am@ a @$#$%$her(o";
+        String expected = "I am a hero";
+        //remove all the spacial char except space
+        String result = inout.replaceAll("[^a-zA-Z ]", "");
+        Assertions.assertThat(result).isEqualTo("I am a hero");
+    }
+
+    @Test
+    public void String_RemoveSpecialCharAllowSpace() {
+        String inout = "I_ am@ a @$#$%$            her(o";
+        String expected = "I am a hero";
+        //Step:1 remove all the spacial char except space
+        String withoutSpecialChars = inout.replaceAll("[^a-zA-Z0-9\\s]", "");
+        // Step 2: Replace multiple spaces with a single space
+        String result = withoutSpecialChars.replaceAll("\\s+", " ");
+        Assertions.assertThat(result).isEqualTo("I am a hero");
     }
 
     @Test
