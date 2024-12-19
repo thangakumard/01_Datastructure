@@ -31,7 +31,7 @@ public class Tree03_Traversal_PostOrderIterative {
 		tree.root.left.left = new TreeNode(4);
 		tree.root.left.right = new TreeNode(5);
 		postOrder_usingTwoStack(tree.root);
-		postOrder_usingSingleStack(tree.root);
+		//postOrder_usingSingleStack(tree.root);
 	}
 	
 	

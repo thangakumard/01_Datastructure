@@ -1,0 +1,21 @@
+** IMPORTANT ***
+ Java collections cannot directly store primitive types (like int, double, boolean, etc.).
+ Java collections work with objects, and primitive types are not objects.
+ Autoboxing will happen when primitive value is added to the collection object
+************
+
+* To store primitive values in collections,
+* you need to use their corresponding wrapper classes (e.g., Integer for int, Double for double, Boolean for boolean, etc.).
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(5); // Autoboxing: int 5 is automatically converted to Integer object
+        numbers.add(10);
+
+        System.out.println(numbers); // Output: [5, 10]
+    }
+}

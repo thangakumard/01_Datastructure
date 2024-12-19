@@ -29,8 +29,11 @@ public class BinaryTree03_LCA_LowestCommonAncestor_I {
 		TreeNode lca1 = LCAOfBinaryTree(tree.root, 5,10);		
 		System.out.println("LCAOfBinaryTree(tree.root, 5, 10) :" + lca1.data);
 	}
-	
-	
+
+	/**
+	 * Time: O(N)
+	 * Space: O(N)
+	 */
 	
 	private TreeNode LCAOfBinaryTree(TreeNode root, int x, int y){		
 		if(root == null)

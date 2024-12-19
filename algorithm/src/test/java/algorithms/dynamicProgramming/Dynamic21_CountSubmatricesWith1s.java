@@ -43,8 +43,11 @@ https://leetcode.com/problems/count-square-submatrices-with-all-ones/description
  */
 public class Dynamic21_CountSubmatricesWith1s {
 
-    /*
-   Solution :  https://leetcode.com/problems/count-square-submatrices-with-all-ones/solutions/441306/java-c-python-dp-solution/
+    /**
+     *
+        https://leetcode.com/problems/count-square-submatrices-with-all-ones/solutions/441306/java-c-python-dp-solution/
+        Time: O(row * col)
+        Space: O(1)
      */
     public int countSquares(int[][] matrix) {
         int result = 0;

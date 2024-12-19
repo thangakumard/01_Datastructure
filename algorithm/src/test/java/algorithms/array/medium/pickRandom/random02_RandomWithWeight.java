@@ -80,6 +80,10 @@ public class random02_RandomWithWeight {
         this.totalSum = sum;
     }
 
+    /**
+     * Time: O(N)
+     * Space: O(N)
+     */
     public int pickIndex() {
         double target = this.totalSum * Math.random();
 

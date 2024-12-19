@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 /*******
  * 
- * To display a HTML Content in webpage you may need to tirm the given valid HTML string to the required length M.
+ * To display HTML Content in webpage you may need to trim the given valid HTML string to the required length M.
  * Write an algorithm to trim the given HTML string to the required length M. 
  * Note: 
  * 	1. The given string is always valid

@@ -20,7 +20,34 @@ public class SampleHashSet {
 		ArrayList maintains the order of the object in which they are inserted 
 		while HashSet is an unordered collection and doesn’t maintain any order.
 		************************************/
-		
+
+		class User {
+			public int userId = 0;
+			public String userName = "";
+		}
+
+		User u1 = new User();
+		u1.userId = 1;
+		u1.userName = "user1";
+
+		User u2 = new User();
+		u2.userId = 2;
+		u2.userName = "user2";
+
+		User u3 = new User();
+		u1.userId = 1;
+		u1.userName = "user1";
+
+		HashSet<User> setUser = new HashSet<>();
+		setUser.add(u1);
+		setUser.add(u2);
+		setUser.add(u3);
+
+		//Hash Set handles unique value objects
+		for(User u : setUser){
+			System.out.println(u.userName);
+		}
+
 		//Method 1: add(E e)
 		HashSet<String> hset = new HashSet<String>();
 		 
@@ -176,7 +203,7 @@ public class SampleHashSet {
 		    
 		    /****** Array to Set ****/
 		    Integer[] arrNumbers = new Integer[] {10,10,20,20,30,30};
-		    HashSet<Integer> setNumArr= new HashSet<Integer>();
+		    HashSet<Integer> setNumArr= new HashSet<>();
 		    setNumArr.addAll(Arrays.asList(arrNumbers));
 	        
 	        Iterator nums1 = setNumArr.iterator();

@@ -39,21 +39,21 @@ public class Array01_ProductOfArrayExceptSelf {
 	 */
 	public int[] productExceptSelf(int[] nums) {
 		int[] result = new int[nums.length];
-		int[] L = new int[nums.length];
-		int[] R = new int[nums.length];
+		int[] LeftToRight = new int[nums.length];
+		int[] RightToLeft = new int[nums.length];
 
-		L[0] = 1;
+		LeftToRight[0] = 1;
 		for (int i = 1; i < nums.length; i++) {
-			L[i] = nums[i - 1] * L[i - 1];
+			LeftToRight[i] = nums[i - 1] * LeftToRight[i - 1];
 		}
 
-		R[nums.length - 1] = 1;
+		RightToLeft[nums.length - 1] = 1;
 		for (int i = nums.length - 2; i >= 0; i--) {
-			R[i] = nums[i + 1] * R[i + 1];
+			RightToLeft[i] = nums[i + 1] * RightToLeft[i + 1];
 		}
 
 		for (int i = 0; i < nums.length; i++) {
-			result[i] = L[i] * R[i];
+			result[i] = LeftToRight[i] * RightToLeft[i];
 		}
 
 		return result;

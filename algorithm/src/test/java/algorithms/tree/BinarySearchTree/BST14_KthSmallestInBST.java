@@ -76,7 +76,11 @@ public class BST14_KthSmallestInBST {
 		Assertions.assertThat(kthSmallest_02(tree.root, 1)).isEqualTo(20);
 
 	}
-	
+
+	/**
+	 * Time: O(H + K) H => Height of BST
+	 * Space: O(H)
+	 */
 	public int kthSmallest_02(TreeNode root, int k) {
 		if (root == null)
 			return -1;
@@ -108,8 +112,8 @@ public class BST14_KthSmallestInBST {
         if(node == null)
             return;
         inorder_Traversal(node.left,k, i);
-        
-        if(++i[0] == k)
+		i[0]++;
+        if(i[0] == k)
         {
             i[1] = node.data;
             return;

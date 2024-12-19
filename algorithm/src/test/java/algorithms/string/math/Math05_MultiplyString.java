@@ -39,6 +39,10 @@ public class Math05_MultiplyString {
 		Assertions.assertThat(multiply("123", "456")).isEqualTo("56088");
 	}
 
+	/**
+	 * Time: O(MN)
+	 * Space: O(M+N)
+	 */
 	public String multiply(String num1, String num2) {
 		if (num1.equals("0") || num2.equals("0"))
 			return "0";
@@ -48,9 +52,9 @@ public class Math05_MultiplyString {
 		for (int i = m - 1; i >= 0; i--) {
 			for (int j = n - 1; j >= 0; j--) {
 				int product = (num1.charAt(i) - '0') * (num2.charAt(j) - '0'); //81
-				int sum = result[i + j + 1] + product; //Get the existing value in the index + current value
+				int sum = result[i + j + 1] + product; //Carry + current value
 				result[i + j + 1] = sum % 10; // Assign the remainder to the current index
-				result[i + j] = result[i + j] + sum / 10; //Keep the Quotient in the previous index
+				result[i + j] = result[i + j] + sum / 10; //Carry => Keep the Quotient in the previous index
 			}
 		} 
 		StringBuilder sb = new StringBuilder();

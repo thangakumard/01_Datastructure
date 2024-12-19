@@ -39,7 +39,10 @@ public class Tree05_Traversal_VerticalOrderTraversal {
 			
 			System.out.println(verticalOrder_01(tree.root));
 	}
-	
+	/**
+	 * Time O(N)
+	 * Space O(N)
+	 */
 public List<List<Integer>> verticalTraversal(TreeNode root) {
         
         List<List<Integer>> result = new ArrayList<>();
@@ -80,8 +83,10 @@ public List<List<Integer>> verticalTraversal(TreeNode root) {
         
         return result;
 }
-	
-	
+
+	/**
+	 *
+	 */
 	public List<List<Integer>> verticalOrder_01(TreeNode root) {
 	        if (root == null) {
 	            return new ArrayList<>();

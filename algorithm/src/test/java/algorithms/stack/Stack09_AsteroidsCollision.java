@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.stack;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
@@ -35,7 +35,7 @@ import java.util.LinkedList;
  asteroids[i] != 0
  */
 
-public class Array44_AsteroidsCollision {
+public class Stack09_AsteroidsCollision {
     @Test
     public void arrangeTest(){
         int input[] = new int[]{5,10,-5};
@@ -47,15 +47,22 @@ public class Array44_AsteroidsCollision {
         input = new int[]{2,1,-1,-2,-1,1};
         Assertions.assertThat(asteroidCollision(input)).isEqualTo(new int[]{-1,1});
     }
+
+    /**
+     * Time: O(N)
+     * Space: O(N)
+     */
     public int[] asteroidCollision(int[] asteroids) {
 
         if(asteroids == null || asteroids.length == 0)
             return asteroids;
 
         LinkedList<Integer> asteroidStack = new LinkedList<>();
+        boolean addToStack = true;
+
 
         for(int i=0; i < asteroids.length; i++){
-            boolean add = true;
+            addToStack = true;
             while(!asteroidStack.isEmpty() &&
                     ((asteroids[i] < 0 && asteroidStack.peek() > 0))) {
                 if(Math.abs(asteroids[i]) == Math.abs(asteroidStack.peek()))
@@ -65,10 +72,10 @@ public class Array44_AsteroidsCollision {
                     asteroidStack.pop();
                     continue;
                 }
-                add = false;
+                addToStack = false;
                 break;
             }
-            if(add){
+            if(addToStack){
                 asteroidStack.push(asteroids[i]);
             }
         }

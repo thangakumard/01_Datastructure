@@ -41,6 +41,15 @@ public class Anagram03_GroupAnagrams {
 
 	}
 
+	/**
+	 * Time Complexity: O(NKlogK), where N is the length of strs,
+	 * 	and K is the maximum length of a string in strs.
+	 * 	The outer loop has complexity O(N) as we iterate through each string.
+	 * 	Then, we sort each string in O(KlogK) time.
+	 *
+	 * Space Complexity: O(NK), the total information content stored in ans.
+	 */
+
 	public List<List<String>> groupAnagrams(String[] strs) {
 
 		List<List<String>> result = new ArrayList<>();
