@@ -6,6 +6,10 @@ import org.testng.annotations.Test;
 
 import algorithms.tree.TreeNode;
 
+/**
+ * https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
+ */
+
 public class BST06_BuildBSTFromInOrderPreOrder {
 
 	@Test
@@ -30,6 +34,12 @@ public class BST06_BuildBSTFromInOrderPreOrder {
 	 * root.left will be all the elements left of the root index in the inorder array 
 	 * root.right will be all the elements right of the root index in the inorder array 
 	 * */
+
+	/**
+	 * HINT : Keep 2 global variables
+	 * 1. inorder in HashMap
+	 * 2. preorder index in a variable
+	 */
 	
 	HashMap<Integer,Integer> inOrderMap = new HashMap<>();
 	int preOrderIndex = 0;

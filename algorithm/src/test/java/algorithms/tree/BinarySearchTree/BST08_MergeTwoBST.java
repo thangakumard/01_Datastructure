@@ -59,6 +59,10 @@ public class BST08_MergeTwoBST {
 		inorderTraversal(root);
 	}
 
+	/**
+	 * Time: O(N)
+	 * Space: O(N)
+	 */
 	private TreeNode mergeTwoTrees(TreeNode t1, TreeNode t2) {
 		if (t1 == null)
 			return t2;

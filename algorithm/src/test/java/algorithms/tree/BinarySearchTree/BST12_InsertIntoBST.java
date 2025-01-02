@@ -41,14 +41,41 @@ It's guaranteed that val does not exist in the original BST.
  *
  */
 public class BST12_InsertIntoBST {
-	
-	public TreeNode insertIntoBST(TreeNode root, int val) {
+    /**
+     * Time : O(N)
+     * Space: O(N)
+     */
+	public TreeNode insertIntoBST_Recursion(TreeNode root, int val) {
         if(root == null) return new TreeNode(val);
         if(root.data < val)
-            root.right = insertIntoBST(root.right, val);
+            root.right = insertIntoBST_Recursion(root.right, val);
         else 
-            root.left = insertIntoBST(root.left, val);
+            root.left = insertIntoBST_Recursion(root.left, val);
         return root;
+    }
+
+    /**
+     * Time : O(N)
+     * Space: O(1)
+     */
+    public TreeNode insertIntoBST_Iteration(TreeNode root, int val) {
+        TreeNode node = root;
+        while (node != null) {
+            if(node.val > val){
+                if(node.left == null){
+                    node.left = new TreeNode(val);
+                    return root;
+                }
+                else node = node.left;
+            }else {
+                if(node.right == null){
+                    node.right = new TreeNode(val);
+                    return root;
+                }
+                else node = node.right;
+            }
+        }
+        return new TreeNode(val);
     }
 
 }
