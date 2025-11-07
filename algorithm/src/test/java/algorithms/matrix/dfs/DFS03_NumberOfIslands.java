@@ -46,6 +46,10 @@ public class DFS03_NumberOfIslands {
 		System.out.println(numIslands(grid));
 	}
 
+	/**
+	 * Time: O(M×N)
+	 * Space: O(min(M,N))
+	 */
 	public int numIslands(char[][] grid) {
 
 		int row = grid.length;

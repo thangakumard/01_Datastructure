@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /***
  * https://leetcode.com/problems/subarray-sum-equals-k/description/
@@ -35,24 +36,18 @@ public class SlidingWindow01_SubarraySumOfK {
         Assertions.assertThat(subarraySum(input,12)).isEqualTo(result);
     }
 
-    static ArrayList<Integer> subarraySum(int[] arr, int s)
-    {
-        ArrayList<Integer> result = new ArrayList<>();
-        int sumSoFar = 0,  left = 0, right = 0;
-
-        while(right < arr.length && left < arr.length){
-            sumSoFar += arr[right];
-            if(sumSoFar > s){
-                sumSoFar = sumSoFar - arr[left];
-                left ++;
+    public int subarraySum(int[] nums, int k) {
+        int sum_so_far = 0;
+        int counter = 0;
+        HashMap<Integer, Integer> mapSumCounter = new HashMap<>();
+        mapSumCounter.put(0, 1);
+        for(int num: nums){
+            sum_so_far += num;
+            if(mapSumCounter.containsKey(sum_so_far - k)){
+                counter += mapSumCounter.get(sum_so_far - k);
             }
-            if(sumSoFar == s) {
-                result.add(left + 1);
-                result.add(right + 1);
-                return result;
-            }
-            right++;
+            mapSumCounter.put(sum_so_far,mapSumCounter.getOrDefault(sum_so_far, 0)+1);
         }
-        return result;
+        return counter;
     }
 }

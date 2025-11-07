@@ -1,4 +1,4 @@
-package coreJava.collections;
+package coreJava.OOPS.Inheritance;
 
 abstract class Animal{
 	   //abstract method

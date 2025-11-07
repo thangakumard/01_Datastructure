@@ -32,6 +32,13 @@ public class Queue01_queue {
 
         //Remove element from queue
         String element1 = queue.poll();
+        /**
+         * remove() method retrieves and removes the head of this queue. This method differs from poll() only in that it throws an exception if this queue is empty.
+         * Returns:
+         * the head of this queue
+         * Throws:
+         * NoSuchElementException – if this queue is empty
+         */
         String element2 = queue.remove();
 
         //Remove all the elements from the queue
