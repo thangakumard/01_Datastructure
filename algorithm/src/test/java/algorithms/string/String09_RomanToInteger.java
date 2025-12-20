@@ -62,30 +62,26 @@ public class String09_RomanToInteger {
 	}
 	
 	private int RomanToNumber(String s){
-		HashMap<Character, Integer> roman = new HashMap<>();
-		roman.put('I',1);
-        roman.put('V',5);
-        roman.put('X',10);
-        roman.put('L',50);
-        roman.put('C',100);
-        roman.put('D',500);
-        roman.put('M',1000);
+		Map<Character, Integer> m = new HashMap<>();
         
-        int total =0, previousValue = 0, currentValue = 0;
-        char[] input = s.toCharArray();
-        for(int i = s.length()-1; i >=0; i--){ //** IMPORTANT TO START FROM THE LAST CHARACTER
-        	if(roman.containsKey(input[i])){
-        		currentValue = roman.get(input[i]);
-        		if(previousValue > currentValue){
-        			total -= currentValue;
-        		}
-        		else{
-        			total += currentValue;
-        		}
-        		previousValue = currentValue;
-        	}
+        m.put('I', 1);
+        m.put('V', 5);
+        m.put('X', 10);
+        m.put('L', 50);
+        m.put('C', 100);
+        m.put('D', 500);
+        m.put('M', 1000);
+        
+        int ans = 0;
+        
+        for (int i = 0; i < s.length(); i++) {
+            if (i < s.length() - 1 && m.get(s.charAt(i)) < m.get(s.charAt(i + 1))) { //Make sure to skip the last index
+                ans -= m.get(s.charAt(i));
+            } else {
+                ans += m.get(s.charAt(i));
+            }
         }
         
-        return total;
+        return ans;
 	}
 }
