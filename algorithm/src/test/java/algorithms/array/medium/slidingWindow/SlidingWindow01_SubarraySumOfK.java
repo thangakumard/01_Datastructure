@@ -39,7 +39,8 @@ public class SlidingWindow01_SubarraySumOfK {
     public int subarraySum(int[] nums, int k) {
         int sum_so_far = 0;
         int counter = 0;
-        HashMap<Integer, Integer> mapSumCounter = new HashMap<>();
+        HashMap<Integer, Integer> mapSumCounter = new HashMap<>(); 
+        //Key: prefix sum value, Value: count of occurrences of that prefix sum
         mapSumCounter.put(0, 1);
         for(int num: nums){
             sum_so_far += num;
