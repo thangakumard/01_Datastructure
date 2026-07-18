@@ -69,7 +69,7 @@ public class Hashset_01_favoriteCompanies {
 	}
 	
 	 private List<Integer> peopleIndexes(List<List<String>> favoriteCompanies) {
-	        List<Integer> result = new ArrayList<Integer>();
+	        List<Integer> result = new ArrayList<>();
 	        Set<String>[] setCompanies = new Set[favoriteCompanies.size()];
 	        for(int i=0; i < favoriteCompanies.size(); i++) {
 	        	setCompanies[i] = new HashSet<String>(favoriteCompanies.get(i));

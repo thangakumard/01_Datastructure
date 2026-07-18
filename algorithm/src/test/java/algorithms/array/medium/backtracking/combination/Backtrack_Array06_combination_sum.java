@@ -39,43 +39,63 @@ import org.testng.annotations.Test;
  * 1 <= candidates.length <= 30 1 <= candidates[i] <= 200 All elements of
  * candidates are distinct. 1 <= target <= 500
  */
+
+/***
+ * Time Complexity: O(N^(T/M))
+ *================
+ * N = number of candidates
+ * T = target value
+ * M = minimal value among candidates
+ * In the worst case, we explore all possible combinations where each element can be picked repeatedly up to T/M times
+ * The branching factor is N at each level, and tree depth is T/M
+ * Each leaf node requires O(combination length) to copy the result, but this is amortized
+ *
+ * Space Complexity: O(T/M)
+ *==================
+ * Recursion depth: At most T/M (when we pick the smallest candidate repeatedly)
+ * Current list: Stores at most T/M elements
+ * Result storage: Not counted in space complexity (it's the output)
+ */
 public class Backtrack_Array06_combination_sum {
 
 	@Test
 	private void test() {
-		int[] input = { 1,1,2,3,4};
+		int[] input = {1, 1, 2, 3, 4};
 		//System.out.println(combinationSum(input, 7));
-		List<List<Integer>> result = combinationSum(input,5);
-		for(List<Integer> sets : result){
+		List<List<Integer>> result = combinationSum(input, 5);
+		for (List<Integer> sets : result) {
 			System.out.println("");
-			for(Integer x: sets){
+			for (Integer x : sets) {
 				System.out.print(x);
 			}
 		}
 	}
-	
-	public List<List<Integer>> combinationSum(int[] nums, int target) {
-		List<List<Integer>> list = new ArrayList<>();
-		//Arrays.sort(nums); // NOT REQUIRED
-		backtrack(list, new ArrayList<>(), nums, target, 0);
-		return list;
+
+	public List<List<Integer>> combinationSum(int[] candidates, int target) {
+		List<List<Integer>> result = new ArrayList<>();
+		if (candidates == null || candidates.length == 0 || target < 0) return result;
+
+		Arrays.sort(candidates);
+		backtrack(candidates, target, 0, new ArrayList<>(), result);
+		return result;
 	}
 
-	/**
-	 Time: O(2 ^N)
-	 Space: O(N)
-	 */
-	private void backtrack(List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start) {
-		if (remain < 0)
+	private void backtrack(int[] candidates, int remain, int start,
+						   List<Integer> path, List<List<Integer>> result) {
+		if (remain == 0) {
+			result.add(new ArrayList<>(path));
 			return;
-		else if (remain == 0)
-			list.add(new ArrayList<>(tempList));
-		else {
-			for (int i = start; i < nums.length; i++) {
-				tempList.add(nums[i]);
-				backtrack(list, tempList, nums, remain - nums[i], i); // not i + 1 because we can reuse same elements
-				tempList.remove(tempList.size() - 1);
-			}
+		}
+
+		for (int i = start; i < candidates.length; i++) {
+			int val = candidates[i];
+
+			// Prune: since sorted, no need to continue if val > remain
+			if (val > remain) break;
+
+			path.add(val);
+			backtrack(candidates, remain - val, i, path, result); // i (reuse allowed)
+			path.remove(path.size() - 1);
 		}
 	}
 }

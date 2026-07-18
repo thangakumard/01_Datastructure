@@ -140,7 +140,7 @@ public class Casting {
 	@Test
 	public void ArrayListToArray() {
 		//Method 1
-		List<Integer> lstValues = new ArrayList<Integer>();
+		List<Integer> lstValues = new ArrayList<>();
 		lstValues.add(10);
 		lstValues.add(20);
 		lstValues.add(30);

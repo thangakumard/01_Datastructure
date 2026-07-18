@@ -97,7 +97,7 @@ public class SampleArray {
 
 		public void ArrayListToArray() 
 		{ 
-			List<Integer> al = new ArrayList<Integer>(); 
+			List<Integer> al = new ArrayList<>(); 
 			al.add(10); 
 			al.add(20); 
 			al.add(30); 

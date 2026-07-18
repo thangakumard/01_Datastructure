@@ -176,7 +176,7 @@ public class Bit05_FindNextSparseNumber {
 	    // Find binary representation of x and store it in bin.get(].  
 	    // bin.get(0] contains least significant bit (LSB), next  
 	    // bit is in bin.get(1], and so on.  
-	    ArrayList<Integer> bin = new ArrayList<Integer>();  
+	    ArrayList<Integer> bin = new ArrayList<>();  
 	    while (x != 0)  
 	    {  
 	        bin.add(x&1);  

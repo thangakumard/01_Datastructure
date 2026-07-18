@@ -61,6 +61,7 @@ public class CastingPractice {
 	    System.out.println("Integer round(-21.3): ");
 	    System.out.println("Integer round(-21.7): ");
 	      
+		int[][] input = {{}};
 
 	}
 	
@@ -110,7 +111,7 @@ public class CastingPractice {
 	@Test
 	public void ArrayListToArray() {
 		//Method 1
-		List<Integer> lstValues = new ArrayList<Integer>();
+		List<Integer> lstValues = new ArrayList<>();
 		lstValues.add(10);
 		lstValues.add(20);
 		lstValues.add(30);

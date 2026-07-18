@@ -20,7 +20,7 @@ public class List01_ArrayList {
 
   @Test
 	public void arrayListSample(){
-       List<Integer> list1 = new ArrayList<Integer>();
+       List<Integer> list1 = new ArrayList<>();
        //ADD
        list1.add(10);
        list1.add(20);
@@ -28,7 +28,7 @@ public class List01_ArrayList {
        list1.add(40);      
        
        //ADD ALL
-       List<Integer> list2 = new ArrayList<Integer>();
+       List<Integer> list2 = new ArrayList<>();
        list2.add(100);
        list2.add(200);
        list2.add(300);
@@ -37,7 +37,7 @@ public class List01_ArrayList {
        list1.addAll(list2);
        
        //ADD ALL -BY INDEX
-       List<Integer> list3 = new ArrayList<Integer>();
+       List<Integer> list3 = new ArrayList<>();
        list3.add(1000);
        list3.add(2000);
        list3.add(3000);
@@ -54,7 +54,7 @@ public class List01_ArrayList {
        list1.remove(list1.get(1)); // REMOVE BY OBJECT
        
        //REMOVE ALL
-       List<Integer> listToRemove = new ArrayList<Integer>();
+       List<Integer> listToRemove = new ArrayList<>();
        listToRemove.add(30);
        listToRemove.add(40);
        list1.remove(listToRemove);

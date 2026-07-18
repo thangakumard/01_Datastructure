@@ -29,7 +29,7 @@ n == citations.length
 1 <= n <= 5000
 0 <= citations[i] <= 1000
  */
-public class Counting05_hIndex {
+public class Counting06_hIndex {
   /**
   Space Complexity : O(n)
   Time Complexity: O(n)

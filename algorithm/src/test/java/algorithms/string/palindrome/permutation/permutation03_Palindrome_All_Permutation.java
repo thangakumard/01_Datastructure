@@ -26,34 +26,39 @@ public class permutation03_Palindrome_All_Permutation {
 	}
 
 	public List<String> generatePalindromes(String s) {
-		LinkedList<String> result = new LinkedList<>();
-		LinkedList<String> odd = new LinkedList<>();
-		int[] char_count = new int[256];
-		for (char c : s.toCharArray()) {
-			char_count[c]++;
+		List<String> result = new ArrayList<>();
+		if(s == null || s.length() == 0) return result;
+
+		int[] freq = new int[26];
+		List<Character> oddChar = new ArrayList<>();
+
+		for(char c: s.toCharArray()){
+			freq[c - 'a']++;
 		}
-		for (int i = 0; i < char_count.length; i++) {
-			if (char_count[i] % 2 != 0) {
-				odd.add((char) i + "");
+		for(int i=0; i < 26;i++){
+			if(freq[i] % 2!= 0){
+				oddChar.add((char) (i +'a'));
 			}
 		}
-		if (odd.size() > 1) // If more than one ODD occurrence of a character, we cannot build Palindrome
+		if(oddChar.size() > 1){
 			return result;
+		}
 
-		backtrack(result, char_count, odd.size() != 0 ? odd.getFirst() : "", s.length());
+		backTracking(result, freq, s, oddChar.size() == 1 ? oddChar.get(0) + "": "");
 		return result;
 	}
 
-	private void backtrack(List<String> r, int[] counts, String temp, int len) {
-		if (temp.length() == len) { // once string
-			r.add(temp);
-		} else {
-			for (int i = 0; i < counts.length; i++) {
-				if (counts[i] > 1) {
-					counts[i] -= 2;
-					backtrack(r, counts, ((char) i) + temp + ((char) i), len);
-					counts[i] += 2;
-				}
+	private void backTracking(List<String> result, int[] freq, String s, String temp){
+		if(temp.length() == s.length()){
+			result.add(temp);
+			return;
+		}
+
+		for(int i = 0; i < freq.length; i++){
+			if(freq[i] > 1){
+				freq[i] -= 2;
+				backTracking(result, freq, s, ((char) (i+'a') + temp + (char)(i+'a')));
+				freq[i] += 2;
 			}
 		}
 	}

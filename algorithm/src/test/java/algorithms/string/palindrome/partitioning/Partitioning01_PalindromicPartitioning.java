@@ -31,6 +31,19 @@ import org.testng.annotations.Test;
 	s contains only lowercase English letters.
 
  */
+
+/**
+ * Time: O(N × 2^N)
+ * At each position, we can make a cut or not → 2^(N-1) partitions
+ * For each partition, palindrome checks take O(N) in worst case
+ * Building output also takes O(N × 2^N)
+ *
+ *
+ * Space: O(N)
+ * Recursion depth: O(N)
+ * Current list size: O(N) at any time
+ * (Not counting output space)
+ */
 public class Partitioning01_PalindromicPartitioning {
 
 	@Test

@@ -33,47 +33,69 @@ public class Backtrack_Array07_CombinationsPhoneNumber {
 	private void test() {
 		System.out.println(letterCombinations("23"));
 	}
+/**
+    ------------
+    Time complexity:
+    ------------
+     Time complexity : O(4^N * N)
+     Why ? Each digit maps to at most 4 letters:
+     7 -> pqrs (4)
+    9 -> wxyz (4)
+    others -> 3. Worst case assume 4 each.
+    So, we have 4 ^ N Choices.
+    Backtracking inner for loop takes O(N). So Time complexity is O(4^N * N)
+    ------------
+    Space complexity:
+    ------------
+    O(4^N * N)  (output)
+    O(N)        (recursion stack)
 
+    Total → O(4^N * N)
+ */
 public List<String> letterCombinations(String digits) {
-        
         List<String> result = new ArrayList<>();
-        if(digits == null || digits.isEmpty() || digits.trim().isEmpty())
+
+        // Edge case: empty string
+        if (digits == null || digits.length() == 0) {
             return result;
-        HashMap<Integer, String> dial_map = new HashMap<>();
-        dial_map.put(2, "abc");
-        dial_map.put(3, "def");
-        dial_map.put(4, "ghi");
-        dial_map.put(5, "jkl");
-        dial_map.put(6, "mno");
-        dial_map.put(7, "pqrs");
-        dial_map.put(8, "tuv");
-        dial_map.put(9, "wxyz");
-        
-        String[] input = new String[digits.length()];
-        int i =0;
-        for(char number: digits.toCharArray()){
-             input[i++] = dial_map.get(Character.getNumericValue(number));
         }
-        backtrack(result, "", input, 0);
+
+        // Mapping of digits to letters
+        String[] mapping = {
+                "",     // 0
+                "",     // 1
+                "abc",  // 2
+                "def",  // 3
+                "ghi",  // 4
+                "jkl",  // 5
+                "mno",  // 6
+                "pqrs", // 7
+                "tuv",  // 8
+                "wxyz"  // 9
+        };
+
+        backtrack(digits, 0, new StringBuilder(), result, mapping);
         return result;
     }
 
-    /**
-     * Time : O((4 ^ N) * N) === O(4 ^ N)
-     * N is the length of digits.
-     * Note that 4 in this expression is referring to the maximum value length in the hash map
-     *
-     * Space: O(4 ^ N)
-     */
-    private void backtrack(List<String> result, String current, String[] input, int start){
-        if(start == input.length){
-            result.add(current);
+    private void backtrack(String digits, int index, StringBuilder current,
+                           List<String> result, String[] mapping) {
+        // Base case: processed all digits
+        if (index == digits.length()) {
+            result.add(current.toString());
             return;
         }
-        
-        String letters = input[start];
-        for(int i=0; i < letters.length(); i++){
-            backtrack(result, current + letters.charAt(i), input, start+1);
+
+        // Get the letters for current digit
+        char digit = digits.charAt(index);
+        String letters = mapping[digit - '0'];
+
+        // Try each letter for this digit
+        for (char letter : letters.toCharArray()) {
+            current.append(letter);
+            backtrack(digits, index + 1, current, result, mapping);
+            current.deleteCharAt(current.length() - 1); // Backtrack
         }
     }
+
 }

@@ -53,6 +53,21 @@ Constraints:
 Node.random is null or is pointing to some node in the linked list.
  *
  */
+
+/***
+ * Complexity Analysis
+ * Time Complexity: O(n)
+ *==================
+ * Pass 1: O(n) to create all node copies via linear traversal
+ * Pass 2: O(n) to wire up all pointers via linear traversal
+ * Total: O(n) + O(n) = O(n)
+ *
+ * Space Complexity: O(n)
+ *===================
+ * HashMap stores n entries (original → copied node mappings)
+ * Output linked list requires O(n) space for the copied nodes
+ * Excluding output, auxiliary space is O(n) for the hashmap
+ */
 public class LList19_copyRandomList {
 	
 	public class RandomNode{
@@ -71,12 +86,14 @@ public class LList19_copyRandomList {
         if(head == null) return null;
         HashMap<RandomNode , RandomNode> oldToNew = new HashMap<>();
 
+        // Pass 1: Create all node copies
         RandomNode current = head;
         while (current != null) {
             oldToNew.put(current, new RandomNode(current.val));
             current = current.next;
         }
 
+        // Pass 2: Wire up next and random pointers
         current = head;
         while (current != null) {
             oldToNew.get(current).next = oldToNew.get(current.next);

@@ -11,12 +11,11 @@ import java.util.*;
  * Given a string s , find the length of the longest substring t  that contains at most 2 distinct characters.
 
 	Example 1:
-	
 	Input: "eceba"
 	Output: 3
 	Explanation: t is "ece" which its length is 3.
+
 	Example 2:
-	
 	Input: "ccaabbb"
 	Output: 5
 	Explanation: t is "aabbb" which its length is 5.
@@ -99,26 +98,31 @@ public void lengthOfLongestSubstringTwoDistinct_test4(){
         return maxLength;
     }
     public int lengthOfLongestSubstringTwoDistinct_slidingwindow2(String s) {
-        
-        if(s.length() < 3) return s.length();
-        //Keep the character as Key and it's index
-        HashMap<Character, Integer> rightmostPositionCharMap = new HashMap<>();
-        int left=0, right = 0, max = 0, index_delete = -1;
-        
-       while(right < s.length()){
-           rightmostPositionCharMap.put(s.charAt(right), right);
-           right++;
 
-           if(rightmostPositionCharMap.size() == 3){
-               index_delete = Collections.min(rightmostPositionCharMap.values());
-               rightmostPositionCharMap.remove(s.charAt(index_delete));
-               left = index_delete + 1;
-           }
-           
-           max = Math.max( max, right - left);
-       }
-        
-        return max;
+        if (s == null || s.length() == 0) return 0;
+
+        Map<Character, Integer> charCount = new HashMap<>();
+        int left = 0;
+        int maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char c = s.charAt(right);
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+
+            // Shrink window while we have more than 2 distinct characters
+            while (charCount.size() > 2) {
+                char leftChar = s.charAt(left);
+                charCount.put(leftChar, charCount.get(leftChar) - 1);
+                if (charCount.get(leftChar) == 0) {
+                    charCount.remove(leftChar);
+                }
+                left++;
+            }
+
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
         
     }
 }

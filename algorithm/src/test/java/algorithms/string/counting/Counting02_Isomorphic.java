@@ -90,11 +90,11 @@ public class Counting02_Isomorphic {
 
             if(map.containsKey(c1))
             {
-                if(map.get(c1) != c2)
+                if(map.get(c1) != c2) //c1 was already mapped with different char
                     return false;
             }
             else{
-                if(map.containsValue(c2))
+                if(map.containsValue(c2)) //different key already has this char
                     return false;
 
                 map.put(c1, c2);

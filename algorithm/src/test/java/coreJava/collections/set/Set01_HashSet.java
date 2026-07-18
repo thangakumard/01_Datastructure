@@ -1,6 +1,7 @@
 package coreJava.collections.set;
 
 import java.util.HashSet;
+import java.util.Set;
 
 import org.testng.annotations.Test;
 
@@ -51,7 +52,7 @@ public class Set01_HashSet {
 
 	@Test
 	public void hasSetSample() {
-		HashSet<Object> hashSet = new HashSet<>();
+		Set<Integer> hashSet = new HashSet<>();
 		hashSet.add(45);
 	      hashSet.add(15);
 	      hashSet.add(99);

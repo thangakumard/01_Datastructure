@@ -21,6 +21,18 @@ public class permutation01_canPermutePalindrome {
 	 * Time complexity O(n) Space complexity O(1)
 	 */
 
+	/***
+	 * TimeO(n)
+	 * 		We iterate through the string once to count frequencies,
+	 * 		then iterate through the frequency map (at most O(1) if character set is fixed like 26 lowercase letters, or O(k)
+	 * 		where k is unique characters).
+	 * 		Total is O(n + k), which simplifies to O(n) for practical purposes.
+	 * SpaceO(1) or O(k)
+	 * 		If restricted to lowercase English letters: O(26) = O(1).
+	 * 		For arbitrary character sets: O(k) where k is the number of unique characters (worst case O(n) if all characters are distinct).
+	 * @param s
+	 * @return
+	 */
 	public boolean canPermutePalindrome_counter(String s) {
 
 		int[] counter = new int[26];

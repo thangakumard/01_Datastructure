@@ -4,6 +4,23 @@ import java.util.*;
 
 /***
  * https://leetcode.com/problems/network-delay-time
+ *
+ * Complexity
+ * ===========
+ * Time Complexity: O((V + E) log V) where V = n (nodes) and E = times.length (edges)
+ *================
+ * Each node is inserted into the heap at most once per edge update: O(E) insertions
+ * Each heap operation (push/pop) is O(log V)
+ * Edge relaxation: O(E) total
+ * Overall: O(E log V) for heap operations + O(V) for initialization = O((V + E) log V)
+ * In this problem: O((n + 6000) log n) ≈ O(6000 log 100)
+ *
+ * Space Complexity: O(V + E)
+ *=================
+ * graph adjacency list: O(V + E) — V nodes + E edges
+ * dist array: O(V)
+ * Priority queue: O(E) — worst case all edges are in queue
+ * Total: O(V + E) or O(n + 6000)
  */
 public class Dijkstra03_networkDelayTime {
     public int networkDelayTime(int[][] times, int N, int K) {

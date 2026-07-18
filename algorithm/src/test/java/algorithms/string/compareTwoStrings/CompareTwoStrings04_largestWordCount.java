@@ -4,6 +4,16 @@ import java.util.HashMap;
 
 /**
  * https://leetcode.com/problems/sender-with-largest-word-count/
+ *
+ * Time Complexity: O(n·m)
+ * ================
+ * n: number of messages
+ * m: average length of each message (in characters)
+ *
+ * Space Complexity: O(s + m)
+ *================
+ * s: number of unique senders (HashMap size)
+ * m: size of the words array from a single split operation (reused per iteration)
  */
 public class CompareTwoStrings04_largestWordCount {
     public String largestWordCount(String[] messages, String[] senders) {

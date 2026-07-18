@@ -184,7 +184,7 @@ public class SampleHashSet {
 	        Collections.sort(list);
 	     
 	        /****** ArrayList to Set ****/
-	        List<Integer> lstNumbers = new ArrayList<Integer>();
+	        List<Integer> lstNumbers = new ArrayList<>();
 	        lstNumbers.add(10);
 	        lstNumbers.add(20);
 	        lstNumbers.add(40);

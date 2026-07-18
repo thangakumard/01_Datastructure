@@ -32,7 +32,7 @@ public class Bit12_AddBinary {
 		Assert.assertEquals(BestApproach(a, b), "11");
 		int[] A = {1,2,3};
 		int k = 10;
-		 List<Integer> result = new ArrayList<Integer>();
+		 List<Integer> result = new ArrayList<>();
 	        for(int i=A.length-1; i> -1; i--){
 	            result.add((A[i]+k) % 10);
 	            k = (A[i]+k) / 10;

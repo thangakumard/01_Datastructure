@@ -30,6 +30,12 @@ import java.util.List;
  * first and second consist of lowercase English letters.
  * text will not have any leading or trailing spaces.
  */
+
+/***
+ * Time complexity : O(n)
+ * Space Complexity: O(k)
+ *  list: O(k) where k is the number of matching occurrences
+ */
 public class CompareTwoStrings02_findOcurrences {
     public String[] findOcurrences(String text, String first, String second) {
 

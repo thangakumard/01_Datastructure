@@ -10,7 +10,7 @@ import algorithms.singlyLinkedList.base.ListNode;
  * ******* Why is ArrayDeque better than LinkedList ??? **********
  * https://stackoverflow.com/questions/6163166/why-is-arraydeque-better-than-linkedlist
  */
-public class List01_ArrayDeque {
+public class deque01_ArrayDeque {
 
 	/**
 	 https://www.baeldung.com/java-array-deque

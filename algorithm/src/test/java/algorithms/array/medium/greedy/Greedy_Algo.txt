@@ -1,0 +1,18 @@
+What is Greedy Algorithms ?
+
+A Greedy Algorithm builds a solution step-by-step, always making the locally optimal choice at each step with the hope that these local choices lead to a globally optimal solution. It never reconsiders a choice once made — no backtracking, no looking ahead.
+The core idea: pick the best option available right now, and move on.
+
+When to use Greedy:
+You should reach for a greedy approach when the problem has two key properties:
+Greedy Choice Property — a globally optimal solution can be built by making locally optimal (greedy) choices at each step. Choosing the "best now" doesn't block the best overall answer.
+Optimal Substructure — an optimal solution to the problem contains optimal solutions to its subproblems (shared with Dynamic Programming, but greedy is simpler when it applies).
+Common problem patterns that signal greedy:
+
+Interval scheduling / activity selection
+Minimum spanning trees (Kruskal's, Prim's)
+Shortest paths (Dijkstra's)
+Huffman encoding / data compression
+Fractional Knapsack
+Jump Game (LeetCode 55)
+Task scheduling by deadline

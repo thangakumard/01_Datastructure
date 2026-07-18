@@ -23,7 +23,7 @@ public class Array60_AddToArray {
 	
 	public List<Integer> addToArrayForm(int[] A, int K) {
 	     
-        List<Integer> result = new ArrayList<Integer>();
+        List<Integer> result = new ArrayList<>();
         for(int i=A.length-1; i> -1; i--){
             result.add((A[i]+K)%10);
             K = (A[i]+K) / 10;

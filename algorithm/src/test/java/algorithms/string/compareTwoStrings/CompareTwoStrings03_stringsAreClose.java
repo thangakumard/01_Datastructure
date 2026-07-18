@@ -55,6 +55,10 @@ public class CompareTwoStrings03_stringsAreClose {
 	 * 1. Both strings should have common Alphabets . It's count may differ
 	 * 2. The pattern of number of times a character appears should match
 	 */
+	/**
+	 * Time Complexity : O(n)
+	 * Space Complexity: O(1)
+	 */
 
 	public boolean isCloseString(String word1, String word2) {
 
