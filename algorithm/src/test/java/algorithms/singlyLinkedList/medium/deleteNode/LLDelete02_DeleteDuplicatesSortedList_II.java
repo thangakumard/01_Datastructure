@@ -20,24 +20,39 @@ import algorithms.singlyLinkedList.base.ListNode;
  * -100 <= Node.val <= 100
  * The list is guaranteed to be sorted in ascending order.
  */
+
+/**
+ * Time Complexity: O(n)
+ * ===============
+ * Single pass through the linked list
+ * Each node is visited at most once
+ * n is the number of nodes
+ *
+ * Space Complexity: O(1)
+ * ================
+ * Only using constant extra space for pointers (dummy, prev, curr)
+ * Not counting the output list
+ */
 public class LLDelete02_DeleteDuplicatesSortedList_II {
     public ListNode deleteDuplicates(ListNode head) {
-        ListNode sentinal = new ListNode(0);
-        sentinal.next = head;
-        ListNode prev = sentinal;
+        ListNode sentinel = new ListNode(0);
+        ListNode fast = head;
+        ListNode slow = sentinel;
+        slow.next = fast;
 
-        while(head != null){
-            if(head.next != null && head.value == head.next.value){
-                while (head.next != null && head.value == head.next.value) {
-                    head = head.next;
-                }
-                prev.next = head.next;
-            }else{
-                prev = prev.next;
+        while(fast != null){
+            while(fast.next != null && fast.val == fast.next.val){
+                fast = fast.next;
             }
-            head = head.next;
-        }
+            if(slow.next != fast){
+                slow.next = fast.next;
+                fast = slow.next;
+            }else{
+                slow = slow.next;
+                fast = fast.next;
+            }
 
-        return sentinal.next;
+        }
+        return sentinel.next;
     }
 }

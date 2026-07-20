@@ -44,28 +44,41 @@ import java.util.Stack;
  * At most 3 * 104 calls will be made to push, pop, top, and getMin.
  */
 public class Stack06_MinStack {
-    Stack<int[]> stack = new Stack<>();
+        private Stack<Integer> stack;      // Main stack
+        private Stack<Integer> minStack;   // Auxiliary stack tracking minimums
 
-    public Stack06_MinStack() {}
-
-    public void push(int val) {
-        if(stack.isEmpty()){
-            stack.push(new int[] {val ,val});
-            return;
+        public MinStack() {
+            stack = new Stack<>();
+            minStack = new Stack<>();
         }
-        int currentMin = stack.peek()[1];
-        stack.push(new int[] {val, Math.min(val, currentMin)});
-    }
 
-    public void pop() {
-        stack.pop();
-    }
+        // Time: O(1) | Space: O(1) amortized
+        public void push(int val) {
+            stack.push(val);
 
-    public int top() {
-        return stack.peek()[0];
-    }
+            // Push to minStack only if it's the new minimum
+            // Use <= to handle duplicates correctly during pop
+            if (minStack.isEmpty() || val <= minStack.peek()) {
+                minStack.push(val);
+            }
+        }
 
-    public int getMin() {
-        return stack.peek()[1];
-    }
+        // Time: O(1) | Space: O(1)
+        public void pop() {
+            // If top of main stack equals top of min stack, pop from both
+            if (stack.peek().equals(minStack.peek())) {
+                minStack.pop();
+            }
+            stack.pop();
+        }
+
+        // Time: O(1) | Space: O(1)
+        public int top() {
+            return stack.peek();
+        }
+
+        // Time: O(1) | Space: O(1)
+        public int getMin() {
+            return minStack.peek();
+        }
 }

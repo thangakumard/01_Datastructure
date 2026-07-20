@@ -69,8 +69,12 @@ public class String32_simplifyPath {
 		 5. Create a stringbuilder and append all the values in stack split by /
 		 6. If stringbuilder is empty return / alse return the stringbuilder as String
 		 */
+	/**
+	 * Time Complexity: O(N)
+	 * Space Complexity: O(N)
+	 */
 	    public String simplifyPath(String path) {
-
+			Stack<int> intstack = new Stack<>();
 	        // Initialize a stack
 	        Stack<String> stack = new Stack<>();
 	        String[] components = path.split("/");

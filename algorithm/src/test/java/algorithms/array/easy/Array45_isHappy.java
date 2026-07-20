@@ -35,14 +35,21 @@ public class Array45_isHappy {
      * @return
      */
 
+    /***
+     * Time complexity for both the approach
+     * O(log n)
+     * Space Complexity
+     * O(1)
+     */
+    //Approach 1
     public boolean isHappy(int n) {
         while(n != 1 && n != 4){
             n = getNext(n);
         }
-
         return n == 1;
     }
 
+    //Approach 2
     public boolean isHappy_approach_02(int n) {
         int slow = n;
         int fast = n;
