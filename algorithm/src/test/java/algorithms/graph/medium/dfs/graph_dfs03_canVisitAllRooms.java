@@ -56,25 +56,31 @@ Complexity:
 Time: O(N + K) where N = number of rooms, K = total number of keys
 Space: O(N) for the visited set and stack
  */
+
+/**
+ * Time : O(Rooms + Keys)
+ * Space : O(Rooms)
+ */
 public class graph_dfs03_canVisitAllRooms {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-        Stack<Integer> roomsStack = new Stack<>();
-        roomsStack.add(0);
+        int n= rooms.size();
+        int visitedRooms = 1;
+        boolean[] visited = new boolean[n];
+        Deque<Integer> stack = new ArrayDeque<>();
+        stack.push(0);
+        visited[0] = true;
 
-        HashSet<Integer> visited = new HashSet<Integer>();
-
-        while(!roomsStack.isEmpty()){
-            int room = roomsStack.pop();
-            if (visited.contains(room)){
-                continue;
-            }
-            visited.add(room);
-            for(int key: rooms.get(room)){
-                if(!visited.contains(key)){
-                    roomsStack.add(key);
+        while(!stack.isEmpty()){
+            int room = stack.pop();
+            List<Integer> keys = rooms.get(room);
+            for(int key: keys){
+                if(!visited[key]){
+                    visited[key] = true;
+                    visitedRooms++;
+                    stack.push(key);
                 }
             }
         }
-        return visited.size() == rooms.size();
+        return visitedRooms == n;
     }
 }

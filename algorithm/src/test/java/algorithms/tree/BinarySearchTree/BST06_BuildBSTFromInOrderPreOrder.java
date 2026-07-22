@@ -40,7 +40,24 @@ public class BST06_BuildBSTFromInOrderPreOrder {
 	 * 1. inorder in HashMap
 	 * 2. preorder index in a variable
 	 */
-	
+	/**
+	 * Time Complexity: O(n)
+	 *================
+	 * Why: Each node is created exactly once, and HashMap lookup is O(1)
+	 * We iterate through preorder array once (n elements), and each preorder element corresponds to exactly one node creation
+	 * The HashMap ensures finding root positions in inorder is O(1), not O(n) per lookup
+	 *
+	 * Space Complexity: O(n)
+	 *=================
+	 * HashMap storage: O(n) for storing all inorder values and their indices
+	 * Recursion call stack: O(h) where h is tree height
+	 *
+	 * Best case (balanced tree): O(log n)
+	 * Worst case (skewed tree): O(n)
+	 *
+	 *
+	 * Total: O(n) for HashMap + O(h) for recursion stack = O(n)
+	 */
 	HashMap<Integer,Integer> inOrderMap = new HashMap<>();
 	int preOrderIndex = 0;
 	

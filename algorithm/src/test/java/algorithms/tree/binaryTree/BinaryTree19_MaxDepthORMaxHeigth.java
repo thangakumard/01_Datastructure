@@ -38,6 +38,17 @@ public class BinaryTree19_MaxDepthORMaxHeigth {
 		System.out.println(maxDepth(tree.root));
 	}
 
+	/***
+	 * Time complexity:
+	 * ================
+	 * O(N), where N is the number of nodes.
+	 * Space complexity:
+	 * =================
+	 * Worst case: O(N) => For completely unbalanced, e.g. each node has only left child node,
+	 * Best Case: O(log N) => For completely balanced Tree
+	 * @param root
+	 * @return
+	 */
 	public int maxDepth(TreeNode root) {
 		if (root == null)
 			return 0;

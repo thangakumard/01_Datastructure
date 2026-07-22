@@ -32,8 +32,10 @@ package algorithms.graph.medium.dfs;
  * isConnected[i][i] == 1
  * isConnected[i][j] == isConnected[j][i]
  *========================
- * 
- * DFS  Time:O(n²)   Space:O(n) — recursion stack
+ * DFS
+ * ===
+ * Time:O(n²)
+ * Space:O(n) — recursion stack
  */
 public class graph_dfs04_findCircleNum {
     public int findCircleNum(int[][] isConnected) {

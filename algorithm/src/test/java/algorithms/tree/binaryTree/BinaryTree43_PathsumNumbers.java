@@ -11,7 +11,12 @@ import java.util.Stack;
 public class BinaryTree43_PathsumNumbers {
      private int totalSum = 0;
 
-
+        /**
+         * Time: O(n) — each node is visited exactly once.
+         * Space: O(h) — recursion stack, where h is the height of the tree.
+         * Balanced tree: O(log n)
+         * Skewed tree: O(n)
+         */
         public int solution1_recursive(TreeNode root) {
             if(root == null) return 0;
             getPathNumber(root, 0);

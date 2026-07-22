@@ -10,6 +10,15 @@ public class BinaryTree06_AverageLevelsBinaryTree {
 	 * https://leetcode.com/problems/average-of-levels-in-binary-tree/
 	 */
 
+	/***
+	 * Time: O(n) Each node is enqueued and dequeued exactly once
+	 * Space: O(w) Where w is the max width of the tree (widest level);
+	 * queue never holds more than one level at a time.
+	 * Worst case (perfect tree) w ≈ n/2, so O(n)
+	 * @param root
+	 * @return
+	 */
+
 	public List<Double> averageOfLevels(TreeNode root) {
 
 		if (root == null)

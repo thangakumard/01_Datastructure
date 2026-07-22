@@ -24,9 +24,11 @@ public class BinaryTree16_InvertBinaryTree {
 		printInorder(invertTreeIterative(t1.root));
 	}
 	
-	/*
+	/**
+	 *  Recursive DFS
+	 *  =============
 	 * Time complexity O(n)
-	 * Space complexity O(n)
+	 * Space complexity => Recursive DFS: O(h) where h = height of tree
 	 */
 	private TreeNode invertTreeRecursive(TreeNode root){
 		if(root == null)
@@ -37,9 +39,11 @@ public class BinaryTree16_InvertBinaryTree {
 		return root;
 	}
 	
-	/*
-	 * Time complexity O(n)
-	 * Space complexity O(n)
+	/**
+	 * Iterative BFS
+	 * ==============
+	 * Time complexity: O(n)
+	 * Space complexity: O(w) where w = maximum width of tree
 	 */
 	private TreeNode invertTreeIterative(TreeNode root) {
         if(root == null)

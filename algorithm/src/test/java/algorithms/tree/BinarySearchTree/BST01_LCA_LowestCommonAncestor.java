@@ -81,7 +81,11 @@ public class BST01_LCA_LowestCommonAncestor {
 		System.out.print(TreeNode.data +" ");
 		inOrderTraversal(TreeNode.right);
 	}
-	
+
+	/**
+	 * Time: O(n) — every node is visited at most once in the worst case (e.g., p/q are deep leaves or the tree is skewed such that you can't prune early).
+	 * Space: O(h) — where h is the height of the tree, due to the recursion call stack. Worst case O(n) for a skewed tree, O(log n) for a balanced tree.
+	 */
 	TreeNode lcAOfTreeNodes(TreeNode root,int n1, int n2){
 		
 		if(root == null)

@@ -42,47 +42,97 @@ All the pairs prerequisites[i] are unique.
  *      Graph adjacency list: O(V + E).
  *      In-degree array: O(V). Queue: O(V) in worst case. Total: O(V + E).
  */
+
+/***
+ * Kahn's algorithm finds a topological order of a directed acyclic graph (DAG)
+ *  — an ordering of nodes where every edge u→v has u appearing before v.
+ *      It's the BFS-based approach to topological sorting (the alternative being DFS + reverse postorder).
+ * The core idea
+ *==============
+ * Compute the in-degree (number of incoming edges) for every node.
+ * Push all nodes with in-degree 0 into a queue — these have no prerequisites, so they can go first.
+ * Repeatedly pop a node from the queue, add it to the result, and "remove" its outgoing edges by decrementing the in-degree of each neighbor.
+ * Whenever a neighbor's in-degree hits 0, push it into the queue.
+ * If the result contains all nodes → valid topological order. If it contains fewer nodes than the graph → there's a cycle (this is Kahn's built-in cycle detector).
+ */
 public class canFinishCourse {
+    public class Main {
+        public static void main(String[] args) {
+            Solution sol = new Solution();
+
+            // Test 1: simple valid case, 1 -> 0
+            int numCourses1 = 2;
+            int[][] prereq1 = {{1, 0}};
+            System.out.println("Test 1 (expect true): " + sol.canFinish(numCourses1, prereq1));
+
+            // Test 2: cycle 0 -> 1 -> 0
+            int numCourses2 = 2;
+            int[][] prereq2 = {{1, 0}, {0, 1}};
+            System.out.println("Test 2 (expect false): " + sol.canFinish(numCourses2, prereq2));
+
+            // Test 3: no prerequisites at all
+            int numCourses3 = 3;
+            int[][] prereq3 = {};
+            System.out.println("Test 3 (expect true): " + sol.canFinish(numCourses3, prereq3));
+
+            // Test 4: larger valid chain 0<-1<-2<-3
+            int numCourses4 = 4;
+            int[][] prereq4 = {{1, 0}, {2, 1}, {3, 2}};
+            System.out.println("Test 4 (expect true): " + sol.canFinish(numCourses4, prereq4));
+
+            // Test 5: larger cycle 0->1->2->0
+            int numCourses5 = 3;
+            int[][] prereq5 = {{1, 0}, {2, 1}, {0, 2}};
+            System.out.println("Test 5 (expect false): " + sol.canFinish(numCourses5, prereq5));
+
+            // Test 6: disconnected components, one with a cycle
+            int numCourses6 = 5;
+            int[][] prereq6 = {{1, 0}, {3, 2}, {2, 3}}; // 0-1 fine, 2-3 cycle
+            System.out.println("Test 6 (expect false): " + sol.canFinish(numCourses6, prereq6));
+        }
+    }
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        if(numCourses == 0) return true;
         List<List<Integer>> graph = new ArrayList<>();
         int[] inDegree = new int[numCourses];
-        int processedCount = 0;
+        int totalCompletedCourses = 0;
 
-        //build an empty graph
-        for (int i = 0; i < numCourses; i++) {
+        //1.Build an empty graph
+        for(int i=0; i < numCourses; i++){
             graph.add(new ArrayList<>());
         }
 
-        //Complete the graph with and count inDegree
-        for (int[] prereq : prerequisites) {
-            int course = prereq[0];
-            int prereqCourse = prereq[1];
-            graph.get(prereqCourse).add(course);
+        //2.Fill the graph and inDegree
+        for(int i=0; i < prerequisites.length; i++){
+            int course = prerequisites[i][1];
+            int prerequestCourse = prerequisites[i][0];
+
+            graph.get(prerequestCourse).add(course);
             inDegree[course]++;
         }
 
+        //3.Build Queue with inDegree == 0 courses
         Queue<Integer> queue = new LinkedList<>();
-        //add inDegree == 0 into the queue
-        for (int i = 0; i < numCourses; i++) {
-            if (inDegree[i] == 0) {
+        for(int i=0; i < inDegree.length; i++){
+            if(inDegree[i] == 0){
                 queue.offer(i);
             }
         }
 
-        //process the queue
-        while (!queue.isEmpty()) {
-            int prereqCourse = queue.poll();
-            processedCount++;
-            List<Integer> courses = graph.get(prereqCourse);
+        //4.Process Queue
+        while(!queue.isEmpty()){
+            int prerequestCourse = queue.poll();
+            totalCompletedCourses++;
 
-            for (int course : courses) {
+            List<Integer> courses = graph.get(prerequestCourse);
+            for(int course: courses){
                 inDegree[course]--;
-                if (inDegree[course] == 0) {
+                if(inDegree[course] == 0){
                     queue.offer(course);
                 }
             }
         }
-
-        return processedCount == numCourses;
+        //5. Return TRUE if totalCompletedCourses equals numCourses
+        return totalCompletedCourses == numCourses;
     }
 }

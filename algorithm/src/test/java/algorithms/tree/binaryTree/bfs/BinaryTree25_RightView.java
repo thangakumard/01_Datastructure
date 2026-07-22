@@ -54,6 +54,11 @@ public class BinaryTree25_RightView {
 		System.out.println(result);
 	}
 
+	/**
+	 * Time: O(n) — every node is enqueued and dequeued exactly once.
+	 * Space: O(n) — the queue holds at most the widest level of the tree, which in the worst case (a complete/perfect binary tree's last level) is ~n/2 nodes → O(n).
+	 * Output list is O(h) where h is height, dominated by the queue term.
+	 */
 	public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if(root == null) return result;
