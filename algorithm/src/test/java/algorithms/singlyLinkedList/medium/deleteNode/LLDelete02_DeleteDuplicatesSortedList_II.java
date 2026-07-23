@@ -41,7 +41,7 @@ public class LLDelete02_DeleteDuplicatesSortedList_II {
         slow.next = fast;
 
         while(fast != null){
-            while(fast.next != null && fast.val == fast.next.val){
+            while(fast.next != null && fast.value == fast.next.value){
                 fast = fast.next;
             }
             if(slow.next != fast){

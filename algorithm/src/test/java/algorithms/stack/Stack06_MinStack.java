@@ -47,7 +47,7 @@ public class Stack06_MinStack {
         private Stack<Integer> stack;      // Main stack
         private Stack<Integer> minStack;   // Auxiliary stack tracking minimums
 
-        public MinStack() {
+        public Stack06_MinStack() {
             stack = new Stack<>();
             minStack = new Stack<>();
         }

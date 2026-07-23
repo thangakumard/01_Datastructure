@@ -21,7 +21,7 @@ public class SampleGetRequest
     	responseSpecification_Sample_02();
     }
     
-    private static void requestSpecification_Sample_01() {
+    private void requestSpecification_Sample_01() {
     	RequestSpecification requestSpec = new  RequestSpecBuilder()
     			.setContentType("application/json")
     			.setBaseUri("http://api.zippopotam.us")
@@ -39,7 +39,7 @@ public class SampleGetRequest
     }
     
 
-    private static void responseSpecification_Sample_02() {
+    private void responseSpecification_Sample_02() {
     	RequestSpecification requestSpec = new  RequestSpecBuilder()
     			.setContentType("application/json")
     			.setBaseUri("http://api.zippopotam.us")

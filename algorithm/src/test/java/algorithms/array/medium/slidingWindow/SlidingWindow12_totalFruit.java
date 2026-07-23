@@ -1,6 +1,7 @@
 package algorithms.array.medium.slidingWindow;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /***
  * https://leetcode.com/problems/fruit-into-baskets/

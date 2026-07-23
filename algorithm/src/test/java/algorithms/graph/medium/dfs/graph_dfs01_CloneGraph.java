@@ -1,9 +1,9 @@
 package algorithms.graph.medium.dfs;
 
 import algorithms.graph.NodeWithNeighbors;
+import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 /**
  * https://leetcode.com/problems/clone-graph/description/
  * Given a reference of a node in a connected undirected graph.
@@ -73,7 +73,8 @@ public class graph_dfs01_CloneGraph {
         return cloneNode;
     }
     /**=============== TESTING =============**/
-    public static void main(String[] args) {
+    @Test
+    public void CloneGraphTests() {
         testSingleNode();
         testSimpleGraph();
         testNullInput();
@@ -82,9 +83,9 @@ public class graph_dfs01_CloneGraph {
     }
 
     // Test 1: single node, no neighbors
-    private static void testSingleNode() {
-        Node original = new Node(1);
-        Node cloned = cloneGraph(original);
+    private void testSingleNode() {
+        NodeWithNeighbors original = new NodeWithNeighbors(1);
+        NodeWithNeighbors cloned = cloneGraph(original);
 
         assertTrue(cloned != null, "clone should not be null");
         assertTrue(cloned != original, "clone must be a different object");
@@ -93,29 +94,29 @@ public class graph_dfs01_CloneGraph {
     }
 
     // Test 2: small connected graph, e.g. 1-2-3-1 triangle
-    private static void testSimpleGraph() {
-        Node n1 = new Node(1);
-        Node n2 = new Node(2);
-        Node n3 = new Node(3);
+    private void testSimpleGraph() {
+        NodeWithNeighbors n1 = new NodeWithNeighbors(1);
+        NodeWithNeighbors n2 = new NodeWithNeighbors(2);
+        NodeWithNeighbors n3 = new NodeWithNeighbors(3);
         n1.neighbors.addAll(List.of(n2, n3));
         n2.neighbors.addAll(List.of(n1, n3));
         n3.neighbors.addAll(List.of(n1, n2));
 
-        Node clonedStart = cloneGraph(n1);
+        NodeWithNeighbors clonedStart = cloneGraph(n1);
 
         // structural check via BFS, comparing values while ensuring
         // no cloned node is reference-equal to an original node
-        Set<Node> originalSeen = Collections.newSetFromMap(new IdentityHashMap<>());
-        Set<Node> clonedSeen = Collections.newSetFromMap(new IdentityHashMap<>());
-        Deque<Node[]> queue = new ArrayDeque<>();
-        queue.add(new Node[]{n1, clonedStart});
+        Set<NodeWithNeighbors> originalSeen = Collections.newSetFromMap(new IdentityHashMap<>());
+        Set<NodeWithNeighbors> clonedSeen = Collections.newSetFromMap(new IdentityHashMap<>());
+        Deque<NodeWithNeighbors[]> queue = new ArrayDeque<>();
+        queue.add(new NodeWithNeighbors[]{n1, clonedStart});
         originalSeen.add(n1);
         clonedSeen.add(clonedStart);
 
         int visitedCount = 0;
         while (!queue.isEmpty()) {
-            Node[] pair = queue.poll();
-            Node orig = pair[0], copy = pair[1];
+            NodeWithNeighbors[] pair = queue.poll();
+            NodeWithNeighbors orig = pair[0], copy = pair[1];
             visitedCount++;
 
             assertTrue(orig != copy, "clone node must not be same reference as original");
@@ -123,13 +124,13 @@ public class graph_dfs01_CloneGraph {
             assertTrue(orig.neighbors.size() == copy.neighbors.size(), "neighbor count must match");
 
             for (int i = 0; i < orig.neighbors.size(); i++) {
-                Node oNeigh = orig.neighbors.get(i);
-                Node cNeigh = copy.neighbors.get(i);
+                NodeWithNeighbors oNeigh = orig.neighbors.get(i);
+                NodeWithNeighbors cNeigh = copy.neighbors.get(i);
                 assertTrue(cNeigh != oNeigh, "neighbor reference must be cloned, not original"); // catches the bug above
                 if (!originalSeen.contains(oNeigh)) {
                     originalSeen.add(oNeigh);
                     clonedSeen.add(cNeigh);
-                    queue.add(new Node[]{oNeigh, cNeigh});
+                    queue.add(new NodeWithNeighbors[]{oNeigh, cNeigh});
                 }
             }
         }
@@ -137,15 +138,15 @@ public class graph_dfs01_CloneGraph {
     }
 
     // Test 3: null input
-    private static void testNullInput() {
+    private void testNullInput() {
         assertTrue(cloneGraph(null) == null, "cloning null should return null");
     }
 
     // Test 4: mutate the clone, verify original is untouched (proves deep copy)
-    private static void testGraphWithCycle() {
-        Node a = new Node(1);
+    private void testGraphWithCycle() {
+        NodeWithNeighbors a = new NodeWithNeighbors(1);
         a.neighbors.add(a); // self-loop
-        Node clonedA = cloneGraph(a);
+        NodeWithNeighbors clonedA = cloneGraph(a);
 
         assertTrue(clonedA != a, "self-loop node must be cloned");
         assertTrue(clonedA.neighbors.get(0) == clonedA, "cloned self-loop should point to itself, not original");
@@ -154,7 +155,7 @@ public class graph_dfs01_CloneGraph {
         assertTrue(a.val == 1, "mutating clone must not affect original — proves deep copy");
     }
 
-    private static void assertTrue(boolean condition, String message) {
+    private void assertTrue(boolean condition, String message) {
         if (!condition) {
             throw new AssertionError("FAILED: " + message);
         }

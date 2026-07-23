@@ -156,13 +156,13 @@ public class Tiktok_extraordinaryNumber {
         return result;
     }
 
-//    private static void getSubStrings(String input_str, List<String> resultSubString, int index){
+//    private void getSubStrings(String input_str, List<String> resultSubString, int index){
 //        for(int i=index; i < input_str.length(); i ++){
 //            resultSubString.add(input_str.substring(index,i));
 //        }
 //    }
 
-    private static void getSubStringsNew(String input,List<String> allSubstrings, int start, int end){
+    private void getSubStringsNew(String input,List<String> allSubstrings, int start, int end){
         for(int i=start; i < input.length(); i++){
             allSubstrings.add(input.substring(start, input.length())); //IMPORTANT TO COLLECT THE SUBSTRING WITHIN THE WHILE LOOP
             getSubStringsNew(input, allSubstrings, start+1, input.length());

@@ -3,7 +3,7 @@ package coreJava;
 import org.testng.annotations.Test;
 
 public class Sample_2DArray {
-    private static void printArray(int[][] a) {
+    private void printArray(int[][] a) {
         for (int i = 0; i < a.length; ++i) {
             System.out.println(a[i]);
         }

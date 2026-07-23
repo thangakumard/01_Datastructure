@@ -70,7 +70,7 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 		for (int i = 0; i < inorder.length; i++) {
 			inorderMap.put(inorder[i], i);
 		}
-		postIndex = postorder.length - 1;
+		postOrderIndex = postorder.length - 1;
 		return helper(postorder, 0, inorder.length - 1);
 	}
 
@@ -84,10 +84,10 @@ public class BST07_BuildBSTFromInOrderPostOrder {
 		TreeNode root = new TreeNode(nodeValue);
 
 		// CRITICAL: Build RIGHT subtree FIRST (postorder goes backward)
-		root.right = helper(postorder, inorderIndex + 1, inEnd);
+		root.right = helper(postorder, inorderIndex + 1, end);
 
 		// THEN build LEFT subtree
-		root.left = helper(postorder, inStart, inorderIndex - 1);
+		root.left = helper(postorder, start, inorderIndex - 1);
 
 		return root;
 	}

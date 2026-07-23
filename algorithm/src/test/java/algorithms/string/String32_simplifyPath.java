@@ -74,7 +74,7 @@ public class String32_simplifyPath {
 	 * Space Complexity: O(N)
 	 */
 	    public String simplifyPath(String path) {
-			Stack<int> intstack = new Stack<>();
+			Stack<Integer> intstack = new Stack<>();
 	        // Initialize a stack
 	        Stack<String> stack = new Stack<>();
 	        String[] components = path.split("/");

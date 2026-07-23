@@ -34,13 +34,13 @@ public class Parenthesis06_backtrack_generateParentheses {
         System.out.println("All combinations of balanced parentheses are: " + result);
     }
 
-    public static List<String> generateValidParentheses(int num) {
+    public List<String> generateValidParentheses(int num) {
         List<String> result = new ArrayList<String>();
         backtrack(result, "", 0, 0, num);
         return result;
     }
 
-    private static void backtrack(List<String> result, String current_string, int open, int close, int max) {
+    private void backtrack(List<String> result, String current_string, int open, int close, int max) {
         if (current_string.length() == max * 2) {
             result.add(current_string);
             return;

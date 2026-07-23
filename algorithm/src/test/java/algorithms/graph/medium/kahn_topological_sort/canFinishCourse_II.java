@@ -1,9 +1,8 @@
 package algorithms.graph.medium.kahn_topological_sort;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import org.testng.annotations.Test;
+
+import java.util.*;
 
 /**
  * There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
@@ -58,41 +57,39 @@ import java.util.Queue;
  * E (edges) = len(prerequisites)
  */
 public class canFinishCourse_II {
-    public class Main {
-        public static void main(String[] args) {
-            Solution sol = new Solution();
+    @Test
+    public void findOrderTests() {
 
             // Test 1: simple valid case, 1 -> 0
             System.out.println("Test 1: " + Arrays.toString(
-                    sol.findOrder(2, new int[][]{{1, 0}})));
+                    findOrder(2, new int[][]{{1, 0}})));
             // expect [0, 1]
 
             // Test 2: cycle 0 -> 1 -> 0
             System.out.println("Test 2: " + Arrays.toString(
-                    sol.findOrder(2, new int[][]{{1, 0}, {0, 1}})));
+                    findOrder(2, new int[][]{{1, 0}, {0, 1}})));
             // expect []
 
             // Test 3: no prerequisites at all
             System.out.println("Test 3: " + Arrays.toString(
-                    sol.findOrder(3, new int[][]{})));
+                    findOrder(3, new int[][]{})));
             // expect some permutation of [0, 1, 2] (order not unique, e.g. [0,1,2])
 
             // Test 4: larger valid chain 0<-1<-2<-3
             System.out.println("Test 4: " + Arrays.toString(
-                    sol.findOrder(4, new int[][]{{1, 0}, {2, 1}, {3, 2}})));
+                    findOrder(4, new int[][]{{1, 0}, {2, 1}, {3, 2}})));
             // expect [3, 2, 1, 0]
 
             // Test 5: larger cycle 0->1->2->0
             System.out.println("Test 5: " + Arrays.toString(
-                    sol.findOrder(3, new int[][]{{1, 0}, {2, 1}, {0, 2}})));
+                    findOrder(3, new int[][]{{1, 0}, {2, 1}, {0, 2}})));
             // expect []
 
             // Test 6: classic LeetCode example
             System.out.println("Test 6: " + Arrays.toString(
-                    sol.findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}})));
+                    findOrder(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}})));
             // expect [0, 1, 2, 3] or [0, 2, 1, 3] (both valid topological orders)
         }
-    }
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         if(numCourses == 0 || prerequisites == null) return new int[0];
         List<List<Integer>> graph = new ArrayList<>();

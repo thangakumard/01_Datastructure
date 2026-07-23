@@ -2,8 +2,7 @@ package algorithms.graph.medium.bfs;
 
 import algorithms.graph.NodeWithNeighbors;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 /***
  * https://leetcode.com/problems/word-ladder

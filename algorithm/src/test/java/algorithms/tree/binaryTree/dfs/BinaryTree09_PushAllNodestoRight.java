@@ -36,7 +36,7 @@ public class BinaryTree09_PushAllNodestoRight {
 	public void flatten(TreeNode root) {
 		if (root != null) {
 			Stack<TreeNode> stackNodes = new Stack<>();
-			stackNodes.push(root);x
+			stackNodes.push(root);
 
 			while (!stackNodes.isEmpty()) {
 				TreeNode currentNode = stackNodes.pop();

@@ -1,8 +1,6 @@
 package algorithms.graph.medium.dfs;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * https://leetcode.com/problems/keys-and-rooms

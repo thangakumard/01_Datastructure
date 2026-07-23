@@ -47,11 +47,11 @@ public class BST09_IsBalanced {
 	 * Time O(n^2)
 	 * Space O(n)
 	 */
-	 public boolean isBalanced(TreeNode root) {
+	 public boolean isBalanced_II(TreeNode root) {
 	        if(root == null) return true;
 	        return Math.abs(heightOfBST(root.left) - heightOfBST(root.right)) < 2
-	            && isBalanced(root.left)
-	            && isBalanced(root.right);
+	            && isBalanced_II(root.left)
+	            && isBalanced_II(root.right);
 	    }
 	    
 	    public int heightOfBST(TreeNode root){

@@ -1,5 +1,7 @@
 package algorithms.graph.medium.kahn_topological_sort;
 
+import org.testng.annotations.Test;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -56,40 +58,39 @@ All the pairs prerequisites[i] are unique.
  * If the result contains all nodes → valid topological order. If it contains fewer nodes than the graph → there's a cycle (this is Kahn's built-in cycle detector).
  */
 public class canFinishCourse {
-    public class Main {
-        public static void main(String[] args) {
-            Solution sol = new Solution();
+    
+    @Test
+    public void canFinishTests() {
 
             // Test 1: simple valid case, 1 -> 0
             int numCourses1 = 2;
             int[][] prereq1 = {{1, 0}};
-            System.out.println("Test 1 (expect true): " + sol.canFinish(numCourses1, prereq1));
+            System.out.println("Test 1 (expect true): " + canFinish(numCourses1, prereq1));
 
             // Test 2: cycle 0 -> 1 -> 0
             int numCourses2 = 2;
             int[][] prereq2 = {{1, 0}, {0, 1}};
-            System.out.println("Test 2 (expect false): " + sol.canFinish(numCourses2, prereq2));
+            System.out.println("Test 2 (expect false): " + canFinish(numCourses2, prereq2));
 
             // Test 3: no prerequisites at all
             int numCourses3 = 3;
             int[][] prereq3 = {};
-            System.out.println("Test 3 (expect true): " + sol.canFinish(numCourses3, prereq3));
+            System.out.println("Test 3 (expect true): " + canFinish(numCourses3, prereq3));
 
             // Test 4: larger valid chain 0<-1<-2<-3
             int numCourses4 = 4;
             int[][] prereq4 = {{1, 0}, {2, 1}, {3, 2}};
-            System.out.println("Test 4 (expect true): " + sol.canFinish(numCourses4, prereq4));
+            System.out.println("Test 4 (expect true): " + canFinish(numCourses4, prereq4));
 
             // Test 5: larger cycle 0->1->2->0
             int numCourses5 = 3;
             int[][] prereq5 = {{1, 0}, {2, 1}, {0, 2}};
-            System.out.println("Test 5 (expect false): " + sol.canFinish(numCourses5, prereq5));
+            System.out.println("Test 5 (expect false): " + canFinish(numCourses5, prereq5));
 
             // Test 6: disconnected components, one with a cycle
             int numCourses6 = 5;
             int[][] prereq6 = {{1, 0}, {3, 2}, {2, 3}}; // 0-1 fine, 2-3 cycle
-            System.out.println("Test 6 (expect false): " + sol.canFinish(numCourses6, prereq6));
-        }
+            System.out.println("Test 6 (expect false): " + canFinish(numCourses6, prereq6));
     }
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         if(numCourses == 0) return true;
