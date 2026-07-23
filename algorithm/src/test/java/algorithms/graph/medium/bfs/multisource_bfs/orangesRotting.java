@@ -57,13 +57,16 @@ public class orangesRotting {
             int r = grid.length;
             int c = grid[0].length;
 
+            //Queue for rotted Oranges
+            Queue<int[]> rottedQueue = new LinkedList<>();
             int freshOranges = 0;
-            Queue<int[]> rottenQueue = new LinkedList<>();
 
+            //Push all the Rotted Oranges cell's row, col and time (0) into a queue
+            //Take count of freshOranges
             for(int i=0; i < r; i++){
                 for(int j=0; j < c; j++){
                     if(grid[i][j] == 2){
-                        rottenQueue.offer(new int[]{i,j,0}); //row,col,time
+                        rottedQueue.offer(new int[]{i,j,0});
                     }else if(grid[i][j] == 1){
                         freshOranges++;
                     }
@@ -71,32 +74,33 @@ public class orangesRotting {
             }
 
             if(freshOranges == 0) return 0;
-
-            int[][] directions = {{-1,0},{1,0},{0,-1},{0,1}};
             int maxTime = 0;
+            int[][] directions = new int[][]{{-1,0},{1,0},{0,-1},{0,1}};
 
-            while(!rottenQueue.isEmpty()){
-                int[] current = rottenQueue.poll();
-                int row = current[0];
-                int col = current[1];
-                int time = current[2];
-
+            while(!rottedQueue.isEmpty()){
+                int[] rottedCell = rottedQueue.poll();
+                int row = rottedCell[0];
+                int col = rottedCell[1];
+                int time = rottedCell[2];
                 maxTime = time;
 
-                for(int[] dir: directions){
-                    int newRow = row + dir[0];
-                    int newCol = col + dir[1];
+                //From each rotted cell visit all the 4 directions
+                //If near by cell value is 1 add it to rottedQueue by increasing time
+                // Reduce the freshOranges count
+                for(int[] direc: directions){
+                    int newRow = row+direc[0];
+                    int newCol = col+direc[1];
 
-                    if(newRow >=0 && newRow < r && newCol >=0 && newCol < c &&
-                            grid[newRow][newCol] == 1){
+                    if(newRow >=0 && newRow < r && newCol >=0 && newCol < c && grid[newRow][newCol] == 1){
                         grid[newRow][newCol] = 2;
+                        rottedQueue.offer(new int[]{newRow,newCol,time+1});
                         freshOranges--;
-                        rottenQueue.offer(new int[]{newRow, newCol, time+1});
                     }
                 }
             }
 
-            return freshOranges == 0 ? maxTime : -1;
+            return freshOranges == 0? maxTime : -1;
+
         }
     }
 }

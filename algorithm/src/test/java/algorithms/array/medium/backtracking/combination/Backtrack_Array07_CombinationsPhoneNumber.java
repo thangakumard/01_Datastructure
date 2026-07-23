@@ -51,6 +51,7 @@ public class Backtrack_Array07_CombinationsPhoneNumber {
     O(N)        (recursion stack)
 
     Total → O(4^N * N)
+    Space complexity: O(N)
  */
 public List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();

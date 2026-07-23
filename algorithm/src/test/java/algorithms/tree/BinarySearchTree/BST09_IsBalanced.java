@@ -21,7 +21,32 @@ public class BST09_IsBalanced {
 		t1.root.left.right = new TreeNode(5);
 		Assert.assertTrue(isBalanced(t1.root));
 	}
-	
+
+	/***
+	 * Time O(n)
+	 * Space O(n)
+	 */
+	public boolean isBalanced(TreeNode root) {
+		return checkHeight(root) != -1;
+	}
+
+	private int checkHeight(TreeNode node) {
+		if (node == null) return 0;
+
+		int leftHeight = checkHeight(node.left);
+		if (leftHeight == -1) return -1; // left subtree already unbalanced
+
+		int rightHeight = checkHeight(node.right);
+		if (rightHeight == -1) return -1; // right subtree already unbalanced
+
+		if (Math.abs(leftHeight - rightHeight) > 1) return -1; // this node unbalanced
+
+		return Math.max(leftHeight, rightHeight) + 1;
+	}
+	/***
+	 * Time O(n^2)
+	 * Space O(n)
+	 */
 	 public boolean isBalanced(TreeNode root) {
 	        if(root == null) return true;
 	        return Math.abs(heightOfBST(root.left) - heightOfBST(root.right)) < 2

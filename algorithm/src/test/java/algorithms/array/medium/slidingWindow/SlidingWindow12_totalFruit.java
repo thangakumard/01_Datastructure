@@ -36,19 +36,25 @@ import java.util.HashMap;
 
 public class SlidingWindow12_totalFruit {
     public int totalFruit(int[] fruits) {
-        HashMap<Integer, Integer> mapCounter = new HashMap<>();
-        int i=0 , result = 0;
+        Map<Integer, Integer> count = new HashMap<>(); // fruit type -> frequency in window
+        int left = 0, maxLen = 0;
 
-        for(int j = 0 ; j < fruits.length; j++){
-            mapCounter.put(fruits[j],mapCounter.getOrDefault(fruits[j], 0)+1);
-            if(mapCounter.size() > 2){
-                mapCounter.put(fruits[i], mapCounter.getOrDefault(fruits[i], 0)-1);
-                if(mapCounter.get(fruits[i]) == 0) mapCounter.remove(fruits[i]);
-                i++;
+        for (int right = 0; right < fruits.length; right++) {
+            count.merge(fruits[right], 1, Integer::sum);
+
+            // shrink window while we have more than 2 basket types
+            while (count.size() > 2) {
+                int leftFruit = fruits[left];
+                count.put(leftFruit, count.get(leftFruit) - 1);
+                if (count.get(leftFruit) == 0) {
+                    count.remove(leftFruit);
+                }
+                left++;
             }
 
-            result = j - i + 1;
+            maxLen = Math.max(maxLen, right - left + 1);
         }
-        return result;
+
+        return maxLen;
     }
 }
