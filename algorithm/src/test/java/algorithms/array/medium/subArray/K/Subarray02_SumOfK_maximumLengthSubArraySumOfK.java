@@ -25,19 +25,19 @@ import java.util.HashMap;
 public class Subarray02_SumOfK_maximumLengthSubArraySumOfK {
     public int maxSubArrayLen(int[] nums, int k) {
         int prefixSum = 0;
-        int longestSubarray = 0;
+        int maxLength = 0; //Don't initialize with Integer.MIN_VALUE. nums =[1] k=0
         HashMap<Integer, Integer> indicesMap = new HashMap<>();//prefixSum is key and index is value
         for (int i = 0; i < nums.length; i++) {
             prefixSum += nums[i];
 
             // Check if all of the numbers seen so far sum to k.
             if (prefixSum == k) {
-                longestSubarray = i + 1;
+                maxLength = i + 1;
             }
 
             // If any subarray seen so far sums to k, then update the length of the longest_subarray.
             if (indicesMap.containsKey(prefixSum - k)) {
-                longestSubarray = Math.max(longestSubarray, i - indicesMap.get(prefixSum - k));
+                maxLength = Math.max(maxLength, i - indicesMap.get(prefixSum - k));
             }
 
             // Only add the current prefix_sum index pair to the
@@ -47,6 +47,6 @@ public class Subarray02_SumOfK_maximumLengthSubArraySumOfK {
             }
         }
 
-        return longestSubarray;
+        return maxLength;
     }
 }

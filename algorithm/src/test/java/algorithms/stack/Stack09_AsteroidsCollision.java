@@ -3,6 +3,8 @@ package algorithms.stack;
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 
 /**
@@ -53,41 +55,39 @@ public class Stack09_AsteroidsCollision {
      * Space: O(N)
      */
     public int[] asteroidCollision(int[] asteroids) {
+        Deque<Integer> stack = new ArrayDeque<>();
 
-        if(asteroids == null || asteroids.length == 0)
-            return asteroids;
+        for (int a : asteroids) {
+            boolean alive = true;
 
-        LinkedList<Integer> asteroidStack = new LinkedList<>();
-        boolean addToStack = true;
+            // Only need to resolve collisions when current moves left (-)
+            // and stack top moves right (+)
+            while (alive && a < 0 && !stack.isEmpty() && stack.peek() > 0) {
+                int top = stack.peek();
 
-
-        for(int i=0; i < asteroids.length; i++){
-            addToStack = true;
-            while(!asteroidStack.isEmpty() &&
-                    ((asteroids[i] < 0 && asteroidStack.peek() > 0))) {
-                if(Math.abs(asteroids[i]) == Math.abs(asteroidStack.peek()))
-                {
-                    asteroidStack.pop();
-                }else if (asteroidStack.peek() < Math.abs(asteroids[i])){
-                    asteroidStack.pop();
-                    continue;
+                if (top < -a) {
+                    // top (smaller) explodes, current keeps moving
+                    stack.pop();
+                } else if (top == -a) {
+                    // equal size: both explode
+                    stack.pop();
+                    alive = false;
+                } else {
+                    // top is bigger: current explodes
+                    alive = false;
                 }
-                addToStack = false;
-                break;
             }
-            if(addToStack){
-                asteroidStack.push(asteroids[i]);
+
+            if (alive) {
+                stack.push(a);
             }
         }
 
-
-        int[] result = new int[asteroidStack.size()];
-        int i=asteroidStack.size()-1;
-        while(!asteroidStack.isEmpty()) {
-            result[i] = asteroidStack.pop();
-            i--;
+        // stack is bottom->top in insertion order; reverse into result array
+        int[] result = new int[stack.size()];
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = stack.pop();
         }
         return result;
-
     }
 }

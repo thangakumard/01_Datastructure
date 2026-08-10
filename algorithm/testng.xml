@@ -3,7 +3,8 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="algorithms.string.String24_ReorganizeString"/>
+      <class name="algorithms.hasset.Hashset_02_arrayRankTransform"/>
+      <class name="algorithms.string.permutation.PermutationInString"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
