@@ -68,6 +68,9 @@ public void lengthOfLongestSubstringTwoDistinct_test4(){
      * Time : O(N)
      * Space: O(1) (Hashmap will hold at the max 3 distinct char O(3))
      *
+     * the character set in this problem is known and bounded (English letters),
+     * so the array is the more justified structure, not the map
+     *
      *  int[26] for Letters 'a' - 'z' or 'A' - 'Z'
      * 	int[128] for ASCII
      *  int[256] for Extended ASCII  ****** [IMPORTANT] *****

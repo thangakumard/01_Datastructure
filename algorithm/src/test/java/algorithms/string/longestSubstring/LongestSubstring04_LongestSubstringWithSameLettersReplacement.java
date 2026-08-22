@@ -73,7 +73,8 @@ public class LongestSubstring04_LongestSubstringWithSameLettersReplacement {
 
 	      //When this condition breaks, remove a char from the sliding window start and
 		  //increment the window start index
-	      while(right - left - maxCharFrequency + 1 > k){
+		int windowLength = right - left + 1;
+		while(windowLength - maxCharFrequency > k){
 	        char_input[str.charAt(left)-'A']--;
 	        left++;
 	      }
