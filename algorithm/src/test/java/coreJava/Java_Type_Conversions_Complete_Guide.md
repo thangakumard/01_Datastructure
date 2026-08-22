@@ -75,6 +75,15 @@ int num = 65;
 char c = (char) num; // 'A' (narrowing - cast required)
 ```
 
+**Digit char ↔ int (numeric value, not code point):**
+```java
+char digitChar = '7';
+int digit = digitChar - '0';        // 7 ('7' is ASCII 55, '0' is ASCII 48 → 55 - 48 = 7)
+
+int num2 = 7;
+char digitChar2 = (char) (num2 + '0'); // '7' (7 + 48 = 55, and ASCII 55 is '7')
+```
+
 ---
 
 ## 4. Primitive to Object (Boxing/Unboxing)

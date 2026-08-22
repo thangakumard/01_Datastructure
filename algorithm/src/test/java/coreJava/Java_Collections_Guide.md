@@ -288,19 +288,19 @@ Exposing all methods when only a subset is needed makes code harder to reason ab
 
 ### Overview — Which Collections Maintain Order?
 
-| Collection | Order Maintained? | Type of Order |
-|---|---|---|
-| `ArrayList` | ✅ Yes | Insertion order |
-| `LinkedList` | ✅ Yes | Insertion order |
-| `Stack` | ✅ Yes | Insertion order (LIFO access) |
-| `ArrayDeque` | ✅ Yes | Insertion order |
-| `LinkedHashSet` | ✅ Yes | Insertion order |
-| `LinkedHashMap` | ✅ Yes | Insertion order |
-| `TreeSet` | ✅ Yes | Natural sorted order (not insertion) |
-| `TreeMap` | ✅ Yes | Natural sorted order (not insertion) |
-| `HashSet` | ❌ No | Random / unpredictable |
-| `HashMap` | ❌ No | Random / unpredictable |
-| `PriorityQueue` | ❌ No | Priority order (not insertion) |
+| Collection | Order Maintained? | Type of Order | Insertion Time Complexity | Add Methods |
+|---|---|---|---|---|
+| `ArrayList` | ✅ Yes | Insertion order | O(1) amortized at end, O(n) at arbitrary index | `add(E)`, `add(int, E)`, `addAll(Collection)` |
+| `LinkedList` | ✅ Yes | Insertion order | O(1) at head/tail, O(n) at arbitrary index | `add(E)`, `add(int, E)`, `addFirst(E)`, `addLast(E)`, `push(E)`, `offer(E)`, `offerFirst(E)`, `offerLast(E)` |
+| `Stack` | ✅ Yes | Insertion order (LIFO access) | O(1) (push) | `push(E)`, `add(E)`, `addElement(E)` |
+| `ArrayDeque` | ✅ Yes | Insertion order | O(1) amortized at both ends | `add(E)`, `addFirst(E)`, `addLast(E)`, `push(E)`, `offer(E)`, `offerFirst(E)`, `offerLast(E)` |
+| `LinkedHashSet` | ✅ Yes | Insertion order | O(1) average | `add(E)`, `addAll(Collection)` |
+| `LinkedHashMap` | ✅ Yes | Insertion order | O(1) average | `put(K, V)`, `putIfAbsent(K, V)`, `putAll(Map)` |
+| `TreeSet` | ✅ Yes | Natural sorted order (not insertion) | O(log n) | `add(E)`, `addAll(Collection)` |
+| `TreeMap` | ✅ Yes | Natural sorted order (not insertion) | O(log n) | `put(K, V)`, `putIfAbsent(K, V)`, `putAll(Map)` |
+| `HashSet` | ❌ No | Random / unpredictable | O(1) average | `add(E)`, `addAll(Collection)` |
+| `HashMap` | ❌ No | Random / unpredictable | O(1) average | `put(K, V)`, `putIfAbsent(K, V)`, `putAll(Map)` |
+| `PriorityQueue` | ❌ No | Priority order (not insertion) | O(log n) | `add(E)`, `offer(E)` |
 
 ### How Each Collection Manages Order Internally
 
