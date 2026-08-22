@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array;
 
 /***
  * https://leetcode.com/problems/find-the-winner-of-an-array-game/description/

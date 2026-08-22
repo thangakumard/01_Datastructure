@@ -1,4 +1,4 @@
-package algorithms.array.medium.waterTank;
+package algorithms.array.waterTank;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;

@@ -1,4 +1,4 @@
-package algorithms.array.medium.meetingScheduler;
+package algorithms.array.meetingScheduler;
 
 import java.util.TreeMap;
 

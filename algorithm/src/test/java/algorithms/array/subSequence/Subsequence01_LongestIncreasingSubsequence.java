@@ -1,4 +1,4 @@
-package algorithms.array.medium.subSequence;
+package algorithms.array.subSequence;
 
 import java.util.ArrayList;
 

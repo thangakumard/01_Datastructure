@@ -1,4 +1,4 @@
-package algorithms.array;
+package java.algorithms.string;
 
 /***
  * https://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/

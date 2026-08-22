@@ -1,4 +1,4 @@
-package algorithms.array.medium.binarySearch;
+package algorithms.array.binarySearch;
 
 /**
  * Meta Interview Quest: Imagine an array of numbers where every number occurs twice.

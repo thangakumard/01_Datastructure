@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array;
 
 /**
  * A competition consists of n players numbered from 0 to n - 1.

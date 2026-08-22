@@ -1,4 +1,4 @@
-package algorithms.array.medium.prefixSum;
+package algorithms.array.prefixSum;
 
 import java.util.HashMap;
 

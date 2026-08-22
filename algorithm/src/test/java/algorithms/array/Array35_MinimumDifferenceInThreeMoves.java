@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array;
 
 import java.util.*;
 import org.testng.annotations.*;

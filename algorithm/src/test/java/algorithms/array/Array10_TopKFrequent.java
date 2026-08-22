@@ -1,4 +1,4 @@
-package algorithms.array.medium;
+package algorithms.array;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

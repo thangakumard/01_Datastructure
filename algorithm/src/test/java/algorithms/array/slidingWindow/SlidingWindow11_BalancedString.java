@@ -1,4 +1,4 @@
-package algorithms.array.medium.slidingWindow;
+package algorithms.array.slidingWindow;
 
 /***
  * https://leetcode.com/problems/replace-the-substring-for-balanced-string/

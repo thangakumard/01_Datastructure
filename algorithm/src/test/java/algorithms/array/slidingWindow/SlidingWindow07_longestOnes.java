@@ -1,4 +1,4 @@
-package algorithms.array.medium.slidingWindow;
+package algorithms.array.slidingWindow;
 
 /***
  * https://leetcode.com/problems/max-consecutive-ones-iii/description/?envType=company&envId=facebook&favoriteSlug=facebook-thirty-days&difficulty=MEDIUM

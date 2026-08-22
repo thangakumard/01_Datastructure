@@ -1,4 +1,4 @@
-package algorithms.array.medium.slidingWindow;
+package algorithms.array.slidingWindow;
 
 /**
  * Meta Interview Quest: Take the square of a sorted array

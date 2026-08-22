@@ -1,4 +1,4 @@
-package algorithms.array.medium.twoPointer;
+package algorithms.array.twoPointer;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

@@ -1,4 +1,4 @@
-package algorithms.array.medium.pickRandom;
+package algorithms.array.pickRandom;
 
 import java.util.Random;
 

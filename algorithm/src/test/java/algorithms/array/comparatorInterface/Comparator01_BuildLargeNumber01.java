@@ -1,4 +1,4 @@
-package algorithms.array.medium.comparatorInterface;
+package algorithms.array.comparatorInterface;
 
 import java.util.Arrays;
 import java.util.Comparator;

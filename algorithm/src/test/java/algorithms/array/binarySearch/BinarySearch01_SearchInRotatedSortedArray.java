@@ -1,4 +1,4 @@
-package algorithms.array.medium.binarySearch;
+package algorithms.array.binarySearch;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
@@ -12,7 +12,7 @@ public class BinarySearch01_SearchInRotatedSortedArray {
     }
 
     /*
-     * Time complexity O(n)
+     * Time complexity O(log n)
      * Space complexity O(1)
      * Approach : Binary search
      */

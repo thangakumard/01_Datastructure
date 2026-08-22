@@ -1,4 +1,4 @@
-package algorithms.array.medium.slidingWindow;
+package algorithms.array.slidingWindow;
 
 /***
  * https://leetcode.com/problems/count-number-of-nice-subarrays/description/

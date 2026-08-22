@@ -1,4 +1,4 @@
-package algorithms.array.medium.binarySearch;
+package algorithms.array.binarySearch;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;

@@ -245,11 +245,12 @@ byte overflow = (byte) (max + 1); // -128 (wraps around)
 
 | Scenario | Code | Key Point |
 |----------|------|-----------|
-| Parse array of digit strings | `int[] nums = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();` | Know `parseInt()` |
 | Convert int to char digit | `char c = (char)('0' + i);` | Leverage ASCII offsets |
 | Frequency counting (char → index) | `freq[c - 'a']++` | Narrowing with offset |
 | Object type checking | `if (obj instanceof Integer) { int i = (Integer) obj; }` | Always instanceof before cast |
-| Array of strings to ints | `int[] nums = Stream.of(arr).mapToInt(Integer::parseInt).toArray();` | Stream + parseInt |
+| `List<String>` to `int[]` | `List<String> list = List.of("1", "2", "3"); int[] nums = list.stream().mapToInt(Integer::parseInt).toArray();` | `parseInt()` converts each String element |
+| `List<Integer>` to `int[]` | `List<Integer> list = List.of(1, 2, 3); int[] nums = list.stream().mapToInt(Integer::intValue).toArray();` | `intValue()` unboxes each Integer element |
+| String array to `int[]` (Arrays.stream) | `String[] input = {"1", "2", "3"}; int[] nums = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();` | `Arrays.stream()` + `parseInt()` |
 
 ---
 

@@ -1,4 +1,4 @@
-package algorithms.array.medium.wordDistance;
+package algorithms.array.wordDistance;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;

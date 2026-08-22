@@ -1,4 +1,4 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.subArray;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;

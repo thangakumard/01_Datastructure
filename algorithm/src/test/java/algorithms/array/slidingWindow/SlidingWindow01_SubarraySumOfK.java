@@ -1,4 +1,4 @@
-package algorithms.array.medium.slidingWindow;
+package algorithms.array.slidingWindow;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;

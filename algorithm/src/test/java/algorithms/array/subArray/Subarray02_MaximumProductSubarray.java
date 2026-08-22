@@ -1,4 +1,4 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.subArray;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

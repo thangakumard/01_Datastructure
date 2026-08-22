@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking.subset;
+package algorithms.array.backtracking.subset;
 
 import org.testng.annotations.Test;
 

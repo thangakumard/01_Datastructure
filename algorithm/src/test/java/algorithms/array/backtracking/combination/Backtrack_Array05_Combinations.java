@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking.combination;
+package algorithms.array.backtracking.combination;
 
 import java.util.ArrayList;
 import java.util.List;

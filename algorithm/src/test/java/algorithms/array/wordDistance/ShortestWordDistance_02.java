@@ -1,4 +1,4 @@
-package algorithms.array.medium.wordDistance;
+package algorithms.array.wordDistance;
 
 /***
  * https://leetcode.com/problems/shortest-word-distance-ii/description/

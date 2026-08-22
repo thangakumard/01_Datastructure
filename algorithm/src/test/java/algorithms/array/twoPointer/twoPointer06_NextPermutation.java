@@ -1,4 +1,4 @@
-package algorithms.array.medium.twoPointer;
+package algorithms.array.twoPointer;
 //https://leetcode.com/problems/next-permutation
 
 /***

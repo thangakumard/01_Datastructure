@@ -1,4 +1,4 @@
-package algorithms.array.medium.Math;
+package algorithms.array.Math;
 
 /***
  * https://leetcode.com/problems/count-primes/description/

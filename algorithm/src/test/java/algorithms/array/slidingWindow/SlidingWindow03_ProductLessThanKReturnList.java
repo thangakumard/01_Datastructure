@@ -1,4 +1,4 @@
-package algorithms.array.medium.slidingWindow;
+package algorithms.array.slidingWindow;
 import java.util.*;
 
 import org.testng.annotations.Test;

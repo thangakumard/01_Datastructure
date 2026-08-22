@@ -1,4 +1,4 @@
-package algorithms.array.medium.backtracking;
+package algorithms.array.backtracking;
 
 import java.util.*;
 

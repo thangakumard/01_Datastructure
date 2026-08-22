@@ -1,4 +1,4 @@
-package algorithms.array.medium.counter;
+package algorithms.array.counter;
 
 /***
  * https://leetcode.com/problems/maximum-swap/

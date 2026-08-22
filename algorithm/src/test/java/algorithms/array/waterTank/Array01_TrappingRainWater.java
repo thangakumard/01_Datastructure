@@ -1,4 +1,4 @@
-package algorithms.array.medium.waterTank;
+package algorithms.array.waterTank;
 
 import org.testng.annotations.Test;
 

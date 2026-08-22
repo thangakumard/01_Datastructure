@@ -1,4 +1,4 @@
-package algorithms.array.medium.subArray;
+package algorithms.array.subArray;
 
 /**
  * https://www.metacareers.com/profile/coding_practice_question/?problem_id=226517205173943&c=1344573719835068&psid=275492097255885&practice_plan=0&b=0222222

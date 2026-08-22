@@ -1,11 +1,11 @@
-package algorithms.array;
+package java.algorithms.array.easy;
 
 import java.util.*;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class containsDuplicate {
+public class Array36_ContainsDuplicate {
 	
 	@Test
 	public void containsDuplicate()
