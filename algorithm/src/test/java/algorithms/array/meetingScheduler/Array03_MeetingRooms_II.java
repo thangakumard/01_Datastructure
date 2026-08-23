@@ -38,34 +38,23 @@ public class Array03_MeetingRooms_II {
         //int[][] intervals= {{9,10},{9,11},{11,12}};
 
 	}
-	
-	public int minMeetingRooms(int[][] intervals) {
-        Arrays.sort(intervals,(a,b)-> Integer.compare(a[0],b[0]));
-        PriorityQueue<int[]> pq=new PriorityQueue<>((a,b)-> Integer.compare(a[1],b[1]));
-        for(int[] i:intervals){
-            if(!pq.isEmpty()&&pq.peek()[1]<=i[0]){
-                /****** IMPORTANT Priority Queue will not re-arrange after the value update.
-                 * so instead of poll(), if we do pq.peek()[1] that will not work
-                 */
-            	//pq.peek()[1] = Math.max(i[1], pq.peek()[1]);
-                pq.poll();
+
+    public int minMeetingRooms(int[][] intervals) {
+        if (intervals == null || intervals.length == 0) return 0;
+
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+
+        // Min-heap of end times for rooms currently occupied
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+
+        for (int[] interval : intervals) {
+            // Earliest-ending room is free by this meeting's start -> reuse it
+            if (!minHeap.isEmpty() && minHeap.peek() <= interval[0]) {
+                minHeap.poll();
             }
-            pq.add(i);
+            minHeap.offer(interval[1]);
         }
-        return pq.size();
+
+        return minHeap.size();
     }
-	
-	public int minMeetingRooms_2(int[][] intervals) {
-        Map<Integer, Integer> m = new TreeMap<>();
-        for (int[] t : intervals) {
-            m.put(t[0], m.getOrDefault(t[0], 0) + 1);
-            m.put(t[1], m.getOrDefault(t[1], 0) - 1);
-        }
-        int res = 0, cur = 0;
-        for (int v : m.values()) {
-            res = Math.max(res, cur += v);
-        }
-        return res;
-    }
-	
 }

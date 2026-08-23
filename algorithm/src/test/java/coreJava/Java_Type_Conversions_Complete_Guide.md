@@ -243,14 +243,15 @@ byte overflow = (byte) (max + 1); // -128 (wraps around)
 
 ## Common Interview Scenarios
 
-| Scenario | Code | Key Point |
-|----------|------|-----------|
-| Convert int to char digit | `char c = (char)('0' + i);` | Leverage ASCII offsets |
-| Frequency counting (char → index) | `freq[c - 'a']++` | Narrowing with offset |
-| Object type checking | `if (obj instanceof Integer) { int i = (Integer) obj; }` | Always instanceof before cast |
-| `List<String>` to `int[]` | `List<String> list = List.of("1", "2", "3"); int[] nums = list.stream().mapToInt(Integer::parseInt).toArray();` | `parseInt()` converts each String element |
-| `List<Integer>` to `int[]` | `List<Integer> list = List.of(1, 2, 3); int[] nums = list.stream().mapToInt(Integer::intValue).toArray();` | `intValue()` unboxes each Integer element |
-| String array to `int[]` (Arrays.stream) | `String[] input = {"1", "2", "3"}; int[] nums = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();` | `Arrays.stream()` + `parseInt()` |
+| Scenario | Code                                                                                                                                     | Key Point |
+|----------|------------------------------------------------------------------------------------------------------------------------------------------|-----------|
+| Convert int to char digit | `char c = (char)('0' + i);`                                                                                                              | Leverage ASCII offsets |
+| Frequency counting (char → index) | `freq[c - 'a']++`                                                                                                                        | Narrowing with offset |
+| Object type checking | `if (obj instanceof Integer) { int i = (Integer) obj; }`                                                                                 | Always instanceof before cast |
+| `List<String>` to `int[]` | `List<String> list = List.of("1", "2", "3"); int[] nums = list.stream().mapToInt(Integer::parseInt).toArray();`                          | `parseInt()` converts each String element |
+| `List<Integer>` to `int[]` | `List<Integer> list = List.of(1, 2, 3); int[] nums = list.stream().mapToInt(Integer::intValue).toArray();`                               | `intValue()` unboxes each Integer element |
+| String array to `int[]` (Arrays.stream) | `String[] input = {"1", "2", "3"}; int[] nums = Arrays.stream(input).mapToInt(Integer::parseInt).toArray();`                             | `Arrays.stream()` + `parseInt()` |
+| `List<int[]>` to `int[][]` | `List<int[]> list = new ArrayList<>(); list.add(new int[]{1,2}); int[][] result = list.toArray(new int[0][]); Eg:merge interval problem` | `toArray(new int[0][])` sizes the array automatically |
 
 ---
 

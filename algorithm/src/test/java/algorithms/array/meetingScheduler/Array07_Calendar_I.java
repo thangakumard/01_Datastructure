@@ -34,20 +34,28 @@ In calls to MyCalendar.book(start, end), start and end are integers in the range
 
 public class Array07_Calendar_I {
 
-	TreeMap<Integer, Integer> calendarTreeMap;
+	private final TreeMap<Integer, Integer> bookings;
+
 	public Array07_Calendar_I() {
-		calendarTreeMap = new TreeMap();
+		bookings = new TreeMap<>();
 	}
 
+	/***
+	 * Time Complexity: for one book call (log n). For n calls O(n log n)
+	 * Space Complexity: O(n)
+	 */
 	public boolean book(int start, int end) {
-		Integer prev_meeting_start = calendarTreeMap.floorKey(start);
-		Integer next_meeting_start = calendarTreeMap.ceilingKey(start);
+		Integer prevStart = bookings.floorKey(start);
+		Integer nextStart = bookings.ceilingKey(start);
 
-		if((prev_meeting_start == null || calendarTreeMap.get(prev_meeting_start) <= start)  &&
-				(next_meeting_start == null || next_meeting_start >= end)){
-			calendarTreeMap.put(start, end);
-			return true;
+		if (prevStart != null && bookings.get(prevStart) > start) {
+			return false; // overlaps previous event
 		}
-		return false;
+		if (nextStart != null && nextStart < end) {
+			return false; // overlaps next event
+		}
+
+		bookings.put(start, end);
+		return true;
 	}
 }

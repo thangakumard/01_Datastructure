@@ -64,28 +64,32 @@ public class Array06_EmployeeFreeTime {
             System.out.println(intv.start + "," + intv.end);
         }
     }
+
+    /***
+     * Complexity (N = total intervals across all employees):
+     *
+     * Time: O(N log N) — dominated by the sort; the merge sweep is a single O(N) pass.
+     * Space: O(N) for the flattened list (output aside).
+     * Sorting itself is O(log N) extra for Java's/Python's sort implementations, dominated by the O(N) flatten.
+     */
     public List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
-        List<Interval> intervals = new ArrayList<>();
-        for (int i = 0; i < schedule.size(); i++) {
-            for (int j = 0; j < schedule.get(i).size(); j++) {
-                intervals.add(schedule.get(i).get(j));
+        List<Interval> all = new ArrayList<>();
+        for (List<Interval> emp : schedule) {
+            all.addAll(emp);
+        }
+        all.sort((a, b) -> Integer.compare(a.start, b.start));
+
+        List<Interval> result = new ArrayList<>();
+        int prevEnd = all.get(0).end;
+        for (int i = 1; i < all.size(); i++) {
+            Interval cur = all.get(i);
+            if (cur.start > prevEnd) {
+                result.add(new Interval(prevEnd, cur.start));
+                prevEnd = cur.end;
+            } else {
+                prevEnd = Math.max(prevEnd, cur.end);
             }
         }
-        Collections.sort(intervals, (a, b) -> a.start - b.start);
-
-        for(Interval intv: intervals){
-            System.out.println(intv.start + "," + intv.end);
-        }
-        System.out.println("*************");
-
-        Interval temp = intervals.get(0);
-        List<Interval> res = new ArrayList<>();
-        for (int i = 1; i < intervals.size(); i++) {
-            if (intervals.get(i).start > temp.end) {
-                res.add(new Interval(temp.end, intervals.get(i).start));
-            }
-            temp = temp.end < intervals.get(i).end ? intervals.get(i) : temp;
-        }
-        return res;
+        return result;
     }
 }

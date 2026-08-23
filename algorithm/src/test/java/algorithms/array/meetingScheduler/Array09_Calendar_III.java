@@ -2,13 +2,14 @@ package algorithms.array.meetingScheduler;
 
 import org.testng.annotations.Test;
 
-import java.util.TreeMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Array09_Calendar_III {
 
     @Test
     public void test_MyCalendarThree(){
-        MyCalendarThree myCalendarThree = new MyCalendarThree();
+        MyCalendarTwo myCalendarThree = new MyCalendarTwo();
         System.out.println(myCalendarThree.book(10, 20));
         System.out.println(myCalendarThree.book(50, 60));
         System.out.println(myCalendarThree.book(10, 40));
@@ -18,22 +19,35 @@ public class Array09_Calendar_III {
     }
 }
 
-class MyCalendarThree {
-    TreeMap<Integer, Integer> delta;
+/***
+ * Time: O(n) per call (scan both lists) → O(n²) total across n calls.
+ * Space: O(n). This is worth defending if asked —
+ * it looks like overlaps could blow up quadratically since a single call can add up to O(n) new entries.
+ * But because we never re-add a region that's already flagged as double-booked (that path returns false before any mutation),
+ * the total number of overlap segments ever created across all calls is bounded by O(n), not O(n²).
+ * I'd walk through a small adversarial example if pushed on this.
+ */
+class MyCalendarTwo {
+    private final List<int[]> bookings;
+    private final List<int[]> overlaps;
 
-    public MyCalendarThree() {
-        delta = new TreeMap();
+    public MyCalendarTwo() {
+        bookings = new ArrayList<>();
+        overlaps = new ArrayList<>();
     }
 
-    public int book(int start, int end) {
-        delta.put(start, delta.getOrDefault(start, 0) + 1);
-        delta.put(end, delta.getOrDefault(end, 0) - 1);
-
-        int active = 0, ans = 0;
-        for (int d: delta.values()) {
-            active += d;
-            if (active > ans) ans = active;
+    public boolean book(int start, int end) {
+        for (int[] o : overlaps) {
+            if (start < o[1] && o[0] < end) {
+                return false; // would create a triple booking
+            }
         }
-        return ans;
+        for (int[] b : bookings) {
+            if (start < b[1] && b[0] < end) {
+                overlaps.add(new int[]{Math.max(start, b[0]), Math.min(end, b[1])});
+            }
+        }
+        bookings.add(new int[]{start, end});
+        return true;
     }
 }
