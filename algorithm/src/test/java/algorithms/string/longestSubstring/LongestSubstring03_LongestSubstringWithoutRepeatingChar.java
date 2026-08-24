@@ -53,28 +53,24 @@ public class LongestSubstring03_LongestSubstringWithoutRepeatingChar {
 			}
 			maxLength = Math.max(maxLength, right -left);
 		}
-
 		return maxLength;
 	}
 	
 	//from https://www.youtube.com/watch?v=3IETreEybaA&t=69s
 	public int lengthOfLongestSubstring_slidingWindow2(String s) {
-		
-		int left = 0, right = 0, max = 0;
-		HashSet<Character> uniqueCharSubstringSet = new HashSet<>();
-		while(right < s.length()){
-		
-			if(!uniqueCharSubstringSet.contains(s.charAt(right))) {
-				uniqueCharSubstringSet.add(s.charAt(right));
-				right++;
-				max = Math.max(uniqueCharSubstringSet.size(), max);
-			}else {
-				uniqueCharSubstringSet.remove(s.charAt(left));
-				left++;
-			}	
-		}
-		
-		return max;
+		Map<Character, Integer> lastSeenMap = new HashMap<>();
+        int maxLength = 0;
+
+        int left = 0;
+        for(int right=0; right < s.length(); right++){
+            char rightChar = s.charAt(right);
+            if(lastSeenMap.containsKey(rightChar) && lastSeenMap.get(rightChar) >= left){
+                left = lastSeenMap.get(rightChar) + 1;
+            }
+            lastSeenMap.put(rightChar, right);
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+        return maxLength;
 	}
 	
 	public int lengthOfLongestSubstring_02(String s) {
