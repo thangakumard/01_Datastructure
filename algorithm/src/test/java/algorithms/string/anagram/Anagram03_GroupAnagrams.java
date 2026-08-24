@@ -41,6 +41,26 @@ public class Anagram03_GroupAnagrams {
 
 	}
 
+	/***
+	 * Time Complexity: O(N · K)
+	 * 		N = number of strings, K = max string length.
+	 * Space Complexity: O(N · K)
+	 */
+	public List<List<String>> groupAnagrams(String[] strs) {
+		Map<String, List<String>> groups = new HashMap<>();
+
+		for (String s : strs) {
+			/*** char[] not int[] ***/
+			char[] count = new char[26]; /*** O(n) - if you use sort() it will become n log n ***/
+			for (char c : s.toCharArray()) {
+				count[c - 'a']++;
+			}
+			String key = new String(count); // canonical signature, e.g. \u0001\u0000...\u0001...
+			groups.computeIfAbsent(key, k -> new ArrayList<>()).add(s);
+		}
+		return new ArrayList<>(groups.values());
+	}
+
 	/**
 	 * Time Complexity: O(N KlogK), where N is the length of strs,
 	 * 	and K is the maximum length of a string in strs.
@@ -50,7 +70,7 @@ public class Anagram03_GroupAnagrams {
 	 * Space Complexity: O(NK), the total information content stored in ans.
 	 */
 
-	public List<List<String>> groupAnagrams(String[] strs) {
+	public List<List<String>> groupAnagrams_II(String[] strs) {
 
 		List<List<String>> result = new ArrayList<>();
 		HashMap<String, List<String>> map = new HashMap<>();

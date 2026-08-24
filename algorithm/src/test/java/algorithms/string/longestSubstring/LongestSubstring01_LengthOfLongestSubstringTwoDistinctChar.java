@@ -77,7 +77,6 @@ public void lengthOfLongestSubstringTwoDistinct_test4(){
      */
     public int lengthOfLongestSubstringKDistinct_slidingwindow1(String s) {
         int[] counter = new int[256];
-
         int left =0, right =0, maxLength = 0, distinctChar = 0;
 
         while(right < s.length()){

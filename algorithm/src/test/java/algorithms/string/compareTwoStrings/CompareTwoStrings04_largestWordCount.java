@@ -30,7 +30,10 @@ public class CompareTwoStrings04_largestWordCount {
                 maxWordCount = mapWordCounter.get(senders[i]);
                 maxWordSender = senders[i];
             }
-            else if(mapWordCounter.get(senders[i]) == maxWordCount && maxWordSender.compareTo(senders[i])<0){
+            //If there is more than one sender with the largest word count,
+            // return the one with the lexicographically largest name.
+            else if(mapWordCounter.get(senders[i]) == maxWordCount &&
+                    maxWordSender.compareTo(senders[i])<0){
                 maxWordSender = senders[i];
             }
         }
