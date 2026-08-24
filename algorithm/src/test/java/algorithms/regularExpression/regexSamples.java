@@ -1,4 +1,4 @@
-package coreJava.regularExpression;
+package algorithms.regularExpression;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
