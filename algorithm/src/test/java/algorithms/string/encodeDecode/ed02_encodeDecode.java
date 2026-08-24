@@ -58,8 +58,10 @@ import java.util.List;
  * Follow up: Could you write a generalized algorithm to work on any possible set of characters?
  */
 public class ed02_encodeDecode {
-
+    /***
+    // Sample encode: "5#Hello5#World"
     // Encodes a list of strings to a single string.
+    */
     public String encode(List<String> strs) {
         StringBuilder sb = new StringBuilder();
         for(String s: strs){
@@ -68,7 +70,10 @@ public class ed02_encodeDecode {
         return sb.toString();
     }
 
+    /***
+    // Sample decode: ["Hello","World"]
     // Decodes a single string to a list of strings.
+    */
     public List<String> decode(String s) {
         List<String> result = new ArrayList<>();
         int i = 0;
