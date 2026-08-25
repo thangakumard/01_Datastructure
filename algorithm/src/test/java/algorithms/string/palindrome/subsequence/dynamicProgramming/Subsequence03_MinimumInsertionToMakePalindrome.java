@@ -1,4 +1,4 @@
-package algorithms.string.palindrome.subsequence;
+package algorithms.string.palindrome.subsequence.dynamicProgramming;
 
 import org.testng.annotations.Test;
 

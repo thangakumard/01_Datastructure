@@ -238,3 +238,25 @@ Misreading the problem statement here is a classic way to pick the wrong techniq
 - **Subsequence problems** (e.g., Longest Common Subsequence, Longest Palindromic Subsequence, Is Subsequence) are usually solved with **dynamic programming** or, for simpler checks, **two pointers**, since you need to reason about "include this character or skip it" decisions rather than a contiguous window.
 
 Quick sanity check while reading a problem: if the wording allows characters to be "deleted" or "skipped" while keeping the rest in order, it's a subsequence problem. If it talks about a "contiguous" or "window" of the string, it's a substring problem.
+
+## Palindrome
+### Palindromic Partition
+   - Backtracking
+   - Time Complexity O(n 2^n)
+   - Space Complexity O(n)
+### Palindromic Permutation
+   - All the Palindromic Permutation uses freq counter 
+   - Make sure to assert count of ODD chat count
+   - Getting Palindromic Permutation - Uses freq counter + Backtracking (uses char freq array to build string) 
+### Palindromic Subsequence
+   - All the Palindromic Subsequence problems use dynamic programming approach
+### Palindromic Substring
+   - All the Palindromic Subsequence problems use expand from middle apprach
+```Java
+   for(int i=0; i< input.length(); i++){
+      expandFromMiddle(charInput , i, i);// for odd length
+      expandFromMiddle(charInput, i, i+1);// for even length
+    }
+   ```
+
+
