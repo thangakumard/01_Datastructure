@@ -34,7 +34,7 @@ public class amazon01_MostFrequentWord {
 		String input = "our garden is 1mile from my home. we planted rose in our garden. now our garden is full of rose. rose perfumes are made from rose oil";
 		String[] WordstoIgnore = {"is","in","our","of","are","from","we"};
 		List<String> lstWordstoIgnore = Arrays.asList(WordstoIgnore);
-		HashMap<String, Integer> wordMap = new HashMap<String, Integer>();
+		Map<String, Integer> wordMap = new HashMap<>();
 		
 		String[] words = input.split("\\s+");
 		for (String word : words) {

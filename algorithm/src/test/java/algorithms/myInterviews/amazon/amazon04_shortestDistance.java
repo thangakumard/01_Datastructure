@@ -33,7 +33,6 @@ public class amazon04_shortestDistance {
 	}
 	
 	private int distanceBetweenTreeNodes(TreeNode root, int x, int y){
-		
 		int xDistanceFromRoot =0, yDistanceFromRoot = 0, LCADistanceFromRoot = 0;
 		xDistanceFromRoot = distanceFromRoot(root, x, 0);
 		yDistanceFromRoot = distanceFromRoot(root, y, 0);

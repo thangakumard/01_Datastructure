@@ -1,10 +1,6 @@
 package algorithms.myInterviews.amazon;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Random;
-import java.util.TreeMap;
+import java.util.*;
 
 /********
  * 
@@ -25,13 +21,13 @@ import java.util.TreeMap;
  */
 
 class songs{
-	HashMap<String, Integer> songsMap = new HashMap<String, Integer>();
-	TreeMap<Integer, List<String>> playCountMap = new TreeMap<Integer, List<String>>();
+	Map<String, Integer> songsMap = new HashMap<>();
+	TreeMap<Integer, List<String>> playCountMap = new TreeMap<>();
 }
 
 public class amazon05_playlist {
 
-	HashMap<String, songs> albumMap = new HashMap<String, songs>();
+	HashMap<String, songs> albumMap = new HashMap<>();
 	
 	public void play(String album, String songName){
 		songs s = albumMap.get(album); //Read Album
