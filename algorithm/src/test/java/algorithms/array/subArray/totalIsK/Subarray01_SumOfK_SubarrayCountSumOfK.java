@@ -1,4 +1,4 @@
-package algorithms.array.subArray.K;
+package algorithms.array.subArray.totalIsK;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

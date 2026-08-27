@@ -1,4 +1,4 @@
-package algorithms.array.subArray.K;
+package algorithms.array.subArray.totalIsK;
 
 import java.util.HashMap;
 

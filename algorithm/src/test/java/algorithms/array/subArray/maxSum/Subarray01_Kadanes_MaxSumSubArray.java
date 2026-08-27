@@ -1,4 +1,4 @@
-package algorithms.array.subArray;
+package algorithms.array.subArray.maxSum;
 
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
