@@ -29,6 +29,17 @@ import java.util.*;
  */
 public class Array06_EmployeeFreeTime {
 
+    class Interval {
+        public int start;
+        public int end;
+
+        public Interval() {}
+
+        public Interval(int _start, int _end) {
+            start = _start;
+            end = _end;
+        }
+    };
     @Test
     public void test(){
         List<Interval> schedule1 = new ArrayList<>();

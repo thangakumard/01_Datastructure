@@ -1,6 +1,8 @@
 package algorithms.string.longestSubstring;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Assert;

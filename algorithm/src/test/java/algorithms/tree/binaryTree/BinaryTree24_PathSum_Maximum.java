@@ -52,27 +52,34 @@ public void test(){
 	System.out.println("Max Path Count :" + maxPathSum(tree.root));
 }
 
-    int max_sum = Integer.MIN_VALUE;
+    int maxSum = Integer.MIN_VALUE;
 
+    /**
+     * Time Complexity: O(N), where N is the total number of nodes in the binary tree. Post-order DFS visits each node exactly once.
+     * Space Complexity: O(H), where H is the height of the tree, corresponding to the call stack size O(H) on balanced trees, O(H) in worst-case degenerate trees).
+     */
     public int maxPathSum(TreeNode root) {
-        max_gain(root);
-        return max_sum;
+        dfs(root);
+        return maxSum;
     }
     
-    private int max_gain(TreeNode root){
-        if(root == null) return 0;
-        
-        //left tree sum
-        int left_gain = Math.max(max_gain(root.left), 0);
-        //right tree sum
-        int right_gain = Math.max(max_gain(root.right), 0);
-        
-        //whole path sum
-        int max_path = root.data + left_gain + right_gain;
-        
-        //max sum
-        max_sum = Math.max(max_sum, max_path);
-        
-        return root.data + Math.max(left_gain, right_gain);
+    private int dfs(TreeNode root){
+        if (root == null) {
+            return 0;
+        }
+
+        // Recursively compute the maximum contribution from left and right branches.
+        // Math.max(0, ...) ignores negative subtree sums.
+        int leftGain = Math.max(0, dfs(root.left));
+        int rightGain = Math.max(0, dfs(root.right));
+
+        // Path sum with current node as the highest point (root of the path)
+        int currentPathSum = root.val + leftGain + rightGain;
+
+        // Update the global max path sum
+        maxSum = Math.max(maxSum, currentPathSum);
+
+        // Return the max single-branch path sum to the parent
+        return root.val + Math.max(leftGain, rightGain);
     }
 }

@@ -37,20 +37,18 @@ import algorithms.singlyLinkedList.base.ListNode;
  * The number of nodes in the list is in the range [1, 105].
  * 1 <= Node.val <= 105
  */
-public class DN01_deleteMiddle {
+public class LLDelete01_deleteMiddle {
     public ListNode deleteMiddle(ListNode head) {
-        if(head == null || head.next == null) return null;
-
-        ListNode sentinal = new ListNode(0);
-        sentinal.next = head;
-        ListNode slow = head, fast = head , prev = head;
+        if (head == null || head.next == null) return null;
+        ListNode slow = head;
+        ListNode fast = head.next.next; /** IMPORTANT TO SET fast = head.next.next **/
 
         while(fast != null && fast.next != null){
-            prev = slow;
-            slow = slow.next;
             fast = fast.next.next;
+            slow = slow.next;
         }
-        prev.next = slow.next;
-        return sentinal.next;
+
+        slow.next = slow.next.next;
+        return head;
     }
 }

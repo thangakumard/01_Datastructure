@@ -1,8 +1,6 @@
 package algorithms.bitOperation;
 
 import org.testng.annotations.*;
-
-import algorithms.array.PowerOfTwo;
 /*********
  * 
  * A magic number is defined as a number which can be expressed as a power of 5 
