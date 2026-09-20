@@ -39,6 +39,59 @@ public class Array03_MeetingRooms_II {
 
 	}
 
+    /***
+     * This method splits the meeting intervals into two separate arrays:
+     * one for start times and one for end times.
+     * We sort both arrays independently and use a two-pointer approach to track room availability.
+     * If a meeting starts before the earliest ending meeting finishes,
+     * if(start_time <= end_time)
+     *      we can reuse a room.
+     * else
+     *      we allocate a new room.
+     *
+     * Time: O (n log n)
+     * Space: O(n)
+     */
+    public int minMeetingRooms_Chronological_Ordering(int[][] intervals) {
+        if (intervals == null || intervals.length == 0) {
+            return 0;
+        }
+
+        int n = intervals.length;
+        int[] startTimes = new int[n];
+        int[] endTimes = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            startTimes[i] = intervals[i][0];
+            endTimes[i] = intervals[i][1];
+        }
+
+        // Sort both arrays independently
+        Arrays.sort(startTimes);
+        Arrays.sort(endTimes);
+
+        int roomsAllocated = 0;
+        int endPointer = 0;
+
+        // Iterate through all meetings by their start times
+        for (int startPointer = 0; startPointer < n; startPointer++) {
+            // If there is a meeting that has ended by the time the current meeting starts
+            if (startTimes[startPointer] < endTimes[endPointer]) {
+                // No room is free, we must allocate a new one
+                roomsAllocated++;
+            } else {
+                // Free up a room, meaning we increment the end pointer
+                endPointer++;
+            }
+        }
+
+        return roomsAllocated;
+    }
+
+    /***
+     * Time: O (n log n)
+     * Space: O(n)
+     */
     public int minMeetingRooms(int[][] intervals) {
         if (intervals == null || intervals.length == 0) return 0;
 

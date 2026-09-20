@@ -66,7 +66,69 @@ public class LList15_MergeKSortedLists {
 
 	}
 
+	/**
+	 * Approach 1: Min Heap (Priority Queue) - OPTIMAL
+	 *
+	 * Strategy:
+	 * - Maintain a min heap of size k, where each element is the head of a list
+	 * - Always extract the node with minimum value
+	 * - Add its next node back to the heap
+	 * - This ensures we always pick the smallest node among all current list heads
+	 *
+	 * Why this is optimal:
+	 * - Total nodes processed: n*k
+	 * - Each heap operation (add/remove): O(log k)
+	 * - Total: O(n*k*log k)
+	 * - This is the theoretical lower bound for comparing nodes across k lists
+	 *
+	 * Time: O(n*k*log k)
+	 * Space: O(k) for the heap
+	 */
 	public ListNode mergeKLists(ListNode[] lists) {
+		if (lists == null || lists.length == 0) return null;
+
+		// Min heap comparator: compare by node value
+		PriorityQueue<ListNode> minHeap = new PriorityQueue<>(
+				(a, b) -> Integer.compare(a.value, b.value)
+		);
+
+		// Add the head of each non-empty list to the heap
+		for (ListNode list : lists) {
+			if (list != null) {
+				minHeap.offer(list);
+			}
+		}
+
+		ListNode dummy = new ListNode(0);
+		ListNode current = dummy;
+
+		// Extract minimum, add it to result, and insert next node from same list
+		while (!minHeap.isEmpty()) {
+			ListNode minNode = minHeap.poll();  // O(log k)
+			current.next = minNode;
+			current = current.next;
+
+			// Add next node from the same list
+			if (minNode.next != null) {
+				minHeap.offer(minNode.next);  // O(log k)
+			}
+		}
+
+		return dummy.next;
+	}
+
+	/***
+	 * The Problem
+	 * You're storing all n·k nodes in the heap, then sorting them. This is inefficient because:
+	 * You rebuild the entire list unnecessarily
+	 * The heap grows to size n·k instead of staying at k
+	 * Each operation costs log(n·k) instead of log(k)
+	 *
+	 * This takes time	O(n·k·log(n·k)) instead of 	O(n·k·log(k))
+	 * Space O(n·k) instead of O(k)
+	 * So use approach 1 above
+	 */
+	public ListNode mergeKLists_inefficient(ListNode[] lists) {
 		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
 		for (ListNode head : lists) {

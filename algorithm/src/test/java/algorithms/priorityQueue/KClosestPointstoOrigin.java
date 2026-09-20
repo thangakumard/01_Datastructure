@@ -24,8 +24,9 @@ public class KClosestPointstoOrigin {
         }
         
         int[][] result = new int[K][2];
-        while(K-- > 0){
+        while(K > 0){
             result[K] = maxHeap.remove();
+            K--;
         }
         
         return result;

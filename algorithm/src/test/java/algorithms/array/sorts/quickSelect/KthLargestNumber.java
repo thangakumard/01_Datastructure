@@ -128,10 +128,10 @@ public class KthLargestNumber {
 		int result = 0;
         if(k-1 == pivotIndex)
             return input[pivotIndex];
-        if(k-1 <= pivotIndex-1 && initial_left <= pivotIndex-1){
+		else if(k-1 < pivotIndex){
             result = quickSort(input, initial_left,pivotIndex-1,k);
         }
-        else if(k-1 >= pivotIndex+1 && pivotIndex+1 <= initial_right){
+        else{
             result = quickSort(input,pivotIndex+1,initial_right,k);
         }
         
