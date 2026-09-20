@@ -4,7 +4,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ThreadsafeRunningAverage {
+public class ThreadsafeRunningAverage_automic {
    private AtomicInteger counter = new AtomicInteger();
    private AtomicInteger totalTime = new AtomicInteger();
    public void addResponseTime(int resTime) throws InterruptedException {
@@ -17,10 +17,10 @@ public class ThreadsafeRunningAverage {
        return (double) (totalTime.get()/ counter.get());
    }
 }
-class ThreadsafeRunningAverageTest {
+class ThreadsafeRunningAverage_automicTest {
     public static void main(String[] args){
         ExecutorService executor = Executors.newFixedThreadPool(2);
-        ThreadsafeRunningAverage threadsafeRunningAverage = new ThreadsafeRunningAverage();
+        ThreadsafeRunningAverage_automic threadsafeRunningAverage = new ThreadsafeRunningAverage_automic();
         Random rand = new Random();
         Runnable task = () -> {
             try {
